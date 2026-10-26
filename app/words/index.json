@@ -496,5 +496,3505 @@
     "C2": 3
    }
   }
+ ],
+ "units": [
+  {
+   "id": "v-A1-people-1",
+   "lv": "A1",
+   "cat": "people",
+   "title": "Personnes et famille (1/2)",
+   "ids": [
+    "people/baby",
+    "people/brother",
+    "people/child",
+    "people/children",
+    "people/couple",
+    "people/daughter",
+    "people/family",
+    "people/father",
+    "people/friend",
+    "people/guy"
+   ]
+  },
+  {
+   "id": "v-A1-people-2",
+   "lv": "A1",
+   "cat": "people",
+   "title": "Personnes et famille (2/2)",
+   "ids": [
+    "people/husband",
+    "people/kid",
+    "people/man",
+    "people/mother",
+    "people/parents",
+    "people/people",
+    "people/sister",
+    "people/son",
+    "people/uncle",
+    "people/wife",
+    "people/woman"
+   ]
+  },
+  {
+   "id": "v-A1-body-1",
+   "lv": "A1",
+   "cat": "body",
+   "title": "Corps et santé (1/2)",
+   "ids": [
+    "body/back",
+    "body/body",
+    "body/cold",
+    "body/doctor",
+    "body/eye",
+    "body/face",
+    "body/hair",
+    "body/hand",
+    "body/head"
+   ]
+  },
+  {
+   "id": "v-A1-body-2",
+   "lv": "A1",
+   "cat": "body",
+   "title": "Corps et santé (2/2)",
+   "ids": [
+    "body/heart",
+    "body/hospital",
+    "body/mouth",
+    "body/pain",
+    "body/sick",
+    "body/tired",
+    "body/to-feel-better",
+    "body/to-hurt",
+    "body/to-rest"
+   ]
+  },
+  {
+   "id": "v-A1-home-1",
+   "lv": "A1",
+   "cat": "home",
+   "title": "Maison",
+   "ids": [
+    "home/bed",
+    "home/door",
+    "home/fridge",
+    "home/home",
+    "home/house",
+    "home/light",
+    "home/living-room",
+    "home/room",
+    "home/to-clean",
+    "home/to-move"
+   ]
+  },
+  {
+   "id": "v-A1-food-1",
+   "lv": "A1",
+   "cat": "food",
+   "title": "Nourriture et repas",
+   "ids": [
+    "food/coffee",
+    "food/dinner",
+    "food/food",
+    "food/menu",
+    "food/the-bill",
+    "food/vegetables",
+    "food/water"
+   ]
+  },
+  {
+   "id": "v-A1-time-1",
+   "lv": "A1",
+   "cat": "time",
+   "title": "Temps et calendrier (1/2)",
+   "ids": [
+    "time/ago",
+    "time/already",
+    "time/always",
+    "time/birthday",
+    "time/day",
+    "time/during",
+    "time/early",
+    "time/evening",
+    "time/hour",
+    "time/late",
+    "time/later",
+    "time/minute",
+    "time/month",
+    "time/morning"
+   ]
+  },
+  {
+   "id": "v-A1-time-2",
+   "lv": "A1",
+   "cat": "time",
+   "title": "Temps et calendrier (2/2)",
+   "ids": [
+    "time/never",
+    "time/night",
+    "time/now",
+    "time/since",
+    "time/sometimes",
+    "time/soon",
+    "time/still",
+    "time/time",
+    "time/today",
+    "time/tomorrow",
+    "time/tonight",
+    "time/until",
+    "time/week",
+    "time/year",
+    "time/yesterday"
+   ]
+  },
+  {
+   "id": "v-A1-city-1",
+   "lv": "A1",
+   "cat": "city",
+   "title": "Ville et lieux",
+   "ids": [
+    "city/behind",
+    "city/between",
+    "city/building",
+    "city/city",
+    "city/far",
+    "city/in-front-of",
+    "city/left",
+    "city/next-to",
+    "city/post-office",
+    "city/right",
+    "city/road",
+    "city/straight-on",
+    "city/street",
+    "city/supermarket",
+    "city/town"
+   ]
+  },
+  {
+   "id": "v-A1-travel-1",
+   "lv": "A1",
+   "cat": "travel",
+   "title": "Voyages et transports",
+   "ids": [
+    "travel/car",
+    "travel/hotel",
+    "travel/to-book",
+    "travel/to-leave",
+    "travel/to-miss",
+    "travel/train"
+   ]
+  },
+  {
+   "id": "v-A1-work-1",
+   "lv": "A1",
+   "cat": "work",
+   "title": "Travail",
+   "ids": [
+    "work/boss",
+    "work/company",
+    "work/job",
+    "work/meeting",
+    "work/office",
+    "work/team",
+    "work/to-be-busy",
+    "work/to-fire",
+    "work/to-work",
+    "work/work"
+   ]
+  },
+  {
+   "id": "v-A1-school-1",
+   "lv": "A1",
+   "cat": "school",
+   "title": "Études et apprentissage",
+   "ids": [
+    "school/answer",
+    "school/class",
+    "school/mistake",
+    "school/question",
+    "school/school",
+    "school/to-forget",
+    "school/to-learn",
+    "school/to-mean",
+    "school/to-remember",
+    "school/to-understand",
+    "school/word"
+   ]
+  },
+  {
+   "id": "v-A1-nature-1",
+   "lv": "A1",
+   "cat": "nature",
+   "title": "Nature et météo",
+   "ids": [
+    "nature/autumn",
+    "nature/cloudy",
+    "nature/cold-froid",
+    "nature/dog",
+    "nature/hot",
+    "nature/sunny"
+   ]
+  },
+  {
+   "id": "v-A1-feelings-1",
+   "lv": "A1",
+   "cat": "feelings",
+   "title": "Émotions et caractère",
+   "ids": [
+    "feelings/afraid",
+    "feelings/funny",
+    "feelings/happy",
+    "feelings/kind",
+    "feelings/nice",
+    "feelings/scared",
+    "feelings/to-feel",
+    "feelings/to-hate",
+    "feelings/to-love",
+    "feelings/worried"
+   ]
+  },
+  {
+   "id": "v-A1-verbs-1",
+   "lv": "A1",
+   "cat": "verbs",
+   "title": "Verbes essentiels (1/5)",
+   "ids": [
+    "verbs/to-ask",
+    "verbs/to-be",
+    "verbs/to-become",
+    "verbs/to-believe",
+    "verbs/to-break",
+    "verbs/to-bring",
+    "verbs/to-buy",
+    "verbs/to-call",
+    "verbs/to-change",
+    "verbs/to-close",
+    "verbs/to-come",
+    "verbs/to-decide",
+    "verbs/to-die",
+    "verbs/to-do"
+   ]
+  },
+  {
+   "id": "v-A1-verbs-2",
+   "lv": "A1",
+   "cat": "verbs",
+   "title": "Verbes essentiels (2/5)",
+   "ids": [
+    "verbs/to-drink",
+    "verbs/to-drive",
+    "verbs/to-eat",
+    "verbs/to-explain",
+    "verbs/to-fall",
+    "verbs/to-find",
+    "verbs/to-finish",
+    "verbs/to-follow",
+    "verbs/to-get",
+    "verbs/to-give",
+    "verbs/to-go",
+    "verbs/to-happen",
+    "verbs/to-have",
+    "verbs/to-hear"
+   ]
+  },
+  {
+   "id": "v-A1-verbs-3",
+   "lv": "A1",
+   "cat": "verbs",
+   "title": "Verbes essentiels (3/5)",
+   "ids": [
+    "verbs/to-help",
+    "verbs/to-hope",
+    "verbs/to-keep",
+    "verbs/to-know",
+    "verbs/to-let",
+    "verbs/to-like",
+    "verbs/to-listen",
+    "verbs/to-live",
+    "verbs/to-look",
+    "verbs/to-lose",
+    "verbs/to-make",
+    "verbs/to-meet",
+    "verbs/to-need",
+    "verbs/to-open",
+    "verbs/to-pay"
+   ]
+  },
+  {
+   "id": "v-A1-verbs-4",
+   "lv": "A1",
+   "cat": "verbs",
+   "title": "Verbes essentiels (4/5)",
+   "ids": [
+    "verbs/to-play",
+    "verbs/to-put",
+    "verbs/to-read",
+    "verbs/to-run",
+    "verbs/to-say",
+    "verbs/to-see",
+    "verbs/to-seem",
+    "verbs/to-sell",
+    "verbs/to-send",
+    "verbs/to-show",
+    "verbs/to-sleep",
+    "verbs/to-speak",
+    "verbs/to-start",
+    "verbs/to-stop"
+   ]
+  },
+  {
+   "id": "v-A1-verbs-5",
+   "lv": "A1",
+   "cat": "verbs",
+   "title": "Verbes essentiels (5/5)",
+   "ids": [
+    "verbs/to-take",
+    "verbs/to-talk",
+    "verbs/to-tell",
+    "verbs/to-think",
+    "verbs/to-try",
+    "verbs/to-turn",
+    "verbs/to-use",
+    "verbs/to-wait",
+    "verbs/to-walk",
+    "verbs/to-want",
+    "verbs/to-watch",
+    "verbs/to-wear",
+    "verbs/to-win",
+    "verbs/to-worry",
+    "verbs/to-write"
+   ]
+  },
+  {
+   "id": "v-A1-adjectives-1",
+   "lv": "A1",
+   "cat": "adjectives",
+   "title": "Adjectifs essentiels (1/3)",
+   "ids": [
+    "adjectives/bad",
+    "adjectives/beautiful",
+    "adjectives/big",
+    "adjectives/busy",
+    "adjectives/different",
+    "adjectives/easy",
+    "adjectives/fast",
+    "adjectives/free",
+    "adjectives/full",
+    "adjectives/good"
+   ]
+  },
+  {
+   "id": "v-A1-adjectives-2",
+   "lv": "A1",
+   "cat": "adjectives",
+   "title": "Adjectifs essentiels (2/3)",
+   "ids": [
+    "adjectives/great",
+    "adjectives/hard",
+    "adjectives/important",
+    "adjectives/little",
+    "adjectives/long",
+    "adjectives/new",
+    "adjectives/old",
+    "adjectives/possible",
+    "adjectives/pretty",
+    "adjectives/quiet"
+   ]
+  },
+  {
+   "id": "v-A1-adjectives-3",
+   "lv": "A1",
+   "cat": "adjectives",
+   "title": "Adjectifs essentiels (3/3)",
+   "ids": [
+    "adjectives/ready",
+    "adjectives/real",
+    "adjectives/right-juste-exact",
+    "adjectives/same",
+    "adjectives/small",
+    "adjectives/strange",
+    "adjectives/sure",
+    "adjectives/true",
+    "adjectives/whole",
+    "adjectives/wrong",
+    "adjectives/young"
+   ]
+  },
+  {
+   "id": "v-A1-connectors-1",
+   "lv": "A1",
+   "cat": "connectors",
+   "title": "Mots de liaison (1/2)",
+   "ids": [
+    "connectors/actually",
+    "connectors/also",
+    "connectors/and",
+    "connectors/anyway",
+    "connectors/because",
+    "connectors/but",
+    "connectors/either",
+    "connectors/finally",
+    "connectors/for-example"
+   ]
+  },
+  {
+   "id": "v-A1-connectors-2",
+   "lv": "A1",
+   "cat": "connectors",
+   "title": "Mots de liaison (2/2)",
+   "ids": [
+    "connectors/if",
+    "connectors/instead",
+    "connectors/or",
+    "connectors/so",
+    "connectors/then",
+    "connectors/too",
+    "connectors/unless",
+    "connectors/when",
+    "connectors/while"
+   ]
+  },
+  {
+   "id": "v-A1-conversation-1",
+   "lv": "A1",
+   "cat": "conversation",
+   "title": "Expressions de conversation (1/2)",
+   "ids": [
+    "conversation/i-don-t-know",
+    "conversation/i-don-t-understand",
+    "conversation/i-m-fine-thanks",
+    "conversation/excuse-me",
+    "conversation/good-luck",
+    "conversation/goodbye",
+    "conversation/hello",
+    "conversation/hi",
+    "conversation/how-are-you"
+   ]
+  },
+  {
+   "id": "v-A1-conversation-2",
+   "lv": "A1",
+   "cat": "conversation",
+   "title": "Expressions de conversation (2/2)",
+   "ids": [
+    "conversation/nice-to-meet-you",
+    "conversation/no-problem",
+    "conversation/of-course",
+    "conversation/please",
+    "conversation/really",
+    "conversation/see-you-later",
+    "conversation/sorry",
+    "conversation/thank-you",
+    "conversation/you-re-welcome"
+   ]
+  },
+  {
+   "id": "v-A1-clothes-1",
+   "lv": "A1",
+   "cat": "clothes",
+   "title": "Vêtements et apparence",
+   "ids": [
+    "clothes/t-shirt",
+    "clothes/clothes",
+    "clothes/jeans",
+    "clothes/skirt",
+    "clothes/socks",
+    "clothes/trousers"
+   ]
+  },
+  {
+   "id": "v-A1-leisure-1",
+   "lv": "A1",
+   "cat": "leisure",
+   "title": "Sports et loisirs (1/2)",
+   "ids": [
+    "leisure/cinema",
+    "leisure/concert",
+    "leisure/football",
+    "leisure/free-time",
+    "leisure/fun",
+    "leisure/game",
+    "leisure/gym",
+    "leisure/hobby"
+   ]
+  },
+  {
+   "id": "v-A1-leisure-2",
+   "lv": "A1",
+   "cat": "leisure",
+   "title": "Sports et loisirs (2/2)",
+   "ids": [
+    "leisure/museum",
+    "leisure/party",
+    "leisure/to-dance",
+    "leisure/to-go-for-a-walk",
+    "leisure/to-go-out",
+    "leisure/to-have-fun",
+    "leisure/to-ride-a-bike",
+    "leisure/to-sing"
+   ]
+  },
+  {
+   "id": "v-A1-tech-1",
+   "lv": "A1",
+   "cat": "tech",
+   "title": "Technologie",
+   "ids": [
+    "tech/email",
+    "tech/internet",
+    "tech/mobile-phone",
+    "tech/phone",
+    "tech/to-save-enregistrer-sauvegarder",
+    "tech/to-work-marcher-fonctionner"
+   ]
+  },
+  {
+   "id": "v-A1-media-1",
+   "lv": "A1",
+   "cat": "media",
+   "title": "Médias et culture",
+   "ids": [
+    "media/tv",
+    "media/book",
+    "media/film",
+    "media/magazine",
+    "media/movie",
+    "media/music",
+    "media/news",
+    "media/newspaper",
+    "media/show",
+    "media/singer",
+    "media/song",
+    "media/story"
+   ]
+  },
+  {
+   "id": "v-A1-mix-1",
+   "lv": "A1",
+   "cat": "mix",
+   "title": "Vocabulaire varié",
+   "ids": [
+    "shopping/change",
+    "shopping/how-much-is-it",
+    "shopping/money",
+    "shopping/poor",
+    "shopping/to-save"
+   ]
+  },
+  {
+   "id": "v-A2-people-1",
+   "lv": "A2",
+   "cat": "people",
+   "title": "Personnes et famille (1/2)",
+   "ids": [
+    "people/aunt",
+    "people/boyfriend",
+    "people/cousin",
+    "people/girlfriend",
+    "people/grandfather",
+    "people/neighbour",
+    "people/nephew",
+    "people/niece"
+   ]
+  },
+  {
+   "id": "v-A2-people-2",
+   "lv": "A2",
+   "cat": "people",
+   "title": "Personnes et famille (2/2)",
+   "ids": [
+    "people/partner",
+    "people/relative",
+    "people/single",
+    "people/teenager",
+    "people/to-get-married",
+    "people/to-grow-up",
+    "people/to-look-after",
+    "people/twin",
+    "people/wedding"
+   ]
+  },
+  {
+   "id": "v-A2-body-1",
+   "lv": "A2",
+   "cat": "body",
+   "title": "Corps et santé (1/2)",
+   "ids": [
+    "body/arm",
+    "body/blood",
+    "body/chemist-s",
+    "body/cough",
+    "body/dentist",
+    "body/ear",
+    "body/finger",
+    "body/flu",
+    "body/foot",
+    "body/health",
+    "body/healthy"
+   ]
+  },
+  {
+   "id": "v-A2-body-2",
+   "lv": "A2",
+   "cat": "body",
+   "title": "Corps et santé (2/2)",
+   "ids": [
+    "body/ill",
+    "body/knee",
+    "body/leg",
+    "body/medicine",
+    "body/neck",
+    "body/nose",
+    "body/nurse",
+    "body/shoulder",
+    "body/skin",
+    "body/sore-throat",
+    "body/stomach",
+    "body/to-lose-weight"
+   ]
+  },
+  {
+   "id": "v-A2-home-1",
+   "lv": "A2",
+   "cat": "home",
+   "title": "Maison (1/2)",
+   "ids": [
+    "home/apartment",
+    "home/bathroom",
+    "home/bedroom",
+    "home/chair",
+    "home/cupboard",
+    "home/downstairs",
+    "home/flat",
+    "home/floor",
+    "home/furniture",
+    "home/garden",
+    "home/key",
+    "home/kitchen",
+    "home/mirror"
+   ]
+  },
+  {
+   "id": "v-A2-home-2",
+   "lv": "A2",
+   "cat": "home",
+   "title": "Maison (2/2)",
+   "ids": [
+    "home/neighbourhood",
+    "home/oven",
+    "home/rent",
+    "home/roof",
+    "home/shelf",
+    "home/sofa",
+    "home/table",
+    "home/to-do-the-dishes",
+    "home/to-do-the-laundry",
+    "home/to-tidy-up",
+    "home/upstairs",
+    "home/wall",
+    "home/washing-machine",
+    "home/window"
+   ]
+  },
+  {
+   "id": "v-A2-food-1",
+   "lv": "A2",
+   "cat": "food",
+   "title": "Nourriture et repas (1/2)",
+   "ids": [
+    "food/beer",
+    "food/bread",
+    "food/breakfast",
+    "food/cheese",
+    "food/chicken",
+    "food/dessert",
+    "food/dish",
+    "food/egg",
+    "food/fish",
+    "food/fresh",
+    "food/hungry",
+    "food/lunch",
+    "food/main-course"
+   ]
+  },
+  {
+   "id": "v-A2-food-2",
+   "lv": "A2",
+   "cat": "food",
+   "title": "Nourriture et repas (2/2)",
+   "ids": [
+    "food/meat",
+    "food/milk",
+    "food/recipe",
+    "food/snack",
+    "food/spicy",
+    "food/starter",
+    "food/sugar",
+    "food/sweet",
+    "food/tea",
+    "food/the-check",
+    "food/to-cook",
+    "food/to-order",
+    "food/vegetarian",
+    "food/wine"
+   ]
+  },
+  {
+   "id": "v-A2-time-1",
+   "lv": "A2",
+   "cat": "time",
+   "title": "Temps et calendrier",
+   "ids": [
+    "time/afternoon",
+    "time/at-the-moment",
+    "time/century",
+    "time/in-the-future",
+    "time/in-the-past",
+    "time/often",
+    "time/on-time",
+    "time/once",
+    "time/recently",
+    "time/the-day-after-tomorrow",
+    "time/the-day-before-yesterday",
+    "time/twice",
+    "time/usually",
+    "time/weekend"
+   ]
+  },
+  {
+   "id": "v-A2-city-1",
+   "lv": "A2",
+   "cat": "city",
+   "title": "Ville et lieux (1/2)",
+   "ids": [
+    "city/bank",
+    "city/bookshop",
+    "city/bridge",
+    "city/car-park",
+    "city/church",
+    "city/city-centre",
+    "city/corner",
+    "city/library",
+    "city/near"
+   ]
+  },
+  {
+   "id": "v-A2-city-2",
+   "lv": "A2",
+   "cat": "city",
+   "title": "Ville et lieux (2/2)",
+   "ids": [
+    "city/park",
+    "city/pharmacy",
+    "city/police-station",
+    "city/restaurant",
+    "city/shop",
+    "city/square",
+    "city/station",
+    "city/store",
+    "city/to-get-lost",
+    "city/traffic-lights"
+   ]
+  },
+  {
+   "id": "v-A2-travel-1",
+   "lv": "A2",
+   "cat": "travel",
+   "title": "Voyages et transports (1/2)",
+   "ids": [
+    "travel/airport",
+    "travel/booking",
+    "travel/bus",
+    "travel/flight",
+    "travel/journey",
+    "travel/luggage",
+    "travel/one-way-ticket",
+    "travel/plane",
+    "travel/platform",
+    "travel/reservation",
+    "travel/return-ticket",
+    "travel/souvenir"
+   ]
+  },
+  {
+   "id": "v-A2-travel-2",
+   "lv": "A2",
+   "cat": "travel",
+   "title": "Voyages et transports (2/2)",
+   "ids": [
+    "travel/suitcase",
+    "travel/ticket",
+    "travel/to-arrive",
+    "travel/to-check-in",
+    "travel/to-get-off",
+    "travel/to-get-on",
+    "travel/to-go-on-holiday",
+    "travel/to-land",
+    "travel/to-rent",
+    "travel/to-take-off",
+    "travel/to-travel",
+    "travel/tourist",
+    "travel/trip"
+   ]
+  },
+  {
+   "id": "v-A2-work-1",
+   "lv": "A2",
+   "cat": "work",
+   "title": "Travail",
+   "ids": [
+    "work/cv",
+    "work/career",
+    "work/employee",
+    "work/experience",
+    "work/full-time",
+    "work/interview",
+    "work/lawyer",
+    "work/manager",
+    "work/part-time",
+    "work/project",
+    "work/to-quit",
+    "work/to-work-from-home"
+   ]
+  },
+  {
+   "id": "v-A2-school-1",
+   "lv": "A2",
+   "cat": "school",
+   "title": "Études et apprentissage",
+   "ids": [
+    "school/course",
+    "school/dictionary",
+    "school/lesson",
+    "school/mark",
+    "school/student",
+    "school/subject",
+    "school/teacher",
+    "school/timetable",
+    "school/to-fail",
+    "school/to-improve",
+    "school/to-pass-an-exam",
+    "school/to-practise",
+    "school/to-study",
+    "school/to-teach",
+    "school/university"
+   ]
+  },
+  {
+   "id": "v-A2-nature-1",
+   "lv": "A2",
+   "cat": "nature",
+   "title": "Nature et météo (1/3)",
+   "ids": [
+    "nature/animal",
+    "nature/beach",
+    "nature/bird",
+    "nature/cat",
+    "nature/countryside",
+    "nature/cow",
+    "nature/degree-le-degre",
+    "nature/field",
+    "nature/flower",
+    "nature/forest",
+    "nature/freezing"
+   ]
+  },
+  {
+   "id": "v-A2-nature-2",
+   "lv": "A2",
+   "cat": "nature",
+   "title": "Nature et météo (2/3)",
+   "ids": [
+    "nature/horse",
+    "nature/island",
+    "nature/lake",
+    "nature/mountain",
+    "nature/pet",
+    "nature/rain",
+    "nature/river",
+    "nature/sea",
+    "nature/season",
+    "nature/sky",
+    "nature/snow"
+   ]
+  },
+  {
+   "id": "v-A2-nature-3",
+   "lv": "A2",
+   "cat": "nature",
+   "title": "Nature et météo (3/3)",
+   "ids": [
+    "nature/spring",
+    "nature/storm",
+    "nature/summer",
+    "nature/sun",
+    "nature/temperature",
+    "nature/to-rain",
+    "nature/tree",
+    "nature/warm",
+    "nature/weather",
+    "nature/wind",
+    "nature/winter"
+   ]
+  },
+  {
+   "id": "v-A2-feelings-1",
+   "lv": "A2",
+   "cat": "feelings",
+   "title": "Émotions et caractère (1/2)",
+   "ids": [
+    "feelings/angry",
+    "feelings/boring",
+    "feelings/calm",
+    "feelings/excited",
+    "feelings/honest",
+    "feelings/lazy",
+    "feelings/lonely",
+    "feelings/mood"
+   ]
+  },
+  {
+   "id": "v-A2-feelings-2",
+   "lv": "A2",
+   "cat": "feelings",
+   "title": "Émotions et caractère (2/2)",
+   "ids": [
+    "feelings/nervous",
+    "feelings/patient",
+    "feelings/polite",
+    "feelings/proud",
+    "feelings/sad",
+    "feelings/surprised",
+    "feelings/to-get-angry",
+    "feelings/to-miss-someone",
+    "feelings/upset"
+   ]
+  },
+  {
+   "id": "v-A2-verbs-1",
+   "lv": "A2",
+   "cat": "verbs",
+   "title": "Verbes essentiels (1/2)",
+   "ids": [
+    "verbs/to-agree",
+    "verbs/to-carry",
+    "verbs/to-choose",
+    "verbs/to-describe",
+    "verbs/to-enjoy",
+    "verbs/to-grow",
+    "verbs/to-guess",
+    "verbs/to-hold",
+    "verbs/to-imagine",
+    "verbs/to-invite",
+    "verbs/to-join",
+    "verbs/to-laugh"
+   ]
+  },
+  {
+   "id": "v-A2-verbs-2",
+   "lv": "A2",
+   "cat": "verbs",
+   "title": "Verbes essentiels (2/2)",
+   "ids": [
+    "verbs/to-look-for",
+    "verbs/to-offer",
+    "verbs/to-prefer",
+    "verbs/to-prepare",
+    "verbs/to-promise",
+    "verbs/to-receive",
+    "verbs/to-repeat",
+    "verbs/to-reply",
+    "verbs/to-return",
+    "verbs/to-smile",
+    "verbs/to-throw",
+    "verbs/to-visit"
+   ]
+  },
+  {
+   "id": "v-A2-adjectives-1",
+   "lv": "A2",
+   "cat": "adjectives",
+   "title": "Adjectifs essentiels (1/2)",
+   "ids": [
+    "adjectives/amazing",
+    "adjectives/awful",
+    "adjectives/cheap",
+    "adjectives/clean",
+    "adjectives/comfortable",
+    "adjectives/correct",
+    "adjectives/dangerous",
+    "adjectives/difficult",
+    "adjectives/dirty",
+    "adjectives/empty",
+    "adjectives/expensive",
+    "adjectives/fantastic",
+    "adjectives/heavy"
+   ]
+  },
+  {
+   "id": "v-A2-adjectives-2",
+   "lv": "A2",
+   "cat": "adjectives",
+   "title": "Adjectifs essentiels (2/2)",
+   "ids": [
+    "adjectives/huge",
+    "adjectives/interesting",
+    "adjectives/light-leger",
+    "adjectives/loud",
+    "adjectives/modern",
+    "adjectives/perfect",
+    "adjectives/safe",
+    "adjectives/short",
+    "adjectives/slow",
+    "adjectives/terrible",
+    "adjectives/traditional",
+    "adjectives/ugly",
+    "adjectives/useful"
+   ]
+  },
+  {
+   "id": "v-A2-connectors-1",
+   "lv": "A2",
+   "cat": "connectors",
+   "title": "Mots de liaison",
+   "ids": [
+    "connectors/although",
+    "connectors/as-well",
+    "connectors/at-first",
+    "connectors/because-of",
+    "connectors/besides",
+    "connectors/first-of-all",
+    "connectors/however",
+    "connectors/otherwise",
+    "connectors/thanks-to"
+   ]
+  },
+  {
+   "id": "v-A2-conversation-1",
+   "lv": "A2",
+   "cat": "conversation",
+   "title": "Expressions de conversation (1/2)",
+   "ids": [
+    "conversation/i-see",
+    "conversation/i-m-not-sure",
+    "conversation/cheers",
+    "conversation/congratulations",
+    "conversation/could-you-repeat-that",
+    "conversation/how-about",
+    "conversation/how-do-you-say-in-english",
+    "conversation/how-s-it-going",
+    "conversation/it-depends"
+   ]
+  },
+  {
+   "id": "v-A2-conversation-2",
+   "lv": "A2",
+   "cat": "conversation",
+   "title": "Expressions de conversation (2/2)",
+   "ids": [
+    "conversation/it-doesn-t-matter",
+    "conversation/let-me-know",
+    "conversation/shall-we",
+    "conversation/take-care",
+    "conversation/that-sounds-great",
+    "conversation/that-s-right",
+    "conversation/what-do-you-mean",
+    "conversation/what-s-up",
+    "conversation/why-don-t-we"
+   ]
+  },
+  {
+   "id": "v-A2-shopping-1",
+   "lv": "A2",
+   "cat": "shopping",
+   "title": "Achats et argent (1/2)",
+   "ids": [
+    "shopping/bank-account",
+    "shopping/bill",
+    "shopping/card",
+    "shopping/cash",
+    "shopping/cash-machine",
+    "shopping/coin",
+    "shopping/credit-card",
+    "shopping/delivery",
+    "shopping/discount",
+    "shopping/online-shopping",
+    "shopping/price"
+   ]
+  },
+  {
+   "id": "v-A2-shopping-2",
+   "lv": "A2",
+   "cat": "shopping",
+   "title": "Achats et argent (2/2)",
+   "ids": [
+    "shopping/purse",
+    "shopping/queue",
+    "shopping/receipt",
+    "shopping/rich",
+    "shopping/shop-assistant",
+    "shopping/size",
+    "shopping/to-cost",
+    "shopping/to-exchange",
+    "shopping/to-owe",
+    "shopping/to-spend",
+    "shopping/to-try-on",
+    "shopping/wallet"
+   ]
+  },
+  {
+   "id": "v-A2-clothes-1",
+   "lv": "A2",
+   "cat": "clothes",
+   "title": "Vêtements et apparence (1/2)",
+   "ids": [
+    "clothes/bag",
+    "clothes/beard",
+    "clothes/blonde",
+    "clothes/boots",
+    "clothes/coat",
+    "clothes/curly",
+    "clothes/dress",
+    "clothes/good-looking",
+    "clothes/hat",
+    "clothes/jumper",
+    "clothes/pants",
+    "clothes/shirt"
+   ]
+  },
+  {
+   "id": "v-A2-clothes-2",
+   "lv": "A2",
+   "cat": "clothes",
+   "title": "Vêtements et apparence (2/2)",
+   "ids": [
+    "clothes/shoes",
+    "clothes/slim",
+    "clothes/suit",
+    "clothes/sweater",
+    "clothes/tie",
+    "clothes/tight",
+    "clothes/to-fit",
+    "clothes/to-get-dressed",
+    "clothes/to-look-like",
+    "clothes/to-put-on",
+    "clothes/to-take-off-enlever-un-vetement",
+    "clothes/trainers",
+    "clothes/uniform"
+   ]
+  },
+  {
+   "id": "v-A2-leisure-1",
+   "lv": "A2",
+   "cat": "leisure",
+   "title": "Sports et loisirs",
+   "ids": [
+    "leisure/camping",
+    "leisure/chess",
+    "leisure/competition",
+    "leisure/fan",
+    "leisure/hiking",
+    "leisure/match",
+    "leisure/photo",
+    "leisure/swimming-pool",
+    "leisure/theatre",
+    "leisure/to-paint",
+    "leisure/to-relax",
+    "leisure/to-score",
+    "leisure/to-train"
+   ]
+  },
+  {
+   "id": "v-A2-tech-1",
+   "lv": "A2",
+   "cat": "tech",
+   "title": "Technologie (1/2)",
+   "ids": [
+    "tech/account",
+    "tech/app",
+    "tech/battery",
+    "tech/broken",
+    "tech/computer",
+    "tech/file",
+    "tech/keyboard",
+    "tech/laptop",
+    "tech/link",
+    "tech/message",
+    "tech/online",
+    "tech/password",
+    "tech/smartphone"
+   ]
+  },
+  {
+   "id": "v-A2-tech-2",
+   "lv": "A2",
+   "cat": "tech",
+   "title": "Technologie (2/2)",
+   "ids": [
+    "tech/social-media",
+    "tech/to-call-back",
+    "tech/to-charge",
+    "tech/to-click",
+    "tech/to-download",
+    "tech/to-fix",
+    "tech/to-search",
+    "tech/to-share",
+    "tech/to-text",
+    "tech/to-turn-off",
+    "tech/to-turn-on",
+    "tech/website",
+    "tech/wifi"
+   ]
+  },
+  {
+   "id": "v-A2-media-1",
+   "lv": "A2",
+   "cat": "media",
+   "title": "Médias et culture",
+   "ids": [
+    "media/album",
+    "media/art",
+    "media/article",
+    "media/artist",
+    "media/band",
+    "media/channel",
+    "media/character",
+    "media/episode",
+    "media/famous",
+    "media/journalist",
+    "media/review",
+    "media/series"
+   ]
+  },
+  {
+   "id": "v-A2-collocations-1",
+   "lv": "A2",
+   "cat": "collocations",
+   "title": "Collocations",
+   "ids": [
+    "collocations/to-catch-a-bus",
+    "collocations/to-do-the-shopping",
+    "collocations/to-do-your-best",
+    "collocations/to-have-a-good-time",
+    "collocations/to-have-a-look",
+    "collocations/to-make-a-mistake",
+    "collocations/to-make-a-phone-call",
+    "collocations/to-make-friends",
+    "collocations/to-make-money",
+    "collocations/to-take-a-break",
+    "collocations/to-take-a-photo",
+    "collocations/to-tell-the-truth"
+   ]
+  },
+  {
+   "id": "v-A2-falsefriends-1",
+   "lv": "A2",
+   "cat": "falsefriends",
+   "title": "Faux amis",
+   "ids": [
+    "falsefriends/chance",
+    "falsefriends/diary",
+    "falsefriends/factory",
+    "falsefriends/large",
+    "falsefriends/luck",
+    "falsefriends/oil",
+    "falsefriends/pencil",
+    "falsefriends/petrol",
+    "falsefriends/reading",
+    "falsefriends/secondary-school",
+    "falsefriends/to-check",
+    "falsefriends/way-out"
+   ]
+  },
+  {
+   "id": "v-A2-nuances-1",
+   "lv": "A2",
+   "cat": "nuances",
+   "title": "Nuances : mots proches",
+   "ids": [
+    "nuances/bored-boring",
+    "nuances/come-go",
+    "nuances/hear-listen",
+    "nuances/house-home",
+    "nuances/interested-interesting",
+    "nuances/job-work",
+    "nuances/look-see-watch",
+    "nuances/much-many",
+    "nuances/since-for"
+   ]
+  },
+  {
+   "id": "v-A2-mix-1",
+   "lv": "A2",
+   "cat": "mix",
+   "title": "Vocabulaire varié",
+   "ids": [
+    "phrasal/to-come-back",
+    "phrasal/to-get-up",
+    "phrasal/to-give-back",
+    "phrasal/to-throw-away",
+    "phrasal/to-wake-up",
+    "opinion/i-totally-agree",
+    "opinion/fair",
+    "opinion/the-problem-is-that",
+    "opinion/to-be-against",
+    "society/peace",
+    "society/police",
+    "society/president",
+    "society/war",
+    "environment/plastic",
+    "slang/cool"
+   ]
+  },
+  {
+   "id": "v-B1-people-1",
+   "lv": "B1",
+   "cat": "people",
+   "title": "Personnes et famille",
+   "ids": [
+    "people/adult",
+    "people/childhood",
+    "people/divorced",
+    "people/fiance",
+    "people/flatmate",
+    "people/generation",
+    "people/grandmother",
+    "people/mate",
+    "people/stranger",
+    "people/to-be-engaged",
+    "people/to-bring-up",
+    "people/to-get-on-with",
+    "people/to-split-up"
+   ]
+  },
+  {
+   "id": "v-B1-body-1",
+   "lv": "B1",
+   "cat": "body",
+   "title": "Corps et santé",
+   "ids": [
+    "body/allergic",
+    "body/appointment",
+    "body/fever",
+    "body/headache",
+    "body/injury",
+    "body/prescription",
+    "body/to-be-fit",
+    "body/to-be-on-a-diet",
+    "body/to-injure",
+    "body/to-put-on-weight",
+    "body/to-recover",
+    "body/tooth"
+   ]
+  },
+  {
+   "id": "v-B1-home-1",
+   "lv": "B1",
+   "cat": "home",
+   "title": "Maison",
+   "ids": [
+    "home/ceiling",
+    "home/cosy",
+    "home/drawer",
+    "home/heating",
+    "home/landlord",
+    "home/messy",
+    "home/sink",
+    "home/stairs",
+    "home/tenant",
+    "home/to-settle-in",
+    "home/to-share-a-flat"
+   ]
+  },
+  {
+   "id": "v-B1-food-1",
+   "lv": "B1",
+   "cat": "food",
+   "title": "Nourriture et repas (1/2)",
+   "ids": [
+    "food/apple",
+    "food/delicious",
+    "food/fruit",
+    "food/ingredient",
+    "food/leftovers",
+    "food/meal",
+    "food/potato",
+    "food/raw",
+    "food/rice"
+   ]
+  },
+  {
+   "id": "v-B1-food-2",
+   "lv": "B1",
+   "cat": "food",
+   "title": "Nourriture et repas (2/2)",
+   "ids": [
+    "food/salt",
+    "food/salty",
+    "food/takeaway",
+    "food/thirsty",
+    "food/tip",
+    "food/to-bake",
+    "food/to-be-starving",
+    "food/to-boil",
+    "food/to-fry"
+   ]
+  },
+  {
+   "id": "v-B1-time-1",
+   "lv": "B1",
+   "cat": "time",
+   "title": "Temps et calendrier",
+   "ids": [
+    "time/by-the-end-of",
+    "time/decade",
+    "time/fortnight",
+    "time/from-time-to-time",
+    "time/holiday",
+    "time/in-time",
+    "time/meanwhile",
+    "time/nowadays"
+   ]
+  },
+  {
+   "id": "v-B1-city-1",
+   "lv": "B1",
+   "cat": "city",
+   "title": "Ville et lieux",
+   "ids": [
+    "city/crossroads",
+    "city/crowded",
+    "city/downtown",
+    "city/nearby",
+    "city/opposite",
+    "city/pavement",
+    "city/roundabout",
+    "city/suburbs",
+    "city/town-hall",
+    "city/traffic"
+   ]
+  },
+  {
+   "id": "v-B1-travel-1",
+   "lv": "B1",
+   "cat": "travel",
+   "title": "Voyages et transports (1/2)",
+   "ids": [
+    "travel/abroad",
+    "travel/arrival",
+    "travel/backpack",
+    "travel/boarding-pass",
+    "travel/customs",
+    "travel/delay",
+    "travel/departure",
+    "travel/destination"
+   ]
+  },
+  {
+   "id": "v-B1-travel-2",
+   "lv": "B1",
+   "cat": "travel",
+   "title": "Voyages et transports (2/2)",
+   "ids": [
+    "travel/guided-tour",
+    "travel/map",
+    "travel/on-board",
+    "travel/passport",
+    "travel/sightseeing",
+    "travel/to-check-out",
+    "travel/to-go-sightseeing",
+    "travel/youth-hostel"
+   ]
+  },
+  {
+   "id": "v-B1-work-1",
+   "lv": "B1",
+   "cat": "work",
+   "title": "Travail (1/2)",
+   "ids": [
+    "work/application",
+    "work/budget",
+    "work/colleague",
+    "work/commute",
+    "work/contract",
+    "work/customer",
+    "work/deadline",
+    "work/employer",
+    "work/overtime",
+    "work/pay-rise",
+    "work/promotion"
+   ]
+  },
+  {
+   "id": "v-B1-work-2",
+   "lv": "B1",
+   "cat": "work",
+   "title": "Travail (2/2)",
+   "ids": [
+    "work/retired",
+    "work/salary",
+    "work/skill",
+    "work/staff",
+    "work/task",
+    "work/to-apply-for",
+    "work/to-be-in-charge-of",
+    "work/to-earn",
+    "work/to-hire",
+    "work/to-run-a-business",
+    "work/unemployed"
+   ]
+  },
+  {
+   "id": "v-B1-school-1",
+   "lv": "B1",
+   "cat": "school",
+   "title": "Études et apprentissage (1/2)",
+   "ids": [
+    "school/accent",
+    "school/degree",
+    "school/essay",
+    "school/exam",
+    "school/fluent",
+    "school/grade",
+    "school/homework",
+    "school/knowledge"
+   ]
+  },
+  {
+   "id": "v-B1-school-2",
+   "lv": "B1",
+   "cat": "school",
+   "title": "Études et apprentissage (2/2)",
+   "ids": [
+    "school/pronunciation",
+    "school/scholarship",
+    "school/term",
+    "school/to-cheat",
+    "school/to-graduate",
+    "school/to-look-up",
+    "school/to-make-progress",
+    "school/to-revise",
+    "school/to-take-an-exam"
+   ]
+  },
+  {
+   "id": "v-B1-nature-1",
+   "lv": "B1",
+   "cat": "nature",
+   "title": "Nature et météo",
+   "ids": [
+    "nature/climate-change",
+    "nature/cloud",
+    "nature/environment",
+    "nature/fog",
+    "nature/foggy",
+    "nature/forecast",
+    "nature/insect",
+    "nature/lightning",
+    "nature/pollution",
+    "nature/thunder",
+    "nature/to-recycle",
+    "nature/waste"
+   ]
+  },
+  {
+   "id": "v-B1-feelings-1",
+   "lv": "B1",
+   "cat": "feelings",
+   "title": "Émotions et caractère (1/2)",
+   "ids": [
+    "feelings/annoyed",
+    "feelings/bored",
+    "feelings/confident",
+    "feelings/confused",
+    "feelings/disappointed",
+    "feelings/embarrassed",
+    "feelings/friendly",
+    "feelings/generous",
+    "feelings/hard-working",
+    "feelings/jealous",
+    "feelings/reliable"
+   ]
+  },
+  {
+   "id": "v-B1-feelings-2",
+   "lv": "B1",
+   "cat": "feelings",
+   "title": "Émotions et caractère (2/2)",
+   "ids": [
+    "feelings/relieved",
+    "feelings/rude",
+    "feelings/selfish",
+    "feelings/sensible",
+    "feelings/sensitive",
+    "feelings/shy",
+    "feelings/stressed",
+    "feelings/stubborn",
+    "feelings/to-be-fed-up-with",
+    "feelings/to-calm-down",
+    "feelings/to-cheer-up"
+   ]
+  },
+  {
+   "id": "v-B1-verbs-1",
+   "lv": "B1",
+   "cat": "verbs",
+   "title": "Verbes essentiels (1/3)",
+   "ids": [
+    "verbs/to-allow",
+    "verbs/to-avoid",
+    "verbs/to-compare",
+    "verbs/to-complain",
+    "verbs/to-depend-on",
+    "verbs/to-develop",
+    "verbs/to-discuss",
+    "verbs/to-encourage",
+    "verbs/to-expect",
+    "verbs/to-fill-in"
+   ]
+  },
+  {
+   "id": "v-B1-verbs-2",
+   "lv": "B1",
+   "cat": "verbs",
+   "title": "Verbes essentiels (2/3)",
+   "ids": [
+    "verbs/to-find-out",
+    "verbs/to-give-up",
+    "verbs/to-hesitate",
+    "verbs/to-lie",
+    "verbs/to-look-forward-to",
+    "verbs/to-manage",
+    "verbs/to-mention",
+    "verbs/to-notice",
+    "verbs/to-pick-up",
+    "verbs/to-realise"
+   ]
+  },
+  {
+   "id": "v-B1-verbs-3",
+   "lv": "B1",
+   "cat": "verbs",
+   "title": "Verbes essentiels (3/3)",
+   "ids": [
+    "verbs/to-recommend",
+    "verbs/to-reduce",
+    "verbs/to-refuse",
+    "verbs/to-remind",
+    "verbs/to-replace",
+    "verbs/to-set-up",
+    "verbs/to-succeed",
+    "verbs/to-suggest",
+    "verbs/to-warn",
+    "verbs/to-wonder",
+    "verbs/to-work-out"
+   ]
+  },
+  {
+   "id": "v-B1-adjectives-1",
+   "lv": "B1",
+   "cat": "adjectives",
+   "title": "Adjectifs essentiels",
+   "ids": [
+    "adjectives/available",
+    "adjectives/common",
+    "adjectives/complicated",
+    "adjectives/convenient",
+    "adjectives/deep",
+    "adjectives/exhausted",
+    "adjectives/familiar",
+    "adjectives/narrow",
+    "adjectives/obvious",
+    "adjectives/similar",
+    "adjectives/tiny",
+    "adjectives/unusual",
+    "adjectives/useless",
+    "adjectives/weird",
+    "adjectives/wide"
+   ]
+  },
+  {
+   "id": "v-B1-connectors-1",
+   "lv": "B1",
+   "cat": "connectors",
+   "title": "Mots de liaison (1/2)",
+   "ids": [
+    "connectors/apart-from",
+    "connectors/as-a-result",
+    "connectors/as-long-as",
+    "connectors/despite",
+    "connectors/even-though",
+    "connectors/eventually",
+    "connectors/in-addition",
+    "connectors/in-case",
+    "connectors/in-conclusion",
+    "connectors/in-fact"
+   ]
+  },
+  {
+   "id": "v-B1-connectors-2",
+   "lv": "B1",
+   "cat": "connectors",
+   "title": "Mots de liaison (2/2)",
+   "ids": [
+    "connectors/in-order-to",
+    "connectors/in-other-words",
+    "connectors/in-spite-of",
+    "connectors/in-the-end",
+    "connectors/on-the-other-hand",
+    "connectors/so-that",
+    "connectors/such-as",
+    "connectors/therefore",
+    "connectors/to-sum-up",
+    "connectors/whether"
+   ]
+  },
+  {
+   "id": "v-B1-conversation-1",
+   "lv": "B1",
+   "cat": "conversation",
+   "title": "Expressions de conversation (1/2)",
+   "ids": [
+    "conversation/i-can-t-wait",
+    "conversation/i-d-rather",
+    "conversation/i-ll-let-you-know",
+    "conversation/i-m-afraid",
+    "conversation/i-m-on-my-way",
+    "conversation/i-m-sorry-to-hear-that",
+    "conversation/as-far-as-i-know",
+    "conversation/by-the-way",
+    "conversation/don-t-mention-it",
+    "conversation/fair-enough",
+    "conversation/go-ahead",
+    "conversation/hang-on"
+   ]
+  },
+  {
+   "id": "v-B1-conversation-2",
+   "lv": "B1",
+   "cat": "conversation",
+   "title": "Expressions de conversation (2/2)",
+   "ids": [
+    "conversation/help-yourself",
+    "conversation/it-s-not-a-big-deal",
+    "conversation/it-s-up-to-you",
+    "conversation/make-yourself-at-home",
+    "conversation/never-mind",
+    "conversation/no-way",
+    "conversation/same-here",
+    "conversation/to-be-honest",
+    "conversation/what-a-pity",
+    "conversation/what-a-shame",
+    "conversation/would-you-mind",
+    "conversation/you-know-what-i-mean"
+   ]
+  },
+  {
+   "id": "v-B1-shopping-1",
+   "lv": "B1",
+   "cat": "shopping",
+   "title": "Achats et argent",
+   "ids": [
+    "shopping/bargain",
+    "shopping/cashier",
+    "shopping/debt",
+    "shopping/fitting-room",
+    "shopping/refund",
+    "shopping/sale",
+    "shopping/to-afford",
+    "shopping/to-borrow",
+    "shopping/to-lend",
+    "shopping/to-queue",
+    "shopping/to-refund",
+    "shopping/to-withdraw",
+    "shopping/worth"
+   ]
+  },
+  {
+   "id": "v-B1-clothes-1",
+   "lv": "B1",
+   "cat": "clothes",
+   "title": "Vêtements et apparence",
+   "ids": [
+    "clothes/fashion",
+    "clothes/fashionable",
+    "clothes/glasses",
+    "clothes/jacket",
+    "clothes/loose",
+    "clothes/overweight",
+    "clothes/tall",
+    "clothes/to-suit"
+   ]
+  },
+  {
+   "id": "v-B1-leisure-1",
+   "lv": "B1",
+   "cat": "leisure",
+   "title": "Sports et loisirs",
+   "ids": [
+    "leisure/board-game",
+    "leisure/championship",
+    "leisure/goal",
+    "leisure/player",
+    "leisure/sport",
+    "leisure/to-be-into-something",
+    "leisure/to-swim"
+   ]
+  },
+  {
+   "id": "v-B1-tech-1",
+   "lv": "B1",
+   "cat": "tech",
+   "title": "Technologie",
+   "ids": [
+    "tech/charger",
+    "tech/screen",
+    "tech/to-delete",
+    "tech/to-log-in",
+    "tech/to-update",
+    "tech/to-upload"
+   ]
+  },
+  {
+   "id": "v-B1-media-1",
+   "lv": "B1",
+   "cat": "media",
+   "title": "Médias et culture",
+   "ids": [
+    "media/actor",
+    "media/advert",
+    "media/author",
+    "media/ending",
+    "media/exhibition",
+    "media/headline",
+    "media/novel",
+    "media/plot",
+    "media/podcast",
+    "media/subtitles",
+    "media/to-stream"
+   ]
+  },
+  {
+   "id": "v-B1-phrasal-1",
+   "lv": "B1",
+   "cat": "phrasal",
+   "title": "Phrasal verbs (1/2)",
+   "ids": [
+    "phrasal/to-break-down",
+    "phrasal/to-break-up",
+    "phrasal/to-bring-back",
+    "phrasal/to-carry-on",
+    "phrasal/to-catch-up",
+    "phrasal/to-come-over",
+    "phrasal/to-count-on",
+    "phrasal/to-deal-with",
+    "phrasal/to-drop-off",
+    "phrasal/to-end-up",
+    "phrasal/to-figure-out",
+    "phrasal/to-fill-up",
+    "phrasal/to-get-back",
+    "phrasal/to-get-rid-of"
+   ]
+  },
+  {
+   "id": "v-B1-phrasal-2",
+   "lv": "B1",
+   "cat": "phrasal",
+   "title": "Phrasal verbs (2/2)",
+   "ids": [
+    "phrasal/to-go-on",
+    "phrasal/to-hand-in",
+    "phrasal/to-hang-out",
+    "phrasal/to-hold-on",
+    "phrasal/to-put-away",
+    "phrasal/to-run-away",
+    "phrasal/to-run-out-of",
+    "phrasal/to-show-off",
+    "phrasal/to-show-up",
+    "phrasal/to-slow-down",
+    "phrasal/to-sort-out",
+    "phrasal/to-take-up",
+    "phrasal/to-try-out",
+    "phrasal/to-turn-up",
+    "phrasal/to-watch-out"
+   ]
+  },
+  {
+   "id": "v-B1-collocations-1",
+   "lv": "B1",
+   "cat": "collocations",
+   "title": "Collocations (1/3)",
+   "ids": [
+    "collocations/heavy-rain",
+    "collocations/heavy-traffic",
+    "collocations/strong-coffee",
+    "collocations/to-break-a-promise",
+    "collocations/to-break-the-law",
+    "collocations/to-catch-a-cold",
+    "collocations/to-do-business",
+    "collocations/to-do-research",
+    "collocations/to-do-someone-a-favour",
+    "collocations/to-give-a-speech"
+   ]
+  },
+  {
+   "id": "v-B1-collocations-2",
+   "lv": "B1",
+   "cat": "collocations",
+   "title": "Collocations (2/3)",
+   "ids": [
+    "collocations/to-give-advice",
+    "collocations/to-have-a-go",
+    "collocations/to-keep-a-secret",
+    "collocations/to-keep-calm",
+    "collocations/to-keep-in-touch",
+    "collocations/to-make-a-decision",
+    "collocations/to-make-a-difference",
+    "collocations/to-make-an-appointment",
+    "collocations/to-make-an-effort",
+    "collocations/to-make-sure"
+   ]
+  },
+  {
+   "id": "v-B1-collocations-3",
+   "lv": "B1",
+   "cat": "collocations",
+   "title": "Collocations (3/3)",
+   "ids": [
+    "collocations/to-pay-a-visit",
+    "collocations/to-pay-attention",
+    "collocations/to-save-time",
+    "collocations/to-take-a-risk",
+    "collocations/to-take-a-seat",
+    "collocations/to-take-care-of",
+    "collocations/to-take-part-in",
+    "collocations/to-take-place",
+    "collocations/to-tell-a-joke",
+    "collocations/to-tell-a-lie",
+    "collocations/to-waste-time"
+   ]
+  },
+  {
+   "id": "v-B1-falsefriends-1",
+   "lv": "B1",
+   "cat": "falsefriends",
+   "title": "Faux amis (1/2)",
+   "ids": [
+    "falsefriends/argument",
+    "falsefriends/cave",
+    "falsefriends/college",
+    "falsefriends/current",
+    "falsefriends/currently",
+    "falsefriends/disappointment",
+    "falsefriends/grape",
+    "falsefriends/issue",
+    "falsefriends/lecture",
+    "falsefriends/location"
+   ]
+  },
+  {
+   "id": "v-B1-falsefriends-2",
+   "lv": "B1",
+   "cat": "falsefriends",
+   "title": "Faux amis (2/2)",
+   "ids": [
+    "falsefriends/miserable",
+    "falsefriends/stage",
+    "falsefriends/to-achieve",
+    "falsefriends/to-attend",
+    "falsefriends/to-complete",
+    "falsefriends/to-deliver",
+    "falsefriends/to-pretend",
+    "falsefriends/to-summarise",
+    "falsefriends/to-support",
+    "falsefriends/training"
+   ]
+  },
+  {
+   "id": "v-B1-opinion-1",
+   "lv": "B1",
+   "cat": "opinion",
+   "title": "Donner son avis et débattre (1/2)",
+   "ids": [
+    "opinion/i-see-your-point-but",
+    "opinion/i-m-not-convinced",
+    "opinion/according-to",
+    "opinion/advantage",
+    "opinion/debate",
+    "opinion/disadvantage",
+    "opinion/evidence",
+    "opinion/generally-speaking",
+    "opinion/in-my-view",
+    "opinion/it-seems-to-me-that",
+    "opinion/on-the-one-hand"
+   ]
+  },
+  {
+   "id": "v-B1-opinion-2",
+   "lv": "B1",
+   "cat": "opinion",
+   "title": "Donner son avis et débattre (2/2)",
+   "ids": [
+    "opinion/point-of-view",
+    "opinion/pros-and-cons",
+    "opinion/reasonable",
+    "opinion/that-s-a-good-point",
+    "opinion/the-main-reason-is",
+    "opinion/to-admit",
+    "opinion/to-argue",
+    "opinion/to-be-in-favour-of",
+    "opinion/to-convince",
+    "opinion/to-doubt",
+    "opinion/to-persuade",
+    "opinion/unfair"
+   ]
+  },
+  {
+   "id": "v-B1-society-1",
+   "lv": "B1",
+   "cat": "society",
+   "title": "Société et actualité (1/3)",
+   "ids": [
+    "society/charity",
+    "society/citizen",
+    "society/community",
+    "society/court",
+    "society/crime",
+    "society/criminal",
+    "society/democracy",
+    "society/economy",
+    "society/election",
+    "society/fake-news",
+    "society/freedom",
+    "society/government"
+   ]
+  },
+  {
+   "id": "v-B1-society-2",
+   "lv": "B1",
+   "cat": "society",
+   "title": "Société et actualité (2/3)",
+   "ids": [
+    "society/immigration",
+    "society/law",
+    "society/party-le-parti-politique",
+    "society/politician",
+    "society/politics",
+    "society/population",
+    "society/poverty",
+    "society/prime-minister",
+    "society/prison",
+    "society/protest",
+    "society/refugee",
+    "society/rights"
+   ]
+  },
+  {
+   "id": "v-B1-society-3",
+   "lv": "B1",
+   "cat": "society",
+   "title": "Société et actualité (3/3)",
+   "ids": [
+    "society/security",
+    "society/statistics",
+    "society/strike",
+    "society/survey",
+    "society/tax",
+    "society/to-arrest",
+    "society/to-raise-money",
+    "society/to-report",
+    "society/to-vote",
+    "society/unemployment",
+    "society/violence",
+    "society/volunteer"
+   ]
+  },
+  {
+   "id": "v-B1-science-1",
+   "lv": "B1",
+   "cat": "science",
+   "title": "Sciences et santé publique",
+   "ids": [
+    "science/brain",
+    "science/discovery",
+    "science/disease",
+    "science/experiment",
+    "science/invention",
+    "science/laboratory",
+    "science/patient-le-patient",
+    "science/planet",
+    "science/research",
+    "science/results",
+    "science/scientist",
+    "science/space",
+    "science/study",
+    "science/to-invent",
+    "science/to-measure"
+   ]
+  },
+  {
+   "id": "v-B1-business-1",
+   "lv": "B1",
+   "cat": "business",
+   "title": "Économie et entreprise",
+   "ids": [
+    "business/costs",
+    "business/deal",
+    "business/market",
+    "business/product",
+    "business/profit",
+    "business/sales",
+    "business/to-fall-baisser",
+    "business/to-rise",
+    "business/to-sign"
+   ]
+  },
+  {
+   "id": "v-B1-slang-1",
+   "lv": "B1",
+   "cat": "slang",
+   "title": "Anglais familier",
+   "ids": [
+    "slang/a-big-deal",
+    "slang/awesome",
+    "slang/brilliant",
+    "slang/gonna",
+    "slang/gotta",
+    "slang/kinda",
+    "slang/no-worries",
+    "slang/rubbish",
+    "slang/sort-of",
+    "slang/to-chill",
+    "slang/wanna"
+   ]
+  },
+  {
+   "id": "v-B1-nuances-1",
+   "lv": "B1",
+   "cat": "nuances",
+   "title": "Nuances : mots proches",
+   "ids": [
+    "nuances/ago-before",
+    "nuances/alone-lonely",
+    "nuances/among-between",
+    "nuances/borrow-lend",
+    "nuances/bring-take",
+    "nuances/during-for",
+    "nuances/each-every",
+    "nuances/fun-funny",
+    "nuances/journey-trip-travel",
+    "nuances/lose-loose",
+    "nuances/make-do",
+    "nuances/remember-remind",
+    "nuances/say-tell",
+    "nuances/speak-talk"
+   ]
+  },
+  {
+   "id": "v-B1-mix-1",
+   "lv": "B1",
+   "cat": "mix",
+   "title": "Vocabulaire varié",
+   "ids": [
+    "formal/to-inform",
+    "environment/earthquake",
+    "environment/flood",
+    "environment/global-warming",
+    "environment/to-protect",
+    "environment/to-save-energy",
+    "idioms/a-piece-of-cake",
+    "idioms/to-keep-your-fingers-crossed",
+    "idioms/to-take-it-easy",
+    "proverbs/better-late-than-never",
+    "proverbs/practice-makes-perfect",
+    "proverbs/time-is-money"
+   ]
+  },
+  {
+   "id": "v-B2-body-1",
+   "lv": "B2",
+   "cat": "body",
+   "title": "Corps et santé",
+   "ids": [
+    "body/ankle",
+    "body/bruise",
+    "body/check-up",
+    "body/dizzy",
+    "body/painkiller",
+    "body/scar",
+    "body/to-faint",
+    "body/to-sprain",
+    "body/wrist"
+   ]
+  },
+  {
+   "id": "v-B2-food-1",
+   "lv": "B2",
+   "cat": "food",
+   "title": "Nourriture et repas",
+   "ids": [
+    "food/bland",
+    "food/gluten-free",
+    "food/it-s-on-me",
+    "food/medium",
+    "food/overcooked",
+    "food/rare",
+    "food/to-treat-someone",
+    "food/well-done"
+   ]
+  },
+  {
+   "id": "v-B2-travel-1",
+   "lv": "B2",
+   "cat": "travel",
+   "title": "Voyages et transports",
+   "ids": [
+    "travel/accommodation",
+    "travel/breathtaking",
+    "travel/budget-airline",
+    "travel/itinerary",
+    "travel/jet-lag",
+    "travel/layover",
+    "travel/travel-insurance"
+   ]
+  },
+  {
+   "id": "v-B2-work-1",
+   "lv": "B2",
+   "cat": "work",
+   "title": "Travail",
+   "ids": [
+    "work/burnout",
+    "work/job-security",
+    "work/target",
+    "work/to-be-made-redundant",
+    "work/to-brainstorm",
+    "work/to-call-in-sick",
+    "work/to-delegate",
+    "work/to-negotiate",
+    "work/to-network",
+    "work/to-resign",
+    "work/work-life-balance",
+    "work/workload"
+   ]
+  },
+  {
+   "id": "v-B2-feelings-1",
+   "lv": "B2",
+   "cat": "feelings",
+   "title": "Émotions et caractère",
+   "ids": [
+    "feelings/anxious",
+    "feelings/arrogant",
+    "feelings/ashamed",
+    "feelings/bossy",
+    "feelings/delighted",
+    "feelings/devastated",
+    "feelings/easy-going",
+    "feelings/frustrated",
+    "feelings/grateful",
+    "feelings/modest",
+    "feelings/moody",
+    "feelings/narrow-minded",
+    "feelings/open-minded",
+    "feelings/overwhelmed",
+    "feelings/thrilled"
+   ]
+  },
+  {
+   "id": "v-B2-verbs-1",
+   "lv": "B2",
+   "cat": "verbs",
+   "title": "Verbes essentiels (1/2)",
+   "ids": [
+    "verbs/to-achieve-one-s-goals",
+    "verbs/to-adapt",
+    "verbs/to-approach",
+    "verbs/to-cope-with",
+    "verbs/to-ensure",
+    "verbs/to-estimate",
+    "verbs/to-focus-on",
+    "verbs/to-handle",
+    "verbs/to-identify",
+    "verbs/to-indicate",
+    "verbs/to-influence",
+    "verbs/to-involve"
+   ]
+  },
+  {
+   "id": "v-B2-verbs-2",
+   "lv": "B2",
+   "cat": "verbs",
+   "title": "Verbes essentiels (2/2)",
+   "ids": [
+    "verbs/to-justify",
+    "verbs/to-maintain",
+    "verbs/to-occur",
+    "verbs/to-overcome",
+    "verbs/to-provide",
+    "verbs/to-rely-on",
+    "verbs/to-resolve",
+    "verbs/to-reveal",
+    "verbs/to-struggle",
+    "verbs/to-tackle",
+    "verbs/to-tend-to",
+    "verbs/to-threaten"
+   ]
+  },
+  {
+   "id": "v-B2-adjectives-1",
+   "lv": "B2",
+   "cat": "adjectives",
+   "title": "Adjectifs essentiels (1/2)",
+   "ids": [
+    "adjectives/accurate",
+    "adjectives/appropriate",
+    "adjectives/aware",
+    "adjectives/considerable",
+    "adjectives/consistent",
+    "adjectives/crucial",
+    "adjectives/effective",
+    "adjectives/efficient",
+    "adjectives/essential",
+    "adjectives/genuine",
+    "adjectives/impressive",
+    "adjectives/inevitable"
+   ]
+  },
+  {
+   "id": "v-B2-adjectives-2",
+   "lv": "B2",
+   "cat": "adjectives",
+   "title": "Adjectifs essentiels (2/2)",
+   "ids": [
+    "adjectives/likely",
+    "adjectives/meaningful",
+    "adjectives/outstanding",
+    "adjectives/relevant",
+    "adjectives/rough",
+    "adjectives/significant",
+    "adjectives/straightforward",
+    "adjectives/tough",
+    "adjectives/unlikely",
+    "adjectives/vague",
+    "adjectives/vulnerable",
+    "adjectives/worthwhile"
+   ]
+  },
+  {
+   "id": "v-B2-connectors-1",
+   "lv": "B2",
+   "cat": "connectors",
+   "title": "Mots de liaison",
+   "ids": [
+    "connectors/consequently",
+    "connectors/given-that",
+    "connectors/in-terms-of",
+    "connectors/moreover",
+    "connectors/not-only-but-also",
+    "connectors/provided-that",
+    "connectors/whereas"
+   ]
+  },
+  {
+   "id": "v-B2-conversation-1",
+   "lv": "B2",
+   "cat": "conversation",
+   "title": "Expressions de conversation",
+   "ids": [
+    "conversation/i-couldn-t-agree-more",
+    "conversation/i-m-not-in-the-mood",
+    "conversation/fair-point",
+    "conversation/if-you-ask-me",
+    "conversation/it-s-a-deal",
+    "conversation/no-wonder",
+    "conversation/there-s-no-rush",
+    "conversation/to-cut-a-long-story-short",
+    "conversation/what-i-m-trying-to-say-is",
+    "conversation/you-ve-got-a-point"
+   ]
+  },
+  {
+   "id": "v-B2-tech-1",
+   "lv": "B2",
+   "cat": "tech",
+   "title": "Technologie",
+   "ids": [
+    "tech/bug",
+    "tech/cloud-storage",
+    "tech/privacy",
+    "tech/screen-time",
+    "tech/to-crash",
+    "tech/to-hack",
+    "tech/user-friendly"
+   ]
+  },
+  {
+   "id": "v-B2-media-1",
+   "lv": "B2",
+   "cat": "media",
+   "title": "Médias et culture",
+   "ids": [
+    "media/bestseller",
+    "media/blockbuster",
+    "media/broadcast",
+    "media/influencer",
+    "media/sequel",
+    "media/spoiler",
+    "media/to-go-viral"
+   ]
+  },
+  {
+   "id": "v-B2-phrasal-1",
+   "lv": "B2",
+   "cat": "phrasal",
+   "title": "Phrasal verbs (1/3)",
+   "ids": [
+    "phrasal/to-back-up",
+    "phrasal/to-call-off",
+    "phrasal/to-come-across",
+    "phrasal/to-come-down-with",
+    "phrasal/to-come-up-with",
+    "phrasal/to-cut-down-on",
+    "phrasal/to-drop-out",
+    "phrasal/to-fall-out-with",
+    "phrasal/to-get-away-with",
+    "phrasal/to-get-over"
+   ]
+  },
+  {
+   "id": "v-B2-phrasal-2",
+   "lv": "B2",
+   "cat": "phrasal",
+   "title": "Phrasal verbs (2/3)",
+   "ids": [
+    "phrasal/to-go-off",
+    "phrasal/to-go-through",
+    "phrasal/to-keep-up-with",
+    "phrasal/to-let-down",
+    "phrasal/to-look-into",
+    "phrasal/to-look-out-for",
+    "phrasal/to-look-up-to",
+    "phrasal/to-make-up",
+    "phrasal/to-make-up-your-mind",
+    "phrasal/to-pass-away"
+   ]
+  },
+  {
+   "id": "v-B2-phrasal-3",
+   "lv": "B2",
+   "cat": "phrasal",
+   "title": "Phrasal verbs (3/3)",
+   "ids": [
+    "phrasal/to-point-out",
+    "phrasal/to-put-off",
+    "phrasal/to-put-out",
+    "phrasal/to-put-up-with",
+    "phrasal/to-run-into",
+    "phrasal/to-set-off",
+    "phrasal/to-stand-for",
+    "phrasal/to-stand-out",
+    "phrasal/to-take-after",
+    "phrasal/to-take-over",
+    "phrasal/to-turn-down"
+   ]
+  },
+  {
+   "id": "v-B2-collocations-1",
+   "lv": "B2",
+   "cat": "collocations",
+   "title": "Collocations",
+   "ids": [
+    "collocations/fully-aware",
+    "collocations/highly-recommended",
+    "collocations/to-break-the-ice",
+    "collocations/to-lose-track-of-time",
+    "collocations/to-lose-your-temper",
+    "collocations/to-make-a-living",
+    "collocations/to-meet-a-deadline",
+    "collocations/to-pay-a-compliment",
+    "collocations/to-run-a-risk",
+    "collocations/to-take-advantage-of",
+    "collocations/to-take-into-account"
+   ]
+  },
+  {
+   "id": "v-B2-falsefriends-1",
+   "lv": "B2",
+   "cat": "falsefriends",
+   "title": "Faux amis (1/2)",
+   "ids": [
+    "falsefriends/actual",
+    "falsefriends/agenda",
+    "falsefriends/attempt",
+    "falsefriends/cellar",
+    "falsefriends/costume",
+    "falsefriends/crayon",
+    "falsefriends/fabric",
+    "falsefriends/internship",
+    "falsefriends/raisin",
+    "falsefriends/sympathetic"
+   ]
+  },
+  {
+   "id": "v-B2-falsefriends-2",
+   "lv": "B2",
+   "cat": "falsefriends",
+   "title": "Faux amis (2/2)",
+   "ids": [
+    "falsefriends/to-assist",
+    "falsefriends/to-bless",
+    "falsefriends/to-claim",
+    "falsefriends/to-deceive",
+    "falsefriends/to-demand",
+    "falsefriends/to-propose",
+    "falsefriends/to-release",
+    "falsefriends/to-require",
+    "falsefriends/to-resume",
+    "falsefriends/understanding",
+    "falsefriends/wound"
+   ]
+  },
+  {
+   "id": "v-B2-opinion-1",
+   "lv": "B2",
+   "cat": "opinion",
+   "title": "Donner son avis et débattre (1/2)",
+   "ids": [
+    "opinion/i-partly-agree",
+    "opinion/i-strongly-believe-that",
+    "opinion/i-m-convinced-that",
+    "opinion/as-a-matter-of-fact",
+    "opinion/biased",
+    "opinion/controversial",
+    "opinion/drawback",
+    "opinion/it-s-worth-considering"
+   ]
+  },
+  {
+   "id": "v-B2-opinion-2",
+   "lv": "B2",
+   "cat": "opinion",
+   "title": "Donner son avis et débattre (2/2)",
+   "ids": [
+    "opinion/let-s-face-it",
+    "opinion/that-s-not-the-point",
+    "opinion/there-s-no-doubt-that",
+    "opinion/to-assume",
+    "opinion/to-deny",
+    "opinion/to-make-a-point",
+    "opinion/to-raise-a-question",
+    "opinion/whereas-i-think"
+   ]
+  },
+  {
+   "id": "v-B2-society-1",
+   "lv": "B2",
+   "cat": "society",
+   "title": "Société et actualité (1/2)",
+   "ids": [
+    "society/ban",
+    "society/candidate",
+    "society/corruption",
+    "society/developing-country",
+    "society/discrimination",
+    "society/equality",
+    "society/gender",
+    "society/healthcare",
+    "society/homeless",
+    "society/housing",
+    "society/human-rights",
+    "society/inequality",
+    "society/inflation",
+    "society/majority",
+    "society/minority"
+   ]
+  },
+  {
+   "id": "v-B2-society-2",
+   "lv": "B2",
+   "cat": "society",
+   "title": "Société et actualité (2/2)",
+   "ids": [
+    "society/pension",
+    "society/policy",
+    "society/public-opinion",
+    "society/racism",
+    "society/reform",
+    "society/renewable-energy",
+    "society/scandal",
+    "society/social-class",
+    "society/sustainable",
+    "society/to-ban",
+    "society/to-campaign",
+    "society/to-donate",
+    "society/to-elect",
+    "society/trial",
+    "society/wealth"
+   ]
+  },
+  {
+   "id": "v-B2-formal-1",
+   "lv": "B2",
+   "cat": "formal",
+   "title": "Registre soutenu (1/2)",
+   "ids": [
+    "formal/i-am-writing-to",
+    "formal/i-look-forward-to-hearing-from-you",
+    "formal/apologies-for",
+    "formal/furthermore",
+    "formal/nevertheless",
+    "formal/numerous",
+    "formal/please-do-not-hesitate-to-contact-me",
+    "formal/regarding",
+    "formal/sufficient",
+    "formal/to-address",
+    "formal/to-attach"
+   ]
+  },
+  {
+   "id": "v-B2-formal-2",
+   "lv": "B2",
+   "cat": "formal",
+   "title": "Registre soutenu (2/2)",
+   "ids": [
+    "formal/to-be-grateful-if",
+    "formal/to-clarify",
+    "formal/to-emphasise",
+    "formal/to-enquire",
+    "formal/to-highlight",
+    "formal/to-obtain",
+    "formal/to-outline",
+    "formal/to-postpone",
+    "formal/to-purchase",
+    "formal/to-seek",
+    "formal/yours-faithfully",
+    "formal/yours-sincerely"
+   ]
+  },
+  {
+   "id": "v-B2-science-1",
+   "lv": "B2",
+   "cat": "science",
+   "title": "Sciences et santé publique (1/2)",
+   "ids": [
+    "science/accurate-results",
+    "science/addiction",
+    "science/artificial-intelligence",
+    "science/cure",
+    "science/data",
+    "science/device",
+    "science/mental-health",
+    "science/pandemic",
+    "science/researcher"
+   ]
+  },
+  {
+   "id": "v-B2-science-2",
+   "lv": "B2",
+   "cat": "science",
+   "title": "Sciences et santé publique (2/2)",
+   "ids": [
+    "science/sample",
+    "science/side-effects",
+    "science/surgeon",
+    "science/surgery",
+    "science/symptom",
+    "science/theory",
+    "science/to-prevent",
+    "science/treatment",
+    "science/vaccine",
+    "science/virus"
+   ]
+  },
+  {
+   "id": "v-B2-business-1",
+   "lv": "B2",
+   "cat": "business",
+   "title": "Économie et entreprise (1/3)",
+   "ids": [
+    "business/advertising",
+    "business/branch",
+    "business/brand",
+    "business/client",
+    "business/competition-la-concurrence",
+    "business/competitor",
+    "business/entrepreneur",
+    "business/growth",
+    "business/headquarters",
+    "business/income"
+   ]
+  },
+  {
+   "id": "v-B2-business-2",
+   "lv": "B2",
+   "cat": "business",
+   "title": "Économie et entreprise (2/3)",
+   "ids": [
+    "business/interest-rate",
+    "business/investment",
+    "business/investor",
+    "business/loan",
+    "business/loss",
+    "business/management",
+    "business/marketing",
+    "business/mortgage",
+    "business/negotiation",
+    "business/recession"
+   ]
+  },
+  {
+   "id": "v-B2-business-3",
+   "lv": "B2",
+   "cat": "business",
+   "title": "Économie et entreprise (3/3)",
+   "ids": [
+    "business/share",
+    "business/startup",
+    "business/stock-market",
+    "business/strategy",
+    "business/supplier",
+    "business/to-boost",
+    "business/to-cut-costs",
+    "business/to-decline",
+    "business/to-go-bankrupt",
+    "business/to-invest",
+    "business/to-launch"
+   ]
+  },
+  {
+   "id": "v-B2-environment-1",
+   "lv": "B2",
+   "cat": "environment",
+   "title": "Environnement (1/2)",
+   "ids": [
+    "environment/carbon-emissions",
+    "environment/carbon-footprint",
+    "environment/deforestation",
+    "environment/drought",
+    "environment/eco-friendly",
+    "environment/emissions",
+    "environment/endangered",
+    "environment/extinct",
+    "environment/fossil-fuels",
+    "environment/greenhouse-gas",
+    "environment/habitat",
+    "environment/heatwave"
+   ]
+  },
+  {
+   "id": "v-B2-environment-2",
+   "lv": "B2",
+   "cat": "environment",
+   "title": "Environnement (2/2)",
+   "ids": [
+    "environment/natural-disaster",
+    "environment/nuclear-power",
+    "environment/organic",
+    "environment/resources",
+    "environment/sea-level",
+    "environment/solar-power",
+    "environment/species",
+    "environment/to-damage",
+    "environment/to-reduce-waste",
+    "environment/to-reuse",
+    "environment/wildlife",
+    "environment/wind-farm"
+   ]
+  },
+  {
+   "id": "v-B2-idioms-1",
+   "lv": "B2",
+   "cat": "idioms",
+   "title": "Expressions idiomatiques",
+   "ids": [
+    "idioms/not-my-cup-of-tea",
+    "idioms/out-of-the-blue",
+    "idioms/to-be-in-the-same-boat",
+    "idioms/to-be-over-the-moon",
+    "idioms/to-be-under-the-weather",
+    "idioms/to-break-a-leg",
+    "idioms/to-call-it-a-day",
+    "idioms/to-cost-an-arm-and-a-leg",
+    "idioms/to-get-the-hang-of",
+    "idioms/to-have-second-thoughts",
+    "idioms/to-hit-the-sack",
+    "idioms/to-keep-an-eye-on",
+    "idioms/to-pull-someone-s-leg",
+    "idioms/to-rain-cats-and-dogs",
+    "idioms/to-ring-a-bell"
+   ]
+  },
+  {
+   "id": "v-B2-slang-1",
+   "lv": "B2",
+   "cat": "slang",
+   "title": "Anglais familier (1/2)",
+   "ids": [
+    "slang/binge-watch",
+    "slang/bloke",
+    "slang/buck",
+    "slang/cheeky",
+    "slang/dude",
+    "slang/fancy",
+    "slang/loo",
+    "slang/my-bad"
+   ]
+  },
+  {
+   "id": "v-B2-slang-2",
+   "lv": "B2",
+   "cat": "slang",
+   "title": "Anglais familier (2/2)",
+   "ids": [
+    "slang/quid",
+    "slang/to-be-broke",
+    "slang/to-be-into-someone",
+    "slang/to-crash-dormir-chez-qqn-fam",
+    "slang/to-freak-out",
+    "slang/to-grab-a-bite",
+    "slang/to-have-a-lie-in",
+    "slang/to-mess-up"
+   ]
+  },
+  {
+   "id": "v-B2-nuances-1",
+   "lv": "B2",
+   "cat": "nuances",
+   "title": "Nuances : mots proches",
+   "ids": [
+    "nuances/above-over",
+    "nuances/advice-advise",
+    "nuances/affect-effect",
+    "nuances/beside-besides",
+    "nuances/especially-specially",
+    "nuances/fewer-less",
+    "nuances/rise-raise",
+    "nuances/rob-steal",
+    "nuances/sensible-sensitive",
+    "nuances/until-by",
+    "nuances/used-to-be-used-to",
+    "nuances/win-earn-gain"
+   ]
+  },
+  {
+   "id": "v-B2-proverbs-1",
+   "lv": "B2",
+   "cat": "proverbs",
+   "title": "Proverbes et dictons",
+   "ids": [
+    "proverbs/rome-wasn-t-built-in-a-day",
+    "proverbs/actions-speak-louder-than-words",
+    "proverbs/better-safe-than-sorry",
+    "proverbs/don-t-judge-a-book-by-its-cover",
+    "proverbs/easier-said-than-done",
+    "proverbs/honesty-is-the-best-policy",
+    "proverbs/no-pain-no-gain",
+    "proverbs/the-more-the-merrier",
+    "proverbs/two-heads-are-better-than-one",
+    "proverbs/when-in-rome-do-as-the-romans-do",
+    "proverbs/where-there-s-a-will-there-s-a-way"
+   ]
+  },
+  {
+   "id": "v-B2-mix-1",
+   "lv": "B2",
+   "cat": "mix",
+   "title": "Vocabulaire varié",
+   "ids": [
+    "home/diy",
+    "home/detached-house",
+    "home/household-chores",
+    "home/spacious",
+    "home/to-renovate",
+    "school/gap-year",
+    "school/seminar",
+    "school/to-skip-class",
+    "school/tuition-fees"
+   ]
+  },
+  {
+   "id": "v-C1-work-1",
+   "lv": "C1",
+   "cat": "work",
+   "title": "Travail",
+   "ids": [
+    "work/perks",
+    "work/probation-period",
+    "work/skills-gap",
+    "work/to-be-laid-off",
+    "work/to-climb-the-career-ladder",
+    "work/to-touch-base"
+   ]
+  },
+  {
+   "id": "v-C1-school-1",
+   "lv": "C1",
+   "cat": "school",
+   "title": "Études et apprentissage",
+   "ids": [
+    "school/deadline-extension",
+    "school/dissertation",
+    "school/postgraduate",
+    "school/thesis",
+    "school/to-plagiarise",
+    "school/undergraduate"
+   ]
+  },
+  {
+   "id": "v-C1-feelings-1",
+   "lv": "C1",
+   "cat": "feelings",
+   "title": "Émotions et caractère (1/2)",
+   "ids": [
+    "feelings/apprehensive",
+    "feelings/assertive",
+    "feelings/bewildered",
+    "feelings/compassionate",
+    "feelings/content",
+    "feelings/down-to-earth",
+    "feelings/gullible",
+    "feelings/indifferent"
+   ]
+  },
+  {
+   "id": "v-C1-feelings-2",
+   "lv": "C1",
+   "cat": "feelings",
+   "title": "Émotions et caractère (2/2)",
+   "ids": [
+    "feelings/level-headed",
+    "feelings/nostalgic",
+    "feelings/outraged",
+    "feelings/resentful",
+    "feelings/resilient",
+    "feelings/self-conscious",
+    "feelings/wary",
+    "feelings/witty"
+   ]
+  },
+  {
+   "id": "v-C1-verbs-1",
+   "lv": "C1",
+   "cat": "verbs",
+   "title": "Verbes essentiels (1/3)",
+   "ids": [
+    "verbs/to-acquire",
+    "verbs/to-allocate",
+    "verbs/to-assess",
+    "verbs/to-brush-up-on",
+    "verbs/to-cease",
+    "verbs/to-coincide",
+    "verbs/to-come-to-terms-with",
+    "verbs/to-compensate",
+    "verbs/to-deter",
+    "verbs/to-dismiss",
+    "verbs/to-dwell-on",
+    "verbs/to-embrace"
+   ]
+  },
+  {
+   "id": "v-C1-verbs-2",
+   "lv": "C1",
+   "cat": "verbs",
+   "title": "Verbes essentiels (2/3)",
+   "ids": [
+    "verbs/to-emerge",
+    "verbs/to-enhance",
+    "verbs/to-entail",
+    "verbs/to-exceed",
+    "verbs/to-exploit",
+    "verbs/to-foster",
+    "verbs/to-grasp",
+    "verbs/to-hamper",
+    "verbs/to-hinder",
+    "verbs/to-imply",
+    "verbs/to-improve-on",
+    "verbs/to-infer",
+    "verbs/to-neglect"
+   ]
+  },
+  {
+   "id": "v-C1-verbs-3",
+   "lv": "C1",
+   "cat": "verbs",
+   "title": "Verbes essentiels (3/3)",
+   "ids": [
+    "verbs/to-perceive",
+    "verbs/to-pursue",
+    "verbs/to-reinforce",
+    "verbs/to-restore",
+    "verbs/to-retain",
+    "verbs/to-stumble-upon",
+    "verbs/to-sustain",
+    "verbs/to-thrive",
+    "verbs/to-undergo",
+    "verbs/to-undermine",
+    "verbs/to-unveil",
+    "verbs/to-weigh-up",
+    "verbs/to-yield"
+   ]
+  },
+  {
+   "id": "v-C1-adjectives-1",
+   "lv": "C1",
+   "cat": "adjectives",
+   "title": "Adjectifs essentiels (1/2)",
+   "ids": [
+    "adjectives/ambiguous",
+    "adjectives/arbitrary",
+    "adjectives/bleak",
+    "adjectives/blunt",
+    "adjectives/compelling",
+    "adjectives/daunting",
+    "adjectives/eloquent",
+    "adjectives/far-fetched",
+    "adjectives/feasible",
+    "adjectives/groundbreaking",
+    "adjectives/inherent",
+    "adjectives/misleading"
+   ]
+  },
+  {
+   "id": "v-C1-adjectives-2",
+   "lv": "C1",
+   "cat": "adjectives",
+   "title": "Adjectifs essentiels (2/2)",
+   "ids": [
+    "adjectives/overwhelming",
+    "adjectives/plausible",
+    "adjectives/pragmatic",
+    "adjectives/profound",
+    "adjectives/reluctant",
+    "adjectives/robust",
+    "adjectives/seamless",
+    "adjectives/subtle",
+    "adjectives/tedious",
+    "adjectives/thorough",
+    "adjectives/unprecedented",
+    "adjectives/viable",
+    "adjectives/widespread"
+   ]
+  },
+  {
+   "id": "v-C1-connectors-1",
+   "lv": "C1",
+   "cat": "connectors",
+   "title": "Mots de liaison",
+   "ids": [
+    "connectors/admittedly",
+    "connectors/as-opposed-to",
+    "connectors/conversely",
+    "connectors/likewise",
+    "connectors/namely",
+    "connectors/nonetheless",
+    "connectors/with-the-exception-of"
+   ]
+  },
+  {
+   "id": "v-C1-conversation-1",
+   "lv": "C1",
+   "cat": "conversation",
+   "title": "Expressions de conversation (1/2)",
+   "ids": [
+    "conversation/i-couldn-t-care-less",
+    "conversation/i-take-your-point",
+    "conversation/i-ll-take-your-word-for-it",
+    "conversation/i-m-all-ears",
+    "conversation/come-to-think-of-it",
+    "conversation/for-what-it-s-worth",
+    "conversation/it-slipped-my-mind",
+    "conversation/it-s-on-the-tip-of-my-tongue"
+   ]
+  },
+  {
+   "id": "v-C1-conversation-2",
+   "lv": "C1",
+   "cat": "conversation",
+   "title": "Expressions de conversation (2/2)",
+   "ids": [
+    "conversation/it-s-up-in-the-air",
+    "conversation/let-me-put-it-another-way",
+    "conversation/not-that-i-know-of",
+    "conversation/point-taken",
+    "conversation/suit-yourself",
+    "conversation/that-goes-without-saying",
+    "conversation/that-s-beside-the-point",
+    "conversation/you-can-say-that-again"
+   ]
+  },
+  {
+   "id": "v-C1-society-1",
+   "lv": "C1",
+   "cat": "society",
+   "title": "Société et actualité",
+   "ids": [
+    "society/ageing-population",
+    "society/censorship",
+    "society/globalisation",
+    "society/landslide",
+    "society/legislation",
+    "society/standard-of-living",
+    "society/to-lobby",
+    "society/to-resign-from-office",
+    "society/turnout",
+    "society/welfare"
+   ]
+  },
+  {
+   "id": "v-C1-formal-1",
+   "lv": "C1",
+   "cat": "formal",
+   "title": "Registre soutenu (1/2)",
+   "ids": [
+    "formal/adequate",
+    "formal/at-your-earliest-convenience",
+    "formal/further-to",
+    "formal/hence",
+    "formal/in-accordance-with",
+    "formal/notwithstanding",
+    "formal/prior-to",
+    "formal/subsequently",
+    "formal/substantial",
+    "formal/thus",
+    "formal/to-acknowledge",
+    "formal/to-anticipate"
+   ]
+  },
+  {
+   "id": "v-C1-formal-2",
+   "lv": "C1",
+   "cat": "formal",
+   "title": "Registre soutenu (2/2)",
+   "ids": [
+    "formal/to-commence",
+    "formal/to-comply-with",
+    "formal/to-convey",
+    "formal/to-enclose",
+    "formal/to-endeavour",
+    "formal/to-facilitate",
+    "formal/to-implement",
+    "formal/to-regard-as",
+    "formal/to-undertake",
+    "formal/to-utilise",
+    "formal/to-whom-it-may-concern",
+    "formal/whereby",
+    "formal/with-regard-to"
+   ]
+  },
+  {
+   "id": "v-C1-science-1",
+   "lv": "C1",
+   "cat": "science",
+   "title": "Sciences et santé publique (1/2)",
+   "ids": [
+    "science/breakthrough",
+    "science/correlation",
+    "science/diagnosis",
+    "science/epidemic",
+    "science/evidence-based",
+    "science/findings",
+    "science/genetic",
+    "science/hypothesis"
+   ]
+  },
+  {
+   "id": "v-C1-science-2",
+   "lv": "C1",
+   "cat": "science",
+   "title": "Sciences et santé publique (2/2)",
+   "ids": [
+    "science/immune-system",
+    "science/life-expectancy",
+    "science/obesity",
+    "science/outbreak",
+    "science/peer-review",
+    "science/prevention",
+    "science/to-conduct-research",
+    "science/trial-l-essai-clinique"
+   ]
+  },
+  {
+   "id": "v-C1-business-1",
+   "lv": "C1",
+   "cat": "business",
+   "title": "Économie et entreprise",
+   "ids": [
+    "business/asset",
+    "business/benchmark",
+    "business/bottom-line",
+    "business/cash-flow",
+    "business/goal-setting",
+    "business/merger",
+    "business/outsourcing",
+    "business/revenue",
+    "business/shareholder",
+    "business/stakeholder",
+    "business/supply-and-demand",
+    "business/to-take-over-a-company",
+    "business/turnover"
+   ]
+  },
+  {
+   "id": "v-C1-idioms-1",
+   "lv": "C1",
+   "cat": "idioms",
+   "title": "Expressions idiomatiques (1/4)",
+   "ids": [
+    "idioms/a-blessing-in-disguise",
+    "idioms/a-drop-in-the-ocean",
+    "idioms/in-hot-water",
+    "idioms/once-in-a-blue-moon",
+    "idioms/the-elephant-in-the-room",
+    "idioms/the-last-straw",
+    "idioms/the-tip-of-the-iceberg",
+    "idioms/to-be-in-two-minds",
+    "idioms/to-be-on-cloud-nine",
+    "idioms/to-be-on-the-fence",
+    "idioms/to-be-on-thin-ice"
+   ]
+  },
+  {
+   "id": "v-C1-idioms-2",
+   "lv": "C1",
+   "cat": "idioms",
+   "title": "Expressions idiomatiques (2/4)",
+   "ids": [
+    "idioms/to-be-up-to-your-ears",
+    "idioms/to-beat-around-the-bush",
+    "idioms/to-bite-off-more-than-you-can-chew",
+    "idioms/to-bite-the-bullet",
+    "idioms/to-break-new-ground",
+    "idioms/to-call-the-shots",
+    "idioms/to-cut-corners",
+    "idioms/to-cut-to-the-chase",
+    "idioms/to-face-the-music",
+    "idioms/to-get-cold-feet",
+    "idioms/to-get-out-of-hand",
+    "idioms/to-give-someone-the-benefit-of-the-doubt"
+   ]
+  },
+  {
+   "id": "v-C1-idioms-3",
+   "lv": "C1",
+   "cat": "idioms",
+   "title": "Expressions idiomatiques (3/4)",
+   "ids": [
+    "idioms/to-go-down-the-drain",
+    "idioms/to-go-the-extra-mile",
+    "idioms/to-have-a-lot-on-your-plate",
+    "idioms/to-hit-the-nail-on-the-head",
+    "idioms/to-kill-two-birds-with-one-stone",
+    "idioms/to-know-the-ropes",
+    "idioms/to-learn-the-ropes",
+    "idioms/to-let-off-steam",
+    "idioms/to-let-the-cat-out-of-the-bag",
+    "idioms/to-make-ends-meet",
+    "idioms/to-miss-the-boat"
+   ]
+  },
+  {
+   "id": "v-C1-idioms-4",
+   "lv": "C1",
+   "cat": "idioms",
+   "title": "Expressions idiomatiques (4/4)",
+   "ids": [
+    "idioms/to-play-it-by-ear",
+    "idioms/to-read-between-the-lines",
+    "idioms/to-see-eye-to-eye",
+    "idioms/to-see-the-light-at-the-end-of-the-tunnel",
+    "idioms/to-sit-on-the-fence",
+    "idioms/to-speak-your-mind",
+    "idioms/to-spill-the-beans",
+    "idioms/to-steal-the-show",
+    "idioms/to-take-something-with-a-pinch-of-salt",
+    "idioms/to-the-best-of-my-knowledge",
+    "idioms/to-throw-in-the-towel",
+    "idioms/to-turn-a-blind-eye"
+   ]
+  },
+  {
+   "id": "v-C1-slang-1",
+   "lv": "C1",
+   "cat": "slang",
+   "title": "Anglais familier",
+   "ids": [
+    "slang/dodgy",
+    "slang/gutted",
+    "slang/knackered",
+    "slang/lit",
+    "slang/salty-aigri-vexe-argot",
+    "slang/sketchy",
+    "slang/skint",
+    "slang/to-bail-on-someone",
+    "slang/to-be-chuffed",
+    "slang/to-ghost-someone",
+    "slang/to-have-a-go-at-someone",
+    "slang/y-all"
+   ]
+  },
+  {
+   "id": "v-C1-proverbs-1",
+   "lv": "C1",
+   "cat": "proverbs",
+   "title": "Proverbes et dictons",
+   "ids": [
+    "proverbs/curiosity-killed-the-cat",
+    "proverbs/don-t-put-all-your-eggs-in-one-basket",
+    "proverbs/every-cloud-has-a-silver-lining",
+    "proverbs/it-takes-two-to-tango",
+    "proverbs/out-of-sight-out-of-mind",
+    "proverbs/the-early-bird-catches-the-worm",
+    "proverbs/the-grass-is-always-greener-on-the-other-side",
+    "proverbs/you-can-t-have-your-cake-and-eat-it"
+   ]
+  },
+  {
+   "id": "v-C1-mix-1",
+   "lv": "C1",
+   "cat": "mix",
+   "title": "Vocabulaire varié (1/3)",
+   "ids": [
+    "home/cramped",
+    "home/mortgage-payments",
+    "home/semi-detached",
+    "home/to-do-up",
+    "food/mouth-watering",
+    "food/to-have-a-sweet-tooth",
+    "travel/off-the-beaten-track",
+    "travel/to-be-stranded",
+    "tech/cutting-edge",
+    "tech/data-breach"
+   ]
+  },
+  {
+   "id": "v-C1-mix-2",
+   "lv": "C1",
+   "cat": "mix",
+   "title": "Vocabulaire varié (2/3)",
+   "ids": [
+    "tech/to-troubleshoot",
+    "media/coverage",
+    "media/critically-acclaimed",
+    "media/press-release",
+    "collocations/a-narrow-escape",
+    "collocations/bitterly-disappointed",
+    "falsefriends/comprehensive",
+    "falsefriends/deception",
+    "falsefriends/preservative",
+    "falsefriends/tentative"
+   ]
+  },
+  {
+   "id": "v-C1-mix-3",
+   "lv": "C1",
+   "cat": "mix",
+   "title": "Vocabulaire varié (3/3)",
+   "ids": [
+    "opinion/on-balance",
+    "opinion/to-some-extent",
+    "environment/biodiversity",
+    "environment/consumption",
+    "environment/landfill",
+    "environment/single-use",
+    "nuances/ashamed-embarrassed",
+    "nuances/convince-persuade",
+    "nuances/economic-economical",
+    "nuances/historic-historical",
+    "nuances/lie-lay"
+   ]
+  },
+  {
+   "id": "v-C2-feelings-1",
+   "lv": "C2",
+   "cat": "feelings",
+   "title": "Émotions et caractère",
+   "ids": [
+    "feelings/conceited",
+    "feelings/dismayed",
+    "feelings/elated",
+    "feelings/fickle",
+    "feelings/headstrong",
+    "feelings/smug"
+   ]
+  },
+  {
+   "id": "v-C2-verbs-1",
+   "lv": "C2",
+   "cat": "verbs",
+   "title": "Verbes essentiels",
+   "ids": [
+    "verbs/to-alleviate",
+    "verbs/to-bolster",
+    "verbs/to-circumvent",
+    "verbs/to-curtail",
+    "verbs/to-discern",
+    "verbs/to-elicit",
+    "verbs/to-exacerbate",
+    "verbs/to-mitigate",
+    "verbs/to-scrutinise",
+    "verbs/to-wield"
+   ]
+  },
+  {
+   "id": "v-C2-adjectives-1",
+   "lv": "C2",
+   "cat": "adjectives",
+   "title": "Adjectifs essentiels",
+   "ids": [
+    "adjectives/candid",
+    "adjectives/cumbersome",
+    "adjectives/detrimental",
+    "adjectives/elusive",
+    "adjectives/intricate",
+    "adjectives/lenient",
+    "adjectives/meticulous",
+    "adjectives/mundane",
+    "adjectives/paramount",
+    "adjectives/ubiquitous"
+   ]
+  },
+  {
+   "id": "v-C2-idioms-1",
+   "lv": "C2",
+   "cat": "idioms",
+   "title": "Expressions idiomatiques",
+   "ids": [
+    "idioms/to-add-insult-to-injury",
+    "idioms/to-bark-up-the-wrong-tree",
+    "idioms/to-be-a-dime-a-dozen",
+    "idioms/to-be-a-far-cry-from",
+    "idioms/to-beat-a-dead-horse",
+    "idioms/to-burn-the-midnight-oil",
+    "idioms/to-cross-that-bridge-when-we-come-to-it",
+    "idioms/to-have-a-chip-on-your-shoulder",
+    "idioms/to-have-the-last-laugh",
+    "idioms/to-jump-on-the-bandwagon",
+    "idioms/to-make-a-mountain-out-of-a-molehill"
+   ]
+  },
+  {
+   "id": "v-C2-mix-1",
+   "lv": "C2",
+   "cat": "mix",
+   "title": "Vocabulaire varié",
+   "ids": [
+    "home/to-be-house-proud",
+    "conversation/that-rings-true",
+    "society/accountability",
+    "society/grassroots",
+    "society/polarisation",
+    "business/due-diligence",
+    "business/leverage",
+    "business/liability",
+    "slang/gobsmacked",
+    "slang/innit",
+    "slang/to-bum-around",
+    "slang/to-take-the-mickey",
+    "proverbs/birds-of-a-feather-flock-together",
+    "proverbs/it-s-no-use-crying-over-spilt-milk",
+    "proverbs/let-sleeping-dogs-lie"
+   ]
+  }
  ]
 }

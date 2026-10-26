@@ -51,7 +51,31 @@ function reviewQueue() {
   return [...due.filter((c) => !isNew(c)), ...fresh];
 }
 
-const levels = () => (legalMode() ? LEGAL : LEVELS);
+// Parcours = leçons rédigées + leçons de vocabulaire tirées de la banque (words/index.json → units),
+// intercalées régulièrement. En mode CRFPA, le vocabulaire juridique forme un module 5.
+const composed = {};
+const vocabStub = (u) => ({ id: u.id, title: u.title, vocab: u });
+function interleave(main, extra) {
+  if (!main.length) return extra;
+  const out = [];
+  main.forEach((l, i) => {
+    out.push(l);
+    out.push(...extra.slice(Math.floor((i * extra.length) / main.length), Math.floor(((i + 1) * extra.length) / main.length)));
+  });
+  return out;
+}
+const levels = () => {
+  const base = legalMode() ? LEGAL : LEVELS;
+  const units = banks[state.mode].index?.units;
+  if (!units) return base;
+  if (!composed[state.mode]) {
+    const out = base.map((lv) => ({ ...lv, lessons: interleave(lv.lessons, units.filter((u) => u.lv === lv.id).map(vocabStub)) }));
+    const m5 = units.filter((u) => u.lv === "M5");
+    if (m5.length) out.push({ id: "M5", label: "Module 5", name: "Vocabulaire juridique", lessons: m5.map(vocabStub) });
+    composed[state.mode] = out;
+  }
+  return composed[state.mode];
+};
 const allLessons = () => levels().flatMap((lv) => lv.lessons.map((l) => ({ ...l, lv })));
 const findLesson = (id) => allLessons().find((l) => l.id === id);
 const nextLesson = () => allLessons().find((l) => !P().done[l.id]);
@@ -189,8 +213,8 @@ function home() {
       <div class="path">
         ${lv.lessons.map((l) => {
           const st = P().done[l.id] ? "done" : next && next.id === l.id ? "next" : "todo";
-          const ic = st === "done" ? "check" : st === "next" ? "star" : "book";
-          return `<div class="node ${st}">
+          const ic = st === "done" ? "check" : st === "next" ? "star" : l.vocab ? "cards" : "book";
+          return `<div class="node ${st} ${l.vocab ? "vocab" : ""}">
             <button class="node-btn" data-id="${l.id}" aria-label="${esc(l.title)}">
               ${st === "next" ? `<span class="start-tag">COMMENCER</span>` : ""}${icon(ic)}
             </button>
@@ -253,7 +277,59 @@ function home() {
 
 // ---------- Leçon ----------
 function lesson(id) {
-  const l = findLesson(id);
+  const found = findLesson(id);
+  if (found.vocab) return openVocab(found);
+  showLesson(found);
+}
+
+// Leçon de vocabulaire : mots chargés depuis la banque, exercices générés.
+async function openVocab(stub) {
+  const words = [];
+  for (const ref of stub.vocab.ids) {
+    const [cat, wid] = ref.split("/");
+    const w = (await loadCat(cat)).find((x) => x.id === wid);
+    if (w) words.push(w);
+  }
+  const theme = stub.vocab.cat === "mix" ? "de thèmes variés" : `sur le thème « ${stub.vocab.title.replace(/ \(\d+\/\d+\)$/, "")} »`;
+  showLesson({
+    ...stub,
+    tip: `${words.length} mots ${theme}. Écoute chaque mot, lis l'exemple, puis entraîne-toi : à la fin de la leçon, tous ces mots rejoignent tes cartes de révision.`,
+    words: words.map((w) => [w.fr, w.en, w.ex]),
+    bankWords: words,
+    exercises: vocabExercises(words),
+  });
+}
+
+// Forme « nue » d'une expression pour la retrouver dans une phrase (« to cook » → « cook »).
+const core = (en) => en.replace(/\(.*?\)/g, "").replace(/^(to|a|an|the) /i, "").trim();
+
+function vocabExercises(words) {
+  const pick = shuffle(words);
+  let k = 0;
+  const nextWord = () => pick[k++ % pick.length];
+  const others = (w, field) => shuffle([...new Set(words.filter((x) => x[field] !== w[field]).map((x) => x[field]))]).slice(0, 3);
+  const qcm = (q, right, wrong) => {
+    const choices = shuffle([right, ...wrong]);
+    return { type: "qcm", q, choices, answer: choices.indexOf(right) };
+  };
+  const ex = [];
+  for (let n = 0; n < 3; n++) { const w = nextWord(); ex.push(qcm(`Comment dit-on « ${w.fr} » ?`, w.en, others(w, "en"))); }
+  for (let n = 0; n < 2; n++) { const w = nextWord(); ex.push(qcm(`Que veut dire « ${w.en} » ?`, w.fr, others(w, "fr"))); }
+  { const w = nextWord();
+    const e = qcm("Écoute et choisis la traduction", w.fr, others(w, "fr"));
+    ex.push("speechSynthesis" in window ? { ...e, type: "listen", audio: w.en } : { ...e, q: `Que veut dire « ${w.en} » ?` }); }
+  for (let n = 0; n < 2; n++) { const w = nextWord(); ex.push({ type: "translate", q: `Écris en anglais : « ${w.fr} »`, answers: [...new Set([w.en, core(w.en)])] }); }
+  // Phrase à compléter, si l'exemple contient le mot.
+  const w = pick.find((x) => x.ex && core(x.en).length > 2 && x.ex.toLowerCase().includes(core(x.en).toLowerCase()));
+  if (w) {
+    const re = new RegExp(core(w.en).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i");
+    const wrong = shuffle(words.filter((x) => core(x.en).toLowerCase() !== core(w.en).toLowerCase()).map((x) => core(x.en))).slice(0, 3);
+    ex.push(qcm(`Complète : « ${w.ex.replace(re, "___")} »`, core(w.en), wrong));
+  }
+  return shuffle(ex);
+}
+
+function showLesson(l) {
   const minutes = Math.max(3, Math.round(l.exercises.length * 1.2 + l.words.length * 0.3));
   render(`
     <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
@@ -269,8 +345,8 @@ function lesson(id) {
     <h4 class="section-title">${icon("bulb")}L'essentiel</h4>
     <div class="tip">${l.tip}</div>
     <h4 class="section-title">${icon("book")}Vocabulaire</h4>
-    <div class="vocab">${l.words.map(([fr, en]) => `
-      <div class="word"><div><b>${esc(en)}</b><span>${esc(fr)}</span></div>
+    <div class="vocab">${l.words.map(([fr, en, ex]) => `
+      <div class="word"><div><b>${esc(en)}</b><span>${esc(fr)}</span>${ex ? `<i class="word-ex">${esc(ex)}</i>` : ""}</div>
         <button class="say" data-en="${esc(en)}" aria-label="Écouter">${icon("sound")}</button></div>`).join("")}
     </div>
     <div class="dock"><button class="btn lv" id="go">${icon("play")}Commencer la leçon</button></div>
@@ -280,8 +356,10 @@ function lesson(id) {
   root.querySelector("#go").onclick = () => exercise(l, 0, 0);
 }
 
+
 const KINDS = {
   qcm: ["target", "Choisis la bonne réponse"],
+  listen: ["sound", "Écoute"],
   translate: ["pen", "Traduis en anglais"],
   speak: ["chat", "Expression orale"],
 };
@@ -291,8 +369,9 @@ function exercise(l, i, score) {
   const ex = l.exercises[i];
   const [kIcon, kLabel] = KINDS[ex.type];
   let body;
-  if (ex.type === "qcm") {
-    body = `<div class="choices">${ex.choices.map((c, k) =>
+  if (ex.type === "qcm" || ex.type === "listen") {
+    body = `${ex.type === "listen" ? `<button class="say big-say" id="play">${icon("sound")}Réécouter</button>` : ""}
+      <div class="choices">${ex.choices.map((c, k) =>
       `<button class="choice" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${esc(c)}</button>`).join("")}</div>`;
   } else {
     const speakUI = ex.type === "speak" && Rec
@@ -311,7 +390,7 @@ function exercise(l, i, score) {
     <span class="ex-kind">${icon(kIcon)}${kLabel}</span>
     <p class="q">${esc(ex.q)}</p>
     ${body}
-    ${ex.type === "qcm" ? "" : `<div class="dock"><button class="btn lv" id="ok" disabled>Valider</button></div>`}
+    ${ex.type === "qcm" || ex.type === "listen" ? "" : `<div class="dock"><button class="btn lv" id="ok" disabled>Valider</button></div>`}
   `, { lv: l.lv.id });
   root.querySelector("#quit").onclick = () => lesson(l.id);
 
@@ -332,12 +411,16 @@ function exercise(l, i, score) {
     sheet.querySelector("#nx").onclick = () => exercise(l, i + 1, score + (good ? 1 : 0));
   };
 
-  if (ex.type === "qcm") {
+  if (ex.type === "listen") {
+    root.querySelector("#play").onclick = () => speak(ex.audio);
+    setTimeout(() => speak(ex.audio), 300);
+  }
+  if (ex.type === "qcm" || ex.type === "listen") {
     root.querySelectorAll(".choice").forEach((b) => (b.onclick = () => {
       const good = +b.dataset.k === ex.answer;
       b.classList.add(good ? "right" : "wrong");
       if (!good) root.querySelector(`.choice[data-k="${ex.answer}"]`).classList.add("right");
-      next(good, ex.choices[ex.answer]);
+      next(good, ex.type === "listen" ? `${ex.audio} = ${ex.choices[ex.answer]}` : ex.choices[ex.answer]);
     }));
   } else {
     const input = root.querySelector("#ans");
@@ -362,7 +445,11 @@ function finish(l, score) {
   P().done[l.id] = true;
   const gained = 10 + score * 5;
   let added = 0;
-  for (const [fr, en] of l.words) if (!P().deck[en]) { P().deck[en] = newCard(fr, en); added++; }
+  if (l.bankWords) {
+    for (const w of l.bankWords) if (!inDeck(w)) { addWord(w); added++; }
+  } else {
+    for (const [fr, en] of l.words) if (!P().deck[en]) { P().deck[en] = newCard(fr, en); added++; }
+  }
   addXp(gained);
   const acc = Math.round((score / l.exercises.length) * 100);
   render(`
@@ -813,7 +900,7 @@ function placementResult(t) {
   root.querySelector("#h").onclick = home;
   root.querySelector("#start").onclick = () => {
     // Les leçons des niveaux inférieurs sont marquées comme acquises (sans ajouter leurs mots aux cartes).
-    LEVELS.slice(0, i).forEach((lv) => lv.lessons.forEach((l) => (state.done[l.id] = true)));
+    levels().slice(0, i).forEach((lv) => lv.lessons.forEach((l) => (state.done[l.id] = true)));
     save();
     home();
   };
@@ -1346,5 +1433,9 @@ function jury() {
 }
 
 const TABS = { home, words: wordsHome, review: reviewSession, profile, training };
-home();
+// Le parcours a besoin du découpage en leçons de vocabulaire : on charge les deux index d'abord.
+const loadAllIndexes = () => Promise.all(["general", "legal"].map(async (m) => {
+  if (!banks[m].index) banks[m].index = await (await fetch(`${m === "legal" ? "words-legal" : "words"}/index.json`)).json();
+}));
+loadAllIndexes().catch(() => {}).finally(home);
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});

@@ -61,6 +61,7 @@
 [data-lv="M2"] { --lv: #0f766e; --lv-2: #155e75; }
 [data-lv="M3"] { --lv: #9a3412; --lv-2: #b45309; }
 [data-lv="M4"] { --lv: #6d28d9; --lv-2: #9d174d; }
+[data-lv="M5"] { --lv: #b45309; --lv-2: #92400e; }
 .mode-chip { margin-left: 2px; padding: 3px 8px; border-radius: 8px; font-size: .68rem; font-weight: 800; letter-spacing: .06em; color: #1b2a63; background: linear-gradient(135deg, #f7d774, #d4a017); }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -204,6 +205,9 @@ h1, h2, h3 { margin: 0; letter-spacing: -.02em; }
 }
 @keyframes pulse { 0% { transform: scale(.92); opacity: .6; } 100% { transform: scale(1.18); opacity: 0; } }
 .node-label { font-size: .82rem; font-weight: 700; text-align: center; line-height: 1.25; }
+.node.vocab .node-btn { width: 62px; height: 58px; }
+.node.vocab .node-btn svg.i { width: 24px; height: 24px; }
+.node.vocab .node-label { font-weight: 600; opacity: .85; }
 .node.todo .node-label { color: var(--muted); }
 .start-tag {
   position: absolute; top: -34px; left: 50%; transform: translateX(-50%);
@@ -269,6 +273,7 @@ h1, h2, h3 { margin: 0; letter-spacing: -.02em; }
 .word div { flex: 1; min-width: 0; }
 .word b { display: block; font-size: 1.02rem; }
 .word span { color: var(--muted); font-size: .85rem; }
+.word .word-ex { display: block; margin-top: 4px; font-size: .82rem; color: var(--muted); font-style: italic; }
 .say {
   width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; flex: none;
   color: var(--lv); background: color-mix(in srgb, var(--lv) 12%, transparent);

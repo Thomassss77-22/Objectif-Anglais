@@ -72,6 +72,59 @@ def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
 
+UNIT_MAX = 15   # mots par leçon de vocabulaire
+UNIT_MIN = 6    # en dessous, les mots rejoignent une leçon « vocabulaire varié » du même niveau
+
+
+def split_even(items, size):
+    """Découpe en paquets de taille équilibrée, sans dépasser size."""
+    n = -(-len(items) // size)
+    return [items[i * len(items) // n:(i + 1) * len(items) // n] for i in range(n)]
+
+
+def make_units(all_words):
+    """Leçons de vocabulaire : chaque mot de la banque figure dans exactement une leçon.
+    Banque générale : par niveau puis par thème. Banque juridique : par thème (module 5)."""
+    units = []
+    ref = lambda c, e: f"{c['id']}/{e['id']}"
+    if SUFFIX:
+        cats = []
+        for c, e in all_words:
+            if c not in cats:
+                cats.append(c)
+        for c in cats:
+            words = [e for cc, e in all_words if cc is c]
+            parts = split_even(words, UNIT_MAX)
+            for k, part in enumerate(parts, 1):
+                title = c["name"] + (f" ({k}/{len(parts)})" if len(parts) > 1 else "")
+                units.append({"id": f"v-legal-{c['id']}-{k}", "lv": "M5", "cat": c["id"], "title": title,
+                              "ids": [ref(c, e) for e in part]})
+        return units
+    for lv in LEVELS:
+        mixed = []
+        cats = []
+        for c, e in all_words:
+            if e["lv"] == lv and c not in cats:
+                cats.append(c)
+        for c in cats:
+            words = [e for cc, e in all_words if cc is c and e["lv"] == lv]
+            if len(words) < UNIT_MIN:
+                mixed.extend((c, e) for e in words)
+                continue
+            parts = split_even(words, UNIT_MAX)
+            for k, part in enumerate(parts, 1):
+                title = c["name"] + (f" ({k}/{len(parts)})" if len(parts) > 1 else "")
+                units.append({"id": f"v-{lv}-{c['id']}-{k}", "lv": lv, "cat": c["id"], "title": title,
+                              "ids": [ref(c, e) for e in part]})
+        if mixed:
+            parts = split_even(mixed, UNIT_MAX)
+            for k, part in enumerate(parts, 1):
+                title = "Vocabulaire varié" + (f" ({k}/{len(parts)})" if len(parts) > 1 else "")
+                units.append({"id": f"v-{lv}-mix-{k}", "lv": lv, "cat": "mix", "title": title,
+                              "ids": [ref(c, e) for c, e in part]})
+    return units
+
+
 def main():
     ranks = load_ranks()
     errors = []
@@ -82,6 +135,7 @@ def main():
             cats.append({"id": cid, "name": name, "icon": icon, "desc": desc})
 
     seen = {}  # id -> (catégorie, français)
+    all_words = []  # (catégorie, mot) pour les leçons de vocabulaire
     OUT.mkdir(parents=True, exist_ok=True)
     index = []
     total = 0
@@ -122,8 +176,15 @@ def main():
         counts = {lv: sum(e["lv"] == lv for e in entries) for lv in LEVELS}
         index.append({**cat, "count": len(entries), "levels": counts})
         total += len(entries)
+        all_words.extend((cat, e) for e in entries)
 
-    (OUT / "index.json").write_text(json.dumps({"total": total, "categories": index}, ensure_ascii=False, indent=1), encoding="utf-8")
+    units = make_units(all_words)
+    (OUT / "index.json").write_text(json.dumps({"total": total, "categories": index, "units": units},
+                                               ensure_ascii=False, indent=1), encoding="utf-8")
+    covered = sum(len(u["ids"]) for u in units)
+    print(f"{len(units)} leçons de vocabulaire · {covered}/{total} mots couverts")
+    if covered != total:
+        errors.append("des mots ne sont dans aucune leçon de vocabulaire")
     for e in errors:
         print("ERREUR", e, file=sys.stderr)
     by_lv = {lv: sum(c["levels"][lv] for c in index) for lv in LEVELS}

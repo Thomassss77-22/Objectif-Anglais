@@ -44,6 +44,12 @@ app/
   (≤ 800 A1, ≤ 2 000 A2, ≤ 4 000 B1, ≤ 8 000 B2, ≤ 15 000 C1, au-delà C2).
 - Clé de carte : le mot anglais (commune avec les leçons), ou « mot (sens) » pour un mot à plusieurs sens.
 - Au plus 20 nouvelles cartes introduites par jour en révision.
+- Leçons de vocabulaire : le script découpe la banque en `units` (dans `index.json`) de 6 à 15 mots,
+  par niveau et par catégorie (les petits restes d'un niveau forment des leçons « Vocabulaire varié ») ;
+  en CRFPA, par catégorie, dans un module 5. Chaque mot est dans exactement une leçon (`node tools/check_lessons.mjs` le vérifie).
+- `app.js` intercale ces leçons entre les leçons de grammaire de chaque niveau ; leurs exercices
+  (QCM dans les deux sens, écoute, traduction, phrase à compléter) sont générés à l'ouverture, et les mots
+  rejoignent les cartes à la fin de la leçon.
 
 ## Répétition espacée (SM-2)
 Note de 0 à 5 après chaque carte (dans l'UI : *Raté* = 1, *Difficile* = 3, *Bien* = 4, *Facile* = 5).

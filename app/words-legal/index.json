@@ -286,5 +286,1054 @@
     "C2": 0
    }
   }
+ ],
+ "units": [
+  {
+   "id": "v-legal-press-1",
+   "lv": "M5",
+   "cat": "press",
+   "title": "Analyser un article de presse (1/3)",
+   "ids": [
+    "press/a-daily",
+    "press/a-similar-debate",
+    "press/by-contrast",
+    "press/it-deals-with",
+    "press/roughly",
+    "press/the-article-can-be-divided-into",
+    "press/the-article-is-taken-from",
+    "press/the-journalist-states-that",
+    "press/the-tone-is-ironic",
+    "press/this-raises-the-question-of",
+    "press/to-go-back-to"
+   ]
+  },
+  {
+   "id": "v-legal-press-2",
+   "lv": "M5",
+   "cat": "press",
+   "title": "Analyser un article de presse (2/3)",
+   "ids": [
+    "press/to-highlight",
+    "press/to-move-on-to",
+    "press/to-point-out",
+    "press/to-report",
+    "press/to-stress",
+    "press/to-sum-up",
+    "press/to-sum-up-the-main-points",
+    "press/to-tackle-the-issue-of",
+    "press/a-case-in-point",
+    "press/an-op-ed",
+    "press/editorial-line",
+    "press/it-should-be-stressed-that"
+   ]
+  },
+  {
+   "id": "v-legal-press-3",
+   "lv": "M5",
+   "cat": "press",
+   "title": "Analyser un article de presse (3/3)",
+   "ids": [
+    "press/it-will-be-interesting-to-see-whether",
+    "press/no-fewer-than",
+    "press/since-this-article-was-written",
+    "press/the-trigger",
+    "press/this-is-all-the-more-significant-since",
+    "press/to-be-worth-commenting-on",
+    "press/to-play-down",
+    "press/to-recount",
+    "press/to-shed-light-on",
+    "press/to-what-extent",
+    "press/what-is-at-stake",
+    "press/what-is-particularly-striking"
+   ]
+  },
+  {
+   "id": "v-legal-interview-1",
+   "lv": "M5",
+   "cat": "interview",
+   "title": "Entretien avec le jury (1/2)",
+   "ids": [
+    "interview/could-you-repeat-the-question-please",
+    "interview/i-don-t-know-the-exact-figure-but",
+    "interview/i-m-afraid-i-don-t-quite-agree",
+    "interview/i-m-not-entirely-sure-but",
+    "interview/could-you-rephrase-that",
+    "interview/do-you-mean-that",
+    "interview/if-i-were-the-judge",
+    "interview/let-me-rephrase-that",
+    "interview/let-me-think-about-it-for-a-second",
+    "interview/sorry-i-meant"
+   ]
+  },
+  {
+   "id": "v-legal-interview-2",
+   "lv": "M5",
+   "cat": "interview",
+   "title": "Entretien avec le jury (2/2)",
+   "ids": [
+    "interview/that-said",
+    "interview/that-s-a-very-interesting-question",
+    "interview/the-way-i-see-it",
+    "interview/i-share-this-view-to-a-certain-extent",
+    "interview/i-d-side-with",
+    "interview/i-ve-never-thought-about-it-that-way",
+    "interview/admittedly",
+    "interview/it-could-be-argued-that",
+    "interview/there-is-some-truth-in-that",
+    "interview/to-go-back-to-what-you-were-saying",
+    "interview/with-respect-i-would-argue-that"
+   ]
+  },
+  {
+   "id": "v-legal-sources-1",
+   "lv": "M5",
+   "cat": "sources",
+   "title": "Sources du droit et systèmes juridiques (1/2)",
+   "ids": [
+    "sources/act-of-parliament",
+    "sources/civil-code",
+    "sources/case-law",
+    "sources/civil-law-system",
+    "sources/common-law",
+    "sources/legislation",
+    "sources/precedent",
+    "sources/private-law",
+    "sources/public-law",
+    "sources/to-come-into-force",
+    "sources/to-pass-a-law",
+    "sources/treaty",
+    "sources/a-government-bill"
+   ]
+  },
+  {
+   "id": "v-legal-sources-2",
+   "lv": "M5",
+   "cat": "sources",
+   "title": "Sources du droit et systèmes juridiques (2/2)",
+   "ids": [
+    "sources/a-private-member-s-bill",
+    "sources/law-enforcement",
+    "sources/lawful",
+    "sources/legal-certainty",
+    "sources/legal-scholarship",
+    "sources/stare-decisis",
+    "sources/statute",
+    "sources/to-abide-by",
+    "sources/to-amend",
+    "sources/to-comply-with",
+    "sources/to-enact-legislation",
+    "sources/to-enforce",
+    "sources/to-repeal",
+    "sources/unlawful"
+   ]
+  },
+  {
+   "id": "v-legal-institutions-1",
+   "lv": "M5",
+   "cat": "institutions",
+   "title": "Juridictions et professions (1/3)",
+   "ids": [
+    "institutions/supreme-court",
+    "institutions/attorney",
+    "institutions/fees",
+    "institutions/law-firm",
+    "institutions/chief-justice",
+    "institutions/constitutional-council",
+    "institutions/council-of-state",
+    "institutions/court-of-appeal",
+    "institutions/court-of-cassation",
+    "institutions/crown-court"
+   ]
+  },
+  {
+   "id": "v-legal-institutions-2",
+   "lv": "M5",
+   "cat": "institutions",
+   "title": "Juridictions et professions (2/3)",
+   "ids": [
+    "institutions/crown-prosecution-service",
+    "institutions/district-attorney",
+    "institutions/justice",
+    "institutions/king-s-counsel",
+    "institutions/a-court-appointed-lawyer",
+    "institutions/attorney-client-privilege",
+    "institutions/barrister",
+    "institutions/chambers",
+    "institutions/contingency-fees",
+    "institutions/court-clerk",
+    "institutions/judicial-officer"
+   ]
+  },
+  {
+   "id": "v-legal-institutions-3",
+   "lv": "M5",
+   "cat": "institutions",
+   "title": "Juridictions et professions (3/3)",
+   "ids": [
+    "institutions/juror",
+    "institutions/legal-aid",
+    "institutions/legal-professional-privilege",
+    "institutions/magistrates-court",
+    "institutions/solicitor",
+    "institutions/the-bar",
+    "institutions/the-judiciary",
+    "institutions/the-prosecution",
+    "institutions/to-be-called-to-the-bar",
+    "institutions/to-be-sworn-in",
+    "institutions/to-take-silk"
+   ]
+  },
+  {
+   "id": "v-legal-criminal-1",
+   "lv": "M5",
+   "cat": "criminal",
+   "title": "Procédure pénale (1/3)",
+   "ids": [
+    "criminal/a-criminal-record",
+    "criminal/criminal-law",
+    "criminal/investigation",
+    "criminal/offence",
+    "criminal/suspect",
+    "criminal/the-accused",
+    "criminal/the-defendant",
+    "criminal/trial",
+    "criminal/verdict",
+    "criminal/witness",
+    "criminal/a-miscarriage-of-justice",
+    "criminal/a-repeat-offender",
+    "criminal/a-suspended-sentence",
+    "criminal/acquittal"
+   ]
+  },
+  {
+   "id": "v-legal-criminal-2",
+   "lv": "M5",
+   "cat": "criminal",
+   "title": "Procédure pénale (2/3)",
+   "ids": [
+    "criminal/bail",
+    "criminal/beyond-reasonable-doubt",
+    "criminal/capital-punishment",
+    "criminal/charge",
+    "criminal/conviction",
+    "criminal/death-row",
+    "criminal/felony",
+    "criminal/indictment",
+    "criminal/investigating-judge",
+    "criminal/manslaughter",
+    "criminal/misdemeanor",
+    "criminal/parole",
+    "criminal/perjury",
+    "criminal/plea-bargaining"
+   ]
+  },
+  {
+   "id": "v-legal-criminal-3",
+   "lv": "M5",
+   "cat": "criminal",
+   "title": "Procédure pénale (3/3)",
+   "ids": [
+    "criminal/police-custody",
+    "criminal/pre-trial-detention",
+    "criminal/presumption-of-innocence",
+    "criminal/reoffending",
+    "criminal/self-defence",
+    "criminal/to-acquit",
+    "criminal/to-be-placed-under-formal-investigation",
+    "criminal/to-be-remanded-in-custody",
+    "criminal/to-charge-someone-with",
+    "criminal/to-convict",
+    "criminal/to-indict",
+    "criminal/to-plead-guilty",
+    "criminal/to-sentence",
+    "criminal/to-testify"
+   ]
+  },
+  {
+   "id": "v-legal-civil-1",
+   "lv": "M5",
+   "cat": "civil",
+   "title": "Procès civil et contrats (1/3)",
+   "ids": [
+    "civil/claim",
+    "civil/evidence",
+    "civil/harm",
+    "civil/hearing",
+    "civil/lawsuit",
+    "civil/to-appeal",
+    "civil/to-sue",
+    "civil/a-brief",
+    "civil/a-formal-notice",
+    "civil/an-affidavit",
+    "civil/binding"
+   ]
+  },
+  {
+   "id": "v-legal-civil-2",
+   "lv": "M5",
+   "cat": "civil",
+   "title": "Procès civil et contrats (2/3)",
+   "ids": [
+    "civil/breach-of-contract",
+    "civil/burden-of-proof",
+    "civil/claimant",
+    "civil/court-filings",
+    "civil/damages",
+    "civil/injunction",
+    "civil/liability",
+    "civil/limitation-period",
+    "civil/negligence",
+    "civil/plaintiff",
+    "civil/settlement",
+    "civil/standing"
+   ]
+  },
+  {
+   "id": "v-legal-civil-3",
+   "lv": "M5",
+   "cat": "civil",
+   "title": "Procès civil et contrats (3/3)",
+   "ids": [
+    "civil/statute-of-limitations",
+    "civil/summary-proceedings",
+    "civil/time-barred",
+    "civil/to-be-liable",
+    "civil/to-dismiss",
+    "civil/to-overturn",
+    "civil/to-quash",
+    "civil/to-set-aside",
+    "civil/to-settle-out-of-court",
+    "civil/to-toss-out-a-case",
+    "civil/to-uphold",
+    "civil/tort-law"
+   ]
+  },
+  {
+   "id": "v-legal-rights-1",
+   "lv": "M5",
+   "cat": "rights",
+   "title": "Constitution et libertés (1/2)",
+   "ids": [
+    "rights/asylum-seeker",
+    "rights/freedom-of-speech",
+    "rights/fundamental-rights",
+    "rights/defender-of-rights",
+    "rights/a-state-of-emergency",
+    "rights/affirmative-action",
+    "rights/assisted-dying",
+    "rights/checks-and-balances",
+    "rights/civil-liberties",
+    "rights/constitutional-review",
+    "rights/deportation",
+    "rights/due-process",
+    "rights/equal-protection",
+    "rights/freedom-of-assembly"
+   ]
+  },
+  {
+   "id": "v-legal-rights-2",
+   "lv": "M5",
+   "cat": "rights",
+   "title": "Constitution et libertés (2/2)",
+   "ids": [
+    "rights/impeachment",
+    "rights/judicial-review",
+    "rights/priority-preliminary-ruling-on-constitutionality",
+    "rights/proportionality",
+    "rights/secularism",
+    "rights/the-european-convention-on-human-rights",
+    "rights/the-european-court-of-human-rights",
+    "rights/the-right-to-a-fair-trial",
+    "rights/the-right-to-privacy",
+    "rights/the-rule-of-law",
+    "rights/the-separation-of-powers",
+    "rights/to-infringe",
+    "rights/to-strike-down",
+    "rights/whistleblower"
+   ]
+  },
+  {
+   "id": "v-legal-falsefriends-1",
+   "lv": "M5",
+   "cat": "falsefriends",
+   "title": "Faux amis juridiques (1/2)",
+   "ids": [
+    "falsefriends/actually",
+    "falsefriends/eventually",
+    "falsefriends/lecture",
+    "falsefriends/agenda",
+    "falsefriends/arrest",
+    "falsefriends/competition",
+    "falsefriends/control",
+    "falsefriends/crime",
+    "falsefriends/issue",
+    "falsefriends/sensible"
+   ]
+  },
+  {
+   "id": "v-legal-falsefriends-2",
+   "lv": "M5",
+   "cat": "falsefriends",
+   "title": "Faux amis juridiques (2/2)",
+   "ids": [
+    "falsefriends/sentence",
+    "falsefriends/to-argue",
+    "falsefriends/attorney-general",
+    "falsefriends/doctrine",
+    "falsefriends/jurisdiction",
+    "falsefriends/jurisprudence",
+    "falsefriends/magistrate",
+    "falsefriends/prejudice",
+    "falsefriends/process",
+    "falsefriends/to-condemn",
+    "falsefriends/without-prejudice"
+   ]
+  },
+  {
+   "id": "v-legal-verbs-1",
+   "lv": "M5",
+   "cat": "verbs",
+   "title": "Verbes prépositionnels et idiomes (1/2)",
+   "ids": [
+    "verbs/to-accuse-someone-of",
+    "verbs/to-call-for",
+    "verbs/to-insist-on",
+    "verbs/to-prevent-someone-from-doing",
+    "verbs/to-result-in",
+    "verbs/a-bone-of-contention",
+    "verbs/a-double-edged-sword",
+    "verbs/a-smoking-gun",
+    "verbs/justice-delayed-is-justice-denied",
+    "verbs/the-jury-is-still-out",
+    "verbs/to-account-for"
+   ]
+  },
+  {
+   "id": "v-legal-verbs-2",
+   "lv": "M5",
+   "cat": "verbs",
+   "title": "Verbes prépositionnels et idiomes (2/2)",
+   "ids": [
+    "verbs/to-add-fuel-to-the-fire",
+    "verbs/to-backfire",
+    "verbs/to-blow-the-whistle-on",
+    "verbs/to-crack-down-on",
+    "verbs/to-deter-someone-from",
+    "verbs/to-do-away-with",
+    "verbs/to-object-to",
+    "verbs/to-pave-the-way-for",
+    "verbs/to-stem-from",
+    "verbs/to-strike-a-balance-between",
+    "verbs/to-take-the-law-into-one-s-own-hands",
+    "verbs/to-toe-the-line"
+   ]
+  },
+  {
+   "id": "v-legal-collocations-1",
+   "lv": "M5",
+   "cat": "collocations",
+   "title": "Collocations juridiques (1/4)",
+   "ids": [
+    "collocations/to-be-above-the-law",
+    "collocations/to-take-legal-action",
+    "collocations/a-landmark-ruling",
+    "collocations/a-loophole",
+    "collocations/a-split-decision",
+    "collocations/a-unanimous-ruling",
+    "collocations/to-abide-by-a-ruling",
+    "collocations/to-award-damages",
+    "collocations/to-be-held-liable",
+    "collocations/to-be-in-breach-of",
+    "collocations/to-breach-a-duty",
+    "collocations/to-bring-a-case"
+   ]
+  },
+  {
+   "id": "v-legal-collocations-2",
+   "lv": "M5",
+   "cat": "collocations",
+   "title": "Collocations juridiques (2/4)",
+   "ids": [
+    "collocations/to-bring-charges",
+    "collocations/to-bring-proceedings",
+    "collocations/to-challenge-a-decision",
+    "collocations/to-close-a-loophole",
+    "collocations/to-deliver-a-judgment",
+    "collocations/to-dismiss-a-claim",
+    "collocations/to-drop-the-charges",
+    "collocations/to-face-charges",
+    "collocations/to-file-a-lawsuit",
+    "collocations/to-grant-an-injunction",
+    "collocations/to-grant-bail",
+    "collocations/to-grant-permission-to-appeal"
+   ]
+  },
+  {
+   "id": "v-legal-collocations-3",
+   "lv": "M5",
+   "cat": "collocations",
+   "title": "Collocations juridiques (3/4)",
+   "ids": [
+    "collocations/to-hand-down-a-ruling",
+    "collocations/to-hand-down-a-sentence",
+    "collocations/to-hear-a-case",
+    "collocations/to-infringe-a-right",
+    "collocations/to-issue-a-warrant",
+    "collocations/to-lodge-an-appeal",
+    "collocations/to-overturn-a-conviction",
+    "collocations/to-pass-legislation",
+    "collocations/to-press-charges",
+    "collocations/to-raise-a-point-of-law",
+    "collocations/to-reach-a-settlement",
+    "collocations/to-reach-a-verdict"
+   ]
+  },
+  {
+   "id": "v-legal-collocations-4",
+   "lv": "M5",
+   "cat": "collocations",
+   "title": "Collocations juridiques (4/4)",
+   "ids": [
+    "collocations/to-relax-the-rules",
+    "collocations/to-return-a-verdict",
+    "collocations/to-rule-against",
+    "collocations/to-rule-in-favour-of",
+    "collocations/to-seek-damages",
+    "collocations/to-serve-a-sentence",
+    "collocations/to-set-a-precedent",
+    "collocations/to-stand-trial",
+    "collocations/to-tighten-the-law",
+    "collocations/to-uphold-a-conviction",
+    "collocations/to-uphold-the-rule-of-law",
+    "collocations/to-win-on-appeal"
+   ]
+  },
+  {
+   "id": "v-legal-courtroom-1",
+   "lv": "M5",
+   "cat": "courtroom",
+   "title": "Au tribunal (1/3)",
+   "ids": [
+    "courtroom/your-honour",
+    "courtroom/courtroom",
+    "courtroom/my-lord-my-lady",
+    "courtroom/a-court-reporter",
+    "courtroom/a-gag-order",
+    "courtroom/a-hung-jury",
+    "courtroom/a-majority-verdict",
+    "courtroom/a-mistrial",
+    "courtroom/a-public-hearing",
+    "courtroom/a-reasoned-decision",
+    "courtroom/admissible"
+   ]
+  },
+  {
+   "id": "v-legal-courtroom-2",
+   "lv": "M5",
+   "cat": "courtroom",
+   "title": "Au tribunal (2/3)",
+   "ids": [
+    "courtroom/behind-closed-doors",
+    "courtroom/closing-argument",
+    "courtroom/contempt-of-court",
+    "courtroom/cross-examination",
+    "courtroom/exhibit",
+    "courtroom/expert-witness",
+    "courtroom/hearsay",
+    "courtroom/in-camera",
+    "courtroom/inadmissible",
+    "courtroom/objection-overruled",
+    "courtroom/objection-sustained",
+    "courtroom/opening-statement"
+   ]
+  },
+  {
+   "id": "v-legal-courtroom-3",
+   "lv": "M5",
+   "cat": "courtroom",
+   "title": "Au tribunal (3/3)",
+   "ids": [
+    "courtroom/sentencing-hearing",
+    "courtroom/the-bench",
+    "courtroom/the-dock",
+    "courtroom/the-witness-box",
+    "courtroom/the-witness-stand",
+    "courtroom/to-adjourn",
+    "courtroom/to-cross-examine",
+    "courtroom/to-object",
+    "courtroom/to-plead-a-case",
+    "courtroom/to-reserve-judgment",
+    "courtroom/to-take-the-oath",
+    "courtroom/under-oath"
+   ]
+  },
+  {
+   "id": "v-legal-profession-1",
+   "lv": "M5",
+   "cat": "profession",
+   "title": "La profession et sa déontologie (1/3)",
+   "ids": [
+    "profession/a-business-lawyer",
+    "profession/a-criminal-lawyer",
+    "profession/a-human-rights-lawyer",
+    "profession/a-tax-lawyer",
+    "profession/a-trainee",
+    "profession/a-work-placement",
+    "profession/an-internship",
+    "profession/the-right-to-a-lawyer",
+    "profession/to-advise-a-client",
+    "profession/to-represent-a-client",
+    "profession/a-conflict-of-interest"
+   ]
+  },
+  {
+   "id": "v-legal-profession-2",
+   "lv": "M5",
+   "cat": "profession",
+   "title": "La profession et sa déontologie (2/3)",
+   "ids": [
+    "profession/a-practising-lawyer",
+    "profession/a-retainer",
+    "profession/access-to-justice",
+    "profession/billable-hours",
+    "profession/confidentiality",
+    "profession/continuing-professional-development",
+    "profession/dignity-conscience-independence-probity-and-humanity",
+    "profession/disciplinary-proceedings",
+    "profession/duty-of-candour",
+    "profession/in-house-counsel",
+    "profession/legal-ethics"
+   ]
+  },
+  {
+   "id": "v-legal-profession-3",
+   "lv": "M5",
+   "cat": "profession",
+   "title": "La profession et sa déontologie (3/3)",
+   "ids": [
+    "profession/pro-bono",
+    "profession/professional-misconduct",
+    "profession/professional-secrecy",
+    "profession/the-cab-rank-rule",
+    "profession/the-duty-of-competence",
+    "profession/the-lawyer-s-oath",
+    "profession/to-act-for",
+    "profession/to-be-disbarred",
+    "profession/to-be-struck-off",
+    "profession/to-practise-law",
+    "profession/to-qualify-as-a-lawyer",
+    "profession/to-take-on-a-case"
+   ]
+  },
+  {
+   "id": "v-legal-politics-1",
+   "lv": "M5",
+   "cat": "politics",
+   "title": "Politique et institutions UK / US (1/3)",
+   "ids": [
+    "politics/congress",
+    "politics/parliament",
+    "politics/a-general-election",
+    "politics/a-referendum",
+    "politics/an-mp",
+    "politics/the-house-of-commons",
+    "politics/the-house-of-lords",
+    "politics/the-house-of-representatives",
+    "politics/the-senate",
+    "politics/the-federal-government",
+    "politics/royal-assent",
+    "politics/a-backbencher",
+    "politics/a-coalition-government"
+   ]
+  },
+  {
+   "id": "v-legal-politics-2",
+   "lv": "M5",
+   "cat": "politics",
+   "title": "Politique et institutions UK / US (2/3)",
+   "ids": [
+    "politics/a-filibuster",
+    "politics/a-free-vote",
+    "politics/a-hung-parliament",
+    "politics/a-landslide",
+    "politics/a-partisan-divide",
+    "politics/a-peer",
+    "politics/a-swing-state",
+    "politics/an-executive-order",
+    "politics/bipartisan",
+    "politics/devolution",
+    "politics/gerrymandering",
+    "politics/gridlock",
+    "politics/polarisation"
+   ]
+  },
+  {
+   "id": "v-legal-politics-3",
+   "lv": "M5",
+   "cat": "politics",
+   "title": "Politique et institutions UK / US (3/3)",
+   "ids": [
+    "politics/second-reading",
+    "politics/states-rights",
+    "politics/the-attorney-general",
+    "politics/the-electoral-college",
+    "politics/the-home-office",
+    "politics/the-home-secretary",
+    "politics/the-justice-department",
+    "politics/the-lord-chancellor",
+    "politics/the-speaker",
+    "politics/the-midterm-elections",
+    "politics/to-be-sworn-into-office",
+    "politics/to-impeach",
+    "politics/to-table-an-amendment",
+    "politics/to-veto"
+   ]
+  },
+  {
+   "id": "v-legal-international-1",
+   "lv": "M5",
+   "cat": "international",
+   "title": "UE et droit international (1/3)",
+   "ids": [
+    "international/brexit",
+    "international/a-member-state",
+    "international/international-law",
+    "international/sanctions",
+    "international/the-european-commission",
+    "international/the-european-parliament",
+    "international/the-united-nations",
+    "international/to-sign-a-treaty",
+    "international/eu-law",
+    "international/a-margin-of-appreciation",
+    "international/a-preliminary-ruling"
+   ]
+  },
+  {
+   "id": "v-legal-international-2",
+   "lv": "M5",
+   "cat": "international",
+   "title": "UE et droit international (2/3)",
+   "ids": [
+    "international/an-arrest-warrant",
+    "international/crimes-against-humanity",
+    "international/diplomatic-immunity",
+    "international/directly-applicable",
+    "international/extradition",
+    "international/genocide",
+    "international/non-refoulement",
+    "international/refugee-status",
+    "international/sovereignty",
+    "international/the-council-of-europe",
+    "international/the-council-of-the-european-union"
+   ]
+  },
+  {
+   "id": "v-legal-international-3",
+   "lv": "M5",
+   "cat": "international",
+   "title": "UE et droit international (3/3)",
+   "ids": [
+    "international/the-court-of-justice-of-the-european-union",
+    "international/the-geneva-convention",
+    "international/the-international-court-of-justice",
+    "international/the-international-criminal-court",
+    "international/the-security-council",
+    "international/the-strasbourg-court",
+    "international/the-primacy-of-eu-law",
+    "international/to-extradite",
+    "international/to-find-a-violation",
+    "international/to-ratify-a-treaty",
+    "international/war-crimes"
+   ]
+  },
+  {
+   "id": "v-legal-debates-1",
+   "lv": "M5",
+   "cat": "debates",
+   "title": "Grands débats de société (1/3)",
+   "ids": [
+    "debates/artificial-intelligence",
+    "debates/border-control",
+    "debates/illegal-immigration",
+    "debates/the-cost-of-living",
+    "debates/a-detention-centre",
+    "debates/a-mass-shooting",
+    "debates/abortion-rights",
+    "debates/algorithmic-bias",
+    "debates/cancel-culture",
+    "debates/climate-litigation",
+    "debates/data-protection"
+   ]
+  },
+  {
+   "id": "v-legal-debates-2",
+   "lv": "M5",
+   "cat": "debates",
+   "title": "Grands débats de société (2/3)",
+   "ids": [
+    "debates/disinformation",
+    "debates/end-of-life-care",
+    "debates/facial-recognition",
+    "debates/freedom-of-the-press",
+    "debates/gender-equality",
+    "debates/gun-control",
+    "debates/hate-speech",
+    "debates/mass-surveillance",
+    "debates/police-brutality",
+    "debates/press-freedom",
+    "debates/prison-overcrowding",
+    "debates/pro-choice"
+   ]
+  },
+  {
+   "id": "v-legal-debates-3",
+   "lv": "M5",
+   "cat": "debates",
+   "title": "Grands débats de société (3/3)",
+   "ids": [
+    "debates/pro-life",
+    "debates/racial-profiling",
+    "debates/same-sex-marriage",
+    "debates/systemic-racism",
+    "debates/the-gdpr",
+    "debates/the-gender-pay-gap",
+    "debates/the-housing-crisis",
+    "debates/the-right-to-bear-arms",
+    "debates/the-welfare-state",
+    "debates/to-deport",
+    "debates/to-hold-governments-accountable",
+    "debates/undocumented-migrants"
+   ]
+  },
+  {
+   "id": "v-legal-arguing-1",
+   "lv": "M5",
+   "cat": "arguing",
+   "title": "Commenter et argumenter (1/3)",
+   "ids": [
+    "arguing/a-step-in-the-right-direction",
+    "arguing/at-first-glance",
+    "arguing/in-the-long-run",
+    "arguing/in-the-short-term",
+    "arguing/a-double-standard",
+    "arguing/a-heated-debate",
+    "arguing/a-slippery-slope",
+    "arguing/a-trade-off",
+    "arguing/all-things-considered",
+    "arguing/by-the-same-token",
+    "arguing/far-reaching-consequences"
+   ]
+  },
+  {
+   "id": "v-legal-arguing-2",
+   "lv": "M5",
+   "cat": "arguing",
+   "title": "Commenter et argumenter (2/3)",
+   "ids": [
+    "arguing/it-is-no-coincidence-that",
+    "arguing/it-is-worth-noting-that",
+    "arguing/on-closer-inspection",
+    "arguing/the-bottom-line-is",
+    "arguing/the-crux-of-the-matter",
+    "arguing/this-begs-the-question",
+    "arguing/this-echoes",
+    "arguing/this-goes-to-show-that",
+    "arguing/this-is-reminiscent-of",
+    "arguing/to-be-at-odds-with",
+    "arguing/to-call-into-question"
+   ]
+  },
+  {
+   "id": "v-legal-arguing-3",
+   "lv": "M5",
+   "cat": "arguing",
+   "title": "Commenter et argumenter (3/3)",
+   "ids": [
+    "arguing/to-come-under-fire",
+    "arguing/to-draw-a-parallel-with",
+    "arguing/to-fuel-the-debate",
+    "arguing/to-pave-the-way",
+    "arguing/to-play-devil-s-advocate",
+    "arguing/to-put-it-in-a-nutshell",
+    "arguing/to-raise-concerns",
+    "arguing/to-shift-the-burden",
+    "arguing/to-spark-a-debate",
+    "arguing/to-strike-the-right-balance",
+    "arguing/to-take-a-stand",
+    "arguing/to-weigh-the-pros-and-cons"
+   ]
+  },
+  {
+   "id": "v-legal-figures-1",
+   "lv": "M5",
+   "cat": "figures",
+   "title": "Chiffres et tendances (1/3)",
+   "ids": [
+    "figures/four-hundred-million-dollars",
+    "figures/point-five-per-cent",
+    "figures/to-fall",
+    "figures/to-increase",
+    "figures/to-rise",
+    "figures/twenty-twenty-six",
+    "figures/a-poll",
+    "figures/a-slight-drop",
+    "figures/a-survey",
+    "figures/a-third-of",
+    "figures/by-10"
+   ]
+  },
+  {
+   "id": "v-legal-figures-2",
+   "lv": "M5",
+   "cat": "figures",
+   "title": "Chiffres et tendances (2/3)",
+   "ids": [
+    "figures/just-over",
+    "figures/nearly",
+    "figures/on-average",
+    "figures/the-vast-majority",
+    "figures/to-decrease",
+    "figures/to-double",
+    "figures/a-narrow-majority",
+    "figures/a-record-high",
+    "figures/a-record-low",
+    "figures/a-sharp-rise",
+    "figures/a-steady-decline"
+   ]
+  },
+  {
+   "id": "v-legal-figures-3",
+   "lv": "M5",
+   "cat": "figures",
+   "title": "Chiffres et tendances (3/3)",
+   "ids": [
+    "figures/a-tiny-minority",
+    "figures/a-turnout-of",
+    "figures/a-twofold-increase",
+    "figures/an-estimated",
+    "figures/per-capita",
+    "figures/seven-to-two",
+    "figures/to-halve",
+    "figures/to-level-off",
+    "figures/to-peak",
+    "figures/to-plummet",
+    "figures/to-soar",
+    "figures/well-over"
+   ]
+  },
+  {
+   "id": "v-legal-business-1",
+   "lv": "M5",
+   "cat": "business",
+   "title": "Droit des affaires et du travail (1/3)",
+   "ids": [
+    "business/a-trade-union",
+    "business/an-employment-contract",
+    "business/the-minimum-wage",
+    "business/a-cartel",
+    "business/a-creditor",
+    "business/a-debtor",
+    "business/a-limited-company",
+    "business/a-merger",
+    "business/a-patent",
+    "business/a-public-limited-company",
+    "business/a-shareholder"
+   ]
+  },
+  {
+   "id": "v-legal-business-2",
+   "lv": "M5",
+   "cat": "business",
+   "title": "Droit des affaires et du travail (2/3)",
+   "ids": [
+    "business/a-takeover",
+    "business/a-trademark",
+    "business/a-zero-hours-contract",
+    "business/an-abuse-of-a-dominant-position",
+    "business/antitrust",
+    "business/articles-of-association",
+    "business/collective-bargaining",
+    "business/company-law",
+    "business/competition-law",
+    "business/compliance",
+    "business/copyright"
+   ]
+  },
+  {
+   "id": "v-legal-business-3",
+   "lv": "M5",
+   "cat": "business",
+   "title": "Droit des affaires et du travail (3/3)",
+   "ids": [
+    "business/corporate-social-responsibility",
+    "business/due-diligence",
+    "business/employment-law",
+    "business/infringement",
+    "business/insolvency",
+    "business/intellectual-property",
+    "business/redundancy",
+    "business/the-board-of-directors",
+    "business/the-gig-economy",
+    "business/to-go-into-administration",
+    "business/to-go-into-liquidation",
+    "business/unfair-dismissal"
+   ]
+  },
+  {
+   "id": "v-legal-tax-1",
+   "lv": "M5",
+   "cat": "tax",
+   "title": "Fiscalité et patrimoine (1/3)",
+   "ids": [
+    "tax/vat",
+    "tax/a-tax-return",
+    "tax/a-will",
+    "tax/income-tax",
+    "tax/to-inherit",
+    "tax/a-double-tax-treaty",
+    "tax/a-notary",
+    "tax/a-tax-audit",
+    "tax/a-tax-bracket",
+    "tax/a-tax-break"
+   ]
+  },
+  {
+   "id": "v-legal-tax-2",
+   "lv": "M5",
+   "cat": "tax",
+   "title": "Fiscalité et patrimoine (2/3)",
+   "ids": [
+    "tax/a-tax-haven",
+    "tax/a-tax-loophole",
+    "tax/a-taxpayer",
+    "tax/a-trust",
+    "tax/an-estate",
+    "tax/an-heir",
+    "tax/assets",
+    "tax/capital-gains-tax",
+    "tax/corporation-tax",
+    "tax/double-taxation",
+    "tax/estate-planning"
+   ]
+  },
+  {
+   "id": "v-legal-tax-3",
+   "lv": "M5",
+   "cat": "tax",
+   "title": "Fiscalité et patrimoine (3/3)",
+   "ids": [
+    "tax/gift-tax",
+    "tax/inheritance-tax",
+    "tax/probate",
+    "tax/tax-avoidance",
+    "tax/tax-evasion",
+    "tax/tax-law",
+    "tax/tax-residence",
+    "tax/the-tax-authorities",
+    "tax/to-bequeath",
+    "tax/wealth-management",
+    "tax/wealth-tax"
+   ]
+  }
  ]
 }
