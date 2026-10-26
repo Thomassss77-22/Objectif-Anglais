@@ -669,3 +669,9 @@ h1, h2, h3 { margin: 0; letter-spacing: -.02em; }
 .theme-lessons .ch-row.next { background: color-mix(in srgb, var(--lv) 12%, var(--surface)); }
 .cat-meter { display: block; width: 100%; height: 5px; margin-top: auto; flex: none; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
 .cat-meter i { display: block; height: 100%; border-radius: inherit; background: var(--brand); }
+
+/* Sauvegarde (profil) */
+.backup { padding: 16px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+.backup p { margin: 0 0 8px; font-size: .88rem; line-height: 1.45; }
+.backup-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; }
+.backup-btns .btn { margin: 0; }

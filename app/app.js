@@ -18,13 +18,54 @@ function load() {
     return {};
   }
 }
-const state = Object.assign({ done: {}, deck: {}, xp: 0, streak: 0, lastDay: null, days: {}, mode: "general" }, load());
+const DEFAULTS = () => ({ done: {}, deck: {}, xp: 0, streak: 0, lastDay: null, days: {}, mode: "general" });
+const state = Object.assign(DEFAULTS(), load());
 // Le mode CRFPA a ses propres leçons et cartes ; XP et série sont communes aux deux modes.
 state.legal = Object.assign({ done: {}, deck: {} }, state.legal);
 const legalMode = () => state.mode === "legal";
 const P = () => (legalMode() ? state.legal : state);
 function save() {
   try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {}
+}
+
+// ---------- Sauvegarde ----------
+// La progression ne vit que dans ce navigateur : on peut l'exporter dans un fichier et la restaurer
+// sur un autre appareil.
+const BACKUP_APP = "objectif-anglais";
+function exportProgress() {
+  state.lastBackup = Date.now();
+  save();
+  const blob = new Blob([JSON.stringify({ app: BACKUP_APP, version: 1, exported: new Date().toISOString(), state })], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `objectif-anglais-${dayKey()}.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+// Rappel sur l'accueil dès qu'il y a quelque chose à perdre, puis toutes les deux semaines.
+const needsBackup = () => Object.keys(state.done).length + Object.keys(state.legal.done).length >= 3
+  && (!state.lastBackup || Date.now() - state.lastBackup > 14 * 864e5);
+const isObj = (o) => o && typeof o === "object" && !Array.isArray(o);
+function importProgress(file, after) {
+  const r = new FileReader();
+  r.onload = () => {
+    let d = null;
+    try { d = JSON.parse(r.result); } catch {}
+    const s = d && d.app === BACKUP_APP && d.state;
+    if (!isObj(s) || !isObj(s.done || {}) || !isObj(s.deck || {})) return alert("Ce fichier n'est pas une sauvegarde d'Objectif Anglais.");
+    const lessons = Object.keys(s.done || {}).length + Object.keys(s.legal?.done || {}).length;
+    const cards = Object.keys(s.deck || {}).length + Object.keys(s.legal?.deck || {}).length;
+    const when = new Date(d.exported).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+    if (!confirm(`Restaurer la sauvegarde du ${when} (${lessons} leçons, ${cards} cartes, ${s.xp || 0} XP) ?\nTa progression actuelle sur cet appareil sera remplacée.`)) return;
+    for (const k of Object.keys(state)) delete state[k];
+    Object.assign(state, DEFAULTS(), s);
+    state.legal = Object.assign({ done: {}, deck: {} }, state.legal);
+    save();
+    after();
+  };
+  r.readAsText(file);
 }
 
 const dayKey = (t = Date.now()) => new Date(t).toISOString().slice(0, 10);
@@ -102,6 +143,8 @@ const ICONS = {
   mic: "M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zM19 10v2a7 7 0 0 1-14 0v-2M12 19v3",
   book: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15zM6.5 17A2.5 2.5 0 0 0 4 19.5 2.5 2.5 0 0 0 6.5 22H20v-5",
   star: "m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2-6.2 3.2L7 14.2 2 9.3l6.9-1L12 2z",
+  download: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3",
+  upload: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12",
   trophy: "M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3",
   bulb: "M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z",
   chat: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z",
@@ -228,6 +271,10 @@ function home() {
         <span>${due ? "Révise maintenant pour ne pas oublier" : "Les mots de tes leçons arriveront ici"}</span></div>
       ${due ? `<span class="badge-count">${due}</span>` : `<span class="go">${icon("chevron")}</span>`}
     </button>
+    ${needsBackup() ? `<button class="tile" id="backup-home">
+      <div class="tile-icon alt-test">${icon("download")}</div>
+      <div><b>Sauvegarde ta progression</b><span>${state.lastBackup ? "Ta dernière sauvegarde date de plus de 2 semaines" : "Elle n'existe que sur cet appareil : garde-en une copie"}</span></div>
+      <span class="go">${icon("chevron")}</span></button>` : ""}
     ${legalMode() ? "" : `<button class="tile" id="test-home">
       <div class="tile-icon alt-test">${icon("target")}</div>
       <div><b>${state.placement ? `Ton niveau : ${state.placement.level}` : "Tester mon niveau"}</b>
@@ -251,6 +298,7 @@ function home() {
   root.querySelector("#continue").onclick = () => (next ? lesson(next.id) : reviewSession());
   root.querySelector("#cine-home")?.addEventListener("click", cinema);
   root.querySelector("#test-home")?.addEventListener("click", placementIntro);
+  root.querySelector("#backup-home")?.addEventListener("click", () => { exportProgress(); home(); });
   bindPath(next);
 }
 
@@ -1040,9 +1088,24 @@ function profile() {
         <div><b>${esc(lv.name.split(" — ")[0])}</b><div class="meter"><i style="width:${(n / lv.lessons.length) * 100}%"></i></div></div>
         <em>${n}/${lv.lessons.length}</em></div>`;
     }).join("")}</div>
+    <h4 class="section-title">${icon("download")}Sauvegarde</h4>
+    <div class="backup">
+      <p>Ta progression est enregistrée <b>sur cet appareil uniquement</b>. Télécharge une sauvegarde pour la retrouver
+        sur un autre appareil ou après avoir vidé ton navigateur.</p>
+      <p class="muted small">${state.lastBackup ? `Dernière sauvegarde : ${new Date(state.lastBackup).toLocaleDateString("fr-FR", { day: "numeric", month: "long" })}` : "Aucune sauvegarde pour l'instant."}</p>
+      <div class="backup-btns">
+        <button class="btn" id="export">${icon("download")}Télécharger</button>
+        <button class="btn ghost" id="import">${icon("upload")}Restaurer</button>
+        <input type="file" id="import-file" accept=".json,application/json" hidden>
+      </div>
+    </div>
     <button class="link-danger" id="reset">Réinitialiser ma progression (${legalMode() ? "mode CRFPA" : "anglais général"})</button>
   `, { nav: "profile" });
   root.querySelector("#retest")?.addEventListener("click", placementIntro);
+  root.querySelector("#export").onclick = () => { exportProgress(); profile(); };
+  const file = root.querySelector("#import-file");
+  root.querySelector("#import").onclick = () => file.click();
+  file.onchange = () => file.files[0] && importProgress(file.files[0], home);
   root.querySelectorAll("[data-pace]").forEach((b) => (b.onclick = () => {
     state.newPerDay = +b.dataset.pace;
     save();

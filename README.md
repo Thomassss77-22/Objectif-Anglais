@@ -20,6 +20,7 @@ Fonctionnalités :
 - **Vocabulaire intensif** : dans l'onglet Mots, chaque thème liste ses leçons de vocabulaire avec sa progression et un bouton « Leçon suivante de ce thème ».
 - Rythme réglable dans le profil : 10, 20, 40 ou 60 nouvelles cartes par jour, avec le temps de révision quotidien estimé.
 - XP, série quotidienne, progression sauvegardée localement, fonctionne hors ligne.
+- Sauvegarde : la progression s'exporte dans un fichier (Profil → Sauvegarde) et se restaure sur un autre appareil ; un rappel apparaît sur l'accueil toutes les deux semaines.
 
 ## Test de niveau
 Test adaptatif A1 → C2 (`app/placement.js`) : 72 questions (grammaire, vocabulaire, compréhension écrite et orale),
