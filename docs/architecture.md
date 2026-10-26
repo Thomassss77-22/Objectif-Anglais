@@ -15,7 +15,8 @@ app/
   style.css       styles (mobile d'abord, mode sombre)
   data.js         contenu : niveaux, leçons, vocabulaire, exercices
   srs.js          répétition espacée (SM-2)
-  app.js          navigation, écrans, progression
+  app.js          écrans (parcours, leçon, exercices, révision, profil), progression
+  fonts/          police Plus Jakarta Sans (licence OFL), embarquée pour le hors ligne
   manifest.json   métadonnées PWA
   sw.js           service worker (cache hors ligne)
 ```
@@ -30,7 +31,7 @@ app/
 ## Répétition espacée (SM-2)
 Note de 0 à 5 après chaque carte (dans l'UI : *Raté* = 1, *Difficile* = 3, *Bien* = 4, *Facile* = 5).
 - Note < 3 → `reps = 0`, intervalle 1 jour.
-- Sinon intervalle 1 → 6 → `interval × ef` jours.
+- Sinon intervalle 1 → 6 → `interval × ef` jours (première révision notée *Facile* : 4 jours).
 - `ef = max(1.3, ef + 0.1 − (5−q)(0.08 + (5−q)·0.02))`.
 
 ## Lancer en local

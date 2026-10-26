@@ -13,7 +13,8 @@ export function review(card, q, now = Date.now()) {
     c.interval = 1;
   } else {
     c.reps += 1;
-    c.interval = c.reps === 1 ? 1 : c.reps === 2 ? 6 : Math.round(c.interval * c.ef);
+    // Première révision : « Facile » saute directement à 4 jours.
+    c.interval = c.reps === 1 ? (q === 5 ? 4 : 1) : c.reps === 2 ? 6 : Math.round(c.interval * c.ef);
   }
   c.ef = Math.max(1.3, c.ef + 0.1 - (5 - q) * (0.08 + (5 - q) * 0.02));
   // Une carte ratée revient dans la séance du jour.
