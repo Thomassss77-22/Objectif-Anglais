@@ -730,8 +730,8 @@ function placementIntro() {
     <h4 class="section-title">${icon("alert")}Ce que le test ne mesure pas</h4>
     <div class="tip">L'expression orale et écrite. Ce n'est pas une certification officielle (TOEIC, IELTS, Cambridge) : c'est une estimation fiable pour choisir ton point de départ.</div>
     <div class="dock"><div class="row2">
-      <button class="btn ghost" id="go-noaudio">Sans le son</button>
-      <button class="btn" id="go">${icon("sound")}Oui, j'ai le son</button>
+      <button class="btn ghost" id="go-noaudio">Non</button>
+      <button class="btn" id="go">${icon("sound")}Oui, je peux écouter</button>
     </div></div>
   `);
   root.querySelector("#back").onclick = home;
