@@ -1,0 +1,28 @@
+# anglais | français | exemple | niveau
+statute | la loi (texte voté) | The statute came into force in 2020. | C1
+legislation | la législation | Parliament passed new legislation. | B2
+Act of Parliament | la loi (UK) | The Human Rights Act 1998 is an Act of Parliament. | B2
+a government bill | un projet de loi | The government bill was debated in the Commons. | C1
+a private member's bill | une proposition de loi | It started as a private member's bill. | C1
+case law | la jurisprudence | Case law is a key source of English law. | B2
+precedent | le précédent | The court followed precedent. | B2
+stare decisis | la règle du précédent | Stare decisis ensures legal certainty. | C1
+common law | la common law (droit d'origine jurisprudentielle) | England has a common law system. | B2
+civil law system | le système romano-germanique | France has a civil law system. | B2
+Civil Code | le Code civil | The Civil Code dates from 1804. | B2
+treaty | le traité | The Treaty of Rome. | B2
+to pass a law | adopter une loi | Congress passed the law in 2010. | B2
+to enact legislation | adopter une législation | The state enacted new legislation. | C1
+to repeal | abroger | The law was repealed in 2024. | C1
+to amend | modifier, amender | The Constitution was amended. | C1
+to come into force | entrer en vigueur | The law comes into force next month. | B2
+to enforce | faire appliquer | The police enforce the law. | C1
+law enforcement | les forces de l'ordre | Law enforcement agencies. | C1
+to comply with | se conformer à | Firms must comply with the rules. | C1
+to abide by | respecter (une règle) | Citizens must abide by the law. | C1
+legal certainty | la sécurité juridique | Legal certainty is essential. | C1
+public law | le droit public | Administrative law is part of public law. | B2
+private law | le droit privé | Family law belongs to private law. | B2
+legal scholarship | la doctrine | Legal scholarship influences judges. | C1
+lawful | licite, légal | A lawful search. | C1
+unlawful | illicite, illégal | The prorogation was unlawful. | C1

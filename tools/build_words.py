@@ -8,7 +8,8 @@ dans l'anglais parlé (sous-titres OpenSubtitles 2018, liste FrequencyWords
 de Hermit Dave, CC BY-SA 4.0).
 
 Sortie : app/words/index.json et app/words/<catégorie>.json.
-Usage : python3 tools/build_words.py
+Usage : python3 tools/build_words.py            (banque générale)
+        python3 tools/build_words.py legal      (banque juridique : tools/words-legal → app/words-legal)
 """
 import json
 import re
@@ -18,8 +19,9 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "tools" / "words"
-OUT = ROOT / "app" / "words"
+SUFFIX = "-legal" if sys.argv[1:] == ["legal"] else ""
+SRC = ROOT / "tools" / f"words{SUFFIX}"
+OUT = ROOT / "app" / f"words{SUFFIX}"
 FREQ_URL = "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/en/en_50k.txt"
 FREQ_CACHE = ROOT / "tools" / ".cache" / "en_50k.txt"
 LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"]

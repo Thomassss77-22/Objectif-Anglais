@@ -1,0 +1,29 @@
+# anglais | français | exemple | niveau
+the rule of law | l'État de droit | The rule of law protects citizens. | C1
+the separation of powers | la séparation des pouvoirs | Montesquieu theorised the separation of powers. | C1
+checks and balances | les freins et contrepoids | The US system relies on checks and balances. | C1
+constitutional review | le contrôle de constitutionnalité | Constitutional review was strengthened in 2008. | C1
+judicial review | le contrôle juridictionnel | Judicial review was born in Marbury v. Madison. | C1
+priority preliminary ruling on constitutionality | la QPC | The QPC was introduced in 2010. | C1
+to strike down | censurer, invalider (une loi) | The court struck down the law. | C1
+fundamental rights | les droits fondamentaux | Fundamental rights must be protected. | B2
+civil liberties | les libertés publiques | Civil liberties groups criticised the law. | C1
+freedom of speech | la liberté d'expression | Freedom of speech is protected by the First Amendment. | B2
+freedom of assembly | la liberté de réunion | Freedom of assembly includes the right to protest. | C1
+the right to privacy | le droit au respect de la vie privée | Article 8 protects the right to privacy. | C1
+the right to a fair trial | le droit à un procès équitable | Article 6 guarantees the right to a fair trial. | C1
+due process | les garanties procédurales | No one can be deprived of liberty without due process. | C1
+equal protection | l'égalité devant la loi | The Equal Protection Clause of the 14th Amendment. | C1
+proportionality | la proportionnalité | The measure failed the proportionality test. | C1
+to infringe | porter atteinte à | The law infringes freedom of expression. | C1
+secularism | la laïcité | French secularism dates from 1905. | C1
+affirmative action | la discrimination positive (US) | The Court ended affirmative action in admissions. | C1
+whistleblower | le lanceur d'alerte | Whistleblowers need protection. | C1
+asylum seeker | le demandeur d'asile | Asylum seekers arrived by boat. | B2
+deportation | l'expulsion | The deportation was blocked by the court. | C1
+a state of emergency | l'état d'urgence | France declared a state of emergency in 2015. | C1
+Defender of Rights | le Défenseur des droits | The Defender of Rights issued an opinion. | C1
+assisted dying | l'aide à mourir | The bill on assisted dying was rejected. | C1
+the European Convention on Human Rights | la Convention européenne des droits de l'homme | The UK remains party to the European Convention on Human Rights. | C1
+the European Court of Human Rights | la Cour européenne des droits de l'homme | The European Court of Human Rights sits in Strasbourg. | C1
+impeachment | la procédure de destitution (US) | The House voted for impeachment. | C1

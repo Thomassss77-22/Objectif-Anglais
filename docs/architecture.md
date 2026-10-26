@@ -14,6 +14,8 @@ app/
   index.html      coquille de l'app
   style.css       styles (mobile d'abord, mode sombre)
   data.js         contenu : niveaux, leçons, vocabulaire, exercices
+  legal.js        mode CRFPA : modules, questions du jury, grille d'auto-évaluation
+  words-legal/    banque de vocabulaire juridique (même format que words/)
   words/          banque de mots générée (index.json + un fichier par catégorie, chargés à la demande)
   srs.js          répétition espacée (SM-2)
   app.js          écrans (parcours, leçon, exercices, révision, profil), progression
@@ -28,6 +30,12 @@ app/
 - **Exercice** : `qcm` (choix), `translate` (saisie libre, plusieurs réponses acceptées).
 - **Carte** (paquet) : `en`, `fr`, état SM-2 `{ ef, interval, reps, due }`.
 - **Progression** : leçons terminées, XP, série (`streak`, `lastDay`).
+
+## Modes
+- `state.mode` : `general` ou `legal`. `P()` renvoie la progression du mode actif (`done`, `deck`, nouvelles cartes du jour) ;
+  `xp`, `streak` et `days` sont partagés.
+- Le mode CRFPA a sa propre identité visuelle (`[data-mode="legal"]`) et ses outils d'entraînement
+  (simulation chronométrée 5/3/7 puis exposé, enregistrement via MediaRecorder, questions du jury, grille sur 20).
 
 ## Banque de mots
 - Sources : `tools/words/*.txt`, compilées par `tools/build_words.py` vers `app/words/`.

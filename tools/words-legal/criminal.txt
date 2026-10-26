@@ -1,0 +1,43 @@
+# anglais | français | exemple | niveau
+criminal law | le droit pénal | She specialises in criminal law. | B2
+offence | l'infraction (UK) | It is a criminal offence. | B2
+felony | le crime (infraction grave, US) | Murder is a felony. | C1
+misdemeanor | l'infraction mineure (US) | Shoplifting can be a misdemeanor. | C1
+suspect | le suspect | The suspect was released. | B2
+police custody | la garde à vue | He spent 24 hours in police custody. | C1
+investigation | l'enquête | The police opened an investigation. | B2
+investigating judge | le juge d'instruction | The investigating judge ordered a search. | C1
+to be placed under formal investigation | être mis en examen | He was placed under formal investigation. | C1
+to charge someone with | inculper quelqu'un de | He was charged with fraud. | C1
+charge | le chef d'accusation | He faces three charges. | C1
+to indict | mettre en accusation (US, grand jury) | He was indicted by a grand jury. | C1
+indictment | l'acte d'accusation | The indictment runs to 50 pages. | C1
+the defendant | le prévenu, l'accusé ; le défendeur | The defendant pleaded not guilty. | B2
+the accused | l'accusé | The accused was found guilty. | B2
+to plead guilty | plaider coupable | She pleaded guilty to theft. | C1
+plea bargaining | la négociation de peine | Most US cases end in plea bargaining. | C1
+presumption of innocence | la présomption d'innocence | The presumption of innocence is fundamental. | C1
+beyond reasonable doubt | au-delà de tout doute raisonnable | Guilt must be proved beyond reasonable doubt. | C1
+trial | le procès | The trial lasted three weeks. | B2
+verdict | le verdict | The jury returned a guilty verdict. | B2
+to convict | déclarer coupable | He was convicted of murder. | C1
+conviction | la condamnation (déclaration de culpabilité) | His conviction was quashed. | C1
+to acquit | acquitter, relaxer | The jury acquitted her. | C1
+acquittal | l'acquittement | The trial ended in an acquittal. | C1
+to sentence | condamner (à une peine) | He was sentenced to ten years. | C1
+a suspended sentence | une peine avec sursis | She received a suspended sentence. | C1
+pre-trial detention | la détention provisoire | Pre-trial detention should be the exception. | C1
+to be remanded in custody | être placé en détention provisoire | He was remanded in custody pending trial. | C1
+bail | la liberté sous caution | He was released on bail. | C1
+parole | la libération conditionnelle | He was released on parole. | C1
+reoffending | la récidive | Short sentences increase reoffending. | C1
+a repeat offender | un récidiviste | Repeat offenders face longer sentences. | C1
+a criminal record | un casier judiciaire | She has no criminal record. | B2
+a miscarriage of justice | une erreur judiciaire | It was a terrible miscarriage of justice. | C1
+death row | le couloir de la mort | He spent 20 years on death row. | C1
+capital punishment | la peine capitale | Capital punishment was abolished in 1981. | C1
+self-defence | la légitime défense | He claimed self-defence. | C1
+manslaughter | l'homicide involontaire | He was convicted of manslaughter. | C1
+witness | le témoin | The witness gave evidence. | B2
+to testify | témoigner | She testified against him. | C1
+perjury | le parjure, le faux témoignage | He was charged with perjury. | C1

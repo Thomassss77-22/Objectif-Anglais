@@ -1,0 +1,36 @@
+# anglais | français | exemple | niveau
+lawsuit | le procès, l'action en justice | They filed a lawsuit against the airline. | B2
+to sue | poursuivre en justice | He sued the airline for damages. | B2
+claimant | le demandeur (UK) | The claimant lost the case. | C1
+plaintiff | le demandeur (US) | The plaintiff sought damages. | C1
+claim | la demande, la prétention | The claim was dismissed. | B2
+hearing | l'audience | The hearing was adjourned. | B2
+to dismiss | rejeter, débouter | The judge dismissed the case. | C1
+to toss out a case | rejeter une affaire (fam., US) | The judge tossed out the case. | C1
+a brief | les conclusions écrites, le mémoire | The lawyers filed a ten-page brief. | C1
+court filings | les actes de procédure | The court filings contained fake citations. | C1
+an affidavit | une déclaration écrite sous serment | He admitted it in an affidavit. | C1
+evidence | les preuves | The evidence was overwhelming. | B2
+burden of proof | la charge de la preuve | The burden of proof lies on the claimant. | C1
+to appeal | faire appel | She appealed against the decision. | B2
+to uphold | confirmer (une décision) | The Supreme Court upheld the ruling. | C1
+to quash | casser, annuler | The conviction was quashed. | C1
+to overturn | infirmer, annuler | The ruling was overturned on appeal. | C1
+to set aside | annuler (une décision) | The judgment was set aside. | C1
+damages | les dommages et intérêts | The court awarded damages. | C1
+harm | le préjudice | She suffered serious harm. | B2
+tort law | la responsabilité civile délictuelle | Negligence is part of tort law. | C1
+to be liable | être responsable (juridiquement) | The company was held liable. | C1
+liability | la responsabilité (juridique) | The firm denied liability. | C1
+negligence | la négligence (faute) | It was a case of negligence. | C1
+limitation period | le délai de prescription | The limitation period is two years. | C1
+statute of limitations | la prescription (US) | The claim was barred by the statute of limitations. | C1
+time-barred | prescrit | The claim was time-barred. | C1
+a formal notice | une mise en demeure | They sent a formal notice. | C1
+settlement | la transaction, l'accord amiable | The parties reached a settlement. | C1
+to settle out of court | transiger | They settled out of court. | C1
+injunction | l'injonction ; l'ordonnance (≈ référé) | The court granted an injunction. | C1
+summary proceedings | la procédure de référé | The case was heard in summary proceedings. | C1
+breach of contract | l'inexécution du contrat | He sued for breach of contract. | C1
+binding | obligatoire, qui lie | A legally binding agreement. | C1
+standing | l'intérêt à agir | The states lacked standing. | C1

@@ -1,0 +1,10 @@
+# id | nom | icône | description
+press | Analyser un article de presse | pen | Présenter, résumer et commenter un article
+interview | Entretien avec le jury | chat | Gagner du temps, nuancer, défendre son point de vue
+sources | Sources du droit et systèmes juridiques | book | Common law, civil law, loi, jurisprudence
+institutions | Juridictions et professions | scale | Avocats, juges, juridictions (France, UK, US)
+criminal | Procédure pénale | link2 | Enquête, procès pénal, peines
+civil | Procès civil et contrats | list | Action en justice, voies de recours, contrats, responsabilité
+rights | Constitution et libertés | globe | État de droit, libertés fondamentales, contrôle
+falsefriends | Faux amis juridiques | alert | jurisprudence, magistrate, sentence, prejudice…
+verbs | Verbes prépositionnels et idiomes | zap | abide by, stem from, pave the way for…

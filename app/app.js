@@ -1,4 +1,5 @@
 import { LEVELS } from "./data.js";
+import { LEGAL, JURY_QUESTIONS, SELF_GRID } from "./legal.js";
 import { newCard, review, dueCards } from "./srs.js";
 
 const KEY = "objectif-anglais-v1";
@@ -13,7 +14,11 @@ function load() {
     return {};
   }
 }
-const state = Object.assign({ done: {}, deck: {}, xp: 0, streak: 0, lastDay: null, days: {} }, load());
+const state = Object.assign({ done: {}, deck: {}, xp: 0, streak: 0, lastDay: null, days: {}, mode: "general" }, load());
+// Le mode CRFPA a ses propres leçons et cartes ; XP et série sont communes aux deux modes.
+state.legal = Object.assign({ done: {}, deck: {} }, state.legal);
+const legalMode = () => state.mode === "legal";
+const P = () => (legalMode() ? state.legal : state);
 function save() {
   try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {}
 }
@@ -36,15 +41,16 @@ const liveStreak = () => (state.lastDay === dayKey() || state.lastDay === dayKey
 const NEW_PER_DAY = 20;
 const isNew = (c) => c.reps === 0 && c.interval === 0;
 function reviewQueue() {
-  const due = dueCards(state.deck).sort((a, b) => a.due - b.due);
-  const seen = state.newDay === dayKey() ? state.newSeen : 0;
+  const due = dueCards(P().deck).sort((a, b) => a.due - b.due);
+  const seen = P().newDay === dayKey() ? P().newSeen : 0;
   const fresh = due.filter(isNew).slice(0, Math.max(0, NEW_PER_DAY - seen));
   return [...due.filter((c) => !isNew(c)), ...fresh];
 }
 
-const allLessons = LEVELS.flatMap((lv) => lv.lessons.map((l) => ({ ...l, lv })));
-const findLesson = (id) => allLessons.find((l) => l.id === id);
-const nextLesson = () => allLessons.find((l) => !state.done[l.id]);
+const levels = () => (legalMode() ? LEGAL : LEVELS);
+const allLessons = () => levels().flatMap((lv) => lv.lessons.map((l) => ({ ...l, lv })));
+const findLesson = (id) => allLessons().find((l) => l.id === id);
+const nextLesson = () => allLessons().find((l) => !P().done[l.id]);
 
 // ---------- Utilitaires ----------
 // Compare des réponses en ignorant ponctuation, casse et contractions (I'm = I am).
@@ -138,10 +144,11 @@ function listen(btn, label, done) {
 function render(html, { nav = null, lv = null } = {}) {
   root.innerHTML = `<main id="view" class="enter ${nav ? "" : "no-nav"}">${html}</main>${nav ? tabbar(nav) : ""}`;
   // La couleur du niveau s'applique à tout l'écran, y compris aux éléments fixes.
+  root.dataset.mode = state.mode;
   if (lv) root.dataset.lv = lv;
   else delete root.dataset.lv;
   window.scrollTo(0, 0);
-  root.querySelectorAll("[data-tab]").forEach((b) => (b.onclick = () => TABS[b.dataset.tab]()));
+  root.querySelectorAll("[data-tab]").forEach((b) => (b.onclick = () => { stopTimer(); TABS[b.dataset.tab](); }));
 }
 
 function tabbar(on) {
@@ -158,7 +165,7 @@ function tabbar(on) {
 
 const topbar = () => `
   <header class="topbar">
-    <div class="brand"><div class="logo">OA</div>Objectif Anglais</div>
+    <div class="brand"><div class="logo">OA</div><span class="brand-name">Objectif Anglais</span>${legalMode() ? `<span class="mode-chip">CRFPA</span>` : ""}</div>
     <div class="pills">
       <span class="pill" title="Série">${icon("flame", "flame")}${liveStreak()}</span>
       <span class="pill" title="XP">${icon("bolt", "bolt")}${state.xp}</span>
@@ -173,19 +180,19 @@ function home() {
   const next = nextLesson();
   const due = reviewQueue().length;
 
-  const units = LEVELS.map((lv) => {
-    const n = lv.lessons.filter((l) => state.done[l.id]).length;
+  const units = levels().map((lv) => {
+    const n = lv.lessons.filter((l) => P().done[l.id]).length;
     return `
     <section class="unit" data-lv="${lv.id}">
       <div class="unit-head" data-lv="${lv.id}">
-        <small>Niveau ${lv.id}</small>
+        <small>${lv.label || `Niveau ${lv.id}`}</small>
         <h3>${esc(lv.name)}</h3>
         <div class="meter"><i style="width:${(n / lv.lessons.length) * 100}%"></i></div>
         <div class="count">${n} / ${lv.lessons.length} leçons</div>
       </div>
       <div class="path">
         ${lv.lessons.map((l) => {
-          const st = state.done[l.id] ? "done" : next && next.id === l.id ? "next" : "todo";
+          const st = P().done[l.id] ? "done" : next && next.id === l.id ? "next" : "todo";
           const ic = st === "done" ? "check" : st === "next" ? "star" : "book";
           return `<div class="node ${st}">
             <button class="node-btn" data-id="${l.id}" aria-label="${esc(l.title)}">
@@ -210,7 +217,7 @@ function home() {
         <div>
           <small>Objectif du jour</small>
           <h2>${pct >= 1 ? "Objectif atteint !" : `${today} / ${DAILY_GOAL} XP`}</h2>
-          <p>${pct >= 1 ? "Bravo, ta série continue." : "Une leçon par jour, et l'anglais devient naturel."}</p>
+          <p>${pct >= 1 ? "Bravo, ta série continue." : legalMode() ? "Un peu chaque jour : l'aisance à l'oral vient en parlant." : "Une leçon par jour, et l'anglais devient naturel."}</p>
         </div>
       </div>
       ${next ? `<button class="cta-light" id="continue">${icon("play")}Continuer · ${esc(next.title)}</button>`
@@ -222,6 +229,10 @@ function home() {
         <span>${due ? "Révise maintenant pour ne pas oublier" : "Les mots de tes leçons arriveront ici"}</span></div>
       ${due ? `<span class="badge-count">${due}</span>` : `<span class="go">${icon("chevron")}</span>`}
     </button>
+    ${legalMode() ? `<button class="tile" data-tab="training">
+      <div class="tile-icon alt">${icon("clock")}</div>
+      <div><b>Entraînement à l'oral</b><span>Simulation chronométrée et questions du jury</span></div>
+      <span class="go">${icon("chevron")}</span></button>` : ""}
     ${units}
   `, { nav: "home" });
 
@@ -338,11 +349,11 @@ function exercise(l, i, score) {
 }
 
 function finish(l, score) {
-  const first = !state.done[l.id];
-  state.done[l.id] = true;
+  const first = !P().done[l.id];
+  P().done[l.id] = true;
   const gained = 10 + score * 5;
   let added = 0;
-  for (const [fr, en] of l.words) if (!state.deck[en]) { state.deck[en] = newCard(fr, en); added++; }
+  for (const [fr, en] of l.words) if (!P().deck[en]) { P().deck[en] = newCard(fr, en); added++; }
   addXp(gained);
   const acc = Math.round((score / l.exercises.length) * 100);
   render(`
@@ -410,7 +421,7 @@ function reviewSession() {
   const due = reviewQueue();
   const card = due[0];
   if (!card) {
-    const total = Object.keys(state.deck).length;
+    const total = Object.keys(P().deck).length;
     render(`
       ${topbar()}
       <div class="screen-title"><h1>Révision</h1></div>
@@ -453,11 +464,11 @@ function reviewSession() {
     }).join("");
     root.querySelectorAll(".grade").forEach((b) => (b.onclick = () => {
       if (isNew(card)) {
-        if (state.newDay !== dayKey()) Object.assign(state, { newDay: dayKey(), newSeen: 0 });
-        state.newSeen += 1;
+        if (P().newDay !== dayKey()) Object.assign(P(), { newDay: dayKey(), newSeen: 0 });
+        P().newSeen += 1;
       }
-      const key = Object.keys(state.deck).find((k) => state.deck[k] === card);
-      state.deck[key] = review(card, +b.dataset.q);
+      const key = Object.keys(P().deck).find((k) => P().deck[k] === card);
+      P().deck[key] = review(card, +b.dataset.q);
       addXp(1);
       reviewSession();
     }));
@@ -466,20 +477,25 @@ function reviewSession() {
 
 // ---------- Banque de mots ----------
 // Les fichiers sont chargés à la demande puis gardés en mémoire.
-const bank = { index: null, cats: {} };
+// Une banque par mode : words/ (général) et words-legal/ (CRFPA).
+const banks = { general: { index: null, cats: {} }, legal: { index: null, cats: {} } };
+const bankDir = () => (legalMode() ? "words-legal" : "words");
+const curBank = () => banks[state.mode];
 async function loadIndex() {
-  if (!bank.index) bank.index = await (await fetch("words/index.json")).json();
-  return bank.index;
+  const b = curBank();
+  if (!b.index) b.index = await (await fetch(`${bankDir()}/index.json`)).json();
+  return b.index;
 }
 async function loadCat(id) {
-  if (!bank.cats[id]) bank.cats[id] = await (await fetch(`words/${id}.json`)).json();
-  return bank.cats[id];
+  const b = curBank();
+  if (!b.cats[id]) b.cats[id] = await (await fetch(`${bankDir()}/${id}.json`)).json();
+  return b.cats[id];
 }
 // Même clé que les cartes des leçons (le mot anglais), sauf pour un mot à plusieurs sens.
 const cardKey = (w) => (w.alt ? `${w.en} (${w.fr})` : w.en);
-const inDeck = (w) => Boolean(state.deck[cardKey(w)]);
+const inDeck = (w) => Boolean(P().deck[cardKey(w)]);
 function addWord(w) {
-  if (!inDeck(w)) state.deck[cardKey(w)] = newCard(w.fr, w.en, w.ex);
+  if (!inDeck(w)) P().deck[cardKey(w)] = newCard(w.fr, w.en, w.ex);
 }
 const LV_IDS = ["A1", "A2", "B1", "B2", "C1", "C2"];
 let wordFilter = { lv: null, q: "" };
@@ -507,19 +523,20 @@ function bindRows(list) {
   }));
 }
 
-const lvChips = () => `<div class="chips">
+// Seuls les niveaux présents dans la banque sont proposés (la banque juridique va de B1 à C1).
+const lvChips = (idx) => `<div class="chips">
   <button class="fchip ${wordFilter.lv ? "" : "on"}" data-lv-f="">Tous</button>
-  ${LV_IDS.map((lv) => `<button class="fchip ${wordFilter.lv === lv ? "on" : ""}" data-lv-f="${lv}" data-lv="${lv}">${lv}</button>`).join("")}
+  ${LV_IDS.filter((lv) => idx.categories.some((c) => c.levels[lv])).map((lv) => `<button class="fchip ${wordFilter.lv === lv ? "on" : ""}" data-lv-f="${lv}" data-lv="${lv}">${lv}</button>`).join("")}
 </div>`;
 
 async function wordsHome() {
   const idx = await loadIndex();
-  const known = (c) => (bank.cats[c.id] ? bank.cats[c.id].filter(inDeck).length : null);
+  const known = (c) => (curBank().cats[c.id] ? curBank().cats[c.id].filter(inDeck).length : null);
   render(`
     ${topbar()}
-    <div class="screen-title"><h1>Banque de mots</h1><span class="pill">${icon("book")}${idx.total}</span></div>
+    <div class="screen-title"><h1>${legalMode() ? "Vocabulaire juridique" : "Banque de mots"}</h1><span class="pill">${icon("book")}${idx.total}</span></div>
     <label class="searchbox">${icon("search")}<input id="q" type="search" placeholder="Chercher un mot (anglais ou français)" value="${esc(wordFilter.q)}" autocomplete="off"></label>
-    ${lvChips()}
+    ${lvChips(idx)}
     <div id="results"></div>
     <div class="catgrid" id="cats">${idx.categories.map((c) => {
       const n = wordFilter.lv ? c.levels[wordFilter.lv] : c.count;
@@ -582,40 +599,249 @@ async function category(id) {
 
 // ---------- Profil ----------
 function profile() {
-  const cards = Object.values(state.deck);
+  const cards = Object.values(P().deck);
   const mastered = cards.filter((c) => c.interval >= 21).length;
-  const doneCount = Object.keys(state.done).length;
-  const current = (nextLesson() || allLessons[allLessons.length - 1]).lv;
+  const doneCount = Object.keys(P().done).length;
+  const current = (nextLesson() || allLessons()[allLessons().length - 1]).lv;
   const kpi = (ic, c, v, label) => `<div class="kpi"><div class="ico" style="--c:${c}">${icon(ic)}</div><b>${v}</b><span>${label}</span></div>`;
+  const modeBtn = (id, title, sub) => `<button class="mode-opt ${state.mode === id ? "on" : ""}" data-mode="${id}">
+    <b>${title}</b><span>${sub}</span></button>`;
   render(`
     ${topbar()}
     <div class="profile-head">
       <div class="avatar">${current.id}</div>
-      <div><h1>Mon parcours</h1><p>Niveau actuel : ${current.id} · ${esc(current.name.split(" — ")[0])}</p></div>
+      <div><h1>Mon parcours</h1><p>${legalMode() ? "Module en cours" : "Niveau actuel"} : ${current.id} · ${esc(current.name.split(" — ")[0])}</p></div>
+    </div>
+    <h4 class="section-title">${icon("split")}Mode d'apprentissage</h4>
+    <div class="mode-switch">
+      ${modeBtn("general", "Anglais général", "Du débutant au niveau courant")}
+      ${modeBtn("legal", "Anglais juridique · CRFPA", "Préparer l'oral d'anglais")}
     </div>
     <div class="grid2">
       ${kpi("flame", "#ff7a1a", liveStreak(), "Jours de série")}
       ${kpi("bolt", "#ffb020", state.xp, "XP au total")}
-      ${kpi("book", "#5b5bf7", `${doneCount}/${allLessons.length}`, "Leçons terminées")}
+      ${kpi("book", "#5b5bf7", `${doneCount}/${allLessons().length}`, "Leçons terminées")}
       ${kpi("star", "#12b886", `${mastered}/${cards.length}`, "Mots maîtrisés")}
     </div>
-    <h4 class="section-title">${icon("target")}Vers le niveau courant</h4>
-    <div class="levels">${LEVELS.map((lv) => {
-      const n = lv.lessons.filter((l) => state.done[l.id]).length;
+    <h4 class="section-title">${icon("target")}${legalMode() ? "Ma préparation au CRFPA" : "Vers le niveau courant"}</h4>
+    <div class="levels">${levels().map((lv) => {
+      const n = lv.lessons.filter((l) => P().done[l.id]).length;
       return `<div class="lvrow" data-lv="${lv.id}"><span class="cefr">${lv.id}</span>
         <div><b>${esc(lv.name.split(" — ")[0])}</b><div class="meter"><i style="width:${(n / lv.lessons.length) * 100}%"></i></div></div>
         <em>${n}/${lv.lessons.length}</em></div>`;
     }).join("")}</div>
-    <button class="link-danger" id="reset">Réinitialiser ma progression</button>
+    <button class="link-danger" id="reset">Réinitialiser ma progression (${legalMode() ? "mode CRFPA" : "anglais général"})</button>
   `, { nav: "profile" });
+  root.querySelectorAll("[data-mode]").forEach((b) => (b.onclick = () => {
+    if (state.mode === b.dataset.mode) return;
+    state.mode = b.dataset.mode;
+    wordFilter = { lv: null, q: "" };
+    save();
+    buzz(15);
+    home();
+  }));
   root.querySelector("#reset").onclick = () => {
-    if (!confirm("Effacer toute ta progression ?")) return;
-    Object.assign(state, { done: {}, deck: {}, xp: 0, streak: 0, lastDay: null, days: {} });
+    if (!confirm("Effacer la progression de ce mode (leçons et cartes) ?")) return;
+    Object.assign(P(), { done: {}, deck: {}, newDay: null, newSeen: 0 });
     save();
     home();
   };
 }
 
-const TABS = { home, words: wordsHome, review: reviewSession, profile };
+// ---------- Entraînement CRFPA ----------
+const mmss = (sec) => `${Math.floor(sec / 60)}:${String(Math.floor(sec % 60)).padStart(2, "0")}`;
+let timer = null;
+const stopTimer = () => { clearInterval(timer); timer = null; };
+
+// Les deux temps de l'épreuve, avec leurs repères (en secondes depuis le début de la phase).
+const SIM_PHASES = {
+  prep: { title: "Préparation", total: 15 * 60, steps: [
+    [0, "Lire et comprendre", "Source, date, auteur. Deux lectures : acteurs, chiffres, déclencheur de l'article, structure."],
+    [5 * 60, "Problématiser et planifier", "Thème en une phrase, enjeu, problématique sous forme de question, plan, deux axes de commentaire."],
+    [8 * 60, "Rédiger les notes", "Intro et conclusion rédigées, le reste en mots-clés. Écris les transitions en entier."],
+  ] },
+  talk: { title: "Exposé", total: 8 * 60, steps: [
+    [0, "Introduction", "Accroche, titre, source, date, auteur, problématique, plan."],
+    [60, "Synthèse", "Rendre compte de l'article de façon neutre et organisée. Pas de paraphrase."],
+    [210, "Transition → commentaire", "« Having summed up the main points, I would now like to move on to my analysis. »"],
+    [7 * 60, "Conclusion", "Bilan, avis nuancé, ouverture. « Thank you for your attention. I am now ready to answer your questions. »"],
+  ] },
+};
+
+function training() {
+  stopTimer();
+  render(`
+    ${topbar()}
+    <div class="screen-title"><h1>Entraînement</h1></div>
+    <div class="exam-card">
+      <small>L'épreuve</small>
+      <p>Un article de presse (450 à 550 mots) · <b>15 min</b> de préparation sans document · <b>15 min</b> d'oral :
+      exposé de 7-8 min puis entretien d'environ 7 min · coefficient 1.</p>
+      <span class="muted small">Arrêté du 17 octobre 2016 · vérifie la règle en vigueur pour ta session.</span>
+    </div>
+    <button class="tile" id="sim">
+      <div class="tile-icon">${icon("clock")}</div>
+      <div><b>Simulation chronométrée</b><span>Préparation 5/3/7, exposé avec repères, enregistrement, auto-évaluation</span></div>
+      <span class="go">${icon("chevron")}</span>
+    </button>
+    <button class="tile" id="jury">
+      <div class="tile-icon calm">${icon("chat")}</div>
+      <div><b>Questions du jury</b><span>Une question tirée au sort, 45 secondes pour répondre</span></div>
+      <span class="go">${icon("chevron")}</span>
+    </button>
+    <button class="tile" id="grid">
+      <div class="tile-icon alt">${icon("list")}</div>
+      <div><b>Grille d'auto-évaluation</b><span>Note-toi sur 20 après une simulation</span></div>
+      <span class="go">${icon("chevron")}</span>
+    </button>
+  `, { nav: "home" });
+  root.querySelector("#sim").onclick = () => simulation("prep");
+  root.querySelector("#jury").onclick = jury;
+  root.querySelector("#grid").onclick = () => selfGrid();
+}
+
+// Enregistrement de l'exposé, gardé en mémoire le temps de la séance.
+let recorder = null;
+let recording = null;
+
+function simulation(phase) {
+  stopTimer();
+  const ph = SIM_PHASES[phase];
+  let t = 0;
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="quit" aria-label="Quitter">${icon("x")}</button>
+      <div class="bar"><i id="bar" style="width:0"></i></div></div>
+    <div class="sim">
+      <small>${ph.title}${phase === "talk" ? " · cible 7 à 8 min" : " · 15 min"}</small>
+      <div class="clock" id="clock">0:00</div>
+      <div class="step" id="step"><b></b><p></p></div>
+      <ol class="steps">${ph.steps.map(([at, name]) => `<li data-at="${at}"><span>${mmss(at)}</span>${name}</li>`).join("")}</ol>
+    </div>
+    <div class="dock"><div class="row2">
+      ${phase === "prep"
+        ? `<button class="btn ghost" id="pause">Pause</button><button class="btn" id="next">Passer à l'exposé</button>`
+        : `<button class="btn ghost" id="pause">Pause</button><button class="btn" id="next">Terminer l'exposé</button>`}
+    </div></div>
+  `);
+  const show = () => {
+    root.querySelector("#clock").textContent = mmss(t);
+    root.querySelector("#bar").style.width = `${Math.min(100, (t / ph.total) * 100)}%`;
+    const cur = [...ph.steps].reverse().find(([at]) => t >= at);
+    root.querySelector("#step b").textContent = cur[1];
+    root.querySelector("#step p").textContent = cur[2];
+    root.querySelectorAll(".steps li").forEach((li) => li.classList.toggle("on", +li.dataset.at <= t));
+    root.querySelector("#clock").classList.toggle("over", t > ph.total);
+  };
+  const tick = () => {
+    t += 1;
+    if (ph.steps.some(([at]) => at === t) || t === ph.total) buzz([40, 60, 40]);
+    show();
+  };
+  show();
+  timer = setInterval(tick, 1000);
+  const pause = root.querySelector("#pause");
+  pause.onclick = () => {
+    if (timer) { stopTimer(); pause.textContent = "Reprendre"; } else { timer = setInterval(tick, 1000); pause.textContent = "Pause"; }
+  };
+  root.querySelector("#quit").onclick = () => { stopRecording(); training(); };
+  if (phase === "prep") {
+    root.querySelector("#next").onclick = () => simulation("talk");
+  } else {
+    startRecording();
+    root.querySelector("#next").onclick = () => { stopTimer(); stopRecording(); addXp(15); selfGrid(t); };
+  }
+}
+
+async function startRecording() {
+  recording = null;
+  if (!navigator.mediaDevices || !window.MediaRecorder) return;
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = (e) => chunks.push(e.data);
+    recorder.onstop = () => {
+      stream.getTracks().forEach((tr) => tr.stop());
+      recording = URL.createObjectURL(new Blob(chunks, { type: recorder.mimeType }));
+      const a = root.querySelector("#playback");
+      if (a) { a.src = recording; a.hidden = false; }
+    };
+    recorder.start();
+  } catch {
+    recorder = null; // micro refusé : la simulation continue sans enregistrement
+  }
+}
+function stopRecording() {
+  if (recorder && recorder.state !== "inactive") recorder.stop();
+  recorder = null;
+}
+
+function selfGrid(talkSeconds) {
+  stopTimer();
+  const scores = SELF_GRID.map(() => 1);
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
+    <div class="screen-title"><h1>Auto-évaluation</h1></div>
+    ${talkSeconds ? `<p class="muted">Exposé : <b>${mmss(talkSeconds)}</b> ${talkSeconds < 420 ? "· un peu court (cible 7-8 min)" : talkSeconds > 510 ? "· trop long (cible 7-8 min)" : "· dans la cible"}</p>` : ""}
+    <audio id="playback" controls ${recording ? `src="${recording}"` : "hidden"}></audio>
+    <div class="grid-list">${SELF_GRID.map((c, i) => `
+      <div class="crit"><p>${esc(c)}</p><div class="seg" data-i="${i}">
+        ${[0, 1, 2].map((v) => `<button data-v="${v}" class="${v === 1 ? "on" : ""}">${v}</button>`).join("")}</div></div>`).join("")}
+    </div>
+    <div class="dock"><div class="score-bar"><span>Total</span><b id="total">10 / 20</b><button class="btn" id="done">Valider</button></div></div>
+  `);
+  const advice = (n) => (n < 10 ? "Reprends la méthode : l'épreuve, la lecture, la boîte à phrases."
+    : n <= 15 ? "Bonne base : travaille la langue (fautes, vocabulaire, prononciation)."
+    : "Très bien : multiplie les articles inconnus et suis l'actualité.");
+  const update = () => (root.querySelector("#total").textContent = `${scores.reduce((a, b) => a + b, 0)} / 20`);
+  root.querySelectorAll(".seg").forEach((seg) => seg.querySelectorAll("button").forEach((b) => (b.onclick = () => {
+    scores[+seg.dataset.i] = +b.dataset.v;
+    seg.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
+    update();
+  })));
+  root.querySelector("#back").onclick = training;
+  root.querySelector("#done").onclick = () => {
+    const n = scores.reduce((a, b) => a + b, 0);
+    render(`
+      <div class="done-screen">
+        <div class="trophy">${icon("target")}</div>
+        <h1>${n} / 20</h1>
+        <p>${advice(n)}</p>
+      </div>
+      <div class="dock"><button class="btn" id="h">Retour à l'entraînement</button></div>
+    `);
+    root.querySelector("#h").onclick = training;
+  };
+}
+
+function jury() {
+  stopTimer();
+  const q = JURY_QUESTIONS[Math.floor(Math.random() * JURY_QUESTIONS.length)];
+  let t = 45;
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
+    <span class="ex-kind">${icon("chat")}${esc(q.topic)}</span>
+    <p class="q">${esc(q.q)}</p>
+    <button class="say big-say" id="say" aria-label="Écouter la question">${icon("sound")}Écouter la question</button>
+    <div class="sim"><div class="clock" id="clock">0:45</div>
+      <p class="muted center-text">Réponds à voix haute en 4 temps : réponse · justification · exemple précis · nuance ou comparaison avec la France.</p></div>
+    <details class="model"><summary>Pistes de réponse</summary><p>${esc(q.hint)}</p></details>
+    <div class="dock"><div class="row2"><button class="btn ghost" id="other">Autre</button><button class="btn" id="start">${icon("play")}Démarrer</button></div></div>
+  `);
+  speak(q.q);
+  root.querySelector("#say").onclick = () => speak(q.q);
+  root.querySelector("#back").onclick = training;
+  root.querySelector("#other").onclick = jury;
+  root.querySelector("#start").onclick = (e) => {
+    e.currentTarget.disabled = true;
+    timer = setInterval(() => {
+      t -= 1;
+      root.querySelector("#clock").textContent = mmss(Math.max(0, t));
+      if (t <= 0) { stopTimer(); buzz([40, 60, 40]); root.querySelector("#clock").classList.add("over"); addXp(3); }
+    }, 1000);
+  };
+}
+
+const TABS = { home, words: wordsHome, review: reviewSession, profile, training };
 home();
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});

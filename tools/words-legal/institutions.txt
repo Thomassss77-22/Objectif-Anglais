@@ -1,0 +1,33 @@
+# anglais | français | exemple | niveau
+barrister | l'avocat plaidant (UK) | Barristers argue cases in court. | C1
+solicitor | l'avocat-conseil (UK) | Her solicitor drafted the will. | C1
+attorney | l'avocat (US) | He hired a defense attorney. | B2
+King's Counsel | avocat éminent nommé par la Couronne (KC) | She became a King's Counsel last year. | C1
+to take silk | devenir KC | He took silk in 2015. | C1
+the Bar | le barreau | She was admitted to the Bar. | C1
+to be called to the Bar | être inscrit au barreau (UK) | He was called to the Bar in 2019. | C1
+to be sworn in | prêter serment | New lawyers are sworn in at the court of appeal. | C1
+law firm | le cabinet d'avocats | She works for a large law firm. | B2
+chambers | le cabinet (de barristers) | Barristers practise from chambers. | C1
+legal professional privilege | le secret professionnel (UK) | Legal professional privilege protects clients. | C1
+attorney-client privilege | le secret professionnel (US) | The emails were covered by attorney-client privilege. | C1
+legal aid | l'aide juridictionnelle | She qualified for legal aid. | C1
+a court-appointed lawyer | un avocat commis d'office | He was given a court-appointed lawyer. | C1
+fees | les honoraires | Legal fees are high. | B2
+contingency fees | les honoraires de résultat (US) | Contingency fees are common in the US. | C1
+the judiciary | la magistrature, le pouvoir judiciaire | The independence of the judiciary. | C1
+juror | le juré | Twelve jurors were selected. | C1
+the prosecution | l'accusation, le ministère public | The prosecution called its first witness. | C1
+District Attorney | le procureur (US) | The District Attorney dropped the charges. | C1
+Crown Prosecution Service | le ministère public (Angleterre et pays de Galles) | The Crown Prosecution Service decided to charge him. | C1
+court clerk | le greffier | The court clerk recorded the hearing. | C1
+judicial officer | le commissaire de justice | A judicial officer served the papers. | C1
+Court of Cassation | la Cour de cassation | The Court of Cassation quashed the ruling. | C1
+Council of State | le Conseil d'État | The Council of State is France's highest administrative court. | C1
+Constitutional Council | le Conseil constitutionnel | The Constitutional Council struck down the provision. | C1
+Crown Court | la Crown Court (infractions graves, jury, UK) | Murder is tried in the Crown Court. | C1
+magistrates' court | la juridiction pénale de proximité (UK) | Most criminal cases start in a magistrates' court. | C1
+Court of Appeal | la cour d'appel | He appealed to the Court of Appeal. | C1
+Supreme Court | la Cour suprême | The UK Supreme Court opened in 2009. | B2
+Justice | le juge (Cour suprême) | Justice Kagan wrote the dissent. | C1
+Chief Justice | le président de la Cour suprême (US) | Chief Justice John Roberts. | C1

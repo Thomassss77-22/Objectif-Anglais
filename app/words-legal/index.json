@@ -1,0 +1,140 @@
+{
+ "total": 264,
+ "categories": [
+  {
+   "id": "press",
+   "name": "Analyser un article de presse",
+   "icon": "pen",
+   "desc": "Présenter, résumer et commenter un article",
+   "count": 35,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 19,
+    "C1": 16,
+    "C2": 0
+   }
+  },
+  {
+   "id": "interview",
+   "name": "Entretien avec le jury",
+   "icon": "chat",
+   "desc": "Gagner du temps, nuancer, défendre son point de vue",
+   "count": 21,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 1,
+    "B2": 12,
+    "C1": 8,
+    "C2": 0
+   }
+  },
+  {
+   "id": "sources",
+   "name": "Sources du droit et systèmes juridiques",
+   "icon": "book",
+   "desc": "Common law, civil law, loi, jurisprudence",
+   "count": 27,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 12,
+    "C1": 15,
+    "C2": 0
+   }
+  },
+  {
+   "id": "institutions",
+   "name": "Juridictions et professions",
+   "icon": "scale",
+   "desc": "Avocats, juges, juridictions (France, UK, US)",
+   "count": 32,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 4,
+    "C1": 28,
+    "C2": 0
+   }
+  },
+  {
+   "id": "criminal",
+   "name": "Procédure pénale",
+   "icon": "link2",
+   "desc": "Enquête, procès pénal, peines",
+   "count": 42,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 10,
+    "C1": 32,
+    "C2": 0
+   }
+  },
+  {
+   "id": "civil",
+   "name": "Procès civil et contrats",
+   "icon": "list",
+   "desc": "Action en justice, voies de recours, contrats, responsabilité",
+   "count": 35,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 7,
+    "C1": 28,
+    "C2": 0
+   }
+  },
+  {
+   "id": "rights",
+   "name": "Constitution et libertés",
+   "icon": "globe",
+   "desc": "État de droit, libertés fondamentales, contrôle",
+   "count": 28,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 3,
+    "C1": 25,
+    "C2": 0
+   }
+  },
+  {
+   "id": "falsefriends",
+   "name": "Faux amis juridiques",
+   "icon": "alert",
+   "desc": "jurisprudence, magistrate, sentence, prejudice…",
+   "count": 21,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 3,
+    "B2": 9,
+    "C1": 9,
+    "C2": 0
+   }
+  },
+  {
+   "id": "verbs",
+   "name": "Verbes prépositionnels et idiomes",
+   "icon": "zap",
+   "desc": "abide by, stem from, pave the way for…",
+   "count": 23,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 5,
+    "C1": 18,
+    "C2": 0
+   }
+  }
+ ]
+}

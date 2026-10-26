@@ -17,6 +17,15 @@ Fonctionnalités :
 - Les mots de chaque leçon rejoignent le paquet de **cartes mémoire**, révisées avec l'algorithme **SM-2**.
 - XP, série quotidienne, progression sauvegardée localement, fonctionne hors ligne.
 
+## Mode CRFPA (anglais juridique)
+Activable dans **Profil → Mode d'apprentissage**. Il prépare l'oral d'anglais de l'examen d'accès au CRFPA
+(article de presse, 15 min de préparation, 15 min d'exposé et d'entretien) :
+- un parcours en 4 modules (l'épreuve et la méthode, la langue, la culture juridique anglo-saxonne, le vocabulaire actif) ;
+- un entraînement : simulation chronométrée avec enregistrement, questions du jury, grille d'auto-évaluation ;
+- une banque de vocabulaire juridique (`tools/words-legal`, compilée par `python3 tools/build_words.py legal`).
+
+Le mode a ses propres leçons et cartes ; l'XP et la série sont communes.
+
 ## Banque de mots
 Les mots sont rédigés dans `tools/words/<catégorie>.txt` (une ligne : `anglais | français | exemple | niveau`),
 puis compilés vers `app/words/` :
