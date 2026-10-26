@@ -1,5 +1,5 @@
 import { LEVELS } from "./data.js";
-import { LEGAL, JURY_QUESTIONS, SELF_GRID, DRILL_SENTENCES } from "./legal.js";
+import { LEGAL, JURY_QUESTIONS, SELF_GRID, DRILL_SENTENCES, ERROR_SENTENCES } from "./legal.js";
 import { ARTICLES } from "./articles.js";
 import { newCard, review, dueCards } from "./srs.js";
 
@@ -697,7 +697,7 @@ function training() {
     </button>
     <button class="tile" id="drill">
       <div class="tile-icon">${icon("mic")}</div>
-      <div><b>Exercices oraux</b><span>Collocations, termes et phrases à dire en anglais · 10 exercices</span></div>
+      <div><b>Exercices oraux</b><span>Collocations, termes, fautes à corriger, phrases à traduire · 10 exercices</span></div>
       <span class="go">${icon("chevron")}</span>
     </button>
     <button class="tile" id="jury">
@@ -850,7 +850,7 @@ async function drillSession() {
   // Collocations verbales : on masque le verbe (« to lodge an appeal » → « to ___ an appeal »).
   const colloc = (await loadCat("collocations")).filter((w) => /^to \w+ \S/.test(w.en));
   const verbs = [...new Set(colloc.map((w) => w.en.split(" ")[1]))];
-  const collocItems = shuffle(colloc).slice(0, 4).map((w) => {
+  const collocItems = shuffle(colloc).slice(0, 3).map((w) => {
     const verb = w.en.split(" ")[1];
     const rest = w.en.split(" ").slice(2).join(" ");
     // Pas de leurre qui formerait une autre collocation juste (« to bring a case » pour « to hear a case »).
@@ -860,9 +860,10 @@ async function drillSession() {
   });
   const terms = (await Promise.all(DRILL_CATS.map((c) => loadCat(c)))).flat()
     .filter((w) => w.en.split(" ").length <= 4);
-  const termItems = shuffle(terms).slice(0, 3).map((w) => ({ type: "term", w }));
+  const termItems = shuffle(terms).slice(0, 2).map((w) => ({ type: "term", w }));
+  const errItems = shuffle(ERROR_SENTENCES).slice(0, 2).map((x) => ({ type: "error", ...x }));
   const sentItems = shuffle(DRILL_SENTENCES).slice(0, 3).map((x) => ({ type: "sentence", ...x }));
-  drillStep(shuffle([...collocItems, ...termItems]).concat(sentItems), 0, 0);
+  drillStep(shuffle([...collocItems, ...termItems, ...errItems]).concat(sentItems), 0, 0);
 }
 
 function drillStep(items, i, score) {
@@ -909,6 +910,31 @@ function drillStep(items, i, score) {
       // « J'avais bon » retire la carte seulement si cet exercice vient de l'ajouter.
       const accept = () => { if (!had) { delete P().deck[cardKey(it.w)]; save(); } next(true); };
       drillSheet(ok, it.w.en, it.w.ex, () => next(ok), ok ? null : accept);
+    };
+    okBtn.onclick = submit;
+    input.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); submit(); } };
+    const mic = root.querySelector("#mic");
+    if (mic) mic.onclick = () => listen(mic, root.querySelector("#micl"), (t) => { input.value = t; submit(); });
+  } else if (it.type === "error") {
+    render(`${head("alert", "Corrige la faute")}
+      <p class="q wrong-line">${esc(it.wrong)}</p>
+      <p class="muted">Dis ou écris la phrase correcte.</p>${speakBox}
+      <textarea class="answer" id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="La phrase corrigée…"></textarea>
+      <div class="dock"><button class="btn lv" id="ok" disabled>Valider</button></div>`);
+    const input = root.querySelector("#ans");
+    const okBtn = root.querySelector("#ok");
+    input.oninput = () => (okBtn.disabled = !input.value.trim());
+    // La phrase corrigée devient une carte : recto = la faute, verso = la correction.
+    const key = `✔ ${it.right[0]}`;
+    const submit = () => {
+      if (!input.value.trim()) return;
+      const ok = it.right.some((r) => norm(r) === norm(input.value));
+      root.querySelector(".dock").remove();
+      speak(it.right[0]);
+      const had = Boolean(P().deck[key]);
+      if (!ok && !had) { P().deck[key] = newCard(`Corrige : « ${it.wrong} »`, it.right[0], it.rule); save(); }
+      const accept = () => { if (!had) { delete P().deck[key]; save(); } next(true); };
+      drillSheet(ok, it.right[0], it.rule, () => next(ok), ok ? null : accept);
     };
     okBtn.onclick = submit;
     input.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); submit(); } };

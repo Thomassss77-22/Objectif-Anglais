@@ -378,6 +378,7 @@ h1, h2, h3 { margin: 0; letter-spacing: -.02em; }
 
 .sheet.neutral { background: var(--surface); color: var(--fg); box-shadow: 0 -10px 30px rgba(0, 0, 0, .12); }
 .sheet.neutral h3 .badge { background: var(--brand-1); }
+.wrong-line { text-decoration: line-through; text-decoration-color: var(--ko); text-decoration-thickness: 2px; }
 .sheet-ex { display: block; margin-top: 6px; font-weight: 500; opacity: .85; }
 .sheet .row2 { margin-top: 4px; }
 
