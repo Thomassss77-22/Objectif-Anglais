@@ -146,3 +146,35 @@ to replace | remplacer | I need to replace my phone. | B1
 to struggle | avoir du mal, lutter | I'm struggling with this exercise. | B2
 to tend to | avoir tendance à | I tend to get up late. | B2
 to threaten | menacer | They threatened to leave. | B2
+to undermine | saper, fragiliser | This undermines our efforts. | C1
+to enhance | améliorer, renforcer | This will enhance your CV. | C1
+to foster | favoriser, encourager | We want to foster creativity. | C1
+to tackle | s'attaquer à | We must tackle climate change. | B2
+to assess | évaluer | We need to assess the risks. | C1
+to acquire | acquérir | She acquired new skills. | C1
+to allocate | allouer, attribuer | Funds were allocated to schools. | C1
+to cease | cesser | The company ceased trading. | C1
+to coincide | coïncider | My birthday coincides with Easter. | C1
+to compensate | compenser, indemniser | Nothing can compensate for this. | C1
+to dismiss | écarter, rejeter ; renvoyer | He dismissed the idea. | C1
+to embrace | adopter, accueillir ; étreindre | They embraced new technology. | C1
+to emerge | émerger, apparaître | New problems emerged. | C1
+to exceed | dépasser | Costs exceeded the budget. | C1
+to exploit | exploiter | They exploited the workers. | C1
+to grasp | saisir, comprendre | I couldn't grasp the idea. | C1
+to hinder | entraver, gêner | Bad weather hindered progress. | C1
+to imply | sous-entendre, impliquer | What are you implying? | C1
+to indicate | indiquer | Studies indicate a link. | B2
+to justify | justifier | How can you justify this? | B2
+to neglect | négliger | Don't neglect your health. | C1
+to perceive | percevoir | How is he perceived by others? | C1
+to pursue | poursuivre | She pursued a career in law. | C1
+to reinforce | renforcer | This reinforces my point. | C1
+to resolve | résoudre | The issue was resolved. | B2
+to restore | restaurer, rétablir | They restored the old house. | C1
+to retain | conserver, retenir | Companies want to retain staff. | C1
+to reveal | révéler | The study reveals a problem. | B2
+to sustain | maintenir, soutenir | We can't sustain this pace. | C1
+to undergo | subir (une opération, un changement) | He underwent surgery. | C1
+to weigh up | peser (le pour et le contre) | Weigh up your options. | C1
+to yield | produire, rapporter ; céder | The research yielded results. | C1

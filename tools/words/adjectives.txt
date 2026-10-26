@@ -89,3 +89,24 @@ significant | important, significatif | A significant improvement. | B2
 straightforward | simple ; franc | The instructions are straightforward. | B2
 tough | dur, difficile | It's a tough decision. | B2
 worthwhile | qui vaut la peine | It was a worthwhile experience. | B2
+ambiguous | ambigu | The answer was ambiguous. | C1
+arbitrary | arbitraire | An arbitrary decision. | C1
+blunt | direct, franc ; émoussé | Sorry to be blunt, but… | C1
+compelling | convaincant, captivant | A compelling argument. | C1
+consistent | cohérent, régulier | Be consistent with your practice. | B2
+considerable | considérable | A considerable amount of money. | B2
+feasible | faisable | Is the plan feasible? | C1
+genuine | authentique, sincère | A genuine smile. | B2
+inherent | inhérent | Risks inherent in the job. | C1
+meaningful | significatif, qui a du sens | A meaningful conversation. | B2
+misleading | trompeur | The ad was misleading. | C1
+overwhelming | écrasant, accablant | An overwhelming majority. | C1
+plausible | plausible | A plausible explanation. | C1
+profound | profond | A profound change. | C1
+reluctant | réticent | He was reluctant to help. | C1
+robust | robuste, solide | A robust system. | C1
+subtle | subtil | A subtle difference. | C1
+thorough | minutieux, approfondi | A thorough investigation. | C1
+vague | vague, flou | His answer was vague. | B2
+vulnerable | vulnérable | Children are vulnerable. | B2
+widespread | répandu | A widespread belief. | C1

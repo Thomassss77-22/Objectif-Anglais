@@ -1,0 +1,44 @@
+# anglais | français | exemple | niveau
+research | la recherche | Research shows that sleep matters. | B1
+researcher | le chercheur | Researchers have found a new drug. | B2
+scientist | le scientifique | She's a famous scientist. | B1
+study | l'étude | A new study suggests… | B1
+experiment | l'expérience (scientifique) | We did an experiment in class. | B1
+laboratory | le laboratoire | She works in a laboratory. | B1
+data | les données | We need more data. | B2
+results | les résultats | The results are surprising. | B1
+findings | les conclusions, les résultats | The findings were published. | C1
+theory | la théorie | It's just a theory. | B2
+hypothesis | l'hypothèse | We tested the hypothesis. | C1
+discovery | la découverte | An important discovery. | B1
+breakthrough | l'avancée majeure | A medical breakthrough. | C1
+to invent | inventer | Who invented the telephone? | B1
+invention | l'invention | The internet is a great invention. | B1
+artificial intelligence | l'intelligence artificielle | AI is changing everything. | B2
+device | l'appareil, le dispositif | A medical device. | B2
+vaccine | le vaccin | The vaccine is safe. | B2
+virus | le virus | The virus spread quickly. | B2
+disease | la maladie | Heart disease is common. | B1
+epidemic | l'épidémie | A flu epidemic. | C1
+pandemic | la pandémie | The pandemic changed our lives. | B2
+treatment | le traitement | There's no treatment yet. | B2
+cure | le remède, la guérison | There's no cure for the common cold. | B2
+symptom | le symptôme | What are the symptoms? | B2
+diagnosis | le diagnostic | The diagnosis was cancer. | C1
+surgery | la chirurgie, l'opération | He needs surgery. | B2
+surgeon | le chirurgien | She's a heart surgeon. | B2
+patient | le patient | The patient is recovering. | B1
+side effects | les effets secondaires | Are there any side effects? | B2
+mental health | la santé mentale | Mental health matters. | B2
+life expectancy | l'espérance de vie | Life expectancy is rising. | C1
+obesity | l'obésité | Obesity is a growing problem. | C1
+addiction | la dépendance, l'addiction | Phone addiction is real. | B2
+to prevent | prévenir, empêcher | Exercise helps prevent disease. | B2
+prevention | la prévention | Prevention is better than cure. | C1
+genetic | génétique | A genetic disease. | C1
+brain | le cerveau | The brain needs sleep. | B1
+evidence-based | fondé sur des preuves | Evidence-based medicine. | C1
+to measure | mesurer | We measured the temperature. | B1
+accurate results | des résultats précis | We need accurate results. | B2
+space | l'espace | Space exploration. | B1
+planet | la planète | Mars is a red planet. | B1

@@ -48,3 +48,31 @@ equality | l'égalité | Gender equality matters. | B2
 discrimination | la discrimination | Discrimination is illegal. | B2
 renewable energy | l'énergie renouvelable | We need more renewable energy. | B2
 sustainable | durable | Sustainable development. | B2
+policy | la politique (mesure) | A new housing policy. | B2
+politics | la politique (domaine) | I'm not interested in politics. | B1
+politician | l'homme ou la femme politique | Politicians make promises. | B1
+to campaign | faire campagne | They campaigned for change. | B2
+candidate | le candidat | Who's the best candidate? | B2
+to elect | élire | She was elected mayor. | B2
+majority | la majorité | The majority voted yes. | B2
+minority | la minorité | Minority rights. | B2
+public opinion | l'opinion publique | Public opinion has changed. | B2
+welfare | la protection sociale, le bien-être | The welfare state. | C1
+pension | la retraite (pension) | Pensions are too low. | B2
+reform | la réforme | Pension reform. | B2
+corruption | la corruption | Corruption is widespread. | B2
+scandal | le scandale | A political scandal. | B2
+to resign from office | démissionner de ses fonctions | The minister resigned from office. | C1
+legislation | la législation | New legislation was passed. | C1
+to ban | interdire | They banned smoking in bars. | B2
+ban | l'interdiction | A ban on plastic bags. | B2
+censorship | la censure | Censorship of the press. | C1
+human rights | les droits de l'homme | Human rights abuses. | B2
+gender | le genre, le sexe | Gender equality. | B2
+racism | le racisme | We fight racism. | B2
+homeless | sans-abri | Help for homeless people. | B2
+social class | la classe sociale | Social class still matters. | B2
+globalisation | la mondialisation | The effects of globalisation. | C1
+developing country | le pays en développement | Aid to developing countries. | B2
+ageing population | le vieillissement de la population | Europe has an ageing population. | C1
+standard of living | le niveau de vie | Their standard of living improved. | C1

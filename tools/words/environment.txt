@@ -1,0 +1,35 @@
+# anglais | français | exemple | niveau
+global warming | le réchauffement climatique | Global warming is accelerating. | B1
+greenhouse gas | le gaz à effet de serre | Cars produce greenhouse gases. | B2
+carbon emissions | les émissions de carbone | We must cut carbon emissions. | B2
+carbon footprint | l'empreinte carbone | Reduce your carbon footprint. | B2
+fossil fuels | les combustibles fossiles | We rely too much on fossil fuels. | B2
+solar power | l'énergie solaire | Solar power is getting cheaper. | B2
+wind farm | le parc éolien | A new wind farm. | B2
+nuclear power | l'énergie nucléaire | France relies on nuclear power. | B2
+to save energy | économiser l'énergie | Turn off lights to save energy. | B1
+deforestation | la déforestation | Deforestation destroys habitats. | B2
+biodiversity | la biodiversité | Biodiversity is declining. | C1
+species | l'espèce | Many species are endangered. | B2
+endangered | menacé (d'extinction) | Pandas are an endangered species. | B2
+extinct | disparu, éteint | Dinosaurs are extinct. | B2
+habitat | l'habitat (naturel) | They're losing their habitat. | B2
+wildlife | la faune (sauvage) | Protect wildlife. | B2
+drought | la sécheresse | The drought lasted months. | B2
+flood | l'inondation | The flood destroyed homes. | B1
+heatwave | la canicule | A heatwave hit Europe. | B2
+natural disaster | la catastrophe naturelle | Earthquakes are natural disasters. | B2
+earthquake | le tremblement de terre | A strong earthquake. | B1
+sea level | le niveau de la mer | Sea levels are rising. | B2
+plastic | le plastique | Plastic pollutes the oceans. | A2
+single-use | à usage unique | Ban single-use plastic. | C1
+landfill | la décharge | Waste goes to landfill. | C1
+organic | bio | I buy organic food. | B2
+eco-friendly | écologique | An eco-friendly car. | B2
+to protect | protéger | We must protect nature. | B1
+to damage | endommager | Pollution damages health. | B2
+to reduce waste | réduire les déchets | Let's reduce waste. | B2
+to reuse | réutiliser | Reuse your bags. | B2
+emissions | les émissions | Emissions must fall. | B2
+consumption | la consommation | Energy consumption is rising. | C1
+resources | les ressources | Natural resources are limited. | B2

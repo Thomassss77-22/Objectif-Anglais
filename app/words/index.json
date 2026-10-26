@@ -1,5 +1,5 @@
 {
- "total": 1364,
+ "total": 1652,
  "categories": [
   {
    "id": "people",
@@ -156,13 +156,13 @@
    "name": "Émotions et caractère",
    "icon": "smile",
    "desc": "Sentiments, personnalité, humeur",
-   "count": 61,
+   "count": 76,
    "levels": {
     "A1": 10,
     "A2": 17,
     "B1": 22,
-    "B2": 12,
-    "C1": 0,
+    "B2": 15,
+    "C1": 12,
     "C2": 0
    }
   },
@@ -171,13 +171,13 @@
    "name": "Verbes essentiels",
    "icon": "bolt",
    "desc": "Les verbes les plus utilisés à l'oral",
-   "count": 147,
+   "count": 179,
    "levels": {
     "A1": 72,
     "A2": 24,
     "B1": 31,
-    "B2": 19,
-    "C1": 1,
+    "B2": 24,
+    "C1": 28,
     "C2": 0
    }
   },
@@ -186,13 +186,13 @@
    "name": "Adjectifs essentiels",
    "icon": "star",
    "desc": "Décrire les choses et les gens",
-   "count": 90,
+   "count": 111,
    "levels": {
     "A1": 31,
     "A2": 26,
     "B1": 15,
-    "B2": 18,
-    "C1": 0,
+    "B2": 24,
+    "C1": 15,
     "C2": 0
    }
   },
@@ -201,13 +201,13 @@
    "name": "Mots de liaison",
    "icon": "link",
    "desc": "Structurer son discours : mais, donc, pourtant…",
-   "count": 49,
+   "count": 61,
    "levels": {
     "A1": 18,
     "A2": 9,
     "B1": 20,
-    "B2": 2,
-    "C1": 0,
+    "B2": 7,
+    "C1": 7,
     "C2": 0
    }
   },
@@ -216,13 +216,13 @@
    "name": "Expressions de conversation",
    "icon": "chat",
    "desc": "Réagir, relancer, être poli à l'oral",
-   "count": 65,
+   "count": 72,
    "levels": {
     "A1": 18,
     "A2": 18,
-    "B1": 23,
-    "B2": 4,
-    "C1": 2,
+    "B1": 24,
+    "B2": 7,
+    "C1": 5,
     "C2": 0
    }
   },
@@ -366,13 +366,73 @@
    "name": "Société et actualité",
    "icon": "globe",
    "desc": "Politique, économie, justice, grands enjeux",
-   "count": 49,
+   "count": 77,
    "levels": {
     "A1": 0,
     "A2": 4,
-    "B1": 34,
-    "B2": 11,
-    "C1": 0,
+    "B1": 36,
+    "B2": 30,
+    "C1": 7,
+    "C2": 0
+   }
+  },
+  {
+   "id": "formal",
+   "name": "Registre soutenu",
+   "icon": "pen",
+   "desc": "Écrire et parler dans un anglais soigné et professionnel",
+   "count": 49,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 1,
+    "B2": 23,
+    "C1": 25,
+    "C2": 0
+   }
+  },
+  {
+   "id": "science",
+   "name": "Sciences et santé publique",
+   "icon": "flask",
+   "desc": "Recherche, médecine, technologie, santé",
+   "count": 43,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 15,
+    "B2": 18,
+    "C1": 10,
+    "C2": 0
+   }
+  },
+  {
+   "id": "business",
+   "name": "Économie et entreprise",
+   "icon": "chart",
+   "desc": "Marchés, finance, management, stratégie",
+   "count": 47,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 9,
+    "B2": 31,
+    "C1": 7,
+    "C2": 0
+   }
+  },
+  {
+   "id": "environment",
+   "name": "Environnement",
+   "icon": "leaf",
+   "desc": "Climat, énergie, écologie, biodiversité",
+   "count": 34,
+   "levels": {
+    "A1": 0,
+    "A2": 1,
+    "B1": 5,
+    "B2": 24,
+    "C1": 4,
     "C2": 0
    }
   }

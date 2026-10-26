@@ -24,3 +24,7 @@ collocations | Collocations | link2 | Les bonnes associations : make a decision,
 falsefriends | Faux amis | alert | Les pièges des francophones : to attend, issue, to pretend…
 opinion | Donner son avis et débattre | scale | Argumenter, nuancer, être d'accord ou non
 society | Société et actualité | globe | Politique, économie, justice, grands enjeux
+formal | Registre soutenu | pen | Écrire et parler dans un anglais soigné et professionnel
+science | Sciences et santé publique | flask | Recherche, médecine, technologie, santé
+business | Économie et entreprise | chart | Marchés, finance, management, stratégie
+environment | Environnement | leaf | Climat, énergie, écologie, biodiversité

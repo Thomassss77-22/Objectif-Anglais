@@ -1,0 +1,48 @@
+# anglais | français | exemple | niveau
+market | le marché | The market is growing. | B1
+growth | la croissance | Economic growth slowed. | B2
+profit | le bénéfice | The company made a profit. | B1
+loss | la perte | They made a loss this year. | B2
+revenue | le chiffre d'affaires, les recettes | Revenue rose by 10%. | C1
+turnover | le chiffre d'affaires (UK) ; le roulement | Annual turnover is £2m. | C1
+income | le revenu | Their income is low. | B2
+investment | l'investissement | A good investment. | B2
+to invest | investir | They invested in tech. | B2
+investor | l'investisseur | Investors are worried. | B2
+shareholder | l'actionnaire | Shareholders voted against. | C1
+share | l'action (en bourse) ; la part | Share prices fell. | B2
+stock market | la bourse | The stock market crashed. | B2
+interest rate | le taux d'intérêt | Interest rates are rising. | B2
+loan | le prêt | I need a loan. | B2
+mortgage | le prêt immobilier | We took out a mortgage. | B2
+supply and demand | l'offre et la demande | It's all about supply and demand. | C1
+competitor | le concurrent | Our main competitor. | B2
+competition | la concurrence | There's strong competition. | B2
+brand | la marque | A well-known brand. | B2
+advertising | la publicité | They spend millions on advertising. | B2
+marketing | le marketing | She works in marketing. | B2
+product | le produit | A new product. | B1
+to launch | lancer | They launched a new product. | B2
+strategy | la stratégie | Our strategy is working. | B2
+goal setting | la fixation d'objectifs | Goal setting is essential. | C1
+management | la direction, la gestion | Management decided to cut costs. | B2
+headquarters | le siège social | Their headquarters are in London. | B2
+branch | la succursale, l'agence | The bank has a branch here. | B2
+startup | la start-up | She works for a startup. | B2
+entrepreneur | l'entrepreneur | He's a successful entrepreneur. | B2
+merger | la fusion | The merger was approved. | C1
+to take over a company | racheter une entreprise | They took over a rival company. | C1
+to go bankrupt | faire faillite | The firm went bankrupt. | B2
+recession | la récession | The country is in recession. | B2
+to boost | stimuler, booster | This will boost sales. | B2
+to decline | diminuer, décliner | Sales declined last year. | B2
+to rise | augmenter | Prices are rising. | B1
+to fall | baisser | Unemployment fell. | B1
+sales | les ventes | Sales increased by 5%. | B1
+costs | les coûts | We need to cut costs. | B1
+to cut costs | réduire les coûts | The company is cutting costs. | B2
+supplier | le fournisseur | We changed suppliers. | B2
+client | le client (services) | She has many clients. | B2
+deal | l'accord, l'affaire | We made a deal. | B1
+to sign | signer | Sign the contract here. | B1
+negotiation | la négociation | The negotiations failed. | B2
