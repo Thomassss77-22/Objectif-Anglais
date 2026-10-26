@@ -1,0 +1,8 @@
+{
+  "appId": "fr.objectifanglais.app",
+  "appName": "Objectif Anglais",
+  "webDir": "app",
+  "ios": {
+    "contentInset": "never"
+  }
+}

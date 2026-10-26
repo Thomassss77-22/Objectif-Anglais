@@ -33,10 +33,24 @@ function save() {
 // La progression ne vit que dans ce navigateur : on peut l'exporter dans un fichier et la restaurer
 // sur un autre appareil.
 const BACKUP_APP = "objectif-anglais";
-function exportProgress() {
+// Dans l'application iPhone (Capacitor), pas de téléchargement : on écrit le fichier puis on ouvre
+// la feuille de partage (Fichiers, AirDrop, e-mail…).
+const nativePlugin = (name) => window.Capacitor?.isNativePlatform?.() && (window.Capacitor.Plugins?.[name] || window.Capacitor.registerPlugin?.(name));
+async function exportProgress() {
   state.lastBackup = Date.now();
   save();
-  const blob = new Blob([JSON.stringify({ app: BACKUP_APP, version: 1, exported: new Date().toISOString(), state })], { type: "application/json" });
+  const json = JSON.stringify({ app: BACKUP_APP, version: 1, exported: new Date().toISOString(), state });
+  const fs = nativePlugin("Filesystem"), share = nativePlugin("Share");
+  if (fs && share) {
+    try {
+      const { uri } = await fs.writeFile({ path: `objectif-anglais-${dayKey()}.json`, data: json, directory: "CACHE", encoding: "utf8" });
+      await share.share({ title: "Sauvegarde Objectif Anglais", files: [uri] });
+    } catch (e) {
+      if (!/cancel/i.test(String(e?.message || e))) alert("La sauvegarde n'a pas pu être partagée.");
+    }
+    return;
+  }
+  const blob = new Blob([json], { type: "application/json" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   a.download = `objectif-anglais-${dayKey()}.json`;
@@ -312,7 +326,7 @@ function home() {
   root.querySelector("#test-home")?.addEventListener("click", placementIntro);
   root.querySelector("#mistakes-home")?.addEventListener("click", mistakesHome);
   root.querySelector("#read-home")?.addEventListener("click", readingList);
-  root.querySelector("#backup-home")?.addEventListener("click", () => { exportProgress(); home(); });
+  root.querySelector("#backup-home")?.addEventListener("click", async () => { await exportProgress(); home(); });
   bindPath(next);
 }
 
@@ -1357,7 +1371,7 @@ function profile() {
     <button class="link-danger" id="reset">Réinitialiser ma progression (${legalMode() ? "mode CRFPA" : "anglais général"})</button>
   `, { nav: "profile" });
   root.querySelector("#retest")?.addEventListener("click", placementIntro);
-  root.querySelector("#export").onclick = () => { exportProgress(); profile(); };
+  root.querySelector("#export").onclick = async () => { await exportProgress(); profile(); };
   const file = root.querySelector("#import-file");
   root.querySelector("#import").onclick = () => file.click();
   file.onchange = () => file.files[0] && importProgress(file.files[0], home);

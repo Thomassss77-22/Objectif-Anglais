@@ -1,0 +1,19 @@
+{
+  "name": "objectif-anglais",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Application d'apprentissage de l'anglais pour francophones (PWA + application iOS via Capacitor)",
+  "scripts": {
+    "ios": "cap sync ios && cap open ios",
+    "sync": "cap sync ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/ios": "^8.5.3",
+    "@capacitor/share": "^8.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.3"
+  }
+}
