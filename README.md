@@ -17,6 +17,12 @@ Fonctionnalités :
 - Les mots de chaque leçon rejoignent le paquet de **cartes mémoire**, révisées avec l'algorithme **SM-2**.
 - XP, série quotidienne, progression sauvegardée localement, fonctionne hors ligne.
 
+## Test de niveau
+Test adaptatif A1 → C2 (`app/placement.js`) : 60 questions (grammaire, vocabulaire, compréhension écrite et orale),
+estimation probabiliste du niveau après chaque réponse, arrêt entre 16 et 28 questions à 90 % de confiance.
+Validation par simulation (`node tools/simulate_placement.mjs`) : environ 87 % de candidats classés au niveau exact,
+plus de 99 % à un niveau près. Ne mesure pas l'expression orale ou écrite ; ce n'est pas une certification.
+
 ## Ciné et séries
 Dans l'onglet **Mots** (et sur l'accueil) en anglais général : 10 films et séries (`app/films.js`) avec un pitch sans spoiler,
 l'accent, le niveau, 22 à 27 mots classés par thème et un quiz « Suis-je prêt ? ». Aucune réplique ni extrait n'est reproduit.

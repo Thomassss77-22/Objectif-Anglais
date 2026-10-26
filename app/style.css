@@ -569,6 +569,14 @@ h1, h2, h3 { margin: 0; letter-spacing: -.02em; }
     linear-gradient(160deg, hsl(var(--h) 55% 32%), hsl(calc(var(--h) + 30) 60% 16%)); }
 .film-hero h1 { font-size: 1.6rem; line-height: 1.15; margin-top: 12px; }
 
+/* ---------- Test de niveau ---------- */
+.tile-icon.alt-test { background: linear-gradient(135deg, #5b5bf7, #12b886); }
+.test-text { font-size: .98rem; margin-bottom: 4px; }
+.dunno { margin-top: 14px; box-shadow: none; border: 2px dashed var(--line); color: var(--muted); }
+.level-badge { background: linear-gradient(160deg, var(--lv), var(--lv-2)); box-shadow: 0 10px 0 color-mix(in srgb, var(--lv-2) 60%, #000), 0 30px 50px -16px var(--lv); }
+.level-badge span { font-size: 2.8rem; font-weight: 800; letter-spacing: -.04em; }
+.linklike { color: var(--brand-1); font-weight: 800; text-decoration: underline; }
+
 /* ---------- Profil ---------- */
 .profile-head { display: flex; align-items: center; gap: 16px; margin: 10px 0 20px; }
 .avatar {

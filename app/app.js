@@ -2,6 +2,7 @@ import { LEVELS } from "./data.js";
 import { LEGAL, JURY_QUESTIONS, SELF_GRID, DRILL_SENTENCES, ERROR_SENTENCES } from "./legal.js";
 import { ARTICLES } from "./articles.js";
 import { FILMS } from "./films.js";
+import * as PT from "./placement.js";
 import { newCard, review, dueCards } from "./srs.js";
 
 const KEY = "objectif-anglais-v1";
@@ -232,6 +233,11 @@ function home() {
         <span>${due ? "Révise maintenant pour ne pas oublier" : "Les mots de tes leçons arriveront ici"}</span></div>
       ${due ? `<span class="badge-count">${due}</span>` : `<span class="go">${icon("chevron")}</span>`}
     </button>
+    ${legalMode() ? "" : `<button class="tile" id="test-home">
+      <div class="tile-icon alt-test">${icon("target")}</div>
+      <div><b>${state.placement ? `Ton niveau : ${state.placement.level}` : "Tester mon niveau"}</b>
+        <span>${state.placement ? "Refaire le test de niveau (15 à 25 questions)" : "Un test adaptatif de 15 à 25 questions pour démarrer au bon niveau"}</span></div>
+      <span class="go">${icon("chevron")}</span></button>`}
     ${legalMode() ? "" : `<button class="tile" id="cine-home">
       <div class="tile-icon cine">${icon("film")}</div>
       <div><b>Ciné et séries</b><span>Prépare ton prochain film en anglais</span></div>
@@ -249,6 +255,7 @@ function home() {
   }, 60));
   root.querySelector("#continue").onclick = () => (next ? lesson(next.id) : reviewSession());
   root.querySelector("#cine-home")?.addEventListener("click", cinema);
+  root.querySelector("#test-home")?.addEventListener("click", placementIntro);
   root.querySelectorAll(".node-btn").forEach((b) => (b.onclick = () => lesson(b.dataset.id)));
 }
 
@@ -705,6 +712,102 @@ function filmQuiz(f) {
   step(0, 0);
 }
 
+// ---------- Test de niveau ----------
+function placementIntro() {
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
+    <section class="lesson-hero" data-lv="B1">
+      <span class="chip">Test adaptatif · A1 à C2</span>
+      <h1>Quel est ton niveau d'anglais ?</h1>
+      <div class="meta"><span>${icon("clock")}10 à 15 min</span><span>${icon("list")}15 à 25 questions</span></div>
+    </section>
+    <h4 class="section-title">${icon("bulb")}Comment ça marche</h4>
+    <div class="tip">Chaque réponse affine l'estimation de ton niveau : les questions s'adaptent et deviennent plus faciles ou plus difficiles.
+      Le test porte sur <b>la grammaire, le vocabulaire, la compréhension écrite et la compréhension orale</b> (mets le son).
+      <br><br><b>Ne devine pas :</b> si tu ne sais pas, touche « Je ne sais pas ». Répondre au hasard fausse le résultat.</div>
+    <h4 class="section-title">${icon("alert")}Ce que le test ne mesure pas</h4>
+    <div class="tip">L'expression orale et écrite. Ce n'est pas une certification officielle (TOEIC, IELTS, Cambridge) : c'est une estimation fiable pour choisir ton point de départ.</div>
+    <div class="dock"><button class="btn" id="go">${icon("play")}Commencer le test</button></div>
+  `);
+  root.querySelector("#back").onclick = home;
+  root.querySelector("#go").onclick = () => {
+    const used = new Set();
+    // Sans synthèse vocale, les questions d'écoute sont retirées.
+    if (!("speechSynthesis" in window)) PT.ITEMS.filter((it) => it.skill === "listening").forEach((it) => used.add(it.id));
+    placementStep({ post: Array(6).fill(1 / 6), used, skills: [], answers: [] });
+  };
+}
+
+function placementStep(t) {
+  if (PT.done(t.post, t.answers.length)) return placementResult(t);
+  const it = PT.pickNext(t.post, t.used, t.skills);
+  if (!it) return placementResult(t);
+  const n = t.answers.length;
+  render(`
+    <div class="ex-top">
+      <button class="icon-btn" id="quit" aria-label="Quitter">${icon("x")}</button>
+      <div class="bar"><i style="width:${Math.min(95, (n / 22) * 100)}%"></i></div>
+    </div>
+    <span class="ex-kind">${icon(it.skill === "listening" ? "sound" : it.skill === "reading" ? "book" : it.skill === "vocab" ? "list" : "pen")}${PT.SKILLS[it.skill]} · question ${n + 1}</span>
+    ${it.text ? `<div class="paper test-text">${esc(it.text)}</div>` : ""}
+    ${it.audio ? `<button class="say big-say" id="play">${icon("sound")}Écouter (2 fois max.)</button>` : ""}
+    <p class="q">${esc(it.q)}</p>
+    <div class="choices">${it.choices.map((c, k) => `<button class="choice" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${esc(c)}</button>`).join("")}</div>
+    <button class="btn ghost dunno" id="dunno">Je ne sais pas</button>
+  `);
+  let plays = 0;
+  const play = () => { if (plays < 2) { plays++; speak(it.audio); } if (plays >= 2) root.querySelector("#play").disabled = true; };
+  if (it.audio) { root.querySelector("#play").onclick = play; setTimeout(play, 400); }
+  const answer = (outcome) => {
+    t.used.add(it.id);
+    t.skills.push(it.skill);
+    t.answers.push({ id: it.id, skill: it.skill, lv: it.lv, outcome });
+    t.post = PT.update(t.post, it, outcome);
+    placementStep(t);
+  };
+  root.querySelectorAll(".choice").forEach((b) => (b.onclick = () => answer(+b.dataset.k === it.answer ? "right" : "wrong")));
+  root.querySelector("#dunno").onclick = () => answer("unknown");
+  root.querySelector("#quit").onclick = () => { if (confirm("Abandonner le test ?")) home(); };
+}
+
+function placementResult(t) {
+  const i = PT.best(t.post);
+  const level = PT.LEVEL_NAMES[i];
+  const conf = Math.round(t.post[i] * 100);
+  // Niveau voisin le plus probable, pour situer le candidat entre deux niveaux.
+  const neighbours = [i - 1, i + 1].filter((j) => j >= 0 && j < 6).sort((a, b) => t.post[b] - t.post[a]);
+  const near = neighbours.length && t.post[neighbours[0]] >= 0.15 ? PT.LEVEL_NAMES[neighbours[0]] : null;
+  const bySkill = Object.keys(PT.SKILLS).map((k) => {
+    const a = t.answers.filter((x) => x.skill === k);
+    return { k, n: a.length, ok: a.filter((x) => x.outcome === "right").length };
+  }).filter((x) => x.n);
+  state.placement = { level, conf, date: dayKey() };
+  addXp(10);
+  render(`
+    <canvas id="confetti"></canvas>
+    <div class="done-screen">
+      <div class="trophy level-badge" data-lv="${level}"><span>${level}</span></div>
+      <h1>Ton niveau : ${level}</h1>
+      <p>${esc(PT.LEVEL_INFO[level])}</p>
+      <p class="muted small">Confiance de l'estimation : ${conf} %${near ? ` · proche du niveau ${near}` : ""} · ${t.answers.length} questions</p>
+    </div>
+    <h4 class="section-title">${icon("chart")}Par compétence</h4>
+    <div class="levels">${bySkill.map((x) => `
+      <div class="lvrow"><div><b>${PT.SKILLS[x.k]}</b>
+        <div class="meter"><i style="width:${(x.ok / x.n) * 100}%"></i></div></div><em>${x.ok}/${x.n}</em></div>`).join("")}</div>
+    <p class="muted small center-text">Les questions s'adaptent à ton niveau : un score par compétence se lit en comparant les compétences entre elles.</p>
+    <div class="dock"><div class="row2"><button class="btn ghost" id="h">Plus tard</button><button class="btn" id="start">Commencer en ${level}</button></div></div>
+  `);
+  if (conf >= 60) confetti(root.querySelector("#confetti"));
+  root.querySelector("#h").onclick = home;
+  root.querySelector("#start").onclick = () => {
+    // Les leçons des niveaux inférieurs sont marquées comme acquises (sans ajouter leurs mots aux cartes).
+    LEVELS.slice(0, i).forEach((lv) => lv.lessons.forEach((l) => (state.done[l.id] = true)));
+    save();
+    home();
+  };
+}
+
 // ---------- Profil ----------
 function profile() {
   const cards = Object.values(P().deck);
@@ -718,7 +821,8 @@ function profile() {
     ${topbar()}
     <div class="profile-head">
       <div class="avatar">${current.id}</div>
-      <div><h1>Mon parcours</h1><p>${legalMode() ? "Module en cours" : "Niveau actuel"} : ${current.id} · ${esc(current.name.split(" — ")[0])}</p></div>
+      <div><h1>Mon parcours</h1><p>${legalMode() ? "Module en cours" : "Niveau actuel"} : ${current.id} · ${esc(current.name.split(" — ")[0])}</p>
+        ${!legalMode() && state.placement ? `<p class="muted small">Test de niveau : ${state.placement.level} (${state.placement.conf} %) · <button class="linklike" id="retest">refaire</button></p>` : ""}</div>
     </div>
     <h4 class="section-title">${icon("split")}Mode d'apprentissage</h4>
     <div class="mode-switch">
@@ -740,6 +844,7 @@ function profile() {
     }).join("")}</div>
     <button class="link-danger" id="reset">Réinitialiser ma progression (${legalMode() ? "mode CRFPA" : "anglais général"})</button>
   `, { nav: "profile" });
+  root.querySelector("#retest")?.addEventListener("click", placementIntro);
   root.querySelectorAll("[data-mode]").forEach((b) => (b.onclick = () => {
     if (state.mode === b.dataset.mode) return;
     state.mode = b.dataset.mode;
