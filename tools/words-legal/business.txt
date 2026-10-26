@@ -1,0 +1,35 @@
+# anglais | français | exemple | niveau
+company law | le droit des sociétés | She specialises in company law. | C1
+a limited company | une société à responsabilité limitée | They set up a limited company. | C1
+a public limited company | une société anonyme cotée (plc) | It became a public limited company. | C1
+a shareholder | un actionnaire | Shareholders approved the merger. | C1
+the board of directors | le conseil d'administration | The board of directors met on Monday. | C1
+articles of association | les statuts | The articles of association set out the rules. | C1
+a merger | une fusion | The merger was blocked by regulators. | C1
+a takeover | un rachat, une prise de contrôle | A hostile takeover. | C1
+insolvency | l'insolvabilité | The company faced insolvency. | C1
+to go into administration | être placé en redressement judiciaire (UK) | The retailer went into administration. | C1
+to go into liquidation | être mis en liquidation | The firm went into liquidation. | C1
+a creditor | un créancier | Creditors will be paid first. | C1
+a debtor | un débiteur | The debtor could not pay. | C1
+competition law | le droit de la concurrence | Competition law prohibits cartels. | C1
+antitrust | le droit de la concurrence (US) | The US filed an antitrust suit against Google. | C1
+a cartel | une entente | The cartel fixed prices. | C1
+an abuse of a dominant position | un abus de position dominante | The Commission fined the company for abuse of a dominant position. | C1
+intellectual property | la propriété intellectuelle | Intellectual property protects creations. | C1
+copyright | le droit d'auteur | Copyright lasts seventy years after the author's death. | C1
+a trademark | une marque déposée | They registered the trademark. | C1
+a patent | un brevet | The company holds the patent. | C1
+infringement | la contrefaçon, la violation | Copyright infringement. | C1
+employment law | le droit du travail | Employment law protects workers. | C1
+an employment contract | un contrat de travail | Read your employment contract. | B2
+unfair dismissal | le licenciement abusif | She sued for unfair dismissal. | C1
+redundancy | le licenciement économique | Hundreds faced redundancy. | C1
+a trade union | un syndicat | The trade union called a strike. | B2
+collective bargaining | la négociation collective | Collective bargaining sets wages. | C1
+the minimum wage | le salaire minimum | The minimum wage rose in April. | B2
+a zero-hours contract | un contrat sans horaire garanti (UK) | Many young people are on zero-hours contracts. | C1
+the gig economy | l'économie des plateformes | Gig economy workers lack protection. | C1
+compliance | la conformité | Compliance teams check the rules. | C1
+corporate social responsibility | la responsabilité sociale des entreprises | Corporate social responsibility is now a legal duty. | C1
+due diligence | l'audit préalable, le devoir de vigilance | France adopted a duty of vigilance law in 2017. | C1

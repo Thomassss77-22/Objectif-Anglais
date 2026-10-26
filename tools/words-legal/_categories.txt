@@ -8,3 +8,13 @@ civil | Procès civil et contrats | list | Action en justice, voies de recours, 
 rights | Constitution et libertés | globe | État de droit, libertés fondamentales, contrôle
 falsefriends | Faux amis juridiques | alert | jurisprudence, magistrate, sentence, prejudice…
 verbs | Verbes prépositionnels et idiomes | zap | abide by, stem from, pave the way for…
+collocations | Collocations juridiques | link | Les bons verbes avec les bons noms : to hand down a ruling, to lodge an appeal…
+courtroom | Au tribunal | scale | Audience, témoins, plaidoiries, verdict
+profession | La profession et sa déontologie | briefcase | Serment, secret, conflits d'intérêts, discipline
+politics | Politique et institutions UK / US | globe | Parlement, Congrès, élections, pouvoir exécutif
+international | UE et droit international | globe | Union européenne, Conseil de l'Europe, traités, juridictions internationales
+debates | Grands débats de société | chat | Immigration, IA, climat, armes, avortement, vie privée…
+arguing | Commenter et argumenter | target | Structurer le commentaire, nuancer, prendre du recul
+figures | Chiffres et tendances | chart | Décrire des statistiques, des hausses et des baisses
+business | Droit des affaires et du travail | briefcase | Sociétés, concurrence, propriété intellectuelle, salariés
+tax | Fiscalité et patrimoine | bag | Impôts, succession, optimisation et fraude fiscales

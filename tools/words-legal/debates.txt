@@ -1,0 +1,36 @@
+# anglais | français | exemple | niveau
+illegal immigration | l'immigration irrégulière | Illegal immigration dominates the debate. | B2
+undocumented migrants | les migrants sans papiers | Millions of undocumented migrants live in the US. | C1
+border control | le contrôle aux frontières | The government promised tighter border control. | B2
+to deport | expulser | Thousands were deported last year. | C1
+a detention centre | un centre de rétention | Migrants were held in a detention centre. | C1
+gun control | le contrôle des armes à feu | Gun control is a divisive issue in the US. | C1
+the right to bear arms | le droit de porter des armes | The Second Amendment protects the right to bear arms. | C1
+a mass shooting | une fusillade de masse | Another mass shooting reopened the debate. | C1
+abortion rights | le droit à l'avortement | Abortion rights were at stake in Dobbs. | C1
+pro-choice | pour le droit à l'avortement | Pro-choice groups protested outside the court. | C1
+pro-life | anti-avortement | Pro-life campaigners welcomed the ruling. | C1
+climate litigation | le contentieux climatique | Climate litigation is growing worldwide. | C1
+to hold governments accountable | demander des comptes aux gouvernements | Activists want to hold governments accountable. | C1
+artificial intelligence | l'intelligence artificielle | Artificial intelligence raises legal questions. | B2
+algorithmic bias | les biais algorithmiques | Algorithmic bias can lead to discrimination. | C1
+data protection | la protection des données | Data protection is governed by the GDPR. | C1
+the GDPR | le RGPD | The GDPR came into force in 2018. | C1
+mass surveillance | la surveillance de masse | Mass surveillance threatens privacy. | C1
+facial recognition | la reconnaissance faciale | Police use of facial recognition is controversial. | C1
+hate speech | les discours de haine | Hate speech is a criminal offence in France. | C1
+disinformation | la désinformation | Disinformation spread quickly online. | C1
+freedom of the press | la liberté de la presse | Freedom of the press is under threat. | C1
+press freedom | la liberté de la presse | Press freedom indexes rank countries each year. | C1
+cancel culture | la culture de l'annulation | Some see cancel culture as a threat to free speech. | C1
+police brutality | les violences policières | Protesters denounced police brutality. | C1
+racial profiling | le contrôle au faciès | Racial profiling undermines trust. | C1
+systemic racism | le racisme systémique | The report found evidence of systemic racism. | C1
+gender equality | l'égalité femmes-hommes | Gender equality is a constitutional principle in France. | C1
+the gender pay gap | l'écart de rémunération entre femmes et hommes | The gender pay gap remains significant. | C1
+same-sex marriage | le mariage homosexuel | Same-sex marriage was legalised in 2013 in France. | C1
+end-of-life care | la fin de vie, les soins de fin de vie | End-of-life care must be improved. | C1
+the cost of living | le coût de la vie | The cost of living has soared. | B2
+the housing crisis | la crise du logement | Young people are hit by the housing crisis. | C1
+the welfare state | l'État-providence | The welfare state is under pressure. | C1
+prison overcrowding | la surpopulation carcérale | Prison overcrowding is a chronic problem. | C1

@@ -1,0 +1,49 @@
+# anglais | français | exemple | niveau
+to bring a case | engager une action | She brought a case against her employer. | C1
+to bring proceedings | engager une procédure | The firm brought proceedings in the High Court. | C1
+to file a lawsuit | intenter un procès (US) | They filed a lawsuit against the city. | C1
+to take legal action | agir en justice | The family is taking legal action. | B2
+to hear a case | examiner une affaire, juger | The Supreme Court will hear the case next year. | C1
+to hand down a ruling | rendre une décision | The court handed down its ruling on Friday. | C1
+to deliver a judgment | rendre un jugement | The judge delivered her judgment this morning. | C1
+to rule in favour of | statuer en faveur de | The court ruled in favour of the claimant. | C1
+to rule against | statuer contre | The judge ruled against the government. | C1
+to lodge an appeal | former un appel | His lawyers lodged an appeal. | C1
+to win on appeal | obtenir gain de cause en appel | She won on appeal. | C1
+to grant permission to appeal | autoriser l'appel | The Supreme Court granted permission to appeal. | C1
+to dismiss a claim | rejeter une demande | The claim was dismissed as unfounded. | C1
+to uphold a conviction | confirmer une condamnation | The Court of Appeal upheld his conviction. | C1
+to overturn a conviction | annuler une condamnation | Her conviction was overturned. | C1
+to set a precedent | créer un précédent | This ruling sets an important precedent. | C1
+a landmark ruling | une décision historique, un arrêt de principe | It was a landmark ruling on privacy. | C1
+a split decision | une décision partagée | The court reached a 5-4 split decision. | C1
+a unanimous ruling | une décision unanime | The ruling was unanimous. | C1
+to award damages | accorder des dommages et intérêts | The jury awarded damages of $2 million. | C1
+to seek damages | réclamer des dommages et intérêts | He is seeking damages for libel. | C1
+to grant an injunction | accorder une injonction | The judge granted an injunction. | C1
+to issue a warrant | délivrer un mandat | The judge issued an arrest warrant. | C1
+to press charges | porter plainte (au pénal) | She decided to press charges. | C1
+to drop the charges | abandonner les poursuites | Prosecutors dropped the charges. | C1
+to bring charges | engager des poursuites | Prosecutors brought charges against him. | C1
+to face charges | être poursuivi | He faces charges of fraud. | C1
+to stand trial | être jugé | He will stand trial in March. | C1
+to serve a sentence | purger une peine | She is serving a ten-year sentence. | C1
+to hand down a sentence | prononcer une peine | The judge handed down a life sentence. | C1
+to grant bail | accorder la liberté sous caution | The judge refused to grant bail. | C1
+to breach a duty | manquer à une obligation | The council breached its duty of care. | C1
+to be in breach of | être en infraction avec | The company was in breach of the regulations. | C1
+to be held liable | être déclaré responsable | The hospital was held liable. | C1
+to infringe a right | porter atteinte à un droit | The law infringes the right to privacy. | C1
+to uphold the rule of law | défendre l'État de droit | Judges uphold the rule of law. | C1
+to abide by a ruling | se conformer à une décision | The government must abide by the ruling. | C1
+to challenge a decision | contester une décision | NGOs challenged the decision in court. | C1
+to raise a point of law | soulever une question de droit | The appeal raises a point of law. | C1
+to reach a verdict | parvenir à un verdict | The jury reached a verdict after two days. | C1
+to return a verdict | rendre un verdict | The jury returned a verdict of not guilty. | C1
+to reach a settlement | parvenir à un accord | The parties reached a settlement. | C1
+to pass legislation | adopter une législation | Congress passed legislation on AI. | C1
+to tighten the law | durcir la loi | The government wants to tighten the law. | C1
+to relax the rules | assouplir les règles | The rules were relaxed after the crisis. | C1
+a loophole | une faille juridique | The law contains a loophole. | C1
+to close a loophole | combler une faille | The reform closes a tax loophole. | C1
+to be above the law | être au-dessus des lois | Nobody is above the law. | B2

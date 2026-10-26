@@ -1,0 +1,36 @@
+# anglais | français | exemple | niveau
+courtroom | la salle d'audience | The courtroom was packed. | B2
+the bench | le siège, les juges | He addressed the bench. | C1
+the dock | le banc des accusés | The defendant stood in the dock. | C1
+the witness box | la barre des témoins (UK) | She took the witness box. | C1
+the witness stand | la barre des témoins (US) | He took the stand. | C1
+to take the oath | prêter serment | Witnesses take the oath before testifying. | C1
+under oath | sous serment | He lied under oath. | C1
+opening statement | la déclaration liminaire | The prosecutor made her opening statement. | C1
+closing argument | la plaidoirie finale, le réquisitoire | The defence gave its closing argument. | C1
+to plead a case | plaider une affaire | She pleaded the case brilliantly. | C1
+to cross-examine | contre-interroger | The lawyer cross-examined the witness. | C1
+cross-examination | le contre-interrogatoire | Under cross-examination, he changed his story. | C1
+to object | soulever une objection | Objection, Your Honour! | C1
+objection sustained | objection retenue | — Objection! — Sustained. | C1
+objection overruled | objection rejetée | — Objection! — Overruled. | C1
+Your Honour | Monsieur / Madame le juge | Thank you, Your Honour. | B2
+My Lord / My Lady | Monsieur / Madame le juge (juridictions supérieures UK) | If it pleases My Lord… | C1
+expert witness | l'expert (témoin) | The expert witness explained the DNA results. | C1
+exhibit | la pièce à conviction | The knife was exhibit A. | C1
+hearsay | le ouï-dire | That's hearsay. | C1
+admissible | recevable | The evidence was admissible. | C1
+inadmissible | irrecevable | The confession was ruled inadmissible. | C1
+a hung jury | un jury qui ne parvient pas à se décider | The trial ended with a hung jury. | C1
+a majority verdict | un verdict à la majorité | The judge accepted a majority verdict. | C1
+a mistrial | un procès déclaré nul | The judge declared a mistrial. | C1
+sentencing hearing | l'audience sur la peine | The sentencing hearing is next week. | C1
+in camera | à huis clos | The case was heard in camera. | C1
+behind closed doors | à huis clos | The hearing took place behind closed doors. | C1
+a public hearing | une audience publique | Trials are normally public hearings. | C1
+to adjourn | ajourner, renvoyer | The hearing was adjourned until Monday. | C1
+to reserve judgment | mettre en délibéré | The judges reserved judgment. | C1
+a reasoned decision | une décision motivée | Every litigant is entitled to a reasoned decision. | C1
+a court reporter | un sténographe judiciaire | The court reporter records every word. | C1
+a gag order | une interdiction de s'exprimer publiquement | The judge imposed a gag order. | C1
+contempt of court | l'outrage au tribunal | He was jailed for contempt of court. | C1

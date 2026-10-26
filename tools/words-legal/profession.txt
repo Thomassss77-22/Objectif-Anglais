@@ -1,0 +1,35 @@
+# anglais | français | exemple | niveau
+the lawyer's oath | le serment de l'avocat | The lawyer's oath lists five core values. | C1
+dignity, conscience, independence, probity and humanity | dignité, conscience, indépendance, probité et humanité | French lawyers swear to practise with dignity, conscience, independence, probity and humanity. | C1
+legal ethics | la déontologie | Legal ethics forbid lying to the court. | C1
+professional secrecy | le secret professionnel | Professional secrecy is the cornerstone of trust. | C1
+confidentiality | la confidentialité | Confidentiality applies to all client documents. | C1
+a conflict of interest | un conflit d'intérêts | She declined the case because of a conflict of interest. | C1
+to represent a client | représenter un client | I represent the claimant. | B2
+to act for | agir pour le compte de | Our firm acts for several banks. | C1
+to advise a client | conseiller un client | Tax lawyers advise clients on estate planning. | B2
+to take on a case | accepter un dossier | She took on the case pro bono. | C1
+pro bono | gratuitement, à titre bénévole | Many firms do pro bono work. | C1
+billable hours | les heures facturables | Associates must record their billable hours. | C1
+a retainer | une provision, des honoraires forfaitaires | The client paid a retainer. | C1
+disciplinary proceedings | une procédure disciplinaire | The Bar brought disciplinary proceedings. | C1
+professional misconduct | une faute professionnelle | He was found guilty of professional misconduct. | C1
+to be struck off | être radié | The solicitor was struck off. | C1
+to be disbarred | être radié du barreau (US) | The lawyer was disbarred for fraud. | C1
+duty of candour | l'obligation de loyauté (envers le tribunal) | Lawyers owe a duty of candour to the court. | C1
+the duty of competence | l'obligation de compétence | The duty of competence includes keeping up to date. | C1
+the cab-rank rule | l'obligation pour un barrister d'accepter un dossier | The cab-rank rule ensures everyone can find a barrister. | C1
+a trainee | un stagiaire, un élève | Trainees spend months in different departments. | B2
+an internship | un stage | I did an internship in a law firm. | B2
+a work placement | un stage (UK) | My work placement lasted six months. | B2
+to qualify as a lawyer | devenir avocat (obtenir le titre) | She qualified as a lawyer in 2024. | C1
+to practise law | exercer le droit | He has practised law for thirty years. | C1
+a practising lawyer | un avocat en exercice | Practising lawyers must take continuing training. | C1
+continuing professional development | la formation continue | Lawyers must complete continuing professional development. | C1
+in-house counsel | le juriste d'entreprise | She works as in-house counsel for a bank. | C1
+a tax lawyer | un avocat fiscaliste | I would like to become a tax lawyer. | B2
+a criminal lawyer | un avocat pénaliste | Criminal lawyers often work at night. | B2
+a business lawyer | un avocat d'affaires | Business lawyers draft merger agreements. | B2
+a human rights lawyer | un avocat spécialisé en droits de l'homme | She is a leading human rights lawyer. | B2
+access to justice | l'accès au droit, à la justice | Legal aid ensures access to justice. | C1
+the right to a lawyer | le droit à l'assistance d'un avocat | Suspects have the right to a lawyer. | B2

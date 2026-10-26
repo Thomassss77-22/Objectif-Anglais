@@ -1,0 +1,33 @@
+# anglais | français | exemple | niveau
+tax law | le droit fiscal | Tax law changes every year. | C1
+a taxpayer | un contribuable | Taxpayers will pay for the reform. | C1
+the tax authorities | l'administration fiscale | The tax authorities opened an audit. | C1
+a tax audit | un contrôle fiscal | The company is under a tax audit. | C1
+a tax return | une déclaration d'impôts | File your tax return before May. | B2
+income tax | l'impôt sur le revenu | Income tax is progressive. | B2
+corporation tax | l'impôt sur les sociétés | Corporation tax was cut to 25%. | C1
+VAT | la TVA | VAT is 20% in France. | B2
+wealth tax | l'impôt sur la fortune | France replaced its wealth tax in 2018. | C1
+inheritance tax | les droits de succession | Inheritance tax is unpopular. | C1
+gift tax | les droits de donation | Gift tax applies above certain thresholds. | C1
+capital gains tax | l'impôt sur les plus-values | Capital gains tax applies when you sell shares. | C1
+a tax bracket | une tranche d'imposition | He moved into a higher tax bracket. | C1
+a tax break | un avantage fiscal | The law offers tax breaks to investors. | C1
+tax evasion | la fraude fiscale (illégale) | Tax evasion is a crime. | C1
+tax avoidance | l'optimisation fiscale (légale mais contestée) | Aggressive tax avoidance is legal but controversial. | C1
+a tax haven | un paradis fiscal | Profits were shifted to tax havens. | C1
+a tax loophole | une niche fiscale, une faille | The reform closes a tax loophole. | C1
+double taxation | la double imposition | A treaty prevents double taxation. | C1
+a double tax treaty | une convention fiscale bilatérale | France and the UK have a double tax treaty. | C1
+tax residence | la résidence fiscale | Where is your tax residence? | C1
+estate planning | la gestion de patrimoine, la transmission | Estate planning helps families pass on wealth. | C1
+an estate | une succession, un patrimoine | The estate was worth millions. | C1
+a will | un testament | She made a will last year. | B2
+an heir | un héritier | He is the sole heir. | C1
+to inherit | hériter | She inherited the house. | B2
+to bequeath | léguer | He bequeathed his fortune to charity. | C1
+a trust | un trust (fiducie) | The assets are held in a trust. | C1
+probate | l'homologation du testament, le règlement de la succession | Probate can take months. | C1
+a notary | un notaire | The notary drew up the deed. | C1
+assets | les actifs, les biens | Her assets are held abroad. | C1
+wealth management | la gestion de fortune | I worked in wealth management. | C1

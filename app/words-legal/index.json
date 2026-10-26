@@ -1,5 +1,5 @@
 {
- "total": 264,
+ "total": 623,
  "categories": [
   {
    "id": "press",
@@ -133,6 +133,156 @@
     "B1": 0,
     "B2": 5,
     "C1": 18,
+    "C2": 0
+   }
+  },
+  {
+   "id": "collocations",
+   "name": "Collocations juridiques",
+   "icon": "link",
+   "desc": "Les bons verbes avec les bons noms : to hand down a ruling, to lodge an appeal…",
+   "count": 48,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 2,
+    "C1": 46,
+    "C2": 0
+   }
+  },
+  {
+   "id": "courtroom",
+   "name": "Au tribunal",
+   "icon": "scale",
+   "desc": "Audience, témoins, plaidoiries, verdict",
+   "count": 35,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 2,
+    "C1": 33,
+    "C2": 0
+   }
+  },
+  {
+   "id": "profession",
+   "name": "La profession et sa déontologie",
+   "icon": "briefcase",
+   "desc": "Serment, secret, conflits d'intérêts, discipline",
+   "count": 34,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 10,
+    "C1": 24,
+    "C2": 0
+   }
+  },
+  {
+   "id": "politics",
+   "name": "Politique et institutions UK / US",
+   "icon": "globe",
+   "desc": "Parlement, Congrès, élections, pouvoir exécutif",
+   "count": 40,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 10,
+    "C1": 30,
+    "C2": 0
+   }
+  },
+  {
+   "id": "international",
+   "name": "UE et droit international",
+   "icon": "globe",
+   "desc": "Union européenne, Conseil de l'Europe, traités, juridictions internationales",
+   "count": 33,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 8,
+    "C1": 25,
+    "C2": 0
+   }
+  },
+  {
+   "id": "debates",
+   "name": "Grands débats de société",
+   "icon": "chat",
+   "desc": "Immigration, IA, climat, armes, avortement, vie privée…",
+   "count": 35,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 4,
+    "C1": 31,
+    "C2": 0
+   }
+  },
+  {
+   "id": "arguing",
+   "name": "Commenter et argumenter",
+   "icon": "target",
+   "desc": "Structurer le commentaire, nuancer, prendre du recul",
+   "count": 34,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 4,
+    "C1": 30,
+    "C2": 0
+   }
+  },
+  {
+   "id": "figures",
+   "name": "Chiffres et tendances",
+   "icon": "chart",
+   "desc": "Décrire des statistiques, des hausses et des baisses",
+   "count": 34,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 6,
+    "B2": 11,
+    "C1": 17,
+    "C2": 0
+   }
+  },
+  {
+   "id": "business",
+   "name": "Droit des affaires et du travail",
+   "icon": "briefcase",
+   "desc": "Sociétés, concurrence, propriété intellectuelle, salariés",
+   "count": 34,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 3,
+    "C1": 31,
+    "C2": 0
+   }
+  },
+  {
+   "id": "tax",
+   "name": "Fiscalité et patrimoine",
+   "icon": "bag",
+   "desc": "Impôts, succession, optimisation et fraude fiscales",
+   "count": 32,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 0,
+    "B2": 5,
+    "C1": 27,
     "C2": 0
    }
   }

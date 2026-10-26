@@ -1,0 +1,34 @@
+# anglais | français | exemple | niveau
+EU law | le droit de l'Union européenne | EU law takes precedence over national law. | C1
+a member state | un État membre | Each member state has one commissioner. | B2
+the primacy of EU law | la primauté du droit de l'Union | The primacy of EU law was established in Costa v ENEL. | C1
+directly applicable | d'applicabilité directe | Regulations are directly applicable. | C1
+the Court of Justice of the European Union | la Cour de justice de l'Union européenne | The CJEU sits in Luxembourg. | C1
+a preliminary ruling | une question préjudicielle (décision) | The French court asked for a preliminary ruling. | C1
+the European Commission | la Commission européenne | The Commission proposed a new directive. | B2
+the European Parliament | le Parlement européen | The European Parliament approved the AI Act. | B2
+the Council of the European Union | le Conseil de l'Union européenne | Ministers meet in the Council of the European Union. | C1
+the Council of Europe | le Conseil de l'Europe | The Council of Europe has 46 member states. | C1
+the Strasbourg court | la Cour de Strasbourg (CEDH) | The Strasbourg court found a violation of Article 8. | C1
+to find a violation | constater une violation | The court found a violation of the right to a fair trial. | C1
+a margin of appreciation | une marge d'appréciation | States enjoy a wide margin of appreciation. | C1
+international law | le droit international | The invasion violated international law. | B2
+to ratify a treaty | ratifier un traité | France ratified the treaty in 1974. | C1
+to sign a treaty | signer un traité | Fifty countries signed the treaty. | B2
+the United Nations | les Nations unies | The United Nations was founded in 1945. | B2
+the Security Council | le Conseil de sécurité | Russia vetoed the Security Council resolution. | C1
+the International Court of Justice | la Cour internationale de justice | The ICJ settles disputes between states. | C1
+the International Criminal Court | la Cour pénale internationale | The ICC tries individuals for war crimes. | C1
+war crimes | les crimes de guerre | He was charged with war crimes. | C1
+crimes against humanity | les crimes contre l'humanité | Crimes against humanity have no statute of limitations in France. | C1
+genocide | le génocide | The court examined allegations of genocide. | C1
+sanctions | les sanctions (internationales) | The EU imposed sanctions on Russia. | B2
+extradition | l'extradition | The UK approved his extradition. | C1
+to extradite | extrader | He was extradited to the United States. | C1
+an arrest warrant | un mandat d'arrêt | The ICC issued an arrest warrant. | C1
+diplomatic immunity | l'immunité diplomatique | The ambassador claimed diplomatic immunity. | C1
+refugee status | le statut de réfugié | She was granted refugee status. | C1
+the Geneva Convention | la Convention de Genève | The 1951 Geneva Convention protects refugees. | C1
+non-refoulement | le principe de non-refoulement | Non-refoulement forbids sending refugees back to danger. | C1
+sovereignty | la souveraineté | Brexit was about sovereignty. | C1
+Brexit | le Brexit | Brexit took effect on 31 January 2020. | B2
