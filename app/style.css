@@ -495,7 +495,8 @@ h1, h2, h3 { margin: 0; letter-spacing: -.02em; }
 .catcard:active { transform: scale(.97); }
 .catcard:disabled { opacity: .4; }
 .catcard b { font-size: .95rem; line-height: 1.25; margin-top: 8px; }
-.catcard span:last-child { color: var(--muted); font-size: .8rem; font-weight: 700; }
+.catcard > span:not(.caticon) { margin-bottom: 8px; }
+.catcard > span:not(.caticon) { color: var(--muted); font-size: .8rem; font-weight: 700; }
 .caticon { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; color: #fff; background: var(--brand); }
 .catcard:nth-child(6n+2) .caticon { background: linear-gradient(135deg, #10c48f, #0aa5a5); }
 .catcard:nth-child(6n+3) .caticon { background: linear-gradient(135deg, #ff9f1c, #ff5f3a); }
@@ -644,3 +645,27 @@ h1, h2, h3 { margin: 0; letter-spacing: -.02em; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Rythme des nouvelles cartes (profil) */
+.pace { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.pace-opt {
+  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 4px; border-radius: 16px;
+  background: var(--surface); border: 2px solid var(--line); box-shadow: var(--shadow-sm);
+}
+.pace-opt b { font-size: 1.25rem; }
+.pace-opt span { font-size: .72rem; font-weight: 700; color: var(--muted); }
+.pace-opt.on { border-color: transparent; color: #fff; background: var(--brand); box-shadow: 0 10px 22px -12px var(--brand-1); }
+.pace-opt.on span { color: rgba(255, 255, 255, .85); }
+.pace-note { margin: 10px 4px 22px; font-size: .8rem; color: var(--muted); line-height: 1.45; }
+
+/* Vocabulaire intensif : leçons d'un thème */
+.hero-link {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 8px 12px; border-radius: 12px;
+  background: rgba(255, 255, 255, .18); color: #fff; font-size: .82rem; font-weight: 700; text-align: left;
+}
+.hero-link svg.i { width: 16px; height: 16px; flex: none; }
+.theme-lessons { display: flex; flex-direction: column; gap: 6px; }
+.theme-lessons .ch-row { background: var(--surface); box-shadow: var(--shadow-sm); }
+.theme-lessons .ch-row.next { background: color-mix(in srgb, var(--lv) 12%, var(--surface)); }
+.cat-meter { display: block; width: 100%; height: 5px; margin-top: auto; flex: none; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
+.cat-meter i { display: block; height: 100%; border-radius: inherit; background: var(--brand); }

@@ -17,6 +17,8 @@ Fonctionnalités :
 - **Toute la banque de mots est dans le parcours** : 187 leçons de vocabulaire (2 002 mots) intercalées entre les leçons de grammaire,
   et un module 5 « Vocabulaire juridique » de 53 leçons (623 termes) en mode CRFPA.
 - Les mots de chaque leçon rejoignent le paquet de **cartes mémoire**, révisées avec l'algorithme **SM-2**.
+- **Vocabulaire intensif** : dans l'onglet Mots, chaque thème liste ses leçons de vocabulaire avec sa progression et un bouton « Leçon suivante de ce thème ».
+- Rythme réglable dans le profil : 10, 20, 40 ou 60 nouvelles cartes par jour, avec le temps de révision quotidien estimé.
 - XP, série quotidienne, progression sauvegardée localement, fonctionne hors ligne.
 
 ## Test de niveau

@@ -41,13 +41,17 @@ function addXp(n) {
 // Une série non prolongée hier est perdue.
 const liveStreak = () => (state.lastDay === dayKey() || state.lastDay === dayKey(Date.now() - 864e5) ? state.streak : 0);
 
-// Les nouvelles cartes sont introduites au rythme de NEW_PER_DAY par jour.
-const NEW_PER_DAY = 20;
+// Les nouvelles cartes sont introduites au rythme choisi dans le profil (20 par jour par défaut).
+const PACES = [10, 20, 40, 60];
+const newPerDay = () => state.newPerDay || 20;
+// Temps de révision quotidien une fois le rythme installé : environ 5 révisions par nouvelle carte,
+// comptées 6 s chacune, plus 10 s pour découvrir la carte.
+const paceMinutes = (n) => Math.round((n * 10 + n * 5 * 6) / 60);
 const isNew = (c) => c.reps === 0 && c.interval === 0;
 function reviewQueue() {
   const due = dueCards(P().deck).sort((a, b) => a.due - b.due);
   const seen = P().newDay === dayKey() ? P().newSeen : 0;
-  const fresh = due.filter(isNew).slice(0, Math.max(0, NEW_PER_DAY - seen));
+  const fresh = due.filter(isNew).slice(0, Math.max(0, newPerDay() - seen));
   return [...due.filter((c) => !isNew(c)), ...fresh];
 }
 
@@ -333,7 +337,10 @@ function bindPath(next) {
 }
 
 // ---------- Leçon ----------
-function lesson(id) {
+// Écran où revenir après une leçon ouverte ailleurs que dans le parcours (thème de l'onglet Mots).
+let origin = null;
+function lesson(id, from = null) {
+  origin = from;
   const found = findLesson(id);
   if (found.vocab) return openVocab(found);
   showLesson(found);
@@ -408,7 +415,7 @@ function showLesson(l) {
     </div>
     <div class="dock"><button class="btn lv" id="go">${icon("play")}Commencer la leçon</button></div>
   `, { lv: l.lv.id });
-  root.querySelector("#back").onclick = home;
+  root.querySelector("#back").onclick = origin || home;
   root.querySelectorAll(".say").forEach((b) => (b.onclick = () => speak(b.dataset.en)));
   root.querySelector("#go").onclick = () => exercise(l, 0, 0);
 }
@@ -449,7 +456,7 @@ function exercise(l, i, score) {
     ${body}
     ${ex.type === "qcm" || ex.type === "listen" ? "" : `<div class="dock"><button class="btn lv" id="ok" disabled>Valider</button></div>`}
   `, { lv: l.lv.id });
-  root.querySelector("#quit").onclick = () => lesson(l.id);
+  root.querySelector("#quit").onclick = () => lesson(l.id, origin);
 
   const next = (good, correction, fixes = []) => {
     buzz(good ? 15 : [30, 40, 30]);
@@ -521,12 +528,12 @@ function finish(l, score) {
         <div class="stat" style="--c:#5b5bf7"><b data-count="${first ? added : 0}">0</b><span>Nouvelles cartes</span></div>
       </div>
     </div>
-    <div class="dock"><button class="btn" id="h">Continuer</button></div>
+    <div class="dock"><button class="btn" id="h">${origin ? "Retour au thème" : "Continuer"}</button></div>
   `);
   buzz([20, 60, 20]);
   root.querySelectorAll("[data-count]").forEach((el) => countUp(el, +el.dataset.count, el.dataset.suffix || ""));
   if (acc >= 60) confetti(root.querySelector("#confetti"));
-  root.querySelector("#h").onclick = home;
+  root.querySelector("#h").onclick = origin || home;
 }
 
 function countUp(el, to, suffix) {
@@ -586,7 +593,7 @@ function reviewSession() {
       <div class="empty">
         <div class="tile-icon calm">${icon("check")}</div>
         <h2>${total ? "Tout est révisé" : "Aucune carte pour l'instant"}</h2>
-        <p>${total ? `Tes ${total} cartes sont à jour (${NEW_PER_DAY} nouvelles cartes maximum par jour). Reviens demain pour la suite.` : "Termine une leçon : son vocabulaire arrivera ici automatiquement."}</p>
+        <p>${total ? `Tes ${total} cartes sont à jour (${newPerDay()} nouvelles cartes maximum par jour, réglable dans le profil). Reviens demain pour la suite.` : "Termine une leçon : son vocabulaire arrivera ici automatiquement."}</p>
       </div>
       <button class="btn" id="h">${icon("path")}Retour au parcours</button>
     `, { nav: "review" });
@@ -690,9 +697,13 @@ const lvChips = (idx) => `<div class="chips">
   ${LV_IDS.filter((lv) => idx.categories.some((c) => c.levels[lv])).map((lv) => `<button class="fchip ${wordFilter.lv === lv ? "on" : ""}" data-lv-f="${lv}" data-lv="${lv}">${lv}</button>`).join("")}
 </div>`;
 
+// Leçons de vocabulaire qui contiennent des mots d'une catégorie (les leçons « variées » comptent
+// pour chacun de leurs thèmes).
+const themeUnits = (idx, cat) => (idx.units || []).filter((u) => (!wordFilter.lv || legalMode() || u.lv === wordFilter.lv)
+  && u.ids.some((r) => r.startsWith(`${cat}/`)));
+
 async function wordsHome() {
   const idx = await loadIndex();
-  const known = (c) => (curBank().cats[c.id] ? curBank().cats[c.id].filter(inDeck).length : null);
   render(`
     ${topbar()}
     <div class="screen-title"><h1>${legalMode() ? "Vocabulaire juridique" : "Banque de mots"}</h1><span class="pill">${icon("book")}${idx.total}</span></div>
@@ -705,10 +716,11 @@ async function wordsHome() {
     <div id="results"></div>
     <div class="catgrid" id="cats">${idx.categories.map((c) => {
       const n = wordFilter.lv ? c.levels[wordFilter.lv] : c.count;
-      const k = known(c);
+      const us = themeUnits(idx, c.id), d = us.filter((u) => P().done[u.id]).length;
       return `<button class="catcard" data-cat="${c.id}" ${n ? "" : "disabled"}>
         <span class="caticon">${icon(ICONS[c.icon] ? c.icon : "book")}</span>
-        <b>${esc(c.name)}</b><span>${n} mot${n > 1 ? "s" : ""}${k ? ` · ${k} appris` : ""}</span></button>`;
+        <b>${esc(c.name)}</b><span>${n} mot${n > 1 ? "s" : ""}${us.length ? ` · ${d}/${us.length} leçon${us.length > 1 ? "s" : ""}` : ""}</span>
+        ${us.length ? `<i class="cat-meter"><i style="width:${(d / us.length) * 100}%"></i></i>` : ""}</button>`;
     }).join("")}</div>
   `, { nav: "words" });
   root.querySelectorAll(".catcard").forEach((b) => (b.onclick = () => category(b.dataset.cat)));
@@ -741,6 +753,17 @@ async function category(id) {
   const c = idx.categories.find((x) => x.id === id);
   const list = (await loadCat(id)).filter((w) => !wordFilter.lv || w.lv === wordFilter.lv);
   const todo = list.filter((w) => !inDeck(w));
+  const units = themeUnits(idx, id);
+  const nDone = units.filter((u) => P().done[u.id]).length;
+  const nextU = units.find((u) => !P().done[u.id]);
+  const themeRow = (u) => {
+    const d = P().done[u.id], nx = nextU && nextU.id === u.id;
+    const mine = u.ids.filter((r) => r.startsWith(`${id}/`)).length;
+    return `<button class="ch-row ${d ? "done" : nx ? "next" : ""}" data-id="${u.id}" data-lv="${u.lv}">
+      <span class="ch-ic vocab">${icon(d ? "check" : "cards")}</span>
+      <span class="ch-txt"><small>${u.lv} · ${mine === u.ids.length ? `${mine} mots` : `${mine} mot${mine > 1 ? "s" : ""} de ce thème sur ${u.ids.length}`}</small><b>${esc(u.title)}</b></span>
+      ${nx ? `<span class="ch-go">${icon("play")}</span>` : ""}</button>`;
+  };
   render(`
     <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
     <section class="cat-hero">
@@ -748,11 +771,18 @@ async function category(id) {
       <h1>${esc(c.name)}</h1><p>${esc(c.desc)}</p>
       <div class="meta"><span>${icon("book")}${list.length} mots${wordFilter.lv ? ` · niveau ${wordFilter.lv}` : ""}</span>
         <span>${icon("check")}${list.length - todo.length} dans mes cartes</span></div>
+      ${todo.length ? `<button class="hero-link" id="all">${icon("plus")}Ajouter les ${todo.length} mot${todo.length > 1 ? "s" : ""} à mes cartes sans leçon</button>` : ""}
     </section>
+    ${units.length ? `<h4 class="section-title">${icon("cards")}Leçons de ce thème · ${nDone}/${units.length}</h4>
+      <div class="theme-lessons">${units.map(themeRow).join("")}</div>` : ""}
+    <h4 class="section-title">${icon("book")}Tous les mots</h4>
     <div class="wlist">${list.map(wordRow).join("")}</div>
-    ${todo.length ? `<div class="dock"><button class="btn" id="all">${icon("plus")}Ajouter ${todo.length} mot${todo.length > 1 ? "s" : ""} à mes cartes</button></div>` : ""}
+    ${nextU ? `<div class="dock"><button class="btn" id="next-u">${icon("play")}${nDone ? "Leçon suivante de ce thème" : "Commencer ce thème"}</button></div>` : ""}
   `);
   root.querySelector("#back").onclick = wordsHome;
+  const back = () => category(id);
+  root.querySelectorAll(".theme-lessons .ch-row").forEach((b) => (b.onclick = () => lesson(b.dataset.id, back)));
+  root.querySelector("#next-u")?.addEventListener("click", () => lesson(nextU.id, back));
   bindRows(list);
   const all = root.querySelector("#all");
   if (all) all.onclick = () => {
@@ -975,6 +1005,7 @@ function placementResult(t) {
 function profile() {
   const cards = Object.values(P().deck);
   const mastered = cards.filter((c) => c.interval >= 21).length;
+  const waiting = cards.filter(isNew).length;
   const doneCount = Object.keys(P().done).length;
   const current = (nextLesson() || allLessons()[allLessons().length - 1]).lv;
   const kpi = (ic, c, v, label) => `<div class="kpi"><div class="ico" style="--c:${c}">${icon(ic)}</div><b>${v}</b><span>${label}</span></div>`;
@@ -992,6 +1023,10 @@ function profile() {
       ${modeBtn("general", "Anglais général", "Du débutant au niveau courant")}
       ${modeBtn("legal", "Anglais juridique · CRFPA", "Préparer l'oral d'anglais")}
     </div>
+    <h4 class="section-title">${icon("cards")}Nouvelles cartes par jour</h4>
+    <div class="pace">${PACES.map((n) => `<button class="pace-opt ${n === newPerDay() ? "on" : ""}" data-pace="${n}">
+      <b>${n}</b><span>≈ ${paceMinutes(n)} min/j</span></button>`).join("")}</div>
+    <p class="pace-note">${waiting ? `${waiting} nouvelle${waiting > 1 ? "s" : ""} carte${waiting > 1 ? "s" : ""} en attente : environ ${Math.ceil(waiting / newPerDay())} jour${Math.ceil(waiting / newPerDay()) > 1 ? "s" : ""} à ce rythme. ` : ""}Temps de révision estimé par jour, une fois le rythme installé (après 2 à 3 semaines).</p>
     <div class="grid2">
       ${kpi("flame", "#ff7a1a", liveStreak(), "Jours de série")}
       ${kpi("bolt", "#ffb020", state.xp, "XP au total")}
@@ -1008,6 +1043,14 @@ function profile() {
     <button class="link-danger" id="reset">Réinitialiser ma progression (${legalMode() ? "mode CRFPA" : "anglais général"})</button>
   `, { nav: "profile" });
   root.querySelector("#retest")?.addEventListener("click", placementIntro);
+  root.querySelectorAll("[data-pace]").forEach((b) => (b.onclick = () => {
+    state.newPerDay = +b.dataset.pace;
+    save();
+    buzz(15);
+    const y = window.scrollY;
+    profile();
+    window.scrollTo(0, y);
+  }));
   root.querySelectorAll("[data-mode]").forEach((b) => (b.onclick = () => {
     if (state.mode === b.dataset.mode) return;
     state.mode = b.dataset.mode;

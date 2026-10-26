@@ -43,7 +43,8 @@ app/
 - Niveau : donné à la main, sinon déduit du rang de fréquence à l'oral
   (≤ 800 A1, ≤ 2 000 A2, ≤ 4 000 B1, ≤ 8 000 B2, ≤ 15 000 C1, au-delà C2).
 - Clé de carte : le mot anglais (commune avec les leçons), ou « mot (sens) » pour un mot à plusieurs sens.
-- Au plus 20 nouvelles cartes introduites par jour en révision.
+- Nouvelles cartes introduites en révision : 20 par jour par défaut, réglable (10, 20, 40, 60 : `state.newPerDay`).
+  Temps estimé ≈ 10 s par nouvelle carte + 5 révisions de 6 s par carte, une fois le rythme installé.
 - Leçons de vocabulaire : le script découpe la banque en `units` (dans `index.json`) de 6 à 15 mots,
   par niveau et par catégorie (les petits restes d'un niveau forment des leçons « Vocabulaire varié ») ;
   en CRFPA, par catégorie, dans un module 5. Chaque mot est dans exactement une leçon (`node tools/check_lessons.mjs` le vérifie).
