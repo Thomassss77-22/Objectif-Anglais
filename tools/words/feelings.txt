@@ -75,3 +75,13 @@ modest | modeste | She's very modest about her success. | B2
 witty | spirituel, plein d'esprit | A witty remark. | C1
 assertive | affirmé, sûr de soi | Be more assertive. | C1
 resilient | résilient | Children are resilient. | C1
+elated | euphorique | She was elated by the news. | C2
+dismayed | consterné | We were dismayed by the result. | C2
+wary | méfiant, prudent | Be wary of strangers. | C1
+smug | suffisant, content de soi | Don't look so smug. | C2
+gullible | crédule | He's so gullible. | C1
+conceited | vaniteux | He's rather conceited. | C2
+compassionate | compatissant | A compassionate doctor. | C1
+headstrong | têtu, obstiné | A headstrong child. | C2
+level-headed | pondéré | She's very level-headed. | C1
+fickle | inconstant, versatile | Fans can be fickle. | C2

@@ -46,3 +46,12 @@ client | le client (services) | She has many clients. | B2
 deal | l'accord, l'affaire | We made a deal. | B1
 to sign | signer | Sign the contract here. | B1
 negotiation | la négociation | The negotiations failed. | B2
+leverage | l'effet de levier ; le poids, l'influence | We have little leverage. | C2
+stakeholder | la partie prenante | All stakeholders were consulted. | C1
+benchmark | la référence, l'étalon | Industry benchmark. | C1
+bottom line | le résultat net ; l'essentiel | The bottom line is we need money. | C1
+cash flow | la trésorerie | We have cash flow problems. | C1
+due diligence | l'audit préalable | We did our due diligence. | C2
+outsourcing | l'externalisation | Outsourcing reduces costs. | C1
+asset | l'actif, l'atout | She's an asset to the team. | C1
+liability | le passif ; la responsabilité | The company has huge liabilities. | C2

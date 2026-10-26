@@ -51,3 +51,13 @@ to order | commander | Are you ready to order? | A2
 takeaway | le plat à emporter (UK) | Let's get a takeaway tonight. | B1
 to be starving | mourir de faim | I'm starving! | B1
 leftovers | les restes | We had leftovers for lunch. | B1
+mouth-watering | appétissant | A mouth-watering dessert. | C1
+bland | fade | The soup is bland. | B2
+overcooked | trop cuit | The pasta is overcooked. | B2
+rare | saignant | I'd like my steak rare. | B2
+medium | à point | Medium, please. | B2
+well done | bien cuit | Well done, please. | B2
+to have a sweet tooth | aimer les sucreries | I've got a sweet tooth. | C1
+gluten-free | sans gluten | Do you have gluten-free options? | B2
+to treat someone | inviter qqn (payer) | Let me treat you to lunch. | B2
+it's on me | c'est moi qui invite | Put your money away, it's on me. | B2

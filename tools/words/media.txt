@@ -34,3 +34,13 @@ art | l'art | I'm interested in modern art.
 artist | l'artiste | She's a talented artist. | A2
 exhibition | l'exposition | Let's go to the exhibition. | B1
 famous | célèbre | He's a famous actor.
+blockbuster | le film à succès | A Hollywood blockbuster. | B2
+sequel | la suite | The sequel was disappointing. | B2
+spoiler | le divulgâcheur, le spoiler | No spoilers, please! | B2
+to go viral | faire le buzz | The video went viral. | B2
+influencer | l'influenceur | She's a fashion influencer. | B2
+press release | le communiqué de presse | They issued a press release. | C1
+coverage | la couverture (médiatique) | The story got huge coverage. | C1
+broadcast | l'émission ; diffuser | A live broadcast. | B2
+critically acclaimed | salué par la critique | A critically acclaimed novel. | C1
+bestseller | le best-seller | Her book is a bestseller. | B2

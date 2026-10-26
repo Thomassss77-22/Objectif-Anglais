@@ -42,3 +42,10 @@ to measure | mesurer | We measured the temperature. | B1
 accurate results | des résultats précis | We need accurate results. | B2
 space | l'espace | Space exploration. | B1
 planet | la planète | Mars is a red planet. | B1
+peer review | l'évaluation par les pairs | The paper passed peer review. | C1
+sample | l'échantillon | A sample of 1,000 people. | B2
+trial | l'essai (clinique) | A clinical trial. | C1
+correlation | la corrélation | Correlation isn't causation. | C1
+to conduct research | mener des recherches | They conducted research in Africa. | C1
+immune system | le système immunitaire | Sleep boosts the immune system. | C1
+outbreak | l'épidémie, le foyer (d'une maladie) | An outbreak of measles. | C1

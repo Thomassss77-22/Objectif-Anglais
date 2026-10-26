@@ -28,3 +28,7 @@ formal | Registre soutenu | pen | Écrire et parler dans un anglais soigné et p
 science | Sciences et santé publique | flask | Recherche, médecine, technologie, santé
 business | Économie et entreprise | chart | Marchés, finance, management, stratégie
 environment | Environnement | leaf | Climat, énergie, écologie, biodiversité
+idioms | Expressions idiomatiques | sparkle | Pour parler comme un natif : a piece of cake, to spill the beans…
+slang | Anglais familier | zap | L'anglais de tous les jours, britannique et américain
+nuances | Nuances : mots proches | split | Ne plus confondre : say/tell, rob/steal, borrow/lend…
+proverbs | Proverbes et dictons | quote | Les proverbes que tout anglophone connaît

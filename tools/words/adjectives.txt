@@ -110,3 +110,23 @@ thorough | minutieux, approfondi | A thorough investigation. | C1
 vague | vague, flou | His answer was vague. | B2
 vulnerable | vulnérable | Children are vulnerable. | B2
 widespread | répandu | A widespread belief. | C1
+ubiquitous | omniprésent | Smartphones are ubiquitous. | C2
+meticulous | méticuleux | She's meticulous in her work. | C2
+pragmatic | pragmatique | A pragmatic approach. | C1
+daunting | intimidant | A daunting task. | C1
+tedious | fastidieux | A tedious job. | C1
+cumbersome | encombrant, lourd | A cumbersome process. | C2
+far-fetched | tiré par les cheveux | That story is far-fetched. | C1
+groundbreaking | révolutionnaire, novateur | Groundbreaking research. | C1
+unprecedented | sans précédent | An unprecedented crisis. | C1
+paramount | primordial | Safety is paramount. | C2
+eloquent | éloquent | An eloquent speech. | C1
+candid | franc, sincère | A candid interview. | C2
+elusive | insaisissable | Success remained elusive. | C2
+mundane | banal, terre à terre | Mundane tasks. | C2
+intricate | complexe, détaillé | An intricate design. | C2
+detrimental | préjudiciable, nuisible | Detrimental to health. | C2
+viable | viable | A viable option. | C1
+seamless | fluide, sans accroc | A seamless transition. | C1
+lenient | indulgent, clément | The judge was lenient. | C2
+bleak | sombre, morne | The future looks bleak. | C1

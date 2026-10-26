@@ -1,5 +1,5 @@
 {
- "total": 1652,
+ "total": 2002,
  "categories": [
   {
    "id": "people",
@@ -21,12 +21,12 @@
    "name": "Corps et santé",
    "icon": "heart",
    "desc": "Le corps, la santé, chez le médecin",
-   "count": 52,
+   "count": 62,
    "levels": {
     "A1": 18,
     "A2": 23,
-    "B1": 11,
-    "B2": 0,
+    "B1": 12,
+    "B2": 9,
     "C1": 0,
     "C2": 0
    }
@@ -36,14 +36,14 @@
    "name": "Maison",
    "icon": "home",
    "desc": "Pièces, objets, tâches ménagères",
-   "count": 48,
+   "count": 58,
    "levels": {
     "A1": 10,
     "A2": 27,
     "B1": 11,
-    "B2": 0,
-    "C1": 0,
-    "C2": 0
+    "B2": 5,
+    "C1": 4,
+    "C2": 1
    }
   },
   {
@@ -51,13 +51,13 @@
    "name": "Nourriture et repas",
    "icon": "food",
    "desc": "Aliments, boissons, cuisine, restaurant",
-   "count": 52,
+   "count": 62,
    "levels": {
     "A1": 7,
     "A2": 27,
     "B1": 18,
-    "B2": 0,
-    "C1": 0,
+    "B2": 8,
+    "C1": 2,
     "C2": 0
    }
   },
@@ -96,13 +96,13 @@
    "name": "Voyages et transports",
    "icon": "plane",
    "desc": "Transports, hôtel, vacances",
-   "count": 46,
+   "count": 56,
    "levels": {
     "A1": 6,
     "A2": 25,
-    "B1": 15,
-    "B2": 0,
-    "C1": 0,
+    "B1": 16,
+    "B2": 7,
+    "C1": 2,
     "C2": 0
    }
   },
@@ -111,13 +111,13 @@
    "name": "Travail",
    "icon": "briefcase",
    "desc": "Métiers, bureau, carrière",
-   "count": 53,
+   "count": 62,
    "levels": {
     "A1": 10,
     "A2": 12,
     "B1": 22,
-    "B2": 8,
-    "C1": 1,
+    "B2": 12,
+    "C1": 6,
     "C2": 0
    }
   },
@@ -126,13 +126,13 @@
    "name": "Études et apprentissage",
    "icon": "book",
    "desc": "École, université, apprendre",
-   "count": 43,
+   "count": 53,
    "levels": {
     "A1": 11,
     "A2": 15,
     "B1": 17,
-    "B2": 0,
-    "C1": 0,
+    "B2": 4,
+    "C1": 6,
     "C2": 0
    }
   },
@@ -156,14 +156,14 @@
    "name": "Émotions et caractère",
    "icon": "smile",
    "desc": "Sentiments, personnalité, humeur",
-   "count": 76,
+   "count": 86,
    "levels": {
     "A1": 10,
     "A2": 17,
     "B1": 22,
     "B2": 15,
-    "C1": 12,
-    "C2": 0
+    "C1": 16,
+    "C2": 6
    }
   },
   {
@@ -171,14 +171,14 @@
    "name": "Verbes essentiels",
    "icon": "bolt",
    "desc": "Les verbes les plus utilisés à l'oral",
-   "count": 179,
+   "count": 199,
    "levels": {
     "A1": 72,
     "A2": 24,
     "B1": 31,
     "B2": 24,
-    "C1": 28,
-    "C2": 0
+    "C1": 38,
+    "C2": 10
    }
   },
   {
@@ -186,14 +186,14 @@
    "name": "Adjectifs essentiels",
    "icon": "star",
    "desc": "Décrire les choses et les gens",
-   "count": 111,
+   "count": 131,
    "levels": {
     "A1": 31,
     "A2": 26,
     "B1": 15,
     "B2": 24,
-    "C1": 15,
-    "C2": 0
+    "C1": 25,
+    "C2": 10
    }
   },
   {
@@ -216,14 +216,14 @@
    "name": "Expressions de conversation",
    "icon": "chat",
    "desc": "Réagir, relancer, être poli à l'oral",
-   "count": 72,
+   "count": 87,
    "levels": {
     "A1": 18,
     "A2": 18,
     "B1": 24,
-    "B2": 7,
-    "C1": 5,
-    "C2": 0
+    "B2": 10,
+    "C1": 16,
+    "C2": 1
    }
   },
   {
@@ -276,13 +276,13 @@
    "name": "Technologie",
    "icon": "phone",
    "desc": "Téléphone, ordinateur, internet",
-   "count": 38,
+   "count": 48,
    "levels": {
     "A1": 6,
     "A2": 26,
     "B1": 6,
-    "B2": 0,
-    "C1": 0,
+    "B2": 7,
+    "C1": 3,
     "C2": 0
    }
   },
@@ -291,13 +291,13 @@
    "name": "Médias et culture",
    "icon": "tv",
    "desc": "Films, musique, livres, actualité",
-   "count": 35,
+   "count": 45,
    "levels": {
     "A1": 12,
     "A2": 12,
     "B1": 11,
-    "B2": 0,
-    "C1": 0,
+    "B2": 7,
+    "C1": 3,
     "C2": 0
    }
   },
@@ -366,14 +366,14 @@
    "name": "Société et actualité",
    "icon": "globe",
    "desc": "Politique, économie, justice, grands enjeux",
-   "count": 77,
+   "count": 83,
    "levels": {
     "A1": 0,
     "A2": 4,
     "B1": 36,
     "B2": 30,
-    "C1": 7,
-    "C2": 0
+    "C1": 10,
+    "C2": 3
    }
   },
   {
@@ -396,13 +396,13 @@
    "name": "Sciences et santé publique",
    "icon": "flask",
    "desc": "Recherche, médecine, technologie, santé",
-   "count": 43,
+   "count": 50,
    "levels": {
     "A1": 0,
     "A2": 0,
     "B1": 15,
-    "B2": 18,
-    "C1": 10,
+    "B2": 19,
+    "C1": 16,
     "C2": 0
    }
   },
@@ -411,14 +411,14 @@
    "name": "Économie et entreprise",
    "icon": "chart",
    "desc": "Marchés, finance, management, stratégie",
-   "count": 47,
+   "count": 56,
    "levels": {
     "A1": 0,
     "A2": 0,
     "B1": 9,
     "B2": 31,
-    "C1": 7,
-    "C2": 0
+    "C1": 13,
+    "C2": 3
    }
   },
   {
@@ -434,6 +434,66 @@
     "B2": 24,
     "C1": 4,
     "C2": 0
+   }
+  },
+  {
+   "id": "idioms",
+   "name": "Expressions idiomatiques",
+   "icon": "sparkle",
+   "desc": "Pour parler comme un natif : a piece of cake, to spill the beans…",
+   "count": 75,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 3,
+    "B2": 15,
+    "C1": 46,
+    "C2": 11
+   }
+  },
+  {
+   "id": "slang",
+   "name": "Anglais familier",
+   "icon": "zap",
+   "desc": "L'anglais de tous les jours, britannique et américain",
+   "count": 44,
+   "levels": {
+    "A1": 0,
+    "A2": 1,
+    "B1": 11,
+    "B2": 16,
+    "C1": 12,
+    "C2": 4
+   }
+  },
+  {
+   "id": "nuances",
+   "name": "Nuances : mots proches",
+   "icon": "split",
+   "desc": "Ne plus confondre : say/tell, rob/steal, borrow/lend…",
+   "count": 40,
+   "levels": {
+    "A1": 0,
+    "A2": 9,
+    "B1": 14,
+    "B2": 12,
+    "C1": 5,
+    "C2": 0
+   }
+  },
+  {
+   "id": "proverbs",
+   "name": "Proverbes et dictons",
+   "icon": "quote",
+   "desc": "Les proverbes que tout anglophone connaît",
+   "count": 25,
+   "levels": {
+    "A1": 0,
+    "A2": 0,
+    "B1": 3,
+    "B2": 11,
+    "C1": 8,
+    "C2": 3
    }
   }
  ]

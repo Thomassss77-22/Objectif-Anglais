@@ -51,3 +51,13 @@ healthy | en bonne santé, sain | Eat healthy food. | A2
 to put on weight | prendre du poids | I've put on weight. | B1
 to lose weight | perdre du poids | I want to lose weight. | A2
 to be on a diet | être au régime | I'm on a diet. | B1
+wrist | le poignet | I sprained my wrist. | B2
+ankle | la cheville | I twisted my ankle. | B2
+to sprain | se fouler | She sprained her ankle. | B2
+bruise | le bleu, l'ecchymose | I've got a bruise on my leg. | B2
+scar | la cicatrice | He has a scar on his face. | B2
+to faint | s'évanouir | She fainted in the heat. | B2
+dizzy | qui a le vertige, étourdi | I feel dizzy. | B2
+painkiller | l'antidouleur | Take a painkiller. | B2
+check-up | le bilan de santé | I'm going for a check-up. | B2
+to be fit | être en forme | She's very fit. | B1

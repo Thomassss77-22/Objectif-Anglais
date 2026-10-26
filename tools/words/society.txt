@@ -76,3 +76,9 @@ globalisation | la mondialisation | The effects of globalisation. | C1
 developing country | le pays en développement | Aid to developing countries. | B2
 ageing population | le vieillissement de la population | Europe has an ageing population. | C1
 standard of living | le niveau de vie | Their standard of living improved. | C1
+grassroots | de terrain, populaire (mouvement) | A grassroots movement. | C2
+turnout | le taux de participation | Turnout was low. | C1
+landslide | la victoire écrasante | They won by a landslide. | C1
+to lobby | faire pression (lobbying) | They lobbied the government. | C1
+accountability | la responsabilité (rendre des comptes) | Politicians need accountability. | C2
+polarisation | la polarisation | Political polarisation is growing. | C2

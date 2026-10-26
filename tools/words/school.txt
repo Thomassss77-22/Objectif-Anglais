@@ -42,3 +42,13 @@ dictionary | le dictionnaire | Use a dictionary. | A2
 fluent | courant (langue) | She's fluent in English. | B1
 accent | l'accent | He has a strong Scottish accent. | B1
 pronunciation | la prononciation | Your pronunciation is very good. | B1
+dissertation | le mémoire (de fin d'études) | I'm writing my dissertation. | C1
+thesis | la thèse | She's finishing her PhD thesis. | C1
+tuition fees | les frais de scolarité | Tuition fees are very high. | B2
+undergraduate | l'étudiant en licence | Undergraduates live on campus. | C1
+postgraduate | l'étudiant en master/doctorat | Postgraduate courses. | C1
+to plagiarise | plagier | He plagiarised his essay. | C1
+deadline extension | le report de date limite | I asked for a deadline extension. | C1
+seminar | le séminaire, les TD | I have a seminar at two. | B2
+to skip class | sécher les cours | He skipped class again. | B2
+gap year | l'année de césure | I took a gap year. | B2

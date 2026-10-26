@@ -1,0 +1,41 @@
+# anglais | français | exemple | niveau   (paires de mots proches : la traduction explique la différence)
+say / tell | say : dire qqch ; tell : dire à qqn | She said hello. / She told me a secret. | B1
+speak / talk | speak : parler (langue, discours) ; talk : discuter | I speak French. / We talked for hours. | B1
+look / see / watch | regarder (diriger les yeux) / voir / regarder (qqch qui bouge) | Look at this! / I can see you. / Let's watch TV. | A2
+hear / listen | entendre / écouter (volontairement) | I can't hear you. / Listen to me. | A2
+borrow / lend | emprunter / prêter | Can I borrow your pen? / Can you lend me your pen? | B1
+rob / steal | rob : voler (une personne, un lieu) ; steal : voler (un objet) | They robbed a bank. / He stole my wallet. | B2
+win / earn / gain | gagner (un match) / gagner (un salaire) / gagner (du poids, du temps) | We won! / I earn €2,000. / I gained weight. | B2
+remember / remind | se souvenir de / rappeler à qqn | I remember her. / Remind me to call. | B1
+bring / take | apporter (vers ici) / emporter (vers là-bas) | Bring me a coffee. / Take your umbrella. | B1
+come / go | venir (vers le locuteur) / aller (ailleurs) | Come here! / Go away! | A2
+fun / funny | amusant (agréable) / drôle (qui fait rire) | The party was fun. / The joke was funny. | B1
+bored / boring | qui s'ennuie / ennuyeux | I'm bored. / This film is boring. | A2
+interested / interesting | intéressé / intéressant | I'm interested in art. / Art is interesting. | A2
+economic / economical | économique (de l'économie) / économe, qui économise | Economic growth. / An economical car. | C1
+historic / historical | historique (marquant) / historique (du passé) | A historic victory. / A historical novel. | C1
+sensible / sensitive | raisonnable / sensible | A sensible choice. / Sensitive skin. | B2
+affect / effect | affecter (verbe) / l'effet (nom) | Stress affects sleep. / The effect was huge. | B2
+advice / advise | le conseil (nom) / conseiller (verbe) | Good advice. / I advise you to rest. | B2
+lose / loose | perdre / ample, desserré | Don't lose your keys. / Loose clothes. | B1
+lie / lay | être allongé / poser à plat | Lie down. / Lay the table. | C1
+rise / raise | monter (seul) / lever, augmenter (qqch) | Prices rise. / Raise your hand. | B2
+used to / be used to | avoir l'habitude (avant) / être habitué à | I used to smoke. / I'm used to the cold. | B2
+make / do | faire (créer) / faire (une activité, une tâche) | Make a cake. / Do your homework. | B1
+journey / trip / travel | le trajet / le voyage (aller-retour) / voyager | The journey was long. / A business trip. | B1
+job / work | un emploi (dénombrable) / le travail (indénombrable) | A new job. / I have a lot of work. | A2
+house / home | la maison (bâtiment) / le chez-soi | A big house. / I'm going home. | A2
+alone / lonely | seul (sans personne) / qui se sent seul | I live alone. / I feel lonely. | B1
+especially / specially | surtout, en particulier / spécialement (exprès) | I love fruit, especially apples. / I made it specially for you. | B2
+during / for | pendant (quand ?) / pendant (combien de temps ?) | During the film. / For two hours. | B1
+since / for | depuis (date) / depuis (durée) | Since 2020. / For three years. | A2
+ago / before | il y a (par rapport à maintenant) / avant | Two years ago. / I'd met him before. | B1
+until / by | jusqu'à (durée) / d'ici (au plus tard) | Wait until five. / Finish by five. | B2
+fewer / less | moins de (dénombrable) / moins de (indénombrable) | Fewer people. / Less money. | B2
+much / many | beaucoup de (indénombrable) / beaucoup de (dénombrable) | How much water? / How many people? | A2
+each / every | chaque (un par un) / chaque (tous) | Each student got a book. / Every day. | B1
+above / over | au-dessus (sans contact) / par-dessus, plus de | Above the clouds. / Over 18. | B2
+among / between | parmi (plusieurs) / entre (deux) | Among friends. / Between you and me. | B1
+beside / besides | à côté de / en plus, d'ailleurs | Sit beside me. / Besides, it's late. | B2
+ashamed / embarrassed | honteux (moral) / gêné (situation) | I'm ashamed of what I did. / I was embarrassed when I fell. | C1
+convince / persuade | convaincre (de croire) / persuader (de faire) | He convinced me it was true. / She persuaded me to go. | C1

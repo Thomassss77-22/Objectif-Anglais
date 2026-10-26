@@ -37,3 +37,13 @@ to work | marcher, fonctionner | My phone doesn't work.
 broken | cassé, en panne | The printer is broken.
 to fix | réparer | Can you fix my computer?
 to update | mettre à jour | You need to update the app. | B1
+to crash | planter (ordinateur) | My laptop crashed. | B2
+bug | le bug | There's a bug in the app. | B2
+data breach | la fuite de données | A massive data breach. | C1
+privacy | la vie privée, la confidentialité | Online privacy matters. | B2
+cloud storage | le stockage en ligne | Save it to cloud storage. | B2
+user-friendly | facile à utiliser | A user-friendly interface. | B2
+to troubleshoot | dépanner, diagnostiquer | Let me troubleshoot the problem. | C1
+cutting-edge | de pointe | Cutting-edge technology. | C1
+to hack | pirater | Hackers hacked the website. | B2
+screen time | le temps d'écran | Limit your screen time. | B2
