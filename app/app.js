@@ -1,5 +1,5 @@
 import { LEVELS } from "./data.js";
-import { LEGAL, JURY_QUESTIONS, SELF_GRID } from "./legal.js";
+import { LEGAL, JURY_QUESTIONS, SELF_GRID, DRILL_SENTENCES } from "./legal.js";
 import { ARTICLES } from "./articles.js";
 import { newCard, review, dueCards } from "./srs.js";
 
@@ -695,6 +695,11 @@ function training() {
       <div><b>Simulation sans article</b><span>Le chrono seul, avec un article papier ou PDF à côté</span></div>
       <span class="go">${icon("chevron")}</span>
     </button>
+    <button class="tile" id="drill">
+      <div class="tile-icon">${icon("mic")}</div>
+      <div><b>Exercices oraux</b><span>Collocations, termes et phrases à dire en anglais · 10 exercices</span></div>
+      <span class="go">${icon("chevron")}</span>
+    </button>
     <button class="tile" id="jury">
       <div class="tile-icon calm">${icon("chat")}</div>
       <div><b>Questions du jury</b><span>Une question tirée au sort, 45 secondes pour répondre</span></div>
@@ -708,6 +713,7 @@ function training() {
   `, { nav: "home" });
   root.querySelector("#sim").onclick = () => simulation("prep");
   root.querySelector("#lib").onclick = library;
+  root.querySelector("#drill").onclick = drillSession;
   root.querySelector("#mine").onclick = myArticle;
   root.querySelector("#jury").onclick = jury;
   root.querySelector("#grid").onclick = () => selfGrid();
@@ -830,6 +836,139 @@ function selfGrid(talkSeconds, art = null) {
     const g = root.querySelector("#g");
     if (g) g.onclick = () => guideView(art);
   };
+}
+
+// ---------- Exercices oraux (mode CRFPA) ----------
+const shuffle = (a) => a.map((x) => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map((x) => x[1]);
+// Pour comparer un terme, on ignore « to », les articles et la précision entre parenthèses.
+const bare = (s) => norm(s.replace(/\(.*?\)/g, "")).replace(/^(to|a|an|the) /, "");
+const DRILL_CATS = ["sources", "institutions", "criminal", "civil", "rights", "courtroom", "profession",
+  "politics", "international", "debates", "business", "tax", "falsefriends"];
+
+async function drillSession() {
+  stopTimer();
+  // Collocations verbales : on masque le verbe (« to lodge an appeal » → « to ___ an appeal »).
+  const colloc = (await loadCat("collocations")).filter((w) => /^to \w+ \S/.test(w.en));
+  const verbs = [...new Set(colloc.map((w) => w.en.split(" ")[1]))];
+  const collocItems = shuffle(colloc).slice(0, 4).map((w) => {
+    const verb = w.en.split(" ")[1];
+    const rest = w.en.split(" ").slice(2).join(" ");
+    // Pas de leurre qui formerait une autre collocation juste (« to bring a case » pour « to hear a case »).
+    const valid = new Set(colloc.filter((x) => x.en.split(" ").slice(2).join(" ") === rest).map((x) => x.en.split(" ")[1]));
+    const choices = shuffle([verb, ...shuffle(verbs.filter((v) => !valid.has(v))).slice(0, 3)]);
+    return { type: "colloc", w, verb, choices, gap: w.en.replace(` ${verb} `, " ___ ") };
+  });
+  const terms = (await Promise.all(DRILL_CATS.map((c) => loadCat(c)))).flat()
+    .filter((w) => w.en.split(" ").length <= 4);
+  const termItems = shuffle(terms).slice(0, 3).map((w) => ({ type: "term", w }));
+  const sentItems = shuffle(DRILL_SENTENCES).slice(0, 3).map((x) => ({ type: "sentence", ...x }));
+  drillStep(shuffle([...collocItems, ...termItems]).concat(sentItems), 0, 0);
+}
+
+function drillStep(items, i, score) {
+  if (i >= items.length) return drillDone(items.length, score);
+  const it = items[i];
+  const head = (kIcon, label) => `
+    <div class="ex-top">
+      <button class="icon-btn" id="quit" aria-label="Quitter">${icon("x")}</button>
+      <div class="bar"><i style="width:${(i / items.length) * 100}%"></i></div>
+    </div>
+    <span class="ex-kind">${icon(kIcon)}${label}</span>`;
+  const speakBox = Rec ? `<div class="mic-wrap"><button class="mic" id="mic" aria-label="Parler">${icon("mic")}</button>
+    <span class="mic-label" id="micl">Touche pour parler</span></div><div class="or">ou écris ta réponse</div>` : "";
+  const next = (ok) => drillStep(items, i + 1, score + (ok ? 1 : 0));
+  // Un élément raté rejoint les cartes de révision.
+  const miss = (w) => { if (w) { addWord(w); save(); } };
+
+  if (it.type === "colloc") {
+    render(`${head("link", "Complète la collocation")}
+      <p class="q">${esc(it.gap)}</p><p class="muted">${esc(it.w.fr)}</p>
+      <div class="choices">${it.choices.map((c, k) => `<button class="choice" data-c="${esc(c)}"><span class="k">${"ABCD"[k]}</span>${esc(c)}</button>`).join("")}</div>`);
+    root.querySelectorAll(".choice").forEach((b) => (b.onclick = () => {
+      const ok = b.dataset.c === it.verb;
+      b.classList.add(ok ? "right" : "wrong");
+      if (!ok) { root.querySelector(`.choice[data-c="${it.verb}"]`).classList.add("right"); miss(it.w); }
+      speak(it.w.en);
+      drillSheet(ok, it.w.en, it.w.ex, () => next(ok));
+    }));
+  } else if (it.type === "term") {
+    render(`${head("pen", "Dis-le en anglais")}
+      <p class="q">${esc(it.w.fr)}</p>${speakBox}
+      <textarea class="answer" id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="En anglais…"></textarea>
+      <div class="dock"><button class="btn lv" id="ok" disabled>Valider</button></div>`);
+    const input = root.querySelector("#ans");
+    const okBtn = root.querySelector("#ok");
+    input.oninput = () => (okBtn.disabled = !input.value.trim());
+    const submit = () => {
+      if (!input.value.trim()) return;
+      const ok = bare(input.value) === bare(it.w.en);
+      const had = inDeck(it.w);
+      root.querySelector(".dock").remove();
+      speak(it.w.en);
+      if (!ok) miss(it.w);
+      // « J'avais bon » retire la carte seulement si cet exercice vient de l'ajouter.
+      const accept = () => { if (!had) { delete P().deck[cardKey(it.w)]; save(); } next(true); };
+      drillSheet(ok, it.w.en, it.w.ex, () => next(ok), ok ? null : accept);
+    };
+    okBtn.onclick = submit;
+    input.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); submit(); } };
+    const mic = root.querySelector("#mic");
+    if (mic) mic.onclick = () => listen(mic, root.querySelector("#micl"), (t) => { input.value = t; submit(); });
+  } else {
+    render(`${head("chat", "Traduis à voix haute")}
+      <p class="q">${esc(it.fr)}</p>
+      <p class="muted">Dis ta traduction à voix haute (ou dans ta tête), puis compare avec le modèle.</p>
+      <div class="dock"><button class="btn lv" id="show">Voir la traduction</button></div>`);
+    root.querySelector("#show").onclick = () => {
+      root.querySelector(".dock").remove();
+      speak(it.en);
+      const sheet = document.createElement("div");
+      sheet.className = "sheet neutral";
+      sheet.innerHTML = `<div><h3><span class="badge">${icon("sound")}</span>Une traduction possible</h3>
+        <p><b>${esc(it.en)}</b></p>
+        <div class="row2"><button class="btn ghost" id="ko">À revoir</button><button class="btn ok" id="ok">J'avais bon</button></div></div>`;
+      root.appendChild(sheet);
+      sheet.querySelector("#ok").onclick = () => next(true);
+      sheet.querySelector("#ko").onclick = () => {
+        P().deck[`${it.en}`] ??= newCard(it.fr, it.en);
+        save();
+        next(false);
+      };
+    };
+  }
+  root.querySelector("#quit").onclick = training;
+}
+
+// Feuille de correction ; « accept » permet de valider une réponse juste mais formulée autrement.
+function drillSheet(ok, answer, example, onNext, accept = null) {
+  buzz(ok ? 15 : [30, 40, 30]);
+  root.querySelectorAll(".choice, #ans, #mic").forEach((e) => (e.disabled = true));
+  const sheet = document.createElement("div");
+  sheet.className = `sheet ${ok ? "ok" : "ko"}`;
+  sheet.innerHTML = `<div>
+    <h3><span class="badge">${icon(ok ? "check" : "x")}</span>${ok ? "Exact !" : "La réponse attendue"}</h3>
+    <p><b>${esc(answer)}</b>${example ? `<i class="sheet-ex">${esc(example)}</i>` : ""}</p>
+    ${accept ? `<div class="row2"><button class="btn ghost" id="acc">J'avais bon</button><button class="btn ko" id="nx">Continuer</button></div>`
+             : `<button class="btn ${ok ? "ok" : "ko"}" id="nx">Continuer</button>`}</div>`;
+  root.appendChild(sheet);
+  sheet.querySelector("#nx").onclick = onNext;
+  if (accept) sheet.querySelector("#acc").onclick = accept;
+}
+
+function drillDone(total, score) {
+  addXp(5 + score * 2);
+  render(`
+    <canvas id="confetti"></canvas>
+    <div class="done-screen">
+      <div class="trophy">${icon("mic")}</div>
+      <h1>${score} / ${total}</h1>
+      <p>${score === total ? "Parfait ! Ces expressions deviennent automatiques." : "Les éléments ratés ont été ajoutés à tes cartes de révision."}</p>
+    </div>
+    <div class="dock"><div class="row2"><button class="btn ghost" id="h">Terminer</button><button class="btn" id="again">Nouvelle séance</button></div></div>
+  `);
+  if (score / total >= 0.7) confetti(root.querySelector("#confetti"));
+  root.querySelector("#h").onclick = training;
+  root.querySelector("#again").onclick = drillSession;
 }
 
 // ---------- Articles d'entraînement ----------

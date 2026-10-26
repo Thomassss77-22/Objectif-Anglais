@@ -1,5 +1,5 @@
 // Cache hors ligne : réseau d'abord, cache en secours.
-const CACHE = "oa-v10";
+const CACHE = "oa-v11";
 const FILES = ["./", "index.html", "style.css", "app.js", "data.js", "srs.js", "legal.js", "articles.js", "manifest.json", "icons/icon.svg", "fonts/jakarta.woff2", "words/index.json", "words-legal/index.json"];
 
 self.addEventListener("install", (e) => e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES))));
