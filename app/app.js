@@ -236,7 +236,7 @@ function home() {
     ${legalMode() ? "" : `<button class="tile" id="test-home">
       <div class="tile-icon alt-test">${icon("target")}</div>
       <div><b>${state.placement ? `Ton niveau : ${state.placement.level}` : "Tester mon niveau"}</b>
-        <span>${state.placement ? "Refaire le test de niveau (15 à 25 questions)" : "Un test adaptatif de 15 à 25 questions pour démarrer au bon niveau"}</span></div>
+        <span>${state.placement ? "Refaire le test de niveau" : "Un test adaptatif de 10 à 15 minutes pour démarrer au bon niveau"}</span></div>
       <span class="go">${icon("chevron")}</span></button>`}
     ${legalMode() ? "" : `<button class="tile" id="cine-home">
       <div class="tile-icon cine">${icon("film")}</div>
@@ -719,35 +719,41 @@ function placementIntro() {
     <section class="lesson-hero" data-lv="B1">
       <span class="chip">Test adaptatif · A1 à C2</span>
       <h1>Quel est ton niveau d'anglais ?</h1>
-      <div class="meta"><span>${icon("clock")}10 à 15 min</span><span>${icon("list")}15 à 25 questions</span></div>
+      <div class="meta"><span>${icon("clock")}10 à 15 min</span><span>${icon("list")}16 à 34 questions</span></div>
     </section>
+    <h4 class="section-title">${icon("sound")}Peux-tu écouter de l'audio maintenant ?</h4>
+    <div class="tip">Avec le son, le test inclut des questions de compréhension orale. Sans le son, elles sont remplacées par davantage de questions écrites, pour un résultat aussi fiable.</div>
     <h4 class="section-title">${icon("bulb")}Comment ça marche</h4>
     <div class="tip">Chaque réponse affine l'estimation de ton niveau : les questions s'adaptent et deviennent plus faciles ou plus difficiles.
-      Le test porte sur <b>la grammaire, le vocabulaire, la compréhension écrite et la compréhension orale</b> (mets le son).
+      Le test porte sur <b>la grammaire, le vocabulaire, la compréhension écrite</b> et, si tu as le son, <b>la compréhension orale</b>.
       <br><br><b>Ne devine pas :</b> si tu ne sais pas, touche « Je ne sais pas ». Répondre au hasard fausse le résultat.</div>
     <h4 class="section-title">${icon("alert")}Ce que le test ne mesure pas</h4>
     <div class="tip">L'expression orale et écrite. Ce n'est pas une certification officielle (TOEIC, IELTS, Cambridge) : c'est une estimation fiable pour choisir ton point de départ.</div>
-    <div class="dock"><button class="btn" id="go">${icon("play")}Commencer le test</button></div>
+    <div class="dock"><div class="row2">
+      <button class="btn ghost" id="go-noaudio">Sans le son</button>
+      <button class="btn" id="go">${icon("sound")}Oui, j'ai le son</button>
+    </div></div>
   `);
   root.querySelector("#back").onclick = home;
-  root.querySelector("#go").onclick = () => {
+  const start = (noAudio) => {
     const used = new Set();
-    // Sans synthèse vocale, les questions d'écoute sont retirées.
-    const noAudio = !("speechSynthesis" in window);
     if (noAudio) PT.ITEMS.filter((it) => it.skill === "listening").forEach((it) => used.add(it.id));
-    placementStep({ post: Array(6).fill(1 / 6), used, skills: [], answers: [], noAudio });
+    placementStep({ post: Array(6).fill(1 / 6), used, skills: [], answers: [], noAudio, lim: noAudio ? PT.LIMITS.noAudio : PT.LIMITS.audio });
   };
+  // Sans synthèse vocale sur l'appareil, le test part directement sans écoute.
+  root.querySelector("#go").onclick = () => start(!("speechSynthesis" in window));
+  root.querySelector("#go-noaudio").onclick = () => start(true);
 }
 
 function placementStep(t) {
-  if (PT.done(t.post, t.answers.length)) return placementResult(t);
+  if (PT.done(t.post, t.answers.length, t.lim)) return placementResult(t);
   const it = PT.pickNext(t.post, t.used, t.skills);
   if (!it) return placementResult(t);
   const n = t.answers.length;
   render(`
     <div class="ex-top">
       <button class="icon-btn" id="quit" aria-label="Quitter">${icon("x")}</button>
-      <div class="bar"><i style="width:${Math.min(95, (n / 22) * 100)}%"></i></div>
+      <div class="bar"><i style="width:${Math.min(95, (n / (t.noAudio ? 27 : 22)) * 100)}%"></i></div>
     </div>
     <span class="ex-kind">${icon(it.skill === "listening" ? "sound" : it.skill === "reading" ? "book" : it.skill === "vocab" ? "list" : "pen")}${PT.SKILLS[it.skill]} · question ${n + 1}</span>
     ${it.text ? `<div class="paper test-text">${esc(it.text)}</div>` : ""}
@@ -773,6 +779,7 @@ function placementStep(t) {
   root.querySelector("#noaudio")?.addEventListener("click", () => {
     speechSynthesis.cancel();
     t.noAudio = true;
+    t.lim = PT.LIMITS.noAudio;
     PT.ITEMS.filter((x) => x.skill === "listening").forEach((x) => t.used.add(x.id));
     placementStep(t);
   });

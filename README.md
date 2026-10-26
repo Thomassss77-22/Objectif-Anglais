@@ -20,9 +20,10 @@ Fonctionnalités :
 ## Test de niveau
 Test adaptatif A1 → C2 (`app/placement.js`) : 72 questions (grammaire, vocabulaire, compréhension écrite et orale),
 estimation probabiliste du niveau après chaque réponse, arrêt entre 16 et 28 questions à 90 % de confiance.
-Bouton « Je ne peux pas écouter » : les questions d'écoute sont alors retirées et le niveau est calculé sans elles.
-Validation par simulation (`node tools/simulate_placement.mjs`, `NOAUDIO=1` pour le test sans écoute) : environ 87 %
-(85 % sans écoute) de candidats classés au niveau exact, plus de 99 % à un niveau près. Ne mesure pas l'expression orale ou écrite ; ce n'est pas une certification.
+Au départ, le test demande si l'on peut écouter. Avec le son : 16 à 28 questions, dont de la compréhension orale.
+Sans le son : pas de questions d'écoute, mais 20 à 34 questions et un seuil de confiance de 93 %.
+Validation par simulation (`node tools/simulate_placement.mjs`, `NOAUDIO=1` sans écoute) : environ 86 % (avec son)
+et 88 % (sans son) de candidats classés au niveau exact, plus de 99 % à un niveau près. Ne mesure pas l'expression orale ou écrite ; ce n'est pas une certification.
 
 ## Ciné et séries
 Dans l'onglet **Mots** (et sur l'accueil) en anglais général : 10 films et séries (`app/films.js`) avec un pitch sans spoiler,

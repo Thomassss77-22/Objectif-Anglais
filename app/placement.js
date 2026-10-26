@@ -130,6 +130,8 @@ export const mean = (post) => post.reduce((a, p, i) => a + p * (i + 1), 0);
 export const best = (post) => post.indexOf(Math.max(...post));
 
 export const MIN_ITEMS = 16, MAX_ITEMS = 28, TARGET = 0.9;
+// Sans écoute, il reste moins de types de questions : le test en pose davantage pour rester aussi fiable.
+export const LIMITS = { audio: { min: MIN_ITEMS, max: MAX_ITEMS, target: TARGET }, noAudio: { min: 20, max: 34, target: 0.93 } };
 
 // Question suivante : la plus proche du niveau estimé, en alternant les compétences.
 export function pickNext(post, used, lastSkills, rand = Math.random) {
@@ -140,4 +142,4 @@ export function pickNext(post, used, lastSkills, rand = Math.random) {
   return pool.sort((x, y) => score(x) - score(y))[0];
 }
 
-export const done = (post, n) => n >= MAX_ITEMS || (n >= MIN_ITEMS && Math.max(...post) >= TARGET);
+export const done = (post, n, lim = LIMITS.audio) => n >= lim.max || (n >= lim.min && Math.max(...post) >= lim.target);

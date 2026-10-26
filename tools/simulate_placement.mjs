@@ -1,7 +1,7 @@
 // Valide le test de niveau par simulation : node tools/simulate_placement.mjs
 // Candidats virtuels de chaque niveau ; la difficulté réelle des questions varie de ±0,5 niveau,
 // et un candidat qui ne sait pas répond « je ne sais pas » une fois sur deux, sinon devine.
-import { ITEMS, update, best, pickNext, done } from "../app/placement.js";
+import { ITEMS, update, best, pickNext, done, LIMITS } from "../app/placement.js";
 // Candidat simulé : niveau réel θ (1..6), difficulté réelle des questions = niveau annoncé ± 0,5.
 const noise = Object.fromEntries(ITEMS.map((it) => [it.id, (Math.random() - 0.5)]));
 const knows = (theta, b) => 1 / (1 + Math.exp(-(2 * (theta - b) + 1.1)));
@@ -10,7 +10,7 @@ const noAudio = process.env.NOAUDIO === "1";
 function run(theta) {
   let post = [1, 1, 1, 1, 1, 1].map((x) => x / 6); const used = new Set(); const skills = []; let n = 0;
   if (noAudio) ITEMS.filter((it) => it.skill === "listening").forEach((it) => used.add(it.id));
-  while (!done(post, n)) {
+  while (!done(post, n, noAudio ? LIMITS.noAudio : LIMITS.audio)) {
     const it = pickNext(post, used, skills); used.add(it.id); skills.push(it.skill); n++;
     const b = it.lv + noise[it.id];
     let out;
