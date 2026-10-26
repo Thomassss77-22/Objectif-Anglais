@@ -13,7 +13,7 @@ cd app && python3 -m http.server 8000
 Ouvre http://localhost:8000. Sur mobile : menu du navigateur → « Ajouter à l'écran d'accueil ».
 
 Fonctionnalités :
-- Parcours A1 → C2 (une leçon par niveau pour l'instant) : fiche de grammaire, vocabulaire avec audio, exercices (QCM, traduction).
+- Parcours A1 → C2 : fiche de grammaire, vocabulaire avec audio, exercices (QCM, traduction, oral) ; leçons supplémentaires dans `app/lessons-extra.js`, vérifiées par `node tools/check_lessons.mjs`.
 - Les mots de chaque leçon rejoignent le paquet de **cartes mémoire**, révisées avec l'algorithme **SM-2**.
 - XP, série quotidienne, progression sauvegardée localement, fonctionne hors ligne.
 

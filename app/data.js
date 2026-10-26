@@ -2,6 +2,8 @@
 // Chaque leçon : une fiche en français, le vocabulaire (ajouté aux cartes mémoire),
 // des exercices dont au moins un « speak » (à dire à voix haute).
 // Types d'exercices : qcm (choices + answer), translate (answers), speak (answers).
+import { EXTRA } from "./lessons-extra.js";
+
 export const LEVELS = [
   {
     id: "A1", name: "Débutant — survivre en anglais",
@@ -280,3 +282,12 @@ export const LEVELS = [
     ],
   },
 ];
+
+// Insère les leçons supplémentaires à leur place dans la progression.
+for (const lv of LEVELS) {
+  for (const extra of EXTRA[lv.id] || []) {
+    const { after, ...lesson } = extra;
+    const at = after ? lv.lessons.findIndex((l) => l.id === after) : -1;
+    lv.lessons.splice(at >= 0 ? at + 1 : lv.lessons.length, 0, lesson);
+  }
+}
