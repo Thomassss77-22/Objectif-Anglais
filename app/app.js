@@ -200,31 +200,6 @@ function home() {
   const next = nextLesson();
   const due = reviewQueue().length;
 
-  const units = levels().map((lv) => {
-    const n = lv.lessons.filter((l) => P().done[l.id]).length;
-    return `
-    <section class="unit" data-lv="${lv.id}">
-      <div class="unit-head" data-lv="${lv.id}">
-        <small>${lv.label || `Niveau ${lv.id}`}</small>
-        <h3>${esc(lv.name)}</h3>
-        <div class="meter"><i style="width:${(n / lv.lessons.length) * 100}%"></i></div>
-        <div class="count">${n} / ${lv.lessons.length} leçons</div>
-      </div>
-      <div class="path">
-        ${lv.lessons.map((l) => {
-          const st = P().done[l.id] ? "done" : next && next.id === l.id ? "next" : "todo";
-          const ic = st === "done" ? "check" : st === "next" ? "star" : l.vocab ? "cards" : "book";
-          return `<div class="node ${st} ${l.vocab ? "vocab" : ""}">
-            <button class="node-btn" data-id="${l.id}" aria-label="${esc(l.title)}">
-              ${st === "next" ? `<span class="start-tag">COMMENCER</span>` : ""}${icon(ic)}
-            </button>
-            <div class="node-label">${esc(l.title)}</div>
-          </div>`;
-        }).join("")}
-      </div>
-    </section>`;
-  }).join("");
-
   render(`
     ${topbar()}
     <section class="hero">
@@ -262,7 +237,7 @@ function home() {
       <div class="tile-icon alt">${icon("clock")}</div>
       <div><b>Entraînement à l'oral</b><span>Simulation chronométrée et questions du jury</span></div>
       <span class="go">${icon("chevron")}</span></button>` : ""}
-    ${units}
+    <div id="path">${pathSection(next)}</div>
   `, { nav: "home" });
 
   requestAnimationFrame(() => setTimeout(() => {
@@ -272,7 +247,89 @@ function home() {
   root.querySelector("#continue").onclick = () => (next ? lesson(next.id) : reviewSession());
   root.querySelector("#cine-home")?.addEventListener("click", cinema);
   root.querySelector("#test-home")?.addEventListener("click", placementIntro);
-  root.querySelectorAll(".node-btn").forEach((b) => (b.onclick = () => lesson(b.dataset.id)));
+  bindPath(next);
+}
+
+// Le parcours s'affiche un niveau à la fois (onglets), découpé en chapitres : une leçon rédigée
+// suivie des leçons de vocabulaire qui l'accompagnent. Un module fait uniquement de vocabulaire
+// (CRFPA, module 5) est découpé par thème. Seul le chapitre en cours est déplié.
+const shownLv = {};          // niveau affiché, par mode
+const toggled = new Set();   // chapitres ouverts ou fermés à la main
+const baseTitle = (t) => t.replace(/ \(\d+\/\d+\)$/, "");
+function chapters(lv) {
+  const vocabOnly = lv.lessons.every((l) => l.vocab);
+  const out = [];
+  for (const l of lv.lessons) {
+    const last = out[out.length - 1];
+    const join = last && l.vocab && (!vocabOnly || last.cat === l.vocab.cat);
+    if (join) last.lessons.push(l);
+    else out.push({ id: l.id, cat: l.vocab?.cat, title: vocabOnly ? baseTitle(l.title) : l.title, lessons: [l] });
+  }
+  return out;
+}
+
+function pathSection(next) {
+  const lvls = levels();
+  const cur = (next && lvls.find((lv) => lv.lessons.some((l) => l.id === next.id))) || lvls[lvls.length - 1];
+  const lv = lvls.find((x) => x.id === shownLv[state.mode]) || cur;
+  const doneIn = (list) => list.filter((l) => P().done[l.id]).length;
+  const n = doneIn(lv.lessons);
+  const tabs = lvls.map((x) => {
+    const full = doneIn(x.lessons) === x.lessons.length;
+    return `<button class="lv-tab ${x.id === lv.id ? "on" : ""} ${full ? "full" : ""}" data-lv="${x.id}" data-pick="${x.id}">
+      ${full ? icon("check") : ""}${x.id}${x.id === cur.id && !full ? `<i class="dot"></i>` : ""}</button>`;
+  }).join("");
+  const chs = chapters(lv).map((ch, i) => {
+    const k = doneIn(ch.lessons), len = ch.lessons.length;
+    const isNext = next && ch.lessons.some((l) => l.id === next.id);
+    const st = k === len ? "done" : isNext ? "next" : "todo";
+    const open = isNext !== toggled.has(ch.id);
+    const nv = ch.lessons.filter((l) => l.vocab).length, ng = len - nv;
+    const pl = (k, w) => `${k} ${w}${k > 1 ? "s" : ""}`;
+    const parts = ng ? `${pl(ng, "leçon")}${nv ? ` + ${nv} de vocabulaire` : ""}` : `${pl(nv, "leçon")} de vocabulaire`;
+    const rows = ch.lessons.map((l) => {
+      const d = P().done[l.id], nx = next && next.id === l.id;
+      return `<button class="ch-row ${d ? "done" : nx ? "next" : ""}" data-id="${l.id}">
+        <span class="ch-ic ${l.vocab ? "vocab" : ""}">${icon(d ? "check" : l.vocab ? "cards" : "book")}</span>
+        <span class="ch-txt"><small>${l.vocab ? "Vocabulaire" : "Leçon"}</small><b>${esc(ch.cat ? l.title.replace(/^.* \((\d+)\/(\d+)\)$/, "Partie $1 sur $2") : l.title)}</b></span>
+        ${nx ? `<span class="ch-go">${icon("play")}</span>` : ""}</button>`;
+    }).join("");
+    return `<section class="chapter ${st} ${open ? "open" : ""}">
+      <button class="ch-head" data-ch="${ch.id}" aria-expanded="${open}">
+        <span class="ch-num">${st === "done" ? icon("check") : i + 1}</span>
+        <span class="ch-txt"><b>${esc(ch.title)}</b><small>${parts}</small></span>
+        <span class="ch-count">${k}/${len}</span><span class="ch-arrow">${icon("chevron")}</span>
+      </button>
+      <div class="ch-body">${rows}</div>
+    </section>`;
+  }).join("");
+  return `<div class="lv-tabs" role="tablist">${tabs}</div>
+    <section class="unit" data-lv="${lv.id}">
+      <div class="unit-head" data-lv="${lv.id}">
+        <small>${lv.label || `Niveau ${lv.id}`}</small>
+        <h3>${esc(lv.name)}</h3>
+        <div class="meter"><i style="width:${(n / lv.lessons.length) * 100}%"></i></div>
+        <div class="count">${n} / ${lv.lessons.length} étapes · ${chapters(lv).length} chapitres</div>
+      </div>
+      <div class="chapters">${chs}</div>
+    </section>`;
+}
+
+function bindPath(next) {
+  const box = root.querySelector("#path");
+  box.querySelectorAll(".ch-row").forEach((b) => (b.onclick = () => lesson(b.dataset.id)));
+  box.querySelectorAll(".ch-head").forEach((b) => (b.onclick = () => {
+    const ch = b.parentElement;
+    ch.classList.toggle("open");
+    b.setAttribute("aria-expanded", ch.classList.contains("open"));
+    toggled.has(b.dataset.ch) ? toggled.delete(b.dataset.ch) : toggled.add(b.dataset.ch);
+  }));
+  box.querySelectorAll(".lv-tab").forEach((b) => (b.onclick = () => {
+    shownLv[state.mode] = b.dataset.pick;
+    box.innerHTML = pathSection(next);
+    bindPath(next);
+    box.querySelector(".lv-tab.on").scrollIntoView({ inline: "center", block: "nearest" });
+  }));
 }
 
 // ---------- Leçon ----------

@@ -13,7 +13,7 @@ cd app && python3 -m http.server 8000
 Ouvre http://localhost:8000. Sur mobile : menu du navigateur → « Ajouter à l'écran d'accueil ».
 
 Fonctionnalités :
-- Parcours A1 → C2 : fiche de grammaire, vocabulaire avec audio, exercices (QCM, traduction, oral) ; leçons supplémentaires dans `app/lessons-extra.js`, vérifiées par `node tools/check_lessons.mjs`.
+- Parcours A1 → C2, affiché un niveau à la fois (onglets) et découpé en chapitres repliables (une leçon + son vocabulaire) : fiche de grammaire, vocabulaire avec audio, exercices (QCM, traduction, oral) ; leçons supplémentaires dans `app/lessons-extra.js`, vérifiées par `node tools/check_lessons.mjs`.
 - **Toute la banque de mots est dans le parcours** : 187 leçons de vocabulaire (2 002 mots) intercalées entre les leçons de grammaire,
   et un module 5 « Vocabulaire juridique » de 53 leçons (623 termes) en mode CRFPA.
 - Les mots de chaque leçon rejoignent le paquet de **cartes mémoire**, révisées avec l'algorithme **SM-2**.
