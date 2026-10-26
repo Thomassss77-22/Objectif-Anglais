@@ -13,6 +13,7 @@ Usage : python3 tools/build_words.py
 import json
 import re
 import sys
+import unicodedata
 import urllib.request
 from pathlib import Path
 
@@ -65,7 +66,8 @@ def level_for(en, ranks):
 
 
 def slug(s):
-    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+    s = unicodedata.normalize("NFD", s.lower()).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
 
 def main():
@@ -107,6 +109,7 @@ def main():
                     errors.append(f"{where} : doublon de « {en} » (déjà dans {prev_cat})")
                     continue
                 wid = f"{wid}-{slug(fr)}"  # même mot, autre sens (ex. cold : rhume / froid)
+                print(f"info : « {en} » a deux sens : {prev_fr} ({prev_cat}) / {fr} ({cat['id']})")
             entry = {"id": wid, "en": en, "fr": fr, "ex": ex, "lv": lv}
             if wid != slug(en):
                 entry["alt"] = True  # l'application distingue alors la carte par son sens français

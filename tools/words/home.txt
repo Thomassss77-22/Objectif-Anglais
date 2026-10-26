@@ -28,3 +28,22 @@ to do the laundry | faire la lessive | I do the laundry on Sundays. | A2
 rent | le loyer | The rent is very expensive here.
 to move | déménager, bouger | We're moving to London next month.
 neighbourhood | le quartier | It's a quiet neighbourhood. | A2
+ceiling | le plafond | The ceiling is very high. | B1
+roof | le toit | The roof is leaking. | A2
+cupboard | le placard | The plates are in the cupboard. | A2
+shelf | l'étagère | Put the books on the shelf. | A2
+drawer | le tiroir | The keys are in the top drawer. | B1
+mirror | le miroir | Look in the mirror. | A2
+sink | l'évier, le lavabo | The dishes are in the sink. | B1
+oven | le four | Put the cake in the oven. | A2
+washing machine | la machine à laver | The washing machine is broken. | A2
+heating | le chauffage | Turn the heating on. | B1
+landlord | le propriétaire (bailleur) | I need to call the landlord. | B1
+tenant | le locataire | The tenants pay the rent monthly. | B1
+furniture | les meubles | We bought new furniture. | A2
+upstairs | en haut, à l'étage | The bathroom is upstairs. | A2
+downstairs | en bas, au rez-de-chaussée | Come downstairs, dinner's ready! | A2
+to share a flat | partager un appartement | I share a flat with two friends. | B1
+to settle in | s'installer, s'acclimater | Have you settled in yet? | B1
+messy | en désordre | Your room is so messy! | B1
+cosy | douillet, cosy | It's a cosy little flat. | B1

@@ -1,0 +1,36 @@
+# anglais | français | exemple | niveau
+film | le film (UK) | Have you seen this film?
+movie | le film (US) | Let's watch a movie tonight.
+series | la série | I'm watching a great series. | A2
+episode | l'épisode | I watched three episodes last night. | A2
+actor | l'acteur | Who's your favourite actor?
+singer | le chanteur, la chanteuse | She's a famous singer. | A1
+song | la chanson | I love this song!
+music | la musique | What kind of music do you like?
+band | le groupe (de musique) | They're my favourite band. | A2
+album | l'album | Their new album is great. | A2
+book | le livre | I'm reading a good book.
+novel | le roman | It's a novel by Jane Austen. | B1
+author | l'auteur | Who's the author? | B1
+story | l'histoire, le récit | Tell me a story.
+newspaper | le journal | I read the newspaper every morning. | A1
+magazine | le magazine | She writes for a fashion magazine. | A1
+news | les informations, la nouvelle | Did you hear the news?
+journalist | le journaliste | He works as a journalist. | A2
+article | l'article | I read an interesting article. | A2
+headline | le gros titre | The story made the headlines. | B1
+TV | la télé | What's on TV tonight? | A1
+channel | la chaîne | Change the channel. | A2
+show | l'émission, le spectacle | It's my favourite TV show.
+advert | la publicité (UK) | There are too many adverts. | B1
+podcast | le podcast | I listen to podcasts on the way to work. | B1
+subtitles | les sous-titres | I watch films with English subtitles. | B1
+to stream | regarder en streaming | You can stream it online. | B1
+review | la critique, l'avis | The film got great reviews. | A2
+character | le personnage | The main character is a detective. | A2
+plot | l'intrigue | The plot is too complicated. | B1
+ending | la fin, le dénouement | I didn't like the ending. | B1
+art | l'art | I'm interested in modern art.
+artist | l'artiste | She's a talented artist. | A2
+exhibition | l'exposition | Let's go to the exhibition. | B1
+famous | célèbre | He's a famous actor.

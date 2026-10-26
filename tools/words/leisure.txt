@@ -1,0 +1,38 @@
+# anglais | français | exemple | niveau
+sport | le sport | What's your favourite sport?
+football | le football (UK) | Do you play football? | A1
+match | le match | We watched the match on TV.
+game | le jeu, la partie | Do you want to play a game?
+player | le joueur | He's a great player.
+to score | marquer (un but) | He scored two goals. | A2
+goal | le but, l'objectif | What a goal!
+to train | s'entraîner | I train three times a week. | A2
+gym | la salle de sport | I go to the gym after work. | A1
+to swim | nager | Can you swim?
+swimming pool | la piscine | Is there a swimming pool in the hotel? | A2
+to ride a bike | faire du vélo | I ride my bike to work. | A1
+to go for a walk | aller se promener | Let's go for a walk. | A1
+hiking | la randonnée | We love hiking in the mountains. | A2
+to go out | sortir | Do you want to go out tonight? | A1
+party | la fête, la soirée | Are you coming to my party?
+concert | le concert | We went to a concert last night. | A1
+cinema | le cinéma (UK) | Let's go to the cinema. | A1
+museum | le musée | The museum is free on Sundays. | A1
+theatre | le théâtre | We saw a play at the theatre. | A2
+hobby | le passe-temps | What are your hobbies? | A1
+free time | le temps libre | What do you do in your free time? | A1
+to relax | se détendre | I just want to relax this weekend. | A2
+to have fun | s'amuser | Have fun at the party! | A1
+fun | amusant, le plaisir | It was really fun.
+to dance | danser | Do you want to dance?
+to sing | chanter | She sings beautifully.
+to paint | peindre | I like to paint in my free time.
+photo | la photo | Can you take a photo of us?
+camping | le camping | We go camping every summer. | A2
+board game | le jeu de société | Let's play a board game. | B1
+chess | les échecs | Do you play chess? | A2
+fan | le fan, le supporter | I'm a big fan of the Beatles.
+to support | soutenir, supporter (une équipe) | I support Liverpool.
+competition | la compétition, le concours | She won a singing competition. | A2
+championship | le championnat | They won the championship. | B1
+to be into something | être fan de quelque chose | I'm really into jazz. | B1

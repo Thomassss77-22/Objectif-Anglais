@@ -14,3 +14,8 @@ verbs | Verbes essentiels | bolt | Les verbes les plus utilisés à l'oral
 adjectives | Adjectifs essentiels | star | Décrire les choses et les gens
 connectors | Mots de liaison | link | Structurer son discours : mais, donc, pourtant…
 conversation | Expressions de conversation | chat | Réagir, relancer, être poli à l'oral
+shopping | Achats et argent | bag | Magasins, prix, paiement, banque
+clothes | Vêtements et apparence | shirt | Habits, accessoires, décrire quelqu'un
+leisure | Sports et loisirs | ball | Sport, sorties, passe-temps
+tech | Technologie | phone | Téléphone, ordinateur, internet
+media | Médias et culture | tv | Films, musique, livres, actualité

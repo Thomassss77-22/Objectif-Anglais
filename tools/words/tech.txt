@@ -1,0 +1,39 @@
+# anglais | français | exemple | niveau
+phone | le téléphone | Can I use your phone?
+mobile phone | le portable (UK) | Turn off your mobile phone. | A1
+smartphone | le smartphone | I got a new smartphone. | A2
+computer | l'ordinateur | My computer is very slow.
+laptop | l'ordinateur portable | I work on my laptop. | A2
+screen | l'écran | The screen is broken.
+keyboard | le clavier | I spilled coffee on my keyboard. | A2
+internet | internet | The internet is down. | A1
+website | le site internet | Check our website for details. | A2
+email | l'e-mail | I'll send you an email. | A1
+password | le mot de passe | I forgot my password. | A2
+to download | télécharger | Download the app for free. | A2
+to upload | mettre en ligne | I uploaded the photos. | B1
+to click | cliquer | Click on the link. | A2
+link | le lien | I'll send you the link. | A2
+app | l'application | There's an app for that. | A2
+to charge | charger, recharger | I need to charge my phone. | A2
+battery | la batterie | My battery is dead. | A2
+charger | le chargeur | Can I borrow your charger? | B1
+to text | envoyer un SMS | Text me when you get home. | A2
+message | le message | I left you a message.
+to call back | rappeler | I'll call you back later. | A2
+to turn on | allumer | Turn on the computer. | A2
+to turn off | éteindre | Don't forget to turn off the lights. | A2
+to log in | se connecter | I can't log in to my account. | B1
+account | le compte | Do you have an account? 
+to search | chercher, rechercher | Search for it online. | A2
+to save | enregistrer, sauvegarder | Don't forget to save the file. 
+file | le fichier, le dossier | I'll attach the file. | A2
+to delete | supprimer | I accidentally deleted the photo. | B1
+to share | partager | Share it with your friends.
+social media | les réseaux sociaux | She spends hours on social media. | A2
+online | en ligne | I bought it online. | A2
+wifi | le wifi | What's the wifi password? | A2
+to work | marcher, fonctionner | My phone doesn't work. 
+broken | cassé, en panne | The printer is broken.
+to fix | réparer | Can you fix my computer?
+to update | mettre à jour | You need to update the app. | B1

@@ -75,3 +75,48 @@ to wear | porter (un vêtement) | She's wearing a red dress.
 to break | casser | I broke my phone.
 to fall | tomber | Be careful, don't fall!
 to worry | s'inquiéter | Don't worry!
+to allow | permettre, autoriser | Smoking isn't allowed here. | B1
+to avoid | éviter | Avoid the city centre at rush hour. | B1
+to compare | comparer | Don't compare yourself to others. | B1
+to complain | se plaindre | He's always complaining. | B1
+to describe | décrire | Can you describe him? | A2
+to discuss | discuter de | We need to discuss the plan. | B1
+to expect | s'attendre à, attendre | I didn't expect that. | B1
+to fill in | remplir (un formulaire) | Please fill in this form. | B1
+to find out | découvrir, apprendre | I found out the truth. | B1
+to give up | abandonner, arrêter | Don't give up! | B1
+to grow | grandir, pousser, cultiver | You've grown so much! | A2
+to guess | deviner | Guess what happened! | A2
+to hold | tenir | Hold my hand. | A2
+to imagine | imaginer | Imagine you're on a beach. | A2
+to invite | inviter | They invited us to dinner. | A2
+to join | rejoindre, s'inscrire à | Why don't you join us? | A2
+to laugh | rire | Don't laugh at me! | A2
+to lie | mentir | Don't lie to me. | B1
+to look for | chercher | I'm looking for my keys. | A2
+to look forward to | avoir hâte de | I'm looking forward to seeing you. | B1
+to manage | réussir à, gérer | I managed to finish on time. | B1
+to mention | mentionner | Don't mention it. | B1
+to notice | remarquer | Did you notice anything strange? | B1
+to offer | offrir, proposer | Can I offer you a drink? | A2
+to pick up | ramasser, aller chercher | I'll pick you up at eight. | B1
+to prefer | préférer | I prefer tea. | A2
+to prepare | préparer | I'm preparing for my exam. | A2
+to promise | promettre | I promise I'll call you. | A2
+to realise | se rendre compte | I didn't realise it was so late. | B1
+to receive | recevoir | Did you receive my email? | A2
+to recommend | recommander | Can you recommend a good restaurant? | B1
+to refuse | refuser | She refused to answer. | B1
+to remind | rappeler (qqch à qqn) | Remind me to call her. | B1
+to repeat | répéter | Can you repeat that? | A2
+to reply | répondre | She didn't reply to my message. | A2
+to return | revenir, rendre | I'll return the book tomorrow. | A2
+to set up | créer, installer | She set up her own company. | B1
+to smile | sourire | Smile! | A2
+to succeed | réussir | She succeeded in her exams. | B1
+to suggest | suggérer, proposer | I suggest we leave now. | B1
+to throw | jeter, lancer | Throw me the ball. | A2
+to visit | rendre visite à, visiter | I visited my grandparents. | A2
+to warn | prévenir, avertir | I warned you! | B1
+to wonder | se demander | I wonder why he left. | B1
+to work out | trouver, comprendre ; faire du sport | I can't work out the answer. | B1

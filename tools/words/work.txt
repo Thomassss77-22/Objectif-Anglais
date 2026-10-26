@@ -24,3 +24,21 @@ to be busy | être occupé | Sorry, I'm really busy right now. | A1
 retired | à la retraite | My parents are retired. | B1
 unemployed | au chômage | He's been unemployed for a year. | B1
 lawyer | l'avocat | She wants to become a lawyer.
+employee | l'employé | The company has 200 employees. | A2
+employer | l'employeur | My employer pays for my training. | B1
+staff | le personnel | The staff are very helpful. | B1
+to apply for | postuler à | I'm applying for a job in London. | B1
+application | la candidature | I sent my application yesterday. | B1
+CV | le CV (UK) | Send us your CV. | A2
+full-time | à temps plein | It's a full-time job. | A2
+part-time | à temps partiel | She works part-time. | A2
+overtime | les heures supplémentaires | I worked overtime all week. | B1
+promotion | la promotion | She got a promotion. | B1
+pay rise | l'augmentation (de salaire) | I asked for a pay rise. | B1
+contract | le contrat | Read the contract carefully. | B1
+task | la tâche | I have a lot of tasks today. | B1
+project | le projet | We're working on a new project. | A2
+to be in charge of | être responsable de | She's in charge of the team. | B1
+to run a business | diriger une entreprise | He runs his own business. | B1
+to work from home | travailler de chez soi | I work from home on Fridays. | A2
+commute | le trajet domicile-travail | My commute takes an hour. | B1

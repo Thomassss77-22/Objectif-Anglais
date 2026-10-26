@@ -27,3 +27,21 @@ delay | le retard | There's a two-hour delay. | B1
 platform | le quai | The train leaves from platform four. | A2
 to get on | monter (dans un transport) | Get on the bus here. | A2
 to get off | descendre (d'un transport) | Get off at the next stop. | A2
+one-way ticket | l'aller simple | A one-way ticket to Leeds, please. | A2
+to check in | s'enregistrer | You can check in online. | A2
+to check out | quitter (l'hôtel) | We check out at eleven. | B1
+boarding pass | la carte d'embarquement | Here's your boarding pass. | B1
+departure | le départ | Departures are on the first floor. | B1
+arrival | l'arrivée | Our arrival time is ten pm. | B1
+customs | la douane | We went through customs. | B1
+to land | atterrir | The plane landed on time. | A2
+to take off | décoller | The plane took off late. | A2
+on board | à bord | Welcome on board. | B1
+destination | la destination | What's your final destination? | B1
+sightseeing | le tourisme (visites) | We spent the day sightseeing. | B1
+guided tour | la visite guidée | We went on a guided tour. | B1
+souvenir | le souvenir (objet) | I bought a souvenir for my mum. | A2
+to go on holiday | partir en vacances | We're going on holiday next week. | A2
+backpack | le sac à dos | I travelled with just a backpack. | B1
+youth hostel | l'auberge de jeunesse | We stayed in a youth hostel. | B1
+reservation | la réservation | I have a reservation for two nights. | A2

@@ -28,3 +28,18 @@ behind | derrière | The car park is behind the building.
 in front of | devant | I'll wait in front of the cinema. | A1
 traffic | la circulation | There's a lot of traffic today.
 traffic lights | les feux | Turn right at the traffic lights. | A2
+pharmacy | la pharmacie | The pharmacy closes at seven. | A2
+library | la bibliothèque (≠ librairie) | I study at the library. | A2
+bookshop | la librairie | There's a nice bookshop downtown. | A2
+town hall | la mairie | The town hall is in the main square. | B1
+police station | le commissariat | Where's the nearest police station? | A2
+car park | le parking (UK) | The car park is full. | A2
+pavement | le trottoir (UK) | Walk on the pavement. | B1
+crossroads | le carrefour | Turn left at the crossroads. | B1
+roundabout | le rond-point | Take the second exit at the roundabout. | B1
+suburbs | la banlieue | They live in the suburbs. | B1
+city centre | le centre-ville (UK) | Our hotel is in the city centre. | A2
+downtown | en centre-ville (US) | Let's meet downtown. | B1
+crowded | bondé | The market was very crowded. | B1
+nearby | à proximité | Is there a café nearby? | B1
+to get lost | se perdre | We got lost in the old town. | A2

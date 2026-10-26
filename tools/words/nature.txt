@@ -27,3 +27,26 @@ dog | le chien | I take the dog for a walk every day.
 cat | le chat | Our cat sleeps all day.
 bird | l'oiseau | The birds are singing.
 environment | l'environnement | We must protect the environment.
+storm | la tempête, l'orage | There was a big storm last night. | A2
+thunder | le tonnerre | I heard thunder. | B1
+lightning | les éclairs | The tree was hit by lightning. | B1
+fog | le brouillard | There's thick fog this morning. | B1
+foggy | brumeux | It's foggy today. | B1
+freezing | glacial | It's freezing outside! | A2
+degree | le degré | It's twenty degrees today. | A2
+temperature | la température | The temperature is rising. | A2
+forecast | les prévisions (météo) | What's the forecast for tomorrow? | B1
+countryside | la campagne | I prefer the countryside to the city. | A2
+field | le champ | The cows are in the field. | A2
+forest | la forêt | We went for a walk in the forest. | A2
+lake | le lac | We swam in the lake. | A2
+island | l'île | They live on a small island. | A2
+sky | le ciel | The sky is blue. | A2
+pollution | la pollution | Air pollution is a big problem. | B1
+climate change | le changement climatique | Climate change affects us all. | B1
+to recycle | recycler | We recycle all our bottles. | B1
+waste | les déchets, le gaspillage | It's a waste of time. | B1
+pet | l'animal de compagnie | Do you have any pets? | A2
+horse | le cheval | She loves riding horses. | A2
+cow | la vache | There are cows in the field. | A2
+insect | l'insecte | I hate insects. | B1

@@ -1,16 +1,16 @@
 {
- "total": 505,
+ "total": 1017,
  "categories": [
   {
    "id": "people",
    "name": "Personnes et famille",
    "icon": "user",
    "desc": "Famille, relations, âges de la vie",
-   "count": 34,
+   "count": 51,
    "levels": {
     "A1": 21,
-    "A2": 10,
-    "B1": 3,
+    "A2": 17,
+    "B1": 13,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -21,11 +21,11 @@
    "name": "Corps et santé",
    "icon": "heart",
    "desc": "Le corps, la santé, chez le médecin",
-   "count": 31,
+   "count": 52,
    "levels": {
     "A1": 18,
-    "A2": 9,
-    "B1": 4,
+    "A2": 23,
+    "B1": 11,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -36,11 +36,11 @@
    "name": "Maison",
    "icon": "home",
    "desc": "Pièces, objets, tâches ménagères",
-   "count": 29,
+   "count": 48,
    "levels": {
     "A1": 10,
-    "A2": 18,
-    "B1": 1,
+    "A2": 27,
+    "B1": 11,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -51,11 +51,11 @@
    "name": "Nourriture et repas",
    "icon": "food",
    "desc": "Aliments, boissons, cuisine, restaurant",
-   "count": 33,
+   "count": 52,
    "levels": {
     "A1": 7,
-    "A2": 17,
-    "B1": 9,
+    "A2": 27,
+    "B1": 18,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -66,11 +66,11 @@
    "name": "Temps et calendrier",
    "icon": "clock",
    "desc": "Jours, mois, moments, fréquence",
-   "count": 34,
+   "count": 51,
    "levels": {
     "A1": 29,
-    "A2": 4,
-    "B1": 1,
+    "A2": 14,
+    "B1": 8,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -81,11 +81,11 @@
    "name": "Ville et lieux",
    "icon": "map",
    "desc": "Lieux, bâtiments, orientation",
-   "count": 29,
+   "count": 44,
    "levels": {
     "A1": 15,
-    "A2": 12,
-    "B1": 2,
+    "A2": 19,
+    "B1": 10,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -96,11 +96,11 @@
    "name": "Voyages et transports",
    "icon": "plane",
    "desc": "Transports, hôtel, vacances",
-   "count": 28,
+   "count": 46,
    "levels": {
     "A1": 6,
-    "A2": 18,
-    "B1": 4,
+    "A2": 25,
+    "B1": 15,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -111,11 +111,11 @@
    "name": "Travail",
    "icon": "briefcase",
    "desc": "Métiers, bureau, carrière",
-   "count": 25,
+   "count": 43,
    "levels": {
     "A1": 10,
-    "A2": 6,
-    "B1": 9,
+    "A2": 12,
+    "B1": 21,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -126,11 +126,11 @@
    "name": "Études et apprentissage",
    "icon": "book",
    "desc": "École, université, apprendre",
-   "count": 24,
+   "count": 43,
    "levels": {
     "A1": 11,
-    "A2": 9,
-    "B1": 4,
+    "A2": 15,
+    "B1": 17,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -141,11 +141,11 @@
    "name": "Nature et météo",
    "icon": "sun",
    "desc": "Météo, animaux, environnement",
-   "count": 28,
+   "count": 51,
    "levels": {
     "A1": 6,
-    "A2": 20,
-    "B1": 2,
+    "A2": 33,
+    "B1": 12,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -156,11 +156,11 @@
    "name": "Émotions et caractère",
    "icon": "smile",
    "desc": "Sentiments, personnalité, humeur",
-   "count": 29,
+   "count": 49,
    "levels": {
     "A1": 10,
-    "A2": 14,
-    "B1": 5,
+    "A2": 17,
+    "B1": 22,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -171,11 +171,11 @@
    "name": "Verbes essentiels",
    "icon": "bolt",
    "desc": "Les verbes les plus utilisés à l'oral",
-   "count": 76,
+   "count": 121,
    "levels": {
     "A1": 72,
-    "A2": 4,
-    "B1": 0,
+    "A2": 24,
+    "B1": 25,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -186,11 +186,11 @@
    "name": "Adjectifs essentiels",
    "icon": "star",
    "desc": "Décrire les choses et les gens",
-   "count": 40,
+   "count": 70,
    "levels": {
     "A1": 31,
-    "A2": 9,
-    "B1": 0,
+    "A2": 26,
+    "B1": 13,
     "B2": 0,
     "C1": 0,
     "C2": 0
@@ -201,12 +201,12 @@
    "name": "Mots de liaison",
    "icon": "link",
    "desc": "Structurer son discours : mais, donc, pourtant…",
-   "count": 29,
+   "count": 49,
    "levels": {
     "A1": 18,
-    "A2": 6,
-    "B1": 4,
-    "B2": 1,
+    "A2": 9,
+    "B1": 20,
+    "B2": 2,
     "C1": 0,
     "C2": 0
    }
@@ -216,11 +216,86 @@
    "name": "Expressions de conversation",
    "icon": "chat",
    "desc": "Réagir, relancer, être poli à l'oral",
-   "count": 36,
+   "count": 57,
    "levels": {
     "A1": 18,
-    "A2": 12,
+    "A2": 18,
+    "B1": 21,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "shopping",
+   "name": "Achats et argent",
+   "icon": "bag",
+   "desc": "Magasins, prix, paiement, banque",
+   "count": 41,
+   "levels": {
+    "A1": 5,
+    "A2": 23,
+    "B1": 13,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "clothes",
+   "name": "Vêtements et apparence",
+   "icon": "shirt",
+   "desc": "Habits, accessoires, décrire quelqu'un",
+   "count": 39,
+   "levels": {
+    "A1": 6,
+    "A2": 25,
+    "B1": 8,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "leisure",
+   "name": "Sports et loisirs",
+   "icon": "ball",
+   "desc": "Sport, sorties, passe-temps",
+   "count": 37,
+   "levels": {
+    "A1": 16,
+    "A2": 14,
+    "B1": 7,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "tech",
+   "name": "Technologie",
+   "icon": "phone",
+   "desc": "Téléphone, ordinateur, internet",
+   "count": 38,
+   "levels": {
+    "A1": 6,
+    "A2": 26,
     "B1": 6,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "media",
+   "name": "Médias et culture",
+   "icon": "tv",
+   "desc": "Films, musique, livres, actualité",
+   "count": 35,
+   "levels": {
+    "A1": 12,
+    "A2": 12,
+    "B1": 11,
     "B2": 0,
     "C1": 0,
     "C2": 0

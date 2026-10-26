@@ -1,0 +1,42 @@
+# anglais | français | exemple | niveau
+money | l'argent | I don't have much money.
+price | le prix | The price is too high.
+cash | les espèces, le liquide | Can I pay in cash?
+card | la carte (bancaire) | Do you take cards?
+credit card | la carte de crédit | I'll pay by credit card. | A2
+change | la monnaie | Keep the change.
+receipt | le ticket de caisse, le reçu | Can I have a receipt, please? | A2
+to cost | coûter | How much does it cost?
+how much is it? | combien ça coûte ? | Excuse me, how much is it? | A1
+to spend | dépenser, passer (du temps) | I spent too much money.
+to save | économiser, sauver | I'm saving for a new car.
+to borrow | emprunter | Can I borrow your pen?
+to lend | prêter | Could you lend me ten euros?
+to owe | devoir (de l'argent) | You owe me twenty quid.
+debt | la dette | They're in debt.
+bill | la facture | I need to pay the electricity bill.
+discount | la réduction, la remise | Students get a ten percent discount. | A2
+sale | les soldes, la vente | Everything's on sale this week.
+bargain | la bonne affaire | Only five pounds? What a bargain! | B1
+to afford | avoir les moyens de | I can't afford a new car. | B1
+shop assistant | le vendeur, la vendeuse | Ask the shop assistant. | A2
+cashier | le caissier, la caissière | The cashier gave me the wrong change. | B1
+queue | la file d'attente (UK) | There's a long queue. | A2
+to queue | faire la queue | We queued for an hour. | B1
+size | la taille | What size are you?
+to try on | essayer (un vêtement) | Can I try it on? | A2
+fitting room | la cabine d'essayage | The fitting rooms are over there. | B1
+to refund | rembourser | They refunded my money. | B1
+refund | le remboursement | I'd like a refund, please. | B1
+to exchange | échanger | Can I exchange this for a bigger size? | A2
+wallet | le portefeuille | I left my wallet at home. | A2
+purse | le porte-monnaie (UK), le sac à main (US) | She took some coins out of her purse. | A2
+coin | la pièce (de monnaie) | I need some coins for the parking. | A2
+bank account | le compte bancaire | I'd like to open a bank account. | A2
+cash machine | le distributeur (UK) | Is there a cash machine near here? | A2
+to withdraw | retirer (de l'argent) | I need to withdraw some cash. | B1
+online shopping | les achats en ligne | I do most of my shopping online. | A2
+delivery | la livraison | Delivery is free. | A2
+rich | riche | They're very rich.
+poor | pauvre | It's a poor area.
+worth | qui vaut | It's not worth the money. | B1

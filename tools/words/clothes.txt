@@ -1,0 +1,40 @@
+# anglais | français | exemple | niveau
+clothes | les vêtements | I need some new clothes.
+shirt | la chemise | He's wearing a white shirt.
+T-shirt | le tee-shirt | I bought a T-shirt. | A1
+trousers | le pantalon (UK) | These trousers are too long. | A1
+pants | le pantalon (US), le slip (UK) | My pants are too tight. | A2
+jeans | le jean | I always wear jeans. | A1
+dress | la robe | What a beautiful dress!
+skirt | la jupe | She's wearing a short skirt. | A1
+jacket | la veste | Take a jacket, it's cold.
+coat | le manteau | Don't forget your coat.
+jumper | le pull (UK) | I'm wearing a warm jumper. | A2
+sweater | le pull | This sweater is so soft. | A2
+shoes | les chaussures | I need new shoes.
+trainers | les baskets (UK) | I wear trainers to the gym. | A2
+boots | les bottes | It's muddy, wear your boots. | A2
+socks | les chaussettes | Where are my socks? | A1
+hat | le chapeau, le bonnet | He always wears a hat.
+glasses | les lunettes | I can't read without my glasses.
+bag | le sac | My bag is really heavy.
+suit | le costume | He wore a suit to the interview. | A2
+tie | la cravate | Do I have to wear a tie?
+uniform | l'uniforme | Students wear a uniform. | A2
+to put on | mettre (un vêtement) | Put your coat on. | A2
+to take off | enlever (un vêtement) | Take your shoes off, please. | A2
+to get dressed | s'habiller | I got dressed quickly. | A2
+to fit | être à la bonne taille | These jeans don't fit me. | A2
+to suit | aller bien (style, couleur) | That colour really suits you. | B1
+tight | serré | These shoes are too tight. | A2
+loose | ample | I prefer loose clothes. | B1
+fashion | la mode | She works in fashion.
+fashionable | à la mode | It's very fashionable right now. | B1
+tall | grand (taille) | He's very tall.
+slim | mince | She's tall and slim. | A2
+overweight | en surpoids | He's a bit overweight. | B1
+blonde | blond | She has long blonde hair. | A2
+curly | bouclé | He has curly hair. | A2
+beard | la barbe | He's growing a beard. | A2
+good-looking | beau, séduisant | He's really good-looking. | A2
+to look like | ressembler à | You look like your mother. | A2

@@ -32,3 +32,22 @@ the bill | l'addition (UK) | Could we have the bill, please? | A1
 the check | l'addition (US) | Can I get the check? | A2
 tip | le pourboire | Should we leave a tip?
 vegetarian | végétarien | Do you have any vegetarian dishes? | A2
+dish | le plat | It's a typical British dish. | A2
+recipe | la recette | Can I have the recipe? | A2
+ingredient | l'ingrédient | Mix all the ingredients. | B1
+starter | l'entrée (UK) | I'll have soup as a starter. | A2
+main course | le plat principal | For the main course, I'll have fish. | A2
+dessert | le dessert | What's for dessert? | A2
+snack | l'en-cas | I had a snack at four. | A2
+spicy | épicé | Indian food can be very spicy. | A2
+sweet | sucré | I don't like sweet things. | A2
+salty | salé | The soup is too salty. | B1
+fresh | frais | The fish is very fresh. | A2
+raw | cru | Sushi is raw fish. | B1
+to boil | faire bouillir | Boil the water first. | B1
+to fry | faire frire | Fry the onions. | B1
+to bake | faire cuire au four | I baked a cake. | B1
+to order | commander | Are you ready to order? | A2
+takeaway | le plat à emporter (UK) | Let's get a takeaway tonight. | B1
+to be starving | mourir de faim | I'm starving! | B1
+leftovers | les restes | We had leftovers for lunch. | B1

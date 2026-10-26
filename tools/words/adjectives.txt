@@ -39,3 +39,33 @@ whole | entier | I ate the whole pizza.
 real | vrai, réel | Is that a real diamond?
 strange | étrange, bizarre | That's strange.
 interesting | intéressant | What an interesting idea!
+amazing | incroyable, génial | The view is amazing! | A2
+awful | affreux | The weather is awful. | A2
+terrible | terrible, affreux | I have a terrible headache. | A2
+fantastic | fantastique | That's fantastic news! | A2
+perfect | parfait | Your English is perfect! | A2
+clean | propre | The room is very clean. | A2
+dirty | sale | Your shoes are dirty. | A2
+safe | en sécurité, sûr | Is it safe to walk here at night? | A2
+dangerous | dangereux | It's dangerous to swim here. | A2
+heavy | lourd | This bag is so heavy. | A2
+light | léger | It's a light jacket. | A2
+modern | moderne | It's a very modern building. | A2
+traditional | traditionnel | We had a traditional English breakfast. | A2
+similar | similaire | Our jobs are similar. | B1
+obvious | évident | The answer is obvious. | B1
+useful | utile | This app is really useful. | A2
+useless | inutile | This map is useless. | B1
+convenient | pratique, commode | Is Monday convenient for you? | B1
+comfortable | confortable | This bed is very comfortable. | A2
+available | disponible | Is this room available? | B1
+familiar | familier | His face looks familiar. | B1
+huge | énorme | Their house is huge. | A2
+tiny | minuscule | It's a tiny flat. | B1
+narrow | étroit | The streets are very narrow. | B1
+wide | large | The river is very wide. | B1
+deep | profond | Is the water deep? | B1
+weird | bizarre | That's really weird. | B1
+unusual | inhabituel | It's unusual for him to be late. | B1
+common | courant, fréquent | It's a common mistake. | B1
+correct | correct | That's the correct answer. | A2

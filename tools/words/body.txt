@@ -30,3 +30,24 @@ appointment | le rendez-vous | I have a doctor's appointment at ten.
 to feel better | se sentir mieux | I hope you feel better soon. | A1
 to rest | se reposer | You need to rest.
 tired | fatigué | I'm too tired to go out.
+neck | le cou | My neck is stiff. | A2
+shoulder | l'épaule | I hurt my shoulder. | A2
+finger | le doigt | I cut my finger. | A2
+knee | le genou | I fell and hurt my knee. | A2
+skin | la peau | She has sensitive skin. | A2
+blood | le sang | He lost a lot of blood. | A2
+to injure | blesser | He injured his knee playing football. | B1
+injury | la blessure | It's a serious injury. | B1
+cough | la toux | I've got a bad cough. | A2
+sore throat | le mal de gorge | I have a sore throat. | A2
+flu | la grippe | She's in bed with flu. | A2
+allergic | allergique | I'm allergic to nuts. | B1
+prescription | l'ordonnance | You need a prescription for this. | B1
+chemist's | la pharmacie (UK) | Get some aspirin at the chemist's. | A2
+nurse | l'infirmier, l'infirmière | The nurse will see you now. | A2
+dentist | le dentiste | I'm going to the dentist. | A2
+to recover | se rétablir | He's recovering from an operation. | B1
+healthy | en bonne santé, sain | Eat healthy food. | A2
+to put on weight | prendre du poids | I've put on weight. | B1
+to lose weight | perdre du poids | I want to lose weight. | A2
+to be on a diet | être au régime | I'm on a diet. | B1

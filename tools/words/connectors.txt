@@ -28,3 +28,23 @@ besides | en plus, d'ailleurs | Besides, it's too late now.
 therefore | par conséquent | It's late; therefore, we should leave.
 otherwise | sinon | Hurry up, otherwise we'll be late.
 whereas | tandis que | He likes tea, whereas I prefer coffee. | B2
+moreover | de plus, en outre | Moreover, it's cheaper. | B2
+in addition | en outre, de plus | In addition, we offer free delivery. | B1
+as a result | par conséquent | It rained; as a result, the match was cancelled. | B1
+because of | à cause de | We were late because of the traffic. | A2
+thanks to | grâce à | Thanks to you, I passed. | A2
+despite | malgré | Despite the rain, we had fun. | B1
+in spite of | malgré | In spite of his age, he's very active. | B1
+so that | pour que, afin que | I left early so that I wouldn't be late. | B1
+in order to | afin de | I study in order to get a better job. | B1
+as long as | tant que, à condition que | You can stay as long as you're quiet. | B1
+in case | au cas où | Take an umbrella in case it rains. | B1
+whether | si (alternative) | I don't know whether he's coming. | B1
+such as | tel que, comme | I like fruit such as apples and pears. | B1
+in other words | autrement dit | In other words, we failed. | B1
+to sum up | pour résumer | To sum up, it was a great year. | B1
+in conclusion | en conclusion | In conclusion, I think we should go. | B1
+at first | au début | At first, I didn't like him. | A2
+in the end | finalement, au final | In the end, we stayed at home. | B1
+eventually | finalement (≠ éventuellement) | He eventually found a job. | B1
+apart from | à part, en dehors de | Apart from that, everything's fine. | B1

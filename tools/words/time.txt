@@ -33,3 +33,20 @@ since | depuis (point de départ) | I've lived here since 2019.
 during | pendant | I fell asleep during the film.
 birthday | l'anniversaire | Happy birthday!
 holiday | les vacances (UK), le jour férié | We're on holiday in August.
+fortnight | quinze jours (UK) | I'm away for a fortnight. | B1
+century | le siècle | It was built in the 18th century. | A2
+decade | la décennie | Prices have doubled in a decade. | B1
+recently | récemment | I've been busy recently. | A2
+nowadays | de nos jours | Nowadays everyone has a phone. | B1
+at the moment | en ce moment | I'm busy at the moment. | A2
+in the past | autrefois, dans le passé | In the past, people wrote letters. | A2
+in the future | à l'avenir | In the future, I want to live abroad. | A2
+on time | à l'heure | The train was on time. | A2
+in time | à temps | We arrived just in time. | B1
+from time to time | de temps en temps | I see him from time to time. | B1
+once | une fois | I go to the gym once a week. | A2
+twice | deux fois | I've been there twice. | A2
+the day after tomorrow | après-demain | I'm leaving the day after tomorrow. | A2
+the day before yesterday | avant-hier | I saw her the day before yesterday. | A2
+by the end of | d'ici la fin de | I'll finish by the end of the week. | B1
+meanwhile | pendant ce temps | Meanwhile, the others were waiting. | B1
