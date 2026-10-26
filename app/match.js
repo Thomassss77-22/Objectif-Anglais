@@ -54,6 +54,19 @@ function compare(given, expected) {
 
 // answers : réponses acceptées ; prep : normalisation à appliquer (norm par défaut).
 // Résultat : { ok, fixes, answer } — fixes vide si la réponse est exacte.
+// Sans espaces, apostrophes ni traits d'union : « o clock » = « o'clock », « twenty five » = « twenty-five ».
+const squash = (s) => s.replace(/[\s'-]/g, "");
+
+// Partie qui diffère entre deux phrases (mots communs au début et à la fin retirés), pour l'afficher.
+function diff(given, expected) {
+  const g = given.split(" "), e = expected.split(" ");
+  let i = 0;
+  while (i < g.length && i < e.length && g[i] === e[i]) i++;
+  let j = 0;
+  while (j < g.length - i && j < e.length - i && g[g.length - 1 - j] === e[e.length - 1 - j]) j++;
+  return [g.slice(i, g.length - j).join(" "), e.slice(i, e.length - j).join(" ")];
+}
+
 export function check(input, answers, prep = norm) {
   const given = prep(input);
   let best = null;
@@ -62,7 +75,12 @@ export function check(input, answers, prep = norm) {
     if (fixes && (!best || fixes.length < best.fixes.length)) best = { ok: true, fixes, answer: a };
     if (best && !best.fixes.length) break;
   }
-  return best || { ok: false, fixes: [], answer: answers[0] };
+  if (best) return best;
+  // Seuls les espaces, apostrophes ou traits d'union diffèrent : accepté, avec la forme correcte affichée.
+  for (const a of answers) {
+    if (squash(given) === squash(prep(a))) return { ok: true, fixes: [diff(given, prep(a))], answer: a };
+  }
+  return { ok: false, fixes: [], answer: answers[0] };
 }
 
 // Texte affiché pour signaler les fautes tolérées : « helo → hello ».
