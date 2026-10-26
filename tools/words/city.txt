@@ -1,0 +1,30 @@
+# anglais | français | exemple | niveau
+town | la ville (petite) | I grew up in a small town.
+city | la ville (grande) | London is a huge city.
+street | la rue | I live on this street.
+road | la route | The road is closed.
+shop | le magasin (UK) | The shop opens at nine.
+store | le magasin (US) | I'm going to the store.
+supermarket | le supermarché | I need to go to the supermarket. | A1
+bank | la banque | Is there a bank near here?
+post office | la poste | The post office is next to the bank. | A1
+restaurant | le restaurant | Let's book a restaurant.
+church | l'église | There's an old church in the village.
+park | le parc | Let's go for a walk in the park.
+station | la gare | The station is five minutes away.
+square | la place | We met in the main square.
+bridge | le pont | Cross the bridge and turn left.
+building | le bâtiment, l'immeuble | They work in that building.
+corner | le coin | The café is on the corner.
+left | la gauche, à gauche | Turn left at the lights.
+right | la droite, à droite | It's on your right.
+straight on | tout droit | Go straight on for two hundred metres. | A1
+near | près de | Is it near here?
+far | loin | It's not far from here.
+next to | à côté de | The bank is next to the cinema. | A1
+opposite | en face de | The hotel is opposite the station.
+between | entre | The shop is between the bank and the café.
+behind | derrière | The car park is behind the building.
+in front of | devant | I'll wait in front of the cinema. | A1
+traffic | la circulation | There's a lot of traffic today.
+traffic lights | les feux | Turn right at the traffic lights. | A2

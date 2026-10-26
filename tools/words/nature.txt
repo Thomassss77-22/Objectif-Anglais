@@ -1,0 +1,29 @@
+# anglais | français | exemple | niveau
+weather | le temps (météo) | What's the weather like?
+sun | le soleil | The sun is shining.
+rain | la pluie | I love the sound of rain.
+to rain | pleuvoir | It's raining again.
+snow | la neige | We had a lot of snow this winter.
+wind | le vent | The wind is very strong today.
+cloud | le nuage | There isn't a cloud in the sky.
+hot | chaud (très) | It's so hot today!
+warm | chaud, doux | It's warm for October.
+cold | froid | It's freezing cold outside.
+sunny | ensoleillé | It's a sunny day. | A1
+cloudy | nuageux | It's cloudy but dry. | A1
+season | la saison | Autumn is my favourite season.
+summer | l'été | We go to the beach in summer.
+winter | l'hiver | Winter is long here.
+spring | le printemps | The trees flower in spring.
+autumn | l'automne (UK) | The leaves fall in autumn. | A1
+sea | la mer | Our hotel is near the sea.
+beach | la plage | Let's go to the beach.
+mountain | la montagne | We went hiking in the mountains.
+river | la rivière, le fleuve | The Thames is a river.
+tree | l'arbre | There's a big tree in the garden.
+flower | la fleur | She bought me some flowers.
+animal | l'animal | Do you like animals?
+dog | le chien | I take the dog for a walk every day.
+cat | le chat | Our cat sleeps all day.
+bird | l'oiseau | The birds are singing.
+environment | l'environnement | We must protect the environment.

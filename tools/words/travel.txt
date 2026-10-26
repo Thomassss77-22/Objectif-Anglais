@@ -1,0 +1,29 @@
+# anglais | français | exemple | niveau
+trip | le voyage, l'excursion | How was your trip?
+journey | le trajet | The journey takes three hours.
+to travel | voyager | I love to travel.
+car | la voiture | We went by car.
+bus | le bus | I take the bus to work.
+train | le train | The train is late again.
+plane | l'avion | The plane lands at six.
+flight | le vol | My flight was cancelled.
+airport | l'aéroport | I'll pick you up at the airport.
+ticket | le billet, le ticket | Two tickets to Oxford, please.
+return ticket | l'aller-retour | A return ticket costs twenty pounds. | A2
+passport | le passeport | Don't forget your passport.
+luggage | les bagages | Where can I leave my luggage? | A2
+suitcase | la valise | My suitcase is too heavy. | A2
+hotel | l'hôtel | We stayed in a nice hotel.
+to book | réserver | I booked a table for two.
+booking | la réservation | I have a booking under the name Martin. | A2
+to rent | louer | We rented a car for the week.
+map | la carte, le plan | Can you show me on the map?
+tourist | le touriste | The city is full of tourists. | A2
+abroad | à l'étranger | Have you ever lived abroad? | B1
+to leave | partir, quitter | The train leaves at ten.
+to arrive | arriver | What time does the plane arrive?
+to miss | rater, manquer | Hurry up, we'll miss the bus!
+delay | le retard | There's a two-hour delay. | B1
+platform | le quai | The train leaves from platform four. | A2
+to get on | monter (dans un transport) | Get on the bus here. | A2
+to get off | descendre (d'un transport) | Get off at the next stop. | A2

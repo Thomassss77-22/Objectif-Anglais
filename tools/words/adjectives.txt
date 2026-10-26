@@ -1,0 +1,41 @@
+# anglais | français | exemple | niveau
+good | bon, bien | That's a good idea.
+bad | mauvais | That's not bad at all.
+big | grand, gros | They have a big house.
+small | petit | It's a small world.
+little | petit (affectif), peu | A little bit of sugar, please.
+long | long | It's a long story.
+short | court, petit (taille) | The film is quite short.
+new | nouveau, neuf | Is that a new car?
+old | vieux, âgé | How old are you?
+young | jeune | You're too young to drive.
+easy | facile | English isn't that easy.
+difficult | difficile | This exercise is difficult.
+hard | dur, difficile | It's hard to say.
+important | important | It's really important.
+different | différent | London is very different from Paris.
+same | même | We have the same phone.
+right | juste, exact | You're right.
+wrong | faux, incorrect | Sorry, wrong number.
+true | vrai | Is it true?
+great | génial, super | That's great news!
+beautiful | beau, magnifique | What a beautiful day!
+pretty | joli | She has a pretty smile.
+ugly | laid, moche | That building is so ugly.
+cheap | bon marché | This restaurant is cheap.
+expensive | cher | London is very expensive.
+free | gratuit, libre | Are you free tonight?
+full | plein | The train was full.
+empty | vide | The fridge is empty.
+busy | occupé, animé | The streets are busy today.
+quiet | calme, silencieux | It's a quiet street.
+loud | fort, bruyant | The music is too loud.
+fast | rapide | He's a fast runner.
+slow | lent | The internet is so slow!
+ready | prêt | Are you ready?
+sure | sûr | Are you sure?
+possible | possible | Is it possible?
+whole | entier | I ate the whole pizza.
+real | vrai, réel | Is that a real diamond?
+strange | étrange, bizarre | That's strange.
+interesting | intéressant | What an interesting idea!

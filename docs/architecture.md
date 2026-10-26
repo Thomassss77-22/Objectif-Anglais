@@ -14,6 +14,7 @@ app/
   index.html      coquille de l'app
   style.css       styles (mobile d'abord, mode sombre)
   data.js         contenu : niveaux, leçons, vocabulaire, exercices
+  words/          banque de mots générée (index.json + un fichier par catégorie, chargés à la demande)
   srs.js          répétition espacée (SM-2)
   app.js          écrans (parcours, leçon, exercices, révision, profil), progression
   fonts/          police Plus Jakarta Sans (licence OFL), embarquée pour le hors ligne
@@ -27,6 +28,14 @@ app/
 - **Exercice** : `qcm` (choix), `translate` (saisie libre, plusieurs réponses acceptées).
 - **Carte** (paquet) : `en`, `fr`, état SM-2 `{ ef, interval, reps, due }`.
 - **Progression** : leçons terminées, XP, série (`streak`, `lastDay`).
+
+## Banque de mots
+- Sources : `tools/words/*.txt`, compilées par `tools/build_words.py` vers `app/words/`.
+- Mot : `{ id, en, fr, ex, lv }` (+ `alt` si le même mot anglais a un autre sens dans une autre catégorie).
+- Niveau : donné à la main, sinon déduit du rang de fréquence à l'oral
+  (≤ 800 A1, ≤ 2 000 A2, ≤ 4 000 B1, ≤ 8 000 B2, ≤ 15 000 C1, au-delà C2).
+- Clé de carte : le mot anglais (commune avec les leçons), ou « mot (sens) » pour un mot à plusieurs sens.
+- Au plus 20 nouvelles cartes introduites par jour en révision.
 
 ## Répétition espacée (SM-2)
 Note de 0 à 5 après chaque carte (dans l'UI : *Raté* = 1, *Difficile* = 3, *Bien* = 4, *Facile* = 5).

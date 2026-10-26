@@ -1,0 +1,16 @@
+# id | nom | icône (clé ICONS de app.js) | description
+people | Personnes et famille | user | Famille, relations, âges de la vie
+body | Corps et santé | heart | Le corps, la santé, chez le médecin
+home | Maison | home | Pièces, objets, tâches ménagères
+food | Nourriture et repas | food | Aliments, boissons, cuisine, restaurant
+time | Temps et calendrier | clock | Jours, mois, moments, fréquence
+city | Ville et lieux | map | Lieux, bâtiments, orientation
+travel | Voyages et transports | plane | Transports, hôtel, vacances
+work | Travail | briefcase | Métiers, bureau, carrière
+school | Études et apprentissage | book | École, université, apprendre
+nature | Nature et météo | sun | Météo, animaux, environnement
+feelings | Émotions et caractère | smile | Sentiments, personnalité, humeur
+verbs | Verbes essentiels | bolt | Les verbes les plus utilisés à l'oral
+adjectives | Adjectifs essentiels | star | Décrire les choses et les gens
+connectors | Mots de liaison | link | Structurer son discours : mais, donc, pourtant…
+conversation | Expressions de conversation | chat | Réagir, relancer, être poli à l'oral

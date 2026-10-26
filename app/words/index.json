@@ -1,0 +1,230 @@
+{
+ "total": 505,
+ "categories": [
+  {
+   "id": "people",
+   "name": "Personnes et famille",
+   "icon": "user",
+   "desc": "Famille, relations, âges de la vie",
+   "count": 34,
+   "levels": {
+    "A1": 21,
+    "A2": 10,
+    "B1": 3,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "body",
+   "name": "Corps et santé",
+   "icon": "heart",
+   "desc": "Le corps, la santé, chez le médecin",
+   "count": 31,
+   "levels": {
+    "A1": 18,
+    "A2": 9,
+    "B1": 4,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "home",
+   "name": "Maison",
+   "icon": "home",
+   "desc": "Pièces, objets, tâches ménagères",
+   "count": 29,
+   "levels": {
+    "A1": 10,
+    "A2": 18,
+    "B1": 1,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "food",
+   "name": "Nourriture et repas",
+   "icon": "food",
+   "desc": "Aliments, boissons, cuisine, restaurant",
+   "count": 33,
+   "levels": {
+    "A1": 7,
+    "A2": 17,
+    "B1": 9,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "time",
+   "name": "Temps et calendrier",
+   "icon": "clock",
+   "desc": "Jours, mois, moments, fréquence",
+   "count": 34,
+   "levels": {
+    "A1": 29,
+    "A2": 4,
+    "B1": 1,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "city",
+   "name": "Ville et lieux",
+   "icon": "map",
+   "desc": "Lieux, bâtiments, orientation",
+   "count": 29,
+   "levels": {
+    "A1": 15,
+    "A2": 12,
+    "B1": 2,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "travel",
+   "name": "Voyages et transports",
+   "icon": "plane",
+   "desc": "Transports, hôtel, vacances",
+   "count": 28,
+   "levels": {
+    "A1": 6,
+    "A2": 18,
+    "B1": 4,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "work",
+   "name": "Travail",
+   "icon": "briefcase",
+   "desc": "Métiers, bureau, carrière",
+   "count": 25,
+   "levels": {
+    "A1": 10,
+    "A2": 6,
+    "B1": 9,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "school",
+   "name": "Études et apprentissage",
+   "icon": "book",
+   "desc": "École, université, apprendre",
+   "count": 24,
+   "levels": {
+    "A1": 11,
+    "A2": 9,
+    "B1": 4,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "nature",
+   "name": "Nature et météo",
+   "icon": "sun",
+   "desc": "Météo, animaux, environnement",
+   "count": 28,
+   "levels": {
+    "A1": 6,
+    "A2": 20,
+    "B1": 2,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "feelings",
+   "name": "Émotions et caractère",
+   "icon": "smile",
+   "desc": "Sentiments, personnalité, humeur",
+   "count": 29,
+   "levels": {
+    "A1": 10,
+    "A2": 14,
+    "B1": 5,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "verbs",
+   "name": "Verbes essentiels",
+   "icon": "bolt",
+   "desc": "Les verbes les plus utilisés à l'oral",
+   "count": 76,
+   "levels": {
+    "A1": 72,
+    "A2": 4,
+    "B1": 0,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "adjectives",
+   "name": "Adjectifs essentiels",
+   "icon": "star",
+   "desc": "Décrire les choses et les gens",
+   "count": 40,
+   "levels": {
+    "A1": 31,
+    "A2": 9,
+    "B1": 0,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "connectors",
+   "name": "Mots de liaison",
+   "icon": "link",
+   "desc": "Structurer son discours : mais, donc, pourtant…",
+   "count": 29,
+   "levels": {
+    "A1": 18,
+    "A2": 6,
+    "B1": 4,
+    "B2": 1,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "conversation",
+   "name": "Expressions de conversation",
+   "icon": "chat",
+   "desc": "Réagir, relancer, être poli à l'oral",
+   "count": 36,
+   "levels": {
+    "A1": 18,
+    "A2": 12,
+    "B1": 6,
+    "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  }
+ ]
+}

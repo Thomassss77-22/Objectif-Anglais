@@ -1,0 +1,35 @@
+# anglais | français | exemple | niveau
+time | le temps, l'heure, la fois | What time is it?
+day | le jour, la journée | Have a nice day!
+week | la semaine | See you next week.
+month | le mois | I'm going on holiday next month.
+year | l'année, l'an | She's twenty years old.
+today | aujourd'hui | What are you doing today?
+tomorrow | demain | See you tomorrow.
+yesterday | hier | I saw him yesterday.
+tonight | ce soir | Are you free tonight?
+morning | le matin | I run every morning.
+afternoon | l'après-midi | See you this afternoon.
+evening | le soir | We usually eat in the evening.
+night | la nuit | Good night!
+weekend | le week-end | What are you doing this weekend?
+hour | l'heure (durée) | The film lasts two hours.
+minute | la minute | Wait a minute!
+now | maintenant | I have to go now.
+later | plus tard | Talk to you later.
+soon | bientôt | See you soon!
+early | tôt, en avance | I got up early.
+late | tard, en retard | Sorry I'm late.
+always | toujours | She's always on time.
+usually | d'habitude | I usually walk to work.
+often | souvent | We often go to the cinema.
+sometimes | parfois | Sometimes I work from home.
+never | jamais | I never drink coffee at night.
+already | déjà | I've already eaten.
+still | encore, toujours | Are you still at work?
+ago | il y a (temps) | I moved here two years ago.
+until | jusqu'à | The shop is open until eight.
+since | depuis (point de départ) | I've lived here since 2019.
+during | pendant | I fell asleep during the film.
+birthday | l'anniversaire | Happy birthday!
+holiday | les vacances (UK), le jour férié | We're on holiday in August.

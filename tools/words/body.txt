@@ -1,0 +1,32 @@
+# anglais | français | exemple | niveau
+head | la tête | I hit my head on the door.
+face | le visage | She has a beautiful face.
+eye | l'œil | She has blue eyes.
+ear | l'oreille | My ear hurts.
+nose | le nez | He broke his nose playing rugby.
+mouth | la bouche | Open your mouth, please.
+tooth | la dent | I need to see a dentist about my tooth.
+hair | les cheveux | She has long dark hair.
+hand | la main | Wash your hands before dinner.
+arm | le bras | He broke his arm.
+leg | la jambe | My legs are tired after the run.
+foot | le pied | I walked here on foot.
+back | le dos | I've got back pain.
+heart | le cœur | Her heart was beating fast.
+stomach | l'estomac, le ventre | I have a stomach ache.
+body | le corps | Exercise is good for your body.
+health | la santé | Smoking is bad for your health.
+sick | malade | I feel sick.
+ill | malade | She's been ill for a week.
+pain | la douleur | I have a pain in my chest.
+to hurt | faire mal | My back hurts.
+headache | le mal de tête | I've got a terrible headache.
+cold | le rhume | I think I'm getting a cold.
+fever | la fièvre | The baby has a fever.
+doctor | le médecin | You should see a doctor.
+hospital | l'hôpital | She's still in hospital.
+medicine | le médicament | Take this medicine twice a day.
+appointment | le rendez-vous | I have a doctor's appointment at ten.
+to feel better | se sentir mieux | I hope you feel better soon. | A1
+to rest | se reposer | You need to rest.
+tired | fatigué | I'm too tired to go out.

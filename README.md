@@ -16,3 +16,17 @@ Fonctionnalités :
 - Parcours A1 → C2 (une leçon par niveau pour l'instant) : fiche de grammaire, vocabulaire avec audio, exercices (QCM, traduction).
 - Les mots de chaque leçon rejoignent le paquet de **cartes mémoire**, révisées avec l'algorithme **SM-2**.
 - XP, série quotidienne, progression sauvegardée localement, fonctionne hors ligne.
+
+## Banque de mots
+Les mots sont rédigés dans `tools/words/<catégorie>.txt` (une ligne : `anglais | français | exemple | niveau`),
+puis compilés vers `app/words/` :
+```bash
+python3 tools/build_words.py
+```
+Le script vérifie le format et les doublons, et calcule le niveau CECRL (si absent) à partir de la fréquence
+du mot dans l'anglais parlé.
+
+## Crédits
+- Fréquences de l'anglais parlé : [FrequencyWords](https://github.com/hermitdave/FrequencyWords) (Hermit Dave),
+  d'après OpenSubtitles 2018 — CC BY-SA 4.0. Utilisées uniquement pour estimer le niveau des mots.
+- Police : Plus Jakarta Sans — SIL Open Font License.

@@ -32,6 +32,16 @@ function addXp(n) {
 // Une série non prolongée hier est perdue.
 const liveStreak = () => (state.lastDay === dayKey() || state.lastDay === dayKey(Date.now() - 864e5) ? state.streak : 0);
 
+// Les nouvelles cartes sont introduites au rythme de NEW_PER_DAY par jour.
+const NEW_PER_DAY = 20;
+const isNew = (c) => c.reps === 0 && c.interval === 0;
+function reviewQueue() {
+  const due = dueCards(state.deck).sort((a, b) => a.due - b.due);
+  const seen = state.newDay === dayKey() ? state.newSeen : 0;
+  const fresh = due.filter(isNew).slice(0, Math.max(0, NEW_PER_DAY - seen));
+  return [...due.filter((c) => !isNew(c)), ...fresh];
+}
+
 const allLessons = LEVELS.flatMap((lv) => lv.lessons.map((l) => ({ ...l, lv })));
 const findLesson = (id) => allLessons.find((l) => l.id === id);
 const nextLesson = () => allLessons.find((l) => !state.done[l.id]);
@@ -71,6 +81,17 @@ const ICONS = {
   clock: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6v6l4 2",
   target: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
   chevron: "m9 18 6-6-6-6",
+  heart: "M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7 7-7z",
+  home: "M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9.5z",
+  food: "M3 2v7c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2V2M6 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7",
+  map: "M12 22s-8-6.5-8-13a8 8 0 0 1 16 0c0 6.5-8 13-8 13zM12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
+  plane: "M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z",
+  briefcase: "M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16",
+  sun: "M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4",
+  smile: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01",
+  link: "M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7",
+  search: "M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM21 21l-4.3-4.3",
+  plus: "M12 5v14M5 12h14",
 };
 const icon = (n, cls = "") => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[n]}"/></svg>`;
 
@@ -107,11 +128,12 @@ function render(html, { nav = null, lv = null } = {}) {
 }
 
 function tabbar(on) {
-  const due = dueCards(state.deck).length;
+  const due = reviewQueue().length;
   const tab = (id, ic, label, extra = "") =>
     `<button class="tab ${on === id ? "on" : ""}" data-tab="${id}">${icon(ic)}${label}${extra}</button>`;
   return `<nav class="tabbar">
     ${tab("home", "path", "Parcours")}
+    ${tab("words", "book", "Mots")}
     ${tab("review", "cards", "Révision", due ? `<span class="dot">${due}</span>` : "")}
     ${tab("profile", "user", "Profil")}
   </nav>`;
@@ -132,7 +154,7 @@ function home() {
   const pct = Math.min(1, today / DAILY_GOAL);
   const C = 2 * Math.PI * 36;
   const next = nextLesson();
-  const due = dueCards(state.deck).length;
+  const due = reviewQueue().length;
 
   const units = LEVELS.map((lv) => {
     const n = lv.lessons.filter((l) => state.done[l.id]).length;
@@ -368,7 +390,7 @@ function confetti(cv) {
 const fmtDays = (d) => (d < 1 ? "< 1 j" : d < 30 ? `${d} j` : `${Math.round(d / 30)} mois`);
 
 function reviewSession() {
-  const due = dueCards(state.deck).sort((a, b) => a.due - b.due);
+  const due = reviewQueue();
   const card = due[0];
   if (!card) {
     const total = Object.keys(state.deck).length;
@@ -378,7 +400,7 @@ function reviewSession() {
       <div class="empty">
         <div class="tile-icon calm">${icon("check")}</div>
         <h2>${total ? "Tout est révisé" : "Aucune carte pour l'instant"}</h2>
-        <p>${total ? `Tes ${total} cartes sont à jour. Reviens demain pour les consolider.` : "Termine une leçon : son vocabulaire arrivera ici automatiquement."}</p>
+        <p>${total ? `Tes ${total} cartes sont à jour (${NEW_PER_DAY} nouvelles cartes maximum par jour). Reviens demain pour la suite.` : "Termine une leçon : son vocabulaire arrivera ici automatiquement."}</p>
       </div>
       <button class="btn" id="h">${icon("path")}Retour au parcours</button>
     `, { nav: "review" });
@@ -393,6 +415,7 @@ function reviewSession() {
         <div class="face front"><small>Français</small><div class="term">${esc(card.fr)}</div>
           <span class="hint">Touche pour révéler</span></div>
         <div class="face back"><small>Anglais</small><div class="term">${esc(card.en)}</div>
+          ${card.ex ? `<div class="ex">${esc(card.ex)}</div>` : ""}
           <button class="say" id="say" aria-label="Écouter">${icon("sound")}</button></div>
       </div>
     </div>
@@ -412,10 +435,131 @@ function reviewSession() {
       return `<button class="grade g${q}" data-q="${q}">${t}<small>${fmtDays(d)}</small></button>`;
     }).join("");
     root.querySelectorAll(".grade").forEach((b) => (b.onclick = () => {
-      state.deck[card.en] = review(card, +b.dataset.q);
+      if (isNew(card)) {
+        if (state.newDay !== dayKey()) Object.assign(state, { newDay: dayKey(), newSeen: 0 });
+        state.newSeen += 1;
+      }
+      const key = Object.keys(state.deck).find((k) => state.deck[k] === card);
+      state.deck[key] = review(card, +b.dataset.q);
       addXp(1);
       reviewSession();
     }));
+  };
+}
+
+// ---------- Banque de mots ----------
+// Les fichiers sont chargés à la demande puis gardés en mémoire.
+const bank = { index: null, cats: {} };
+async function loadIndex() {
+  if (!bank.index) bank.index = await (await fetch("words/index.json")).json();
+  return bank.index;
+}
+async function loadCat(id) {
+  if (!bank.cats[id]) bank.cats[id] = await (await fetch(`words/${id}.json`)).json();
+  return bank.cats[id];
+}
+// Même clé que les cartes des leçons (le mot anglais), sauf pour un mot à plusieurs sens.
+const cardKey = (w) => (w.alt ? `${w.en} (${w.fr})` : w.en);
+const inDeck = (w) => Boolean(state.deck[cardKey(w)]);
+function addWord(w) {
+  if (!inDeck(w)) state.deck[cardKey(w)] = newCard(w.fr, w.en, w.ex);
+}
+const LV_IDS = ["A1", "A2", "B1", "B2", "C1", "C2"];
+let wordFilter = { lv: null, q: "" };
+
+function wordRow(w) {
+  const on = inDeck(w);
+  return `<div class="wrow" data-lv="${w.lv}">
+    <button class="say" data-en="${esc(w.en)}" aria-label="Écouter">${icon("sound")}</button>
+    <div class="wtxt"><b>${esc(w.en)}</b> <span class="lvtag">${w.lv}</span>
+      <span class="wfr">${esc(w.fr)}</span><i>${esc(w.ex)}</i></div>
+    <button class="add ${on ? "on" : ""}" data-id="${w.id}" aria-label="${on ? "Dans mes cartes" : "Ajouter à mes cartes"}">${icon(on ? "check" : "plus")}</button>
+  </div>`;
+}
+
+function bindRows(list) {
+  root.querySelectorAll(".wrow .say").forEach((b) => (b.onclick = () => speak(b.dataset.en)));
+  root.querySelectorAll(".wrow .add").forEach((b) => (b.onclick = () => {
+    const w = list.find((x) => x.id === b.dataset.id);
+    if (inDeck(w)) return;
+    addWord(w);
+    save();
+    buzz(10);
+    b.classList.add("on");
+    b.innerHTML = icon("check");
+  }));
+}
+
+const lvChips = () => `<div class="chips">
+  <button class="fchip ${wordFilter.lv ? "" : "on"}" data-lv-f="">Tous</button>
+  ${LV_IDS.map((lv) => `<button class="fchip ${wordFilter.lv === lv ? "on" : ""}" data-lv-f="${lv}" data-lv="${lv}">${lv}</button>`).join("")}
+</div>`;
+
+async function wordsHome() {
+  const idx = await loadIndex();
+  const known = (c) => (bank.cats[c.id] ? bank.cats[c.id].filter(inDeck).length : null);
+  render(`
+    ${topbar()}
+    <div class="screen-title"><h1>Banque de mots</h1><span class="pill">${icon("book")}${idx.total}</span></div>
+    <label class="searchbox">${icon("search")}<input id="q" type="search" placeholder="Chercher un mot (anglais ou français)" value="${esc(wordFilter.q)}" autocomplete="off"></label>
+    ${lvChips()}
+    <div id="results"></div>
+    <div class="catgrid" id="cats">${idx.categories.map((c) => {
+      const n = wordFilter.lv ? c.levels[wordFilter.lv] : c.count;
+      const k = known(c);
+      return `<button class="catcard" data-cat="${c.id}" ${n ? "" : "disabled"}>
+        <span class="caticon">${icon(ICONS[c.icon] ? c.icon : "book")}</span>
+        <b>${esc(c.name)}</b><span>${n} mot${n > 1 ? "s" : ""}${k ? ` · ${k} appris` : ""}</span></button>`;
+    }).join("")}</div>
+  `, { nav: "words" });
+  root.querySelectorAll(".catcard").forEach((b) => (b.onclick = () => category(b.dataset.cat)));
+  root.querySelectorAll("[data-lv-f]").forEach((b) => (b.onclick = () => { wordFilter.lv = b.dataset.lvF || null; wordsHome(); }));
+  const q = root.querySelector("#q");
+  q.oninput = () => search(q.value);
+  if (wordFilter.q) search(wordFilter.q);
+}
+
+// Recherche sans accents ni majuscules, sur l'anglais et le français.
+const fold = (s) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+async function search(text) {
+  wordFilter.q = text;
+  const res = root.querySelector("#results");
+  const cats = root.querySelector("#cats");
+  const t = fold(text.trim());
+  if (t.length < 2) { res.innerHTML = ""; cats.hidden = false; return; }
+  const idx = await loadIndex();
+  const all = (await Promise.all(idx.categories.map((c) => loadCat(c.id)))).flat();
+  if (wordFilter.q !== text) return; // une frappe plus récente a pris le relais
+  const hits = all.filter((w) => (!wordFilter.lv || w.lv === wordFilter.lv) && (fold(w.en).includes(t) || fold(w.fr).includes(t))).slice(0, 60);
+  cats.hidden = true;
+  res.innerHTML = hits.length ? `<div class="wlist">${hits.map(wordRow).join("")}</div>` : `<p class="muted center">Aucun mot trouvé.</p>`;
+  bindRows(hits);
+}
+
+async function category(id) {
+  const idx = await loadIndex();
+  const c = idx.categories.find((x) => x.id === id);
+  const list = (await loadCat(id)).filter((w) => !wordFilter.lv || w.lv === wordFilter.lv);
+  const todo = list.filter((w) => !inDeck(w));
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
+    <section class="cat-hero">
+      <span class="caticon big">${icon(ICONS[c.icon] ? c.icon : "book")}</span>
+      <h1>${esc(c.name)}</h1><p>${esc(c.desc)}</p>
+      <div class="meta"><span>${icon("book")}${list.length} mots${wordFilter.lv ? ` · niveau ${wordFilter.lv}` : ""}</span>
+        <span>${icon("check")}${list.length - todo.length} dans mes cartes</span></div>
+    </section>
+    <div class="wlist">${list.map(wordRow).join("")}</div>
+    ${todo.length ? `<div class="dock"><button class="btn" id="all">${icon("plus")}Ajouter ${todo.length} mot${todo.length > 1 ? "s" : ""} à mes cartes</button></div>` : ""}
+  `);
+  root.querySelector("#back").onclick = wordsHome;
+  bindRows(list);
+  const all = root.querySelector("#all");
+  if (all) all.onclick = () => {
+    todo.forEach(addWord);
+    save();
+    buzz([15, 40, 15]);
+    category(id);
   };
 }
 
@@ -455,6 +599,6 @@ function profile() {
   };
 }
 
-const TABS = { home, review: reviewSession, profile };
+const TABS = { home, words: wordsHome, review: reviewSession, profile };
 home();
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});

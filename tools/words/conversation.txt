@@ -1,0 +1,37 @@
+# anglais | français | exemple | niveau
+hello | bonjour | Hello, how are you? | A1
+hi | salut | Hi, I'm Tom. | A1
+goodbye | au revoir | Goodbye, see you soon. | A1
+please | s'il te plaît, s'il vous plaît | Can you help me, please? | A1
+thank you | merci | Thank you very much. | A1
+you're welcome | de rien | — Thanks! — You're welcome. | A1
+sorry | pardon, désolé | Sorry, I didn't hear you. | A1
+excuse me | excusez-moi | Excuse me, where's the station? | A1
+how are you? | comment ça va ? | Hi! How are you? | A1
+I'm fine, thanks | ça va, merci | I'm fine, thanks. And you? | A1
+nice to meet you | enchanté | Nice to meet you, Sarah. | A1
+see you later | à plus tard | Bye! See you later. | A1
+no problem | pas de problème | — Can you wait? — No problem. | A1
+of course | bien sûr | Of course you can come. | A1
+I don't know | je ne sais pas | Sorry, I don't know. | A1
+I don't understand | je ne comprends pas | Sorry, I don't understand. | A1
+could you repeat that? | pouvez-vous répéter ? | Sorry, could you repeat that? | A2
+what do you mean? | qu'est-ce que tu veux dire ? | What do you mean by that? | A2
+how do you say… in English? | comment dit-on… en anglais ? | How do you say "fromage" in English? | A2
+really? | vraiment ? | Really? I didn't know that. | A1
+that's right | c'est ça, exactement | That's right, he's my brother. | A2
+I see | je vois | Oh, I see. That makes sense. | A2
+it depends | ça dépend | — Do you like it? — It depends. | A2
+never mind | laisse tomber, ce n'est pas grave | Never mind, it's not important. | B1
+good luck | bonne chance | Good luck with your exam! | A1
+congratulations | félicitations | Congratulations on your new job! | A2
+cheers | santé ! / merci (UK familier) | Cheers! / Cheers, mate. | A2
+how's it going? | comment ça va ? (familier) | Hey, how's it going? | A2
+what's up? | quoi de neuf ? | Hey, what's up? | A2
+no way! | pas possible ! / sûrement pas ! | No way! That's amazing! | B1
+fair enough | d'accord, c'est juste | — I'm too tired. — Fair enough. | B1
+I'm afraid… | je crains que… (politesse) | I'm afraid we're closed. | B1
+would you mind…? | ça vous dérangerait de… ? | Would you mind opening the window? | B1
+let me know | tiens-moi au courant | Let me know if you need anything. | A2
+it's up to you | c'est toi qui vois | — Pizza or sushi? — It's up to you. | B1
+take care | prends soin de toi | Bye, take care! | A2

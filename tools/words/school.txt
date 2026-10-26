@@ -1,0 +1,25 @@
+# anglais | français | exemple | niveau
+school | l'école | The kids are at school.
+university | l'université | She's at university in Bristol.
+student | l'étudiant, l'élève | I'm a law student.
+teacher | le professeur, l'enseignant | Our teacher is from Ireland.
+class | le cours, la classe | I have an English class at nine.
+lesson | la leçon | The lesson starts at ten.
+exam | l'examen | I passed my exam!
+to pass an exam | réussir un examen | Did you pass your exam? | A2
+to fail | échouer, rater | I failed my driving test.
+to study | étudier | I'm studying for my exams.
+to learn | apprendre | I'm learning English.
+to teach | enseigner | She teaches maths.
+homework | les devoirs | Have you done your homework?
+mistake | l'erreur, la faute | Everyone makes mistakes.
+question | la question | Can I ask a question?
+answer | la réponse | I don't know the answer.
+word | le mot | What does this word mean?
+to mean | vouloir dire, signifier | What do you mean?
+to understand | comprendre | I don't understand.
+to remember | se souvenir de | I can't remember his name.
+to forget | oublier | Don't forget your keys!
+to practise | s'entraîner, pratiquer | I practise speaking every day. | A2
+degree | le diplôme (universitaire) | She has a degree in law.
+knowledge | les connaissances, le savoir | Knowledge is power.

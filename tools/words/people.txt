@@ -1,0 +1,35 @@
+# anglais | français | exemple | niveau (optionnel, sinon calculé)
+family | la famille | My family lives in Lyon.
+mother | la mère | My mother is a doctor.
+father | le père | His father works in a bank.
+parents | les parents | I'm visiting my parents this weekend.
+brother | le frère | I have one brother and two sisters.
+sister | la sœur | My sister is older than me.
+son | le fils | Their son is five years old.
+daughter | la fille (enfant) | She has a daughter called Emma.
+child | l'enfant | The child is playing in the garden.
+children | les enfants | Do you have any children?
+baby | le bébé | The baby is sleeping.
+husband | le mari | Her husband is a teacher.
+wife | la femme (épouse) | This is my wife, Julie.
+boyfriend | le petit ami | Her boyfriend is from Spain.
+girlfriend | la petite amie | I'm meeting my girlfriend tonight.
+friend | l'ami, l'amie | She's my best friend.
+neighbour | le voisin, la voisine | Our neighbours are very friendly. | A2
+grandmother | la grand-mère | My grandmother is ninety.
+grandfather | le grand-père | My grandfather was a farmer.
+uncle | l'oncle | My uncle lives in Canada.
+aunt | la tante | My aunt makes amazing cakes.
+cousin | le cousin, la cousine | I have lots of cousins.
+man | l'homme | Who is that man?
+woman | la femme | A woman called for you.
+people | les gens | There were a lot of people at the party.
+guy | le mec, le type | He's a nice guy.
+kid | le gamin, l'enfant | The kids are at school.
+teenager | l'adolescent | Teenagers love their phones. | A2
+adult | l'adulte | Tickets are ten pounds for adults.
+couple | le couple | They're a lovely couple.
+to get married | se marier | They got married last year. | A2
+divorced | divorcé | His parents are divorced.
+single | célibataire | Are you single?
+to grow up | grandir | I grew up in a small village. | A2

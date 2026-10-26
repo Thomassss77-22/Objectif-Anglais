@@ -1,0 +1,30 @@
+# anglais | français | exemple | niveau
+house | la maison | They live in a big house.
+home | le chez-soi, la maison | I'm going home.
+flat | l'appartement (UK) | I live in a small flat.
+apartment | l'appartement (US) | Their apartment is in Manhattan.
+room | la pièce, la chambre | The house has five rooms.
+bedroom | la chambre | My bedroom is upstairs.
+bathroom | la salle de bain | Where's the bathroom?
+kitchen | la cuisine | We eat in the kitchen.
+living room | le salon | Let's watch TV in the living room. | A1
+garden | le jardin | The kids are playing in the garden.
+door | la porte | Close the door, please.
+window | la fenêtre | Can I open the window?
+floor | le sol, l'étage | My flat is on the third floor.
+wall | le mur | There's a picture on the wall.
+stairs | l'escalier | Go up the stairs.
+key | la clé | I've lost my keys.
+bed | le lit | I go to bed at eleven.
+table | la table | Dinner is on the table.
+chair | la chaise | Take a chair.
+sofa | le canapé | He fell asleep on the sofa. | A2
+fridge | le frigo | The milk is in the fridge. | A1
+light | la lumière | Turn off the light.
+to clean | nettoyer | I clean the house on Saturdays.
+to tidy up | ranger | Tidy up your room! | A2
+to do the dishes | faire la vaisselle | It's your turn to do the dishes. | A2
+to do the laundry | faire la lessive | I do the laundry on Sundays. | A2
+rent | le loyer | The rent is very expensive here.
+to move | déménager, bouger | We're moving to London next month.
+neighbourhood | le quartier | It's a quiet neighbourhood. | A2

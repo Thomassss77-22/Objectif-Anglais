@@ -1,0 +1,34 @@
+# anglais | français | exemple | niveau
+food | la nourriture | The food was delicious.
+water | l'eau | Can I have a glass of water?
+bread | le pain | We need some bread.
+meat | la viande | I don't eat meat.
+chicken | le poulet | I'll have the chicken, please.
+fish | le poisson | Do you like fish?
+egg | l'œuf | I had two eggs for breakfast.
+cheese | le fromage | France is famous for its cheese.
+fruit | les fruits | Eat more fruit and vegetables.
+vegetables | les légumes | These vegetables are fresh. | A1
+apple | la pomme | An apple a day keeps the doctor away.
+potato | la pomme de terre | I'd like some potatoes with that.
+rice | le riz | We're having rice tonight.
+sugar | le sucre | Do you take sugar in your coffee?
+salt | le sel | Pass me the salt, please.
+coffee | le café | Let's grab a coffee.
+tea | le thé | Would you like a cup of tea?
+milk | le lait | We're out of milk.
+wine | le vin | A glass of red wine, please.
+beer | la bière | Let's have a beer after work.
+breakfast | le petit-déjeuner | What did you have for breakfast?
+lunch | le déjeuner | Let's have lunch together.
+dinner | le dîner | Dinner is ready!
+meal | le repas | That was a lovely meal.
+hungry | qui a faim | I'm starving, I'm so hungry!
+thirsty | qui a soif | I'm thirsty, can I have some water?
+to cook | cuisiner | My dad loves to cook.
+delicious | délicieux | This cake is delicious!
+menu | la carte, le menu | Can we see the menu, please? | A1
+the bill | l'addition (UK) | Could we have the bill, please? | A1
+the check | l'addition (US) | Can I get the check? | A2
+tip | le pourboire | Should we leave a tip?
+vegetarian | végétarien | Do you have any vegetarian dishes? | A2

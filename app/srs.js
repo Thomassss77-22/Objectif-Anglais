@@ -1,8 +1,10 @@
 // Répétition espacée, algorithme SM-2.
 const DAY = 24 * 60 * 60 * 1000;
 
-export function newCard(fr, en) {
-  return { fr, en, ef: 2.5, interval: 0, reps: 0, due: Date.now() };
+export function newCard(fr, en, ex) {
+  const c = { fr, en, ef: 2.5, interval: 0, reps: 0, due: Date.now() };
+  if (ex) c.ex = ex;
+  return c;
 }
 
 // q : note de 0 (oublié) à 5 (parfait).
