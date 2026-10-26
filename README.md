@@ -22,6 +22,8 @@ Activable dans **Profil → Mode d'apprentissage**. Il prépare l'oral d'anglais
 (article de presse, 15 min de préparation, 15 min d'exposé et d'entretien) :
 - un parcours en 4 modules (l'épreuve et la méthode, la langue, la culture juridique anglo-saxonne, le vocabulaire actif) ;
 - un entraînement : simulation chronométrée avec enregistrement, questions du jury, grille d'auto-évaluation ;
+- 10 articles d'entraînement originaux (`app/articles.js`, 450-550 mots, inspirés de faits réels et datés), chacun avec son corrigé ;
+- « Mon article » : coller un sujet, qui reste uniquement sur l'appareil ;
 - une banque de vocabulaire juridique (`tools/words-legal`, compilée par `python3 tools/build_words.py legal`).
 
 Le mode a ses propres leçons et cartes ; l'XP et la série sont communes.

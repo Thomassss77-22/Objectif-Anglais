@@ -54,7 +54,7 @@
 [data-lv="C2"] { --lv: #ff9f1c; --lv-2: #ff5f3a; }
 
 /* Mode CRFPA : bleu marine et or */
-[data-mode="legal"] { --brand-1: #23357a; --brand-2: #4a3aa8; --gold: #d4a017; --brand: linear-gradient(135deg, #23357a, #4a3aa8); }
+[data-mode="legal"] { --brand-1: #23357a; --brand-2: #4a3aa8; --lv: #23357a; --lv-2: #4a3aa8; --gold: #d4a017; --brand: linear-gradient(135deg, #23357a, #4a3aa8); }
 [data-mode="legal"] .hero { background: radial-gradient(120% 140% at 100% 0%, #7a5cc7 0%, transparent 55%), linear-gradient(135deg, #1b2a63, #3d348f); }
 [data-mode="legal"] .logo { background: linear-gradient(135deg, #1b2a63, #3d348f); box-shadow: 0 6px 16px -4px rgba(27, 42, 99, .6); }
 [data-lv="M1"] { --lv: #23357a; --lv-2: #4a3aa8; }
@@ -520,6 +520,25 @@ h1, h2, h3 { margin: 0; letter-spacing: -.02em; }
 .model { margin-top: 18px; padding: 14px 16px; border-radius: 16px; background: var(--surface); box-shadow: var(--shadow-sm); }
 .model summary { font-weight: 800; cursor: pointer; }
 .model p { margin: 10px 0 0; line-height: 1.55; color: var(--muted); font-weight: 600; }
+
+/* ---------- Articles ---------- */
+.art-list { display: grid; gap: 12px; margin-top: 14px; }
+.art-card { display: flex; flex-direction: column; gap: 4px; width: 100%; text-align: left; padding: 16px; border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); border-left: 5px solid var(--gold); }
+.art-card small { font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.art-card b { font-size: 1.05rem; line-height: 1.3; }
+.art-card span { color: var(--muted); font-size: .88rem; font-weight: 600; line-height: 1.45; }
+.paper { margin-top: 8px; padding: 22px 20px; border-radius: 20px; background: var(--surface); box-shadow: var(--shadow); font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 1.04rem; line-height: 1.7; }
+.paper p { margin: 0 0 14px; }
+.paper-tag { display: inline-block; margin-bottom: 10px; padding: 4px 9px; border-radius: 8px; font: 800 .68rem "Jakarta", system-ui, sans-serif; letter-spacing: .05em; text-transform: uppercase; color: #1b2a63; background: linear-gradient(135deg, #f7d774, #d4a017); }
+.paper-title { font-family: Georgia, "Times New Roman", serif; font-size: 1.6rem; line-height: 1.2; margin: 0 0 10px; letter-spacing: -.01em; }
+.paper-standfirst { font-style: italic; color: var(--muted); }
+.paper-count { font: 700 .8rem "Jakarta", system-ui, sans-serif; color: var(--muted); text-align: right; }
+.sim-paper { margin-top: 22px; }
+.guide-title { font-size: 1.45rem; margin-top: 10px; }
+.guide-list { margin: 0; padding: 14px 18px 14px 34px; border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-sm); line-height: 1.6; }
+.guide-list li { margin-bottom: 6px; }
+.inline-say { display: inline-grid; width: 34px; height: 34px; vertical-align: middle; margin-left: 6px; }
+.answer.tall { min-height: 320px; font-size: 1rem; }
 
 /* ---------- Profil ---------- */
 .profile-head { display: flex; align-items: center; gap: 16px; margin: 10px 0 20px; }

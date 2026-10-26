@@ -1,5 +1,6 @@
 import { LEVELS } from "./data.js";
 import { LEGAL, JURY_QUESTIONS, SELF_GRID } from "./legal.js";
+import { ARTICLES } from "./articles.js";
 import { newCard, review, dueCards } from "./srs.js";
 
 const KEY = "objectif-anglais-v1";
@@ -679,9 +680,19 @@ function training() {
       exposé de 7-8 min puis entretien d'environ 7 min · coefficient 1.</p>
       <span class="muted small">Arrêté du 17 octobre 2016 · vérifie la règle en vigueur pour ta session.</span>
     </div>
+    <button class="tile" id="lib">
+      <div class="tile-icon">${icon("book")}</div>
+      <div><b>Articles d'entraînement</b><span>${ARTICLES.length} articles au format de l'épreuve, avec corrigé</span></div>
+      <span class="go">${icon("chevron")}</span>
+    </button>
+    <button class="tile" id="mine">
+      <div class="tile-icon calm">${icon("pen")}</div>
+      <div><b>Mon article</b><span>Colle un sujet (ex. du dossier) : il reste sur ton appareil</span></div>
+      <span class="go">${icon("chevron")}</span>
+    </button>
     <button class="tile" id="sim">
       <div class="tile-icon">${icon("clock")}</div>
-      <div><b>Simulation chronométrée</b><span>Préparation 5/3/7, exposé avec repères, enregistrement, auto-évaluation</span></div>
+      <div><b>Simulation sans article</b><span>Le chrono seul, avec un article papier ou PDF à côté</span></div>
       <span class="go">${icon("chevron")}</span>
     </button>
     <button class="tile" id="jury">
@@ -696,6 +707,8 @@ function training() {
     </button>
   `, { nav: "home" });
   root.querySelector("#sim").onclick = () => simulation("prep");
+  root.querySelector("#lib").onclick = library;
+  root.querySelector("#mine").onclick = myArticle;
   root.querySelector("#jury").onclick = jury;
   root.querySelector("#grid").onclick = () => selfGrid();
 }
@@ -704,7 +717,7 @@ function training() {
 let recorder = null;
 let recording = null;
 
-function simulation(phase) {
+function simulation(phase, art = null) {
   stopTimer();
   const ph = SIM_PHASES[phase];
   let t = 0;
@@ -717,6 +730,7 @@ function simulation(phase) {
       <div class="step" id="step"><b></b><p></p></div>
       <ol class="steps">${ph.steps.map(([at, name]) => `<li data-at="${at}"><span>${mmss(at)}</span>${name}</li>`).join("")}</ol>
     </div>
+    ${art && phase === "prep" ? `<article class="paper sim-paper">${articleHtml(art)}</article>` : ""}
     <div class="dock"><div class="row2">
       ${phase === "prep"
         ? `<button class="btn ghost" id="pause">Pause</button><button class="btn" id="next">Passer à l'exposé</button>`
@@ -745,10 +759,10 @@ function simulation(phase) {
   };
   root.querySelector("#quit").onclick = () => { stopRecording(); training(); };
   if (phase === "prep") {
-    root.querySelector("#next").onclick = () => simulation("talk");
+    root.querySelector("#next").onclick = () => simulation("talk", art);
   } else {
     startRecording();
-    root.querySelector("#next").onclick = () => { stopTimer(); stopRecording(); addXp(15); selfGrid(t); };
+    root.querySelector("#next").onclick = () => { stopTimer(); stopRecording(); addXp(15); selfGrid(t, art); };
   }
 }
 
@@ -776,7 +790,7 @@ function stopRecording() {
   recorder = null;
 }
 
-function selfGrid(talkSeconds) {
+function selfGrid(talkSeconds, art = null) {
   stopTimer();
   const scores = SELF_GRID.map(() => 1);
   render(`
@@ -808,9 +822,108 @@ function selfGrid(talkSeconds) {
         <h1>${n} / 20</h1>
         <p>${advice(n)}</p>
       </div>
-      <div class="dock"><button class="btn" id="h">Retour à l'entraînement</button></div>
+      <div class="dock"><div class="${art && art.guide ? "row2" : ""}">
+        ${art && art.guide ? `<button class="btn ghost" id="h">Retour</button><button class="btn" id="g">Voir le corrigé</button>` : `<button class="btn" id="h">Retour à l'entraînement</button>`}
+      </div></div>
     `);
     root.querySelector("#h").onclick = training;
+    const g = root.querySelector("#g");
+    if (g) g.onclick = () => guideView(art);
+  };
+}
+
+// ---------- Articles d'entraînement ----------
+const wordCount = (a) => a.body.join(" ").split(/\s+/).filter(Boolean).length;
+const articleHtml = (a) => `
+  ${a.asOf ? `<span class="paper-tag">Article d'entraînement original · faits arrêtés en ${esc(a.asOf)}</span>` : ""}
+  <h2 class="paper-title">${esc(a.title)}</h2>
+  ${a.standfirst ? `<p class="paper-standfirst">${esc(a.standfirst)}</p>` : ""}
+  ${a.body.map((p) => `<p>${esc(p)}</p>`).join("")}
+  <p class="paper-count">${wordCount(a)} mots</p>`;
+
+function library() {
+  stopTimer();
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
+    <div class="screen-title"><h1>Articles</h1><span class="pill">${icon("book")}${ARTICLES.length}</span></div>
+    <p class="muted">Des articles originaux, écrits pour l'entraînement à partir de faits réels, au format de l'épreuve (450 à 550 mots). Chacun a son corrigé.</p>
+    <div class="art-list">${ARTICLES.map((a) => `
+      <button class="art-card" data-id="${a.id}">
+        <small>${esc(a.theme)} · ${esc(a.asOf)}</small>
+        <b>${esc(a.title)}</b>
+        <span>${esc(a.standfirst)}</span>
+      </button>`).join("")}</div>
+  `);
+  root.querySelector("#back").onclick = training;
+  root.querySelectorAll(".art-card").forEach((b) => (b.onclick = () => articleView(ARTICLES.find((a) => a.id === b.dataset.id))));
+}
+
+function articleView(a) {
+  stopTimer();
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
+    <article class="paper">${articleHtml(a)}</article>
+    <div class="dock"><div class="row2"><button class="btn ghost" id="g">Corrigé</button><button class="btn" id="go">${icon("clock")}S'entraîner</button></div></div>
+  `);
+  root.querySelector("#back").onclick = library;
+  root.querySelector("#g").onclick = () => guideView(a);
+  root.querySelector("#go").onclick = () => simulation("prep", a);
+}
+
+function guideView(a) {
+  stopTimer();
+  const g = a.guide;
+  const list = (items) => `<ul class="guide-list">${items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
+  const words = g.vocab.map(([en, fr]) => ({ id: `art-${a.id}-${en}`, en, fr, ex: "", lv: "C1" }));
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
+    <span class="ex-kind">${icon("target")}Corrigé</span>
+    <h1 class="guide-title">${esc(a.title)}</h1>
+    <h4 class="section-title">${icon("zap")}Le déclencheur</h4><div class="tip">${esc(g.trigger)}</div>
+    <h4 class="section-title">${icon("target")}Problématique</h4>
+    <div class="tip"><b>${esc(g.issue)}</b> <button class="say inline-say" data-en="${esc(g.issue)}" aria-label="Écouter">${icon("sound")}</button></div>
+    <h4 class="section-title">${icon("list")}Plan</h4>${list(g.plan)}
+    <h4 class="section-title">${icon("scale")}Références pour le commentaire</h4>${list(g.refs)}
+    <h4 class="section-title">${icon("chat")}Questions probables du jury</h4>
+    <div class="grid-list">${g.questions.map((q) => `
+      <details class="model"><summary>${esc(q.q)}</summary><p>${esc(q.hint)}</p></details>`).join("")}</div>
+    <h4 class="section-title">${icon("book")}Vocabulaire de l'article</h4>
+    <div class="wlist">${words.map(wordRow).join("")}</div>
+    <div class="dock"><button class="btn" id="go">${icon("clock")}S'entraîner sur cet article</button></div>
+  `);
+  root.querySelector("#back").onclick = () => articleView(a);
+  root.querySelector("#go").onclick = () => simulation("prep", a);
+  root.querySelectorAll(".inline-say").forEach((b) => (b.onclick = () => speak(b.dataset.en)));
+  bindRows(words);
+}
+
+// L'article collé reste dans le stockage local du navigateur, jamais publié.
+const MINE_KEY = "objectif-anglais-mon-article";
+function myArticle() {
+  stopTimer();
+  let saved = "";
+  try { saved = localStorage.getItem(MINE_KEY) || ""; } catch {}
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
+    <div class="screen-title"><h1>Mon article</h1></div>
+    <p class="muted">Colle le texte d'un sujet (titre sur la première ligne). Il est gardé uniquement sur cet appareil.</p>
+    <textarea class="answer tall" id="txt" placeholder="Title of the article&#10;&#10;First paragraph…">${esc(saved)}</textarea>
+    <p class="muted small" id="count"></p>
+    <div class="dock"><button class="btn" id="go" disabled>${icon("clock")}Lancer la simulation</button></div>
+  `);
+  const txt = root.querySelector("#txt");
+  const go = root.querySelector("#go");
+  const upd = () => {
+    const n = txt.value.split(/\s+/).filter(Boolean).length;
+    root.querySelector("#count").textContent = n ? `${n} mots${n < 450 || n > 550 ? " (l'épreuve : 450 à 550)" : ""}` : "";
+    go.disabled = n < 50;
+  };
+  txt.oninput = () => { upd(); try { localStorage.setItem(MINE_KEY, txt.value); } catch {} };
+  upd();
+  root.querySelector("#back").onclick = training;
+  go.onclick = () => {
+    const lines = txt.value.split(/\n+/).map((l) => l.trim()).filter(Boolean);
+    simulation("prep", { title: lines[0], body: lines.slice(1) });
   };
 }
 
