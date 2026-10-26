@@ -34,7 +34,7 @@ l'accent, le niveau, 22 à 27 mots classés par thème et un quiz « Suis-je pr�
 ## Mode CRFPA (anglais juridique)
 Activable dans **Profil → Mode d'apprentissage**. Il prépare l'oral d'anglais de l'examen d'accès au CRFPA
 (article de presse, 15 min de préparation, 15 min d'exposé et d'entretien) :
-- un parcours en 4 modules (l'épreuve et la méthode, la langue, la culture juridique anglo-saxonne, le vocabulaire actif) ;
+- un parcours de 40 leçons en 4 modules (l'épreuve et la méthode, la langue, la culture juridique anglo-saxonne, le vocabulaire actif ; leçons ajoutées dans `app/legal-extra.js`), plus un module 5 de vocabulaire juridique ;
 - un entraînement : simulation chronométrée avec enregistrement, questions du jury, grille d'auto-évaluation ;
 - 10 articles d'entraînement originaux (`app/articles.js`, 450-550 mots, inspirés de faits réels et datés), chacun avec son corrigé ;
 - « Mon article » : coller un sujet, qui reste uniquement sur l'appareil ;

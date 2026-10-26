@@ -2,6 +2,7 @@
 import { LEVELS } from "../app/data.js";
 import { LEGAL } from "../app/legal.js";
 import { EXTRA } from "../app/lessons-extra.js";
+import { LEGAL_EXTRA } from "../app/legal-extra.js";
 import { readFileSync } from "node:fs";
 let errors = 0;
 const err = (m) => { errors++; console.log("ERREUR", m); };
@@ -21,6 +22,8 @@ for (const [name, levels] of [["général", LEVELS], ["CRFPA", LEGAL]]) {
 // Chaque « after » doit désigner une leçon existante, sinon l'insertion se fait en fin de niveau.
 for (const [lv, list] of Object.entries(EXTRA)) for (const l of list)
   if (l.after && !LEVELS.find((x) => x.id === lv).lessons.some((x) => x.id === l.after)) err(`after inconnu : ${l.after}`);
+for (const [m, list] of Object.entries(LEGAL_EXTRA)) for (const l of list)
+  if (l.after && !LEGAL.find((x) => x.id === m).lessons.some((x) => x.id === l.after)) err(`after inconnu : ${l.after}`);
 // Chaque mot de la banque doit figurer dans une leçon de vocabulaire, une seule fois.
 for (const [name, dir] of [["général", "words"], ["CRFPA", "words-legal"]]) {
   const read = (f) => JSON.parse(readFileSync(new URL(`../app/${dir}/${f}`, import.meta.url)));
