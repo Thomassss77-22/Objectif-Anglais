@@ -733,8 +733,9 @@ function placementIntro() {
   root.querySelector("#go").onclick = () => {
     const used = new Set();
     // Sans synthèse vocale, les questions d'écoute sont retirées.
-    if (!("speechSynthesis" in window)) PT.ITEMS.filter((it) => it.skill === "listening").forEach((it) => used.add(it.id));
-    placementStep({ post: Array(6).fill(1 / 6), used, skills: [], answers: [] });
+    const noAudio = !("speechSynthesis" in window);
+    if (noAudio) PT.ITEMS.filter((it) => it.skill === "listening").forEach((it) => used.add(it.id));
+    placementStep({ post: Array(6).fill(1 / 6), used, skills: [], answers: [], noAudio });
   };
 }
 
@@ -754,6 +755,7 @@ function placementStep(t) {
     <p class="q">${esc(it.q)}</p>
     <div class="choices">${it.choices.map((c, k) => `<button class="choice" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${esc(c)}</button>`).join("")}</div>
     <button class="btn ghost dunno" id="dunno">Je ne sais pas</button>
+    ${it.audio ? `<button class="linklike no-audio" id="noaudio">${icon("x")}Je ne peux pas écouter</button>` : ""}
   `);
   let plays = 0;
   const play = () => { if (plays < 2) { plays++; speak(it.audio); } if (plays >= 2) root.querySelector("#play").disabled = true; };
@@ -767,6 +769,13 @@ function placementStep(t) {
   };
   root.querySelectorAll(".choice").forEach((b) => (b.onclick = () => answer(+b.dataset.k === it.answer ? "right" : "wrong")));
   root.querySelector("#dunno").onclick = () => answer("unknown");
+  // Sans écoute possible : la question n'est pas comptée et l'oral est retiré du reste du test.
+  root.querySelector("#noaudio")?.addEventListener("click", () => {
+    speechSynthesis.cancel();
+    t.noAudio = true;
+    PT.ITEMS.filter((x) => x.skill === "listening").forEach((x) => t.used.add(x.id));
+    placementStep(t);
+  });
   root.querySelector("#quit").onclick = () => { if (confirm("Abandonner le test ?")) home(); };
 }
 
@@ -781,7 +790,7 @@ function placementResult(t) {
     const a = t.answers.filter((x) => x.skill === k);
     return { k, n: a.length, ok: a.filter((x) => x.outcome === "right").length };
   }).filter((x) => x.n);
-  state.placement = { level, conf, date: dayKey() };
+  state.placement = { level, conf, date: dayKey(), noAudio: Boolean(t.noAudio) };
   addXp(10);
   render(`
     <canvas id="confetti"></canvas>
@@ -795,6 +804,7 @@ function placementResult(t) {
     <div class="levels">${bySkill.map((x) => `
       <div class="lvrow"><div><b>${PT.SKILLS[x.k]}</b>
         <div class="meter"><i style="width:${(x.ok / x.n) * 100}%"></i></div></div><em>${x.ok}/${x.n}</em></div>`).join("")}</div>
+    ${t.noAudio ? `<p class="muted small center-text">Compréhension orale non évaluée : le niveau est calculé sur la grammaire, le vocabulaire et la compréhension écrite.</p>` : ""}
     <p class="muted small center-text">Les questions s'adaptent à ton niveau : un score par compétence se lit en comparant les compétences entre elles.</p>
     <div class="dock"><div class="row2"><button class="btn ghost" id="h">Plus tard</button><button class="btn" id="start">Commencer en ${level}</button></div></div>
   `);

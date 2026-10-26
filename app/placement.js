@@ -1,4 +1,4 @@
-// Test de niveau adaptatif (A1 à C2).
+// Test de niveau adaptatif (A1 à C2) : 72 questions, 12 par niveau.
 // Chaque question a un niveau (1 = A1 … 6 = C2) et une compétence. Le niveau du candidat est estimé
 // par une loi de probabilité sur les 6 niveaux, mise à jour après chaque réponse (modèle logistique
 // avec prise en compte du hasard). Textes et phrases rédigés pour l'application.
@@ -28,6 +28,9 @@ export const ITEMS = [
   { id: "a1l1", lv: 1, skill: "listening", audio: "I've got two brothers and one sister.", q: "How many brothers does the speaker have?", choices: ["One", "Two", "Three", "None"], answer: 1 },
   { id: "a1l2", lv: 1, skill: "listening", audio: "The shop opens at nine o'clock.", q: "When does the shop open?", choices: ["7:00", "9:00", "5:00", "10:00"], answer: 1 },
 
+  { id: "a1g5", lv: 1, skill: "grammar", q: "My parents ___ from Spain.", choices: ["is", "are", "am", "be"], answer: 1 },
+  { id: "a1r2", lv: 1, skill: "reading", text: "The museum is open from Tuesday to Sunday. It is closed on Mondays. Tickets cost £5.", q: "When is the museum closed?", choices: ["On Sundays", "On Mondays", "On Tuesdays", "On Saturdays"], answer: 1 },
+
   // ---------- A2 ----------
   { id: "a2g1", lv: 2, skill: "grammar", q: "Yesterday I ___ to the cinema.", choices: ["go", "went", "have gone", "was go"], answer: 1 },
   { id: "a2g2", lv: 2, skill: "grammar", q: "She is ___ than her brother.", choices: ["tall", "taller", "more tall", "tallest"], answer: 1 },
@@ -39,6 +42,9 @@ export const ITEMS = [
   { id: "a2v3", lv: 2, skill: "vocab", q: "Smile! I'm going to ___ a photo.", choices: ["make", "do", "take", "have"], answer: 2 },
   { id: "a2r1", lv: 2, skill: "reading", text: "Dear Anna, thanks for your invitation. I'd love to come to your party on Saturday, but I have to work until 8 pm. Can I come after that? Love, Jess", q: "Why will Jess arrive late?", choices: ["She is ill", "She has to work", "She has no car", "She forgot the date"], answer: 1 },
   { id: "a2l1", lv: 2, skill: "listening", audio: "Sorry, I can't come tonight. I've got a terrible headache.", q: "Why can't the speaker come?", choices: ["They are too busy", "They feel ill", "They have no money", "It is too late"], answer: 1 },
+
+  { id: "a2g6", lv: 2, skill: "grammar", q: "I ___ to Paris three times.", choices: ["have been", "was", "am going", "go"], answer: 0 },
+  { id: "a2r2", lv: 2, skill: "reading", text: "The 8.15 train to Bristol is cancelled. Passengers should take the 8.45 train from platform 3.", q: "What should passengers do?", choices: ["Wait for the 8.15 train", "Take a later train", "Go home", "Buy a new ticket"], answer: 1 },
 
   // ---------- B1 ----------
   { id: "b1g1", lv: 3, skill: "grammar", q: "If it rains tomorrow, we ___ at home.", choices: ["stay", "will stay", "would stay", "stayed"], answer: 1 },
@@ -52,6 +58,9 @@ export const ITEMS = [
   { id: "b1l1", lv: 3, skill: "listening", audio: "If I'd known about the traffic, I would have taken the train.", q: "What did the speaker do?", choices: ["Took the train", "Didn't take the train", "Missed the train", "Didn't travel"], answer: 1 },
   { id: "b1l2", lv: 3, skill: "listening", audio: "I used to play tennis every weekend, but I haven't played for years.", q: "Does the speaker play tennis now?", choices: ["Yes, every weekend", "Yes, sometimes", "No, not any more", "No, never"], answer: 2 },
 
+  { id: "b1g5", lv: 3, skill: "grammar", q: "This is the man ___ car was stolen.", choices: ["who", "whose", "which", "whom"], answer: 1 },
+  { id: "b1r2", lv: 3, skill: "reading", text: "Tickets for the concert sold out in minutes, but the organisers have announced a second date in June. Fans who missed out can register online to be told when tickets go on sale.", q: "What can fans who missed out do?", choices: ["Get a refund", "Sign up to be told about new tickets", "Go to the first concert", "Buy tickets at the door"], answer: 1 },
+
   // ---------- B2 ----------
   { id: "b2g1", lv: 4, skill: "grammar", q: "I wish I ___ more time to study.", choices: ["have", "had", "would have", "will have"], answer: 1 },
   { id: "b2g2", lv: 4, skill: "grammar", q: "By the time we arrived, the film ___.", choices: ["started", "has started", "had started", "was starting"], answer: 2 },
@@ -63,6 +72,9 @@ export const ITEMS = [
   { id: "b2r1", lv: 4, skill: "reading", text: "Although the city council claims that the new cycle lanes have reduced traffic, local shop owners argue that their customers can no longer park nearby, and several have reported a drop in sales. The council insists it is too early to judge.", q: "What is the shop owners' main complaint?", choices: ["The cycle lanes are dangerous", "Traffic has increased", "Parking problems are hurting business", "The council has lied"], answer: 2 },
   { id: "b2l1", lv: 4, skill: "listening", audio: "I'm not against the idea in principle, but I'm worried about how much it will cost.", q: "What is the speaker's attitude?", choices: ["Totally against it", "Supportive, with no doubts", "In favour, but concerned about the cost", "Indifferent"], answer: 2 },
   { id: "b2l2", lv: 4, skill: "listening", audio: "She'd have got the job if she hadn't turned up so late for the interview.", q: "What happened?", choices: ["She got the job", "She didn't get the job because she was late", "She refused the job", "The interview was cancelled"], answer: 1 },
+
+  { id: "b2g5", lv: 4, skill: "grammar", q: "He suggested ___ a taxi to the station.", choices: ["to take", "taking", "take", "to taking"], answer: 1 },
+  { id: "b2r2", lv: 4, skill: "reading", text: "The company insists that the job cuts are unrelated to last year's merger, yet almost all of the positions affected are in departments that were duplicated when the two firms combined.", q: "What does the writer suggest?", choices: ["The cuts are unrelated to the merger", "The cuts are probably linked to the merger", "The merger was cancelled", "No jobs will be lost"], answer: 1 },
 
   // ---------- C1 ----------
   { id: "c1g1", lv: 5, skill: "grammar", q: "Not only ___ late, but he also forgot the documents.", choices: ["he was", "was he", "he is", "did he be"], answer: 1 },
@@ -76,6 +88,9 @@ export const ITEMS = [
   { id: "c1l1", lv: 5, skill: "listening", audio: "I wouldn't go so far as to say it was a failure, but it certainly fell short of expectations.", q: "What does the speaker think?", choices: ["It was a complete failure", "It was a great success", "It was disappointing, but not a failure", "It is too early to say"], answer: 2 },
   { id: "c1v4", lv: 5, skill: "vocab", q: "To « play down » a problem means to…", choices: ["exaggerate it", "make it seem less important", "solve it", "ignore it entirely"], answer: 1 },
 
+  { id: "c1g5", lv: 5, skill: "grammar", q: "Should you need any further information, ___ hesitate to contact us.", choices: ["don't", "not", "no", "won't"], answer: 0 },
+  { id: "c1r2", lv: 5, skill: "reading", text: "While the study's findings are striking, the authors are careful to point out that the sample was small and that the results have yet to be replicated.", q: "What is the authors' attitude to their findings?", choices: ["They consider them definitive", "They are cautious about them", "They reject them", "They exaggerate them"], answer: 1 },
+
   // ---------- C2 ----------
   { id: "c2g1", lv: 6, skill: "grammar", q: "Little ___ that the decision would change everything.", choices: ["they knew", "did they know", "they did know", "knew they"], answer: 1 },
   { id: "c2g2", lv: 6, skill: "grammar", q: "Were the government ___ the bill, protests would follow.", choices: ["to pass", "passing", "passed", "pass"], answer: 0 },
@@ -86,6 +101,8 @@ export const ITEMS = [
   { id: "c2v4", lv: 6, skill: "vocab", q: "A « Pyrrhic victory » is a victory…", choices: ["won at too great a cost", "won easily", "won unfairly", "won by chance"], answer: 0 },
   { id: "c2r1", lv: 6, skill: "reading", text: "The committee's report stops short of recommending outright abolition, yet its tone leaves little doubt as to where its sympathies lie.", q: "What does the report do?", choices: ["It recommends abolition", "It opposes abolition", "It implicitly favours abolition without recommending it", "It takes no position at all"], answer: 2 },
   { id: "c2l1", lv: 6, skill: "listening", audio: "Far from settling the matter, the ruling is likely to open the floodgates to a wave of similar claims.", q: "What does the speaker expect?", choices: ["The issue is now settled", "Many similar cases will follow", "The ruling will be overturned", "Fewer claims will be filed"], answer: 1 },
+  { id: "c2g4", lv: 6, skill: "grammar", q: "Only after the inquiry ___ the full extent of the failures become clear.", choices: ["did", "had", "was", "has"], answer: 0 },
+  { id: "c2r2", lv: 6, skill: "reading", text: "Ostensibly a celebration of local heritage, the festival has, in the eyes of many residents, become little more than a marketing exercise.", q: "What do many residents think?", choices: ["It genuinely celebrates local heritage", "It is mainly a promotional event", "It should be cancelled", "It is too small"], answer: 1 },
   { id: "c2v5", lv: 6, skill: "vocab", q: "The project was ___ in controversy from the very start.", choices: ["mired", "soaked", "sunk", "drowned"], answer: 0 },
 ];
 
