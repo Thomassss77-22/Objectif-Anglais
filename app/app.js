@@ -25,7 +25,15 @@ function touchStreak() {
   state.lastDay = t;
 }
 
-const norm = (s) => s.toLowerCase().trim().replace(/[.!?]/g, "").replace(/\s+/g, " ").replace(/’/g, "'");
+// Compare des réponses en ignorant ponctuation, casse et contractions (I'm = I am).
+const CONTRACTIONS = { "i'm": "i am", "you're": "you are", "he's": "he is", "she's": "she is", "it's": "it is",
+  "we're": "we are", "they're": "they are", "i've": "i have", "you've": "you have", "we've": "we have",
+  "they've": "they have", "i'd": "i would", "i'll": "i will", "you'll": "you will", "don't": "do not",
+  "doesn't": "does not", "didn't": "did not", "can't": "cannot", "won't": "will not", "isn't": "is not",
+  "aren't": "are not", "haven't": "have not", "hasn't": "has not", "wouldn't": "would not", "let's": "let us",
+  "what's": "what is", "that's": "that is", "there's": "there is" };
+const norm = (s) => s.toLowerCase().replace(/’/g, "'").replace(/[.,!?;:]/g, " ").trim().split(/\s+/)
+  .map((w) => CONTRACTIONS[w] || w).join(" ").replace(/\bcan not\b/g, "cannot");
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
 function speak(text) {
@@ -34,6 +42,19 @@ function speak(text) {
   u.lang = "en-GB";
   speechSynthesis.cancel();
   speechSynthesis.speak(u);
+}
+
+// Reconnaissance vocale (Chrome, Edge, Safari). Sinon, on tape la réponse.
+const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+function listen(btn, done) {
+  const r = new Rec();
+  r.lang = "en-US";
+  r.interimResults = false;
+  btn.textContent = "👂 J'écoute…";
+  r.onresult = (e) => done(e.results[0][0].transcript);
+  r.onend = () => (btn.textContent = "🎤 Parler");
+  r.onerror = () => (btn.textContent = "🎤 Réessayer");
+  r.start();
 }
 
 function header() {
@@ -84,7 +105,8 @@ function exercise(l, i, score) {
   const ex = l.exercises[i];
   const body = ex.type === "qcm"
     ? ex.choices.map((c, k) => `<button class="choice" data-k="${k}">${esc(c)}</button>`).join("")
-    : `<input id="ans" autocomplete="off" autocapitalize="off" placeholder="Écris en anglais…"><button class="big" id="ok">Valider</button>`;
+    : `${ex.type === "speak" ? `<p class="hint">🗣️ Dis-le à voix haute, puis vérifie.</p>${Rec ? `<button class="big mic" id="mic">🎤 Parler</button>` : ""}` : ""}
+       <input id="ans" autocomplete="off" autocapitalize="off" placeholder="${ex.type === "speak" ? "Ce que tu as dit…" : "Écris en anglais…"}"><button class="big" id="ok">Valider</button>`;
   view.innerHTML = `
     <div class="progress"><div style="width:${(i / l.exercises.length) * 100}%"></div></div>
     <p class="q">${esc(ex.q)}</p>${body}<div id="fb"></div>`;
@@ -93,7 +115,7 @@ function exercise(l, i, score) {
     const fb = view.querySelector("#fb");
     fb.className = good ? "fb ok" : "fb ko";
     fb.innerHTML = `${good ? "Bravo !" : `Réponse : <b>${esc(correction)}</b>`}<button class="big" id="nx">Continuer</button>`;
-    view.querySelectorAll("button.choice, #ok, #ans").forEach((e) => (e.disabled = true));
+    view.querySelectorAll("button.choice, #ok, #ans, #mic").forEach((e) => (e.disabled = true));
     fb.querySelector("#nx").onclick = () => exercise(l, i + 1, score + (good ? 1 : 0));
   };
 
@@ -106,7 +128,12 @@ function exercise(l, i, score) {
   } else {
     const input = view.querySelector("#ans");
     input.focus();
-    const submit = () => next(ex.answers.map(norm).includes(norm(input.value)), ex.answers[0]);
+    const submit = () => {
+      next(ex.answers.map(norm).includes(norm(input.value)), ex.answers[0]);
+      speak(ex.answers[0]);
+    };
+    const mic = view.querySelector("#mic");
+    if (mic) mic.onclick = () => listen(mic, (text) => { input.value = text; submit(); });
     view.querySelector("#ok").onclick = submit;
     input.onkeydown = (e) => e.key === "Enter" && submit();
   }
