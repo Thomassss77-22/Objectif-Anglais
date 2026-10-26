@@ -20,6 +20,7 @@ Fonctionnalités :
 - **Vocabulaire intensif** : dans l'onglet Mots, chaque thème liste ses leçons de vocabulaire avec sa progression et un bouton « Leçon suivante de ce thème ».
 - Rythme réglable dans le profil : 10, 20, 40 ou 60 nouvelles cartes par jour, avec le temps de révision quotidien estimé.
 - XP, série quotidienne, progression sauvegardée localement, fonctionne hors ligne.
+- **Carnet d'erreurs** : chaque exercice raté est noté (avec ta réponse) et reproposé après 1, 3 puis 7 jours, jusqu'à trois réussites ; en cas d'erreur, « Revoir la règle » rappelle la fiche de la leçon.
 - Sauvegarde : la progression s'exporte dans un fichier (Profil → Sauvegarde) et se restaure sur un autre appareil ; un rappel apparaît sur l'accueil toutes les deux semaines.
 
 ## Test de niveau

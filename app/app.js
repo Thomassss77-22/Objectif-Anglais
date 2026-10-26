@@ -271,6 +271,10 @@ function home() {
         <span>${due ? "Révise maintenant pour ne pas oublier" : "Les mots de tes leçons arriveront ici"}</span></div>
       ${due ? `<span class="badge-count">${due}</span>` : `<span class="go">${icon("chevron")}</span>`}
     </button>
+    ${Object.keys(mistakes()).length ? `<button class="tile" id="mistakes-home">
+      <div class="tile-icon ${dueMistakes().length ? "alt" : "calm"}">${icon("target")}</div>
+      <div><b>Mes erreurs</b><span>${dueMistakes().length ? "À retravailler maintenant" : `${Object.keys(mistakes()).length} en cours, rien à revoir aujourd'hui`}</span></div>
+      ${dueMistakes().length ? `<span class="badge-count">${dueMistakes().length}</span>` : `<span class="go">${icon("chevron")}</span>`}</button>` : ""}
     ${needsBackup() ? `<button class="tile" id="backup-home">
       <div class="tile-icon alt-test">${icon("download")}</div>
       <div><b>Sauvegarde ta progression</b><span>${state.lastBackup ? "Ta dernière sauvegarde date de plus de 2 semaines" : "Elle n'existe que sur cet appareil : garde-en une copie"}</span></div>
@@ -298,6 +302,7 @@ function home() {
   root.querySelector("#continue").onclick = () => (next ? lesson(next.id) : reviewSession());
   root.querySelector("#cine-home")?.addEventListener("click", cinema);
   root.querySelector("#test-home")?.addEventListener("click", placementIntro);
+  root.querySelector("#mistakes-home")?.addEventListener("click", mistakesHome);
   root.querySelector("#backup-home")?.addEventListener("click", () => { exportProgress(); home(); });
   bindPath(next);
 }
@@ -469,6 +474,85 @@ function showLesson(l) {
 }
 
 
+// ---------- Carnet d'erreurs ----------
+// Chaque exercice raté en leçon y est noté, puis reproposé selon des boîtes de Leitner :
+// réussi, il revient après 1, 3 puis 7 jours, et quitte le carnet après trois réussites ;
+// raté, il revient le lendemain.
+const BOXES = [1, 3, 7];
+const mistakes = () => (P().mistakes ||= {});
+const mistakeKey = (lessonId, ex) => `${lessonId}#${ex.q}`;
+const answerText = (ex) => (ex.type === "qcm" || ex.type === "listen" ? ex.choices[ex.answer] : ex.answers[0]);
+const dueMistakes = () => Object.entries(mistakes()).filter(([, m]) => m.due <= Date.now()).map(([k, m]) => ({ key: k, ...m }));
+function logMistake(l, ex, given) {
+  const key = mistakeKey(l.id, ex);
+  mistakes()[key] = { ex: { ...ex, from: l.id, lv: l.lv.id }, title: l.title, given, box: 0, due: Date.now(), added: mistakes()[key]?.added || Date.now() };
+  save();
+}
+
+// Accès au carnet depuis l'écran de révision.
+const errorsPill = () => {
+  const n = Object.keys(mistakes()).length;
+  return n ? `<button class="pill pill-btn" id="to-errors">${icon("target")}Erreurs${dueMistakes().length ? ` · ${dueMistakes().length}` : ""}</button>` : "";
+};
+document.addEventListener("click", (e) => { if (e.target.closest("#to-errors")) mistakesHome(); });
+
+function mistakesHome() {
+  const all = Object.entries(mistakes()).map(([key, m]) => ({ key, ...m })).sort((a, b) => a.due - b.due);
+  const due = all.filter((m) => m.due <= Date.now());
+  const when = (t) => {
+    const d = Math.ceil((t - Date.now()) / 864e5);
+    return d <= 0 ? "maintenant" : d === 1 ? "demain" : `dans ${d} jours`;
+  };
+  render(`
+    ${topbar()}
+    <div class="screen-title"><h1>Mes erreurs</h1><span class="pill">${icon("target")}${all.length}</span></div>
+    <p class="lead">Les exercices ratés reviennent ici jusqu'à ce que tu les réussisses trois fois, à quelques jours d'intervalle.</p>
+    ${all.length ? `<div class="mlist">${all.map((m) => `
+      <div class="mrow" data-lv="${m.ex.lv}">
+        <span class="cefr-mini">${m.ex.lv}</span>
+        <div><small>${esc(m.title)}</small><b>${esc(m.ex.q)}</b>
+          <span class="m-ans">${icon("check")}${esc(answerText(m.ex))}</span>
+          ${m.given ? `<span class="m-given">${icon("x")}${esc(m.given)}</span>` : ""}</div>
+        <em class="${m.due <= Date.now() ? "now" : ""}">${when(m.due)}${m.box ? ` · ${m.box}/3` : ""}</em>
+      </div>`).join("")}</div>`
+    : `<div class="empty"><div class="tile-icon calm">${icon("check")}</div><h2>Aucune erreur à retravailler</h2>
+        <p>Les exercices que tu rates dans les leçons arriveront ici automatiquement.</p></div>`}
+    ${due.length ? `<div class="dock"><button class="btn" id="go">${icon("play")}Retravailler ${due.length} exercice${due.length > 1 ? "s" : ""}</button></div>` : ""}
+  `, { nav: "review" });
+  root.querySelector("#go")?.addEventListener("click", () => mistakesSession(due));
+}
+
+function mistakesSession(list) {
+  const items = shuffle(list).slice(0, 15);
+  let fixed = 0;
+  exercise({
+    id: "mistakes", title: "Mes erreurs", lv: { id: items[0].ex.lv },
+    exercises: items.map((m) => ({ ...m.ex, key: m.key })),
+    onAnswer: (ex, good) => {
+      const m = mistakes()[ex.key];
+      if (!m) return;
+      if (good) {
+        m.box += 1;
+        if (m.box >= BOXES.length) { delete mistakes()[ex.key]; fixed++; } else m.due = Date.now() + BOXES[m.box - 1] * 864e5;
+      } else Object.assign(m, { box: 0, due: Date.now() + 864e5 });
+      save();
+    },
+    onQuit: mistakesHome,
+    onEnd: (score) => {
+      addXp(score * 3);
+      render(`
+        <div class="done-screen">
+          <div class="trophy">${icon("target")}</div>
+          <h1>${score === items.length ? "Tout est juste !" : "Séance terminée"}</h1>
+          <p>${score} / ${items.length} réussi${score > 1 ? "s" : ""}${fixed ? ` · ${fixed} erreur${fixed > 1 ? "s" : ""} définitivement corrigée${fixed > 1 ? "s" : ""}` : ""}</p>
+        </div>
+        <div class="dock"><button class="btn" id="h">Retour au carnet</button></div>
+      `);
+      root.querySelector("#h").onclick = mistakesHome;
+    },
+  }, 0, 0);
+}
+
 const KINDS = {
   qcm: ["target", "Choisis la bonne réponse"],
   listen: ["sound", "Écoute"],
@@ -477,8 +561,11 @@ const KINDS = {
 };
 
 function exercise(l, i, score) {
-  if (i >= l.exercises.length) return finish(l, score);
+  if (i >= l.exercises.length) return l.onEnd ? l.onEnd(score) : finish(l, score);
   const ex = l.exercises[i];
+  const lv = ex.lv || l.lv.id;
+  // Règle de la leçon d'origine, rappelée en cas d'erreur (leçons rédigées uniquement).
+  const tip = l.vocab ? null : ex.from ? findLesson(ex.from)?.tip : l.tip;
   const [kIcon, kLabel] = KINDS[ex.type];
   let body;
   if (ex.type === "qcm" || ex.type === "listen") {
@@ -503,10 +590,12 @@ function exercise(l, i, score) {
     <p class="q">${esc(ex.q)}</p>
     ${body}
     ${ex.type === "qcm" || ex.type === "listen" ? "" : `<div class="dock"><button class="btn lv" id="ok" disabled>Valider</button></div>`}
-  `, { lv: l.lv.id });
-  root.querySelector("#quit").onclick = () => lesson(l.id, origin);
+  `, { lv });
+  root.querySelector("#quit").onclick = l.onQuit || (() => lesson(l.id, origin));
 
-  const next = (good, correction, fixes = []) => {
+  const next = (good, correction, fixes = [], given = "") => {
+    if (l.onAnswer) l.onAnswer(ex, good);
+    else if (!good) logMistake(l, ex, given);
     buzz(good ? 15 : [30, 40, 30]);
     root.querySelector(".dock")?.remove();
     root.querySelectorAll(".choice, #ans, #mic").forEach((e) => (e.disabled = true));
@@ -518,6 +607,7 @@ function exercise(l, i, score) {
       <h3><span class="badge">${icon(good ? "check" : "x")}</span>${good ? (fixes.length ? "Presque parfait !" : praise) : "Pas tout à fait…"}</h3>
       <p>${good ? (ex.type === "qcm" ? "" : `<b>${esc(correction)}</b>`) : `Bonne réponse :<b>${esc(correction)}</b>`}
         ${fixes.length ? `<i class="sheet-ex">Attention à l'orthographe : ${esc(fixesText(fixes))}</i>` : ""}</p>
+      ${!good && tip ? `<details class="rule"><summary>${icon("bulb")}Revoir la règle</summary><div>${tip}</div></details>` : ""}
       <button class="btn ${good ? "ok" : "ko"}" id="nx">Continuer</button></div>`;
     root.appendChild(sheet);
     sheet.querySelector("#nx").onclick = () => exercise(l, i + 1, score + (good ? 1 : 0));
@@ -532,7 +622,7 @@ function exercise(l, i, score) {
       const good = +b.dataset.k === ex.answer;
       b.classList.add(good ? "right" : "wrong");
       if (!good) root.querySelector(`.choice[data-k="${ex.answer}"]`).classList.add("right");
-      next(good, ex.type === "listen" ? `${ex.audio} = ${ex.choices[ex.answer]}` : ex.choices[ex.answer]);
+      next(good, ex.type === "listen" ? `${ex.audio} = ${ex.choices[ex.answer]}` : ex.choices[ex.answer], [], ex.choices[+b.dataset.k]);
     }));
   } else {
     const input = root.querySelector("#ans");
@@ -541,7 +631,7 @@ function exercise(l, i, score) {
     const submit = () => {
       if (!input.value.trim()) return;
       const r = check(input.value, ex.answers);
-      next(r.ok, r.ok ? r.answer : ex.answers[0], r.fixes);
+      next(r.ok, r.ok ? r.answer : ex.answers[0], r.fixes, input.value.trim());
       speak(ex.answers[0]);
     };
     ok.onclick = submit;
@@ -637,7 +727,7 @@ function reviewSession() {
     const total = Object.keys(P().deck).length;
     render(`
       ${topbar()}
-      <div class="screen-title"><h1>Révision</h1></div>
+      <div class="screen-title"><h1>Révision</h1>${errorsPill()}</div>
       <div class="empty">
         <div class="tile-icon calm">${icon("check")}</div>
         <h2>${total ? "Tout est révisé" : "Aucune carte pour l'instant"}</h2>
@@ -650,7 +740,7 @@ function reviewSession() {
   }
   render(`
     ${topbar()}
-    <div class="screen-title"><h1>Révision</h1><span class="pill">${icon("cards")}${due.length}</span></div>
+    <div class="screen-title"><h1>Révision</h1>${errorsPill()}<span class="pill">${icon("cards")}${due.length}</span></div>
     <div class="flip" id="flip">
       <div class="flip-inner">
         <div class="face front"><small>Français</small><div class="term">${esc(card.fr)}</div>
@@ -1124,7 +1214,7 @@ function profile() {
   }));
   root.querySelector("#reset").onclick = () => {
     if (!confirm("Effacer la progression de ce mode (leçons et cartes) ?")) return;
-    Object.assign(P(), { done: {}, deck: {}, newDay: null, newSeen: 0 });
+    Object.assign(P(), { done: {}, deck: {}, newDay: null, newSeen: 0, mistakes: {} });
     save();
     home();
   };
