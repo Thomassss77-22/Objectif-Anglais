@@ -3,6 +3,7 @@ import { LEGAL, JURY_QUESTIONS, SELF_GRID, DRILL_SENTENCES, ERROR_SENTENCES } fr
 import { ARTICLES } from "./articles.js";
 import { FILMS } from "./films.js";
 import * as PT from "./placement.js";
+import { norm, check, fixesText } from "./match.js";
 import { newCard, review, dueCards } from "./srs.js";
 
 const KEY = "objectif-anglais-v1";
@@ -56,15 +57,6 @@ const findLesson = (id) => allLessons().find((l) => l.id === id);
 const nextLesson = () => allLessons().find((l) => !P().done[l.id]);
 
 // ---------- Utilitaires ----------
-// Compare des réponses en ignorant ponctuation, casse et contractions (I'm = I am).
-const CONTRACTIONS = { "i'm": "i am", "you're": "you are", "he's": "he is", "she's": "she is", "it's": "it is",
-  "we're": "we are", "they're": "they are", "i've": "i have", "you've": "you have", "we've": "we have",
-  "they've": "they have", "i'd": "i would", "i'll": "i will", "you'll": "you will", "don't": "do not",
-  "doesn't": "does not", "didn't": "did not", "can't": "cannot", "won't": "will not", "isn't": "is not",
-  "aren't": "are not", "haven't": "have not", "hasn't": "has not", "wouldn't": "would not", "let's": "let us",
-  "what's": "what is", "that's": "that is", "there's": "there is" };
-const norm = (s) => s.toLowerCase().replace(/’/g, "'").replace(/[.,!?;:]/g, " ").trim().split(/\s+/)
-  .map((w) => CONTRACTIONS[w] || w).join(" ").replace(/\bcan not\b/g, "cannot");
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const buzz = (p) => navigator.vibrate && navigator.vibrate(p);
 
@@ -323,7 +315,7 @@ function exercise(l, i, score) {
   `, { lv: l.lv.id });
   root.querySelector("#quit").onclick = () => lesson(l.id);
 
-  const next = (good, correction) => {
+  const next = (good, correction, fixes = []) => {
     buzz(good ? 15 : [30, 40, 30]);
     root.querySelector(".dock")?.remove();
     root.querySelectorAll(".choice, #ans, #mic").forEach((e) => (e.disabled = true));
@@ -332,8 +324,9 @@ function exercise(l, i, score) {
     sheet.className = `sheet ${good ? "ok" : "ko"}`;
     const praise = ["Excellent !", "Parfait !", "Bien joué !", "Impeccable !"][i % 4];
     sheet.innerHTML = `<div>
-      <h3><span class="badge">${icon(good ? "check" : "x")}</span>${good ? praise : "Pas tout à fait…"}</h3>
-      <p>${good ? (ex.type === "qcm" ? "" : `<b>${esc(correction)}</b>`) : `Bonne réponse :<b>${esc(correction)}</b>`}</p>
+      <h3><span class="badge">${icon(good ? "check" : "x")}</span>${good ? (fixes.length ? "Presque parfait !" : praise) : "Pas tout à fait…"}</h3>
+      <p>${good ? (ex.type === "qcm" ? "" : `<b>${esc(correction)}</b>`) : `Bonne réponse :<b>${esc(correction)}</b>`}
+        ${fixes.length ? `<i class="sheet-ex">Attention à l'orthographe : ${esc(fixesText(fixes))}</i>` : ""}</p>
       <button class="btn ${good ? "ok" : "ko"}" id="nx">Continuer</button></div>`;
     root.appendChild(sheet);
     sheet.querySelector("#nx").onclick = () => exercise(l, i + 1, score + (good ? 1 : 0));
@@ -352,7 +345,8 @@ function exercise(l, i, score) {
     input.oninput = () => (ok.disabled = !input.value.trim());
     const submit = () => {
       if (!input.value.trim()) return;
-      next(ex.answers.map(norm).includes(norm(input.value)), ex.answers[0]);
+      const r = check(input.value, ex.answers);
+      next(r.ok, r.ok ? r.answer : ex.answers[0], r.fixes);
       speak(ex.answers[0]);
     };
     ok.onclick = submit;
@@ -1131,14 +1125,15 @@ function drillStep(items, i, score) {
     input.oninput = () => (okBtn.disabled = !input.value.trim());
     const submit = () => {
       if (!input.value.trim()) return;
-      const ok = bare(input.value) === bare(it.w.en);
+      const r = check(input.value, [it.w.en], bare);
+      const ok = r.ok;
       const had = inDeck(it.w);
       root.querySelector(".dock").remove();
       speak(it.w.en);
       if (!ok) miss(it.w);
       // « J'avais bon » retire la carte seulement si cet exercice vient de l'ajouter.
       const accept = () => { if (!had) { delete P().deck[cardKey(it.w)]; save(); } next(true); };
-      drillSheet(ok, it.w.en, it.w.ex, () => next(ok), ok ? null : accept);
+      drillSheet(ok, it.w.en, it.w.ex, () => next(ok), ok ? null : accept, r.fixes);
     };
     okBtn.onclick = submit;
     input.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); submit(); } };
@@ -1157,13 +1152,14 @@ function drillStep(items, i, score) {
     const key = `✔ ${it.right[0]}`;
     const submit = () => {
       if (!input.value.trim()) return;
-      const ok = it.right.some((r) => norm(r) === norm(input.value));
+      const res = check(input.value, it.right);
+      const ok = res.ok;
       root.querySelector(".dock").remove();
       speak(it.right[0]);
       const had = Boolean(P().deck[key]);
       if (!ok && !had) { P().deck[key] = newCard(`Corrige : « ${it.wrong} »`, it.right[0], it.rule); save(); }
       const accept = () => { if (!had) { delete P().deck[key]; save(); } next(true); };
-      drillSheet(ok, it.right[0], it.rule, () => next(ok), ok ? null : accept);
+      drillSheet(ok, ok ? res.answer : it.right[0], it.rule, () => next(ok), ok ? null : accept, res.fixes);
     };
     okBtn.onclick = submit;
     input.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); submit(); } };
@@ -1195,14 +1191,14 @@ function drillStep(items, i, score) {
 }
 
 // Feuille de correction ; « accept » permet de valider une réponse juste mais formulée autrement.
-function drillSheet(ok, answer, example, onNext, accept = null) {
+function drillSheet(ok, answer, example, onNext, accept = null, fixes = []) {
   buzz(ok ? 15 : [30, 40, 30]);
   root.querySelectorAll(".choice, #ans, #mic").forEach((e) => (e.disabled = true));
   const sheet = document.createElement("div");
   sheet.className = `sheet ${ok ? "ok" : "ko"}`;
   sheet.innerHTML = `<div>
-    <h3><span class="badge">${icon(ok ? "check" : "x")}</span>${ok ? "Exact !" : "La réponse attendue"}</h3>
-    <p><b>${esc(answer)}</b>${example ? `<i class="sheet-ex">${esc(example)}</i>` : ""}</p>
+    <h3><span class="badge">${icon(ok ? "check" : "x")}</span>${ok ? (fixes.length ? "Presque parfait !" : "Exact !") : "La réponse attendue"}</h3>
+    <p><b>${esc(answer)}</b>${fixes.length ? `<i class="sheet-ex">Attention à l'orthographe : ${esc(fixesText(fixes))}</i>` : ""}${example ? `<i class="sheet-ex">${esc(example)}</i>` : ""}</p>
     ${accept ? `<div class="row2"><button class="btn ghost" id="acc">J'avais bon</button><button class="btn ko" id="nx">Continuer</button></div>`
              : `<button class="btn ${ok ? "ok" : "ko"}" id="nx">Continuer</button>`}</div>`;
   root.appendChild(sheet);

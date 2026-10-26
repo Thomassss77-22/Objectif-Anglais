@@ -1,0 +1,69 @@
+// Correction des réponses écrites ou dictées.
+// On ignore la casse, la ponctuation et les contractions (I'm = I am), et on tolère une petite faute
+// de frappe sur les mots longs. Les mots courts, l'ordre des mots et les mots manquants restent stricts :
+// ce sont des fautes de langue (is/are, a/an, he go…), pas des fautes de frappe.
+
+const CONTRACTIONS = { "i'm": "i am", "you're": "you are", "he's": "he is", "she's": "she is", "it's": "it is",
+  "we're": "we are", "they're": "they are", "i've": "i have", "you've": "you have", "we've": "we have",
+  "they've": "they have", "i'd": "i would", "i'll": "i will", "you'll": "you will", "don't": "do not",
+  "doesn't": "does not", "didn't": "did not", "can't": "cannot", "won't": "will not", "isn't": "is not",
+  "aren't": "are not", "haven't": "have not", "hasn't": "has not", "wouldn't": "would not", "let's": "let us",
+  "what's": "what is", "that's": "that is", "there's": "there is",
+  // Apostrophe oubliée (fréquent sur téléphone), seulement quand la forme sans apostrophe n'est pas un vrai mot.
+  im: "i am", ive: "i have", youre: "you are", theyre: "they are", youve: "you have", weve: "we have",
+  theyve: "they have", dont: "do not", doesnt: "does not", didnt: "did not", cant: "cannot", isnt: "is not",
+  arent: "are not", havent: "have not", hasnt: "has not", wouldnt: "would not", couldnt: "could not",
+  shouldnt: "should not", thats: "that is", whats: "what is", theres: "there is" };
+
+export const norm = (s) => s.toLowerCase().replace(/[’‘]/g, "'").replace(/[“”"«».,!?;:()]/g, " ").trim().split(/\s+/)
+  .filter(Boolean).map((w) => CONTRACTIONS[w] || w).join(" ").replace(/\bcan not\b/g, "cannot");
+
+// Distance d'édition avec transposition de deux lettres voisines (« teh » → « the » = 1).
+export function distance(a, b) {
+  const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+    }
+  }
+  return d[a.length][b.length];
+}
+
+// Fautes de frappe admises selon la longueur du mot attendu.
+const allowed = (w) => (w.length <= 3 ? 0 : w.length <= 7 ? 1 : 2);
+
+// Compare une réponse à une réponse attendue, déjà normalisées.
+// Renvoie null si c'est faux, sinon la liste des fautes de frappe tolérées [tapé, attendu].
+function compare(given, expected) {
+  const g = given.split(" "), e = expected.split(" ");
+  if (g.length !== e.length) return null;
+  const fixes = [];
+  for (let k = 0; k < e.length; k++) {
+    if (g[k] === e[k]) continue;
+    // Les nombres et les mots avec apostrophe (formes grammaticales) doivent être exacts.
+    // Sur un mot court, seule l'inversion de deux lettres est admise (« yuo » → « you »).
+    const swap = e[k].length === 3 && [...g[k]].sort().join("") === [...e[k]].sort().join("") && distance(g[k], e[k]) === 1;
+    if (/\d|'/.test(e[k]) || (!swap && distance(g[k], e[k]) > allowed(e[k]))) return null;
+    fixes.push([g[k], e[k]]);
+  }
+  return fixes;
+}
+
+// answers : réponses acceptées ; prep : normalisation à appliquer (norm par défaut).
+// Résultat : { ok, fixes, answer } — fixes vide si la réponse est exacte.
+export function check(input, answers, prep = norm) {
+  const given = prep(input);
+  let best = null;
+  for (const a of answers) {
+    const fixes = compare(given, prep(a));
+    if (fixes && (!best || fixes.length < best.fixes.length)) best = { ok: true, fixes, answer: a };
+    if (best && !best.fixes.length) break;
+  }
+  return best || { ok: false, fixes: [], answer: answers[0] };
+}
+
+// Texte affiché pour signaler les fautes tolérées : « helo → hello ».
+export const fixesText = (fixes) => fixes.map(([g, e]) => `${g} → ${e}`).join(", ");
