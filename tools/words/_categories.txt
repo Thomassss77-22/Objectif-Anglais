@@ -19,3 +19,8 @@ clothes | Vêtements et apparence | shirt | Habits, accessoires, décrire quelqu
 leisure | Sports et loisirs | ball | Sport, sorties, passe-temps
 tech | Technologie | phone | Téléphone, ordinateur, internet
 media | Médias et culture | tv | Films, musique, livres, actualité
+phrasal | Phrasal verbs | layers | Les verbes à particule indispensables à l'oral
+collocations | Collocations | link2 | Les bonnes associations : make a decision, take a break…
+falsefriends | Faux amis | alert | Les pièges des francophones : to attend, issue, to pretend…
+opinion | Donner son avis et débattre | scale | Argumenter, nuancer, être d'accord ou non
+society | Société et actualité | globe | Politique, économie, justice, grands enjeux

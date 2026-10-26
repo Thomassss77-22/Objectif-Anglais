@@ -69,3 +69,23 @@ weird | bizarre | That's really weird. | B1
 unusual | inhabituel | It's unusual for him to be late. | B1
 common | courant, fréquent | It's a common mistake. | B1
 correct | correct | That's the correct answer. | A2
+accurate | exact, précis | The information is accurate. | B2
+appropriate | approprié | Is this dress appropriate? | B2
+aware | conscient | Are you aware of the problem? | B2
+complicated | compliqué | It's a bit complicated. | B1
+crucial | crucial | Timing is crucial. | B2
+efficient | efficace (personne, système) | It's a very efficient system. | B2
+effective | efficace (qui marche) | This medicine is very effective. | B2
+essential | essentiel | Water is essential for life. | B2
+exhausted | épuisé | I'm exhausted after the trip. | B1
+impressive | impressionnant | Your English is impressive! | B2
+inevitable | inévitable | Change is inevitable. | B2
+likely | probable | It's likely to rain. | B2
+unlikely | peu probable | It's unlikely he'll come. | B2
+outstanding | exceptionnel | An outstanding performance. | B2
+relevant | pertinent | That's not relevant. | B2
+rough | approximatif ; rugueux ; difficile | I had a rough day. | B2
+significant | important, significatif | A significant improvement. | B2
+straightforward | simple ; franc | The instructions are straightforward. | B2
+tough | dur, difficile | It's a tough decision. | B2
+worthwhile | qui vaut la peine | It was a worthwhile experience. | B2

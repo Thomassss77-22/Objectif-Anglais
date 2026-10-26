@@ -1,0 +1,50 @@
+# anglais | français | exemple | niveau
+government | le gouvernement | The government announced new measures. | B1
+election | l'élection | The election is in May. | B1
+to vote | voter | Did you vote? | B1
+party | le parti (politique) | Which party do you support? | B1
+president | le président | The president gave a speech. | A2
+prime minister | le Premier ministre | The Prime Minister resigned. | B1
+law | la loi ; le droit | It's against the law. | B1
+crime | la criminalité, le crime | Crime is falling. | B1
+criminal | le criminel | The criminal was arrested. | B1
+police | la police | Call the police! | A2
+to arrest | arrêter (interpeller) | He was arrested last night. | B1
+prison | la prison | He spent ten years in prison. | B1
+court | le tribunal | The case went to court. | B1
+trial | le procès | The trial starts next week. | B2
+economy | l'économie | The economy is growing. | B1
+unemployment | le chômage | Unemployment is rising. | B1
+inflation | l'inflation | Inflation is at 3%. | B2
+tax | l'impôt, la taxe | We pay a lot of tax. | B1
+poverty | la pauvreté | Millions live in poverty. | B1
+wealth | la richesse | The wealth gap is growing. | B2
+inequality | l'inégalité | Inequality is a big issue. | B2
+immigration | l'immigration | Immigration is a hot topic. | B1
+refugee | le réfugié | They welcomed refugees. | B1
+citizen | le citoyen | Every citizen can vote. | B1
+rights | les droits | Human rights must be protected. | B1
+freedom | la liberté | Freedom of speech is essential. | B1
+democracy | la démocratie | Democracy depends on voting. | B1
+protest | la manifestation | There was a big protest. | B1
+strike | la grève | The workers are on strike. | B1
+war | la guerre | The war lasted five years. | A2
+peace | la paix | We want peace. | A2
+violence | la violence | Violence is never the answer. | B1
+security | la sécurité | Security has been increased. | B1
+healthcare | les soins de santé | Healthcare should be free. | B2
+housing | le logement | Housing is too expensive. | B2
+fake news | les fausses informations | Don't share fake news. | B1
+to report | rapporter, faire un reportage | The BBC reported the story. | B1
+survey | le sondage, l'enquête | A recent survey shows… | B1
+statistics | les statistiques | According to statistics… | B1
+population | la population | The population is ageing. | B1
+community | la communauté | It's a close community. | B1
+volunteer | le bénévole | She works as a volunteer. | B1
+charity | l'association caritative | We raised money for charity. | B1
+to raise money | collecter des fonds | We're raising money for the hospital. | B1
+to donate | faire un don | I donated to the Red Cross. | B2
+equality | l'égalité | Gender equality matters. | B2
+discrimination | la discrimination | Discrimination is illegal. | B2
+renewable energy | l'énergie renouvelable | We need more renewable energy. | B2
+sustainable | durable | Sustainable development. | B2

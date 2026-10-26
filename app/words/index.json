@@ -1,5 +1,5 @@
 {
- "total": 1017,
+ "total": 1364,
  "categories": [
   {
    "id": "people",
@@ -111,13 +111,13 @@
    "name": "Travail",
    "icon": "briefcase",
    "desc": "Métiers, bureau, carrière",
-   "count": 43,
+   "count": 53,
    "levels": {
     "A1": 10,
     "A2": 12,
-    "B1": 21,
-    "B2": 0,
-    "C1": 0,
+    "B1": 22,
+    "B2": 8,
+    "C1": 1,
     "C2": 0
    }
   },
@@ -156,12 +156,12 @@
    "name": "Émotions et caractère",
    "icon": "smile",
    "desc": "Sentiments, personnalité, humeur",
-   "count": 49,
+   "count": 61,
    "levels": {
     "A1": 10,
     "A2": 17,
     "B1": 22,
-    "B2": 0,
+    "B2": 12,
     "C1": 0,
     "C2": 0
    }
@@ -171,13 +171,13 @@
    "name": "Verbes essentiels",
    "icon": "bolt",
    "desc": "Les verbes les plus utilisés à l'oral",
-   "count": 121,
+   "count": 147,
    "levels": {
     "A1": 72,
     "A2": 24,
-    "B1": 25,
-    "B2": 0,
-    "C1": 0,
+    "B1": 31,
+    "B2": 19,
+    "C1": 1,
     "C2": 0
    }
   },
@@ -186,12 +186,12 @@
    "name": "Adjectifs essentiels",
    "icon": "star",
    "desc": "Décrire les choses et les gens",
-   "count": 70,
+   "count": 90,
    "levels": {
     "A1": 31,
     "A2": 26,
-    "B1": 13,
-    "B2": 0,
+    "B1": 15,
+    "B2": 18,
     "C1": 0,
     "C2": 0
    }
@@ -216,13 +216,13 @@
    "name": "Expressions de conversation",
    "icon": "chat",
    "desc": "Réagir, relancer, être poli à l'oral",
-   "count": 57,
+   "count": 65,
    "levels": {
     "A1": 18,
     "A2": 18,
-    "B1": 21,
-    "B2": 0,
-    "C1": 0,
+    "B1": 23,
+    "B2": 4,
+    "C1": 2,
     "C2": 0
    }
   },
@@ -261,10 +261,10 @@
    "name": "Sports et loisirs",
    "icon": "ball",
    "desc": "Sport, sorties, passe-temps",
-   "count": 37,
+   "count": 36,
    "levels": {
     "A1": 16,
-    "A2": 14,
+    "A2": 13,
     "B1": 7,
     "B2": 0,
     "C1": 0,
@@ -297,6 +297,81 @@
     "A2": 12,
     "B1": 11,
     "B2": 0,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "phrasal",
+   "name": "Phrasal verbs",
+   "icon": "layers",
+   "desc": "Les verbes à particule indispensables à l'oral",
+   "count": 65,
+   "levels": {
+    "A1": 0,
+    "A2": 5,
+    "B1": 29,
+    "B2": 31,
+    "C1": 0,
+    "C2": 0
+   }
+  },
+  {
+   "id": "collocations",
+   "name": "Collocations",
+   "icon": "link2",
+   "desc": "Les bonnes associations : make a decision, take a break…",
+   "count": 56,
+   "levels": {
+    "A1": 0,
+    "A2": 12,
+    "B1": 31,
+    "B2": 11,
+    "C1": 2,
+    "C2": 0
+   }
+  },
+  {
+   "id": "falsefriends",
+   "name": "Faux amis",
+   "icon": "alert",
+   "desc": "Les pièges des francophones : to attend, issue, to pretend…",
+   "count": 57,
+   "levels": {
+    "A1": 0,
+    "A2": 12,
+    "B1": 20,
+    "B2": 21,
+    "C1": 4,
+    "C2": 0
+   }
+  },
+  {
+   "id": "opinion",
+   "name": "Donner son avis et débattre",
+   "icon": "scale",
+   "desc": "Argumenter, nuancer, être d'accord ou non",
+   "count": 45,
+   "levels": {
+    "A1": 0,
+    "A2": 4,
+    "B1": 23,
+    "B2": 16,
+    "C1": 2,
+    "C2": 0
+   }
+  },
+  {
+   "id": "society",
+   "name": "Société et actualité",
+   "icon": "globe",
+   "desc": "Politique, économie, justice, grands enjeux",
+   "count": 49,
+   "levels": {
+    "A1": 0,
+    "A2": 4,
+    "B1": 34,
+    "B2": 11,
     "C1": 0,
     "C2": 0
    }

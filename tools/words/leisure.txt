@@ -32,7 +32,6 @@ camping | le camping | We go camping every summer. | A2
 board game | le jeu de société | Let's play a board game. | B1
 chess | les échecs | Do you play chess? | A2
 fan | le fan, le supporter | I'm a big fan of the Beatles.
-to support | soutenir, supporter (une équipe) | I support Liverpool.
 competition | la compétition, le concours | She won a singing competition. | A2
 championship | le championnat | They won the championship. | B1
 to be into something | être fan de quelque chose | I'm really into jazz. | B1
