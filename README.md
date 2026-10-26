@@ -17,6 +17,10 @@ Fonctionnalités :
 - Les mots de chaque leçon rejoignent le paquet de **cartes mémoire**, révisées avec l'algorithme **SM-2**.
 - XP, série quotidienne, progression sauvegardée localement, fonctionne hors ligne.
 
+## Ciné et séries
+Dans l'onglet **Mots** (et sur l'accueil) en anglais général : 10 films et séries (`app/films.js`) avec un pitch sans spoiler,
+l'accent, le niveau, 22 à 27 mots classés par thème et un quiz « Suis-je prêt ? ». Aucune réplique ni extrait n'est reproduit.
+
 ## Mode CRFPA (anglais juridique)
 Activable dans **Profil → Mode d'apprentissage**. Il prépare l'oral d'anglais de l'examen d'accès au CRFPA
 (article de presse, 15 min de préparation, 15 min d'exposé et d'entretien) :

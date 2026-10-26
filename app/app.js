@@ -1,6 +1,7 @@
 import { LEVELS } from "./data.js";
 import { LEGAL, JURY_QUESTIONS, SELF_GRID, DRILL_SENTENCES, ERROR_SENTENCES } from "./legal.js";
 import { ARTICLES } from "./articles.js";
+import { FILMS } from "./films.js";
 import { newCard, review, dueCards } from "./srs.js";
 
 const KEY = "objectif-anglais-v1";
@@ -115,6 +116,7 @@ const ICONS = {
   zap: "M13 2 3 14h9l-1 8 10-12h-9l1-8z",
   split: "M16 3h5v5M8 3H3v5M21 3l-9 9M3 3l9 9v9",
   quote: "M3 21c3 0 7-1 7-8V5H3v8h4c0 3-1 5-4 5zM14 21c3 0 7-1 7-8V5h-7v8h4c0 3-1 5-4 5z",
+  film: "M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zM7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4",
   globe: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20",
 };
 const icon = (n, cls = "") => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[n]}"/></svg>`;
@@ -230,6 +232,10 @@ function home() {
         <span>${due ? "Révise maintenant pour ne pas oublier" : "Les mots de tes leçons arriveront ici"}</span></div>
       ${due ? `<span class="badge-count">${due}</span>` : `<span class="go">${icon("chevron")}</span>`}
     </button>
+    ${legalMode() ? "" : `<button class="tile" id="cine-home">
+      <div class="tile-icon cine">${icon("film")}</div>
+      <div><b>Ciné et séries</b><span>Prépare ton prochain film en anglais</span></div>
+      <span class="go">${icon("chevron")}</span></button>`}
     ${legalMode() ? `<button class="tile" data-tab="training">
       <div class="tile-icon alt">${icon("clock")}</div>
       <div><b>Entraînement à l'oral</b><span>Simulation chronométrée et questions du jury</span></div>
@@ -242,6 +248,7 @@ function home() {
     if (bar) bar.style.strokeDashoffset = C * (1 - pct);
   }, 60));
   root.querySelector("#continue").onclick = () => (next ? lesson(next.id) : reviewSession());
+  root.querySelector("#cine-home")?.addEventListener("click", cinema);
   root.querySelectorAll(".node-btn").forEach((b) => (b.onclick = () => lesson(b.dataset.id)));
 }
 
@@ -536,6 +543,10 @@ async function wordsHome() {
   render(`
     ${topbar()}
     <div class="screen-title"><h1>${legalMode() ? "Vocabulaire juridique" : "Banque de mots"}</h1><span class="pill">${icon("book")}${idx.total}</span></div>
+    ${legalMode() ? "" : `<button class="tile cine-tile" id="cine">
+      <div class="tile-icon">${icon("film")}</div>
+      <div><b>Ciné et séries</b><span>Le vocabulaire à connaître avant de regarder</span></div>
+      <span class="go">${icon("chevron")}</span></button>`}
     <label class="searchbox">${icon("search")}<input id="q" type="search" placeholder="Chercher un mot (anglais ou français)" value="${esc(wordFilter.q)}" autocomplete="off"></label>
     ${lvChips(idx)}
     <div id="results"></div>
@@ -548,6 +559,7 @@ async function wordsHome() {
     }).join("")}</div>
   `, { nav: "words" });
   root.querySelectorAll(".catcard").forEach((b) => (b.onclick = () => category(b.dataset.cat)));
+  root.querySelector("#cine")?.addEventListener("click", cinema);
   root.querySelectorAll("[data-lv-f]").forEach((b) => (b.onclick = () => { wordFilter.lv = b.dataset.lvF || null; wordsHome(); }));
   const q = root.querySelector("#q");
   q.oninput = () => search(q.value);
@@ -596,6 +608,101 @@ async function category(id) {
     buzz([15, 40, 15]);
     category(id);
   };
+}
+
+// ---------- Ciné et séries ----------
+const filmWords = (f) => f.themes.flatMap((t) => t.words.map(([en, fr, ex]) => ({ id: `${f.id}-${en}`, en, fr, ex, lv: f.level })));
+
+function cinema() {
+  render(`
+    ${topbar()}
+    <div class="screen-title"><h1>Ciné et séries</h1><span class="pill">${icon("film")}${FILMS.length}</span></div>
+    <p class="muted">Apprends le vocabulaire d'un film ou d'une série avant de le regarder en VO : tu suivras l'histoire au lieu de décrocher.</p>
+    <div class="film-grid">${FILMS.map((f, i) => {
+      const words = filmWords(f);
+      const known = words.filter(inDeck).length;
+      return `<button class="film-card" data-id="${f.id}" style="--h:${(i * 37) % 360}">
+        <span class="film-kind">${f.kind} · ${f.year}</span>
+        <b>${esc(f.title)}</b>
+        <span class="film-meta">${f.level} · ${esc(f.accent)}</span>
+        <span class="film-meta">${words.length} mots${known ? ` · ${known} appris` : ""}</span>
+      </button>`;
+    }).join("")}</div>
+  `, { nav: "words" });
+  root.querySelectorAll(".film-card").forEach((b) => (b.onclick = () => filmView(FILMS.find((f) => f.id === b.dataset.id))));
+}
+
+function filmView(f) {
+  const words = filmWords(f);
+  const todo = words.filter((w) => !inDeck(w));
+  let k = 0;
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
+    <section class="film-hero" style="--h:${(FILMS.indexOf(f) * 37) % 360}">
+      <span class="chip">${f.kind} · ${f.year} · ${esc(f.by)}</span>
+      <h1>${esc(f.title)}</h1>
+      <div class="meta"><span>${icon("target")}Niveau ${f.level}</span><span>${icon("sound")}${esc(f.accent)}</span><span>${icon("book")}${words.length} mots</span></div>
+    </section>
+    <h4 class="section-title">${icon("play")}L'histoire (sans spoiler)</h4>
+    <div class="tip">${esc(f.pitch)}</div>
+    ${f.themes.map((t) => `
+      <h4 class="section-title">${icon("list")}${esc(t.name)}</h4>
+      <div class="wlist">${t.words.map(() => wordRow(words[k++])).join("")}</div>`).join("")}
+    <p class="muted small center-text">Vocabulaire du film et de son univers : chaque mot n'est pas forcément prononcé tel quel.</p>
+    <div class="dock"><div class="row2">
+      <button class="btn ghost" id="all" ${todo.length ? "" : "disabled"}>${todo.length ? `${icon("plus")}${todo.length}` : icon("check")}</button>
+      <button class="btn" id="quiz">${icon("target")}Suis-je prêt ?</button>
+    </div></div>
+  `);
+  root.querySelector("#back").onclick = cinema;
+  bindRows(words);
+  root.querySelector("#all").onclick = () => { todo.forEach(addWord); save(); buzz([15, 40, 15]); filmView(f); };
+  root.querySelector("#quiz").onclick = () => filmQuiz(f);
+}
+
+// Quiz avant le film : 8 questions, du français vers l'anglais.
+function filmQuiz(f) {
+  const words = filmWords(f);
+  const items = shuffle(words).slice(0, 8).map((w) => ({
+    w, choices: shuffle([w, ...shuffle(words.filter((x) => x !== w)).slice(0, 3)]),
+  }));
+  const step = (i, score) => {
+    if (i >= items.length) {
+      addXp(5 + score * 2);
+      render(`
+        <canvas id="confetti"></canvas>
+        <div class="done-screen">
+          <div class="trophy">${icon("film")}</div>
+          <h1>${score} / ${items.length}</h1>
+          <p>${score >= 7 ? `Tu es prêt pour ${esc(f.title)}. Bon film en VO !` : "Encore un peu de révision : les mots ratés sont dans tes cartes."}</p>
+        </div>
+        <div class="dock"><div class="row2"><button class="btn ghost" id="h">Retour</button><button class="btn" id="again">Recommencer</button></div></div>`);
+      if (score >= 7) confetti(root.querySelector("#confetti"));
+      root.querySelector("#h").onclick = () => filmView(f);
+      root.querySelector("#again").onclick = () => filmQuiz(f);
+      return;
+    }
+    const it = items[i];
+    render(`
+      <div class="ex-top"><button class="icon-btn" id="quit" aria-label="Quitter">${icon("x")}</button>
+        <div class="bar"><i style="width:${(i / items.length) * 100}%"></i></div></div>
+      <span class="ex-kind">${icon("film")}${esc(f.title)}</span>
+      <p class="q">Comment dit-on «\u00a0${esc(it.w.fr)}\u00a0»\u00a0?</p>
+      <div class="choices">${it.choices.map((c, j) => `<button class="choice" data-j="${j}"><span class="k">${"ABCD"[j]}</span>${esc(c.en)}</button>`).join("")}</div>`);
+    root.querySelector("#quit").onclick = () => filmView(f);
+    root.querySelectorAll(".choice").forEach((b) => (b.onclick = () => {
+      const ok = it.choices[+b.dataset.j] === it.w;
+      b.classList.add(ok ? "right" : "wrong");
+      if (!ok) {
+        root.querySelector(`.choice[data-j="${it.choices.indexOf(it.w)}"]`).classList.add("right");
+        addWord(it.w);
+        save();
+      }
+      speak(it.w.en);
+      drillSheet(ok, it.w.en, it.w.ex, () => step(i + 1, score + (ok ? 1 : 0)));
+    }));
+  };
+  step(0, 0);
 }
 
 // ---------- Profil ----------
