@@ -2,6 +2,7 @@ import { LEVELS } from "./data.js";
 import { LEGAL, JURY_QUESTIONS, SELF_GRID, DRILL_SENTENCES, ERROR_SENTENCES } from "./legal.js";
 import { ARTICLES } from "./articles.js";
 import { FILMS } from "./films.js";
+import { READINGS } from "./reading.js";
 import * as PT from "./placement.js";
 import { norm, check, fixesText } from "./match.js";
 import { newCard, review, dueCards } from "./srs.js";
@@ -147,6 +148,9 @@ const ICONS = {
   upload: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12",
   trophy: "M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3",
   bulb: "M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z",
+  headphones: "M3 18v-6a9 9 0 0 1 18 0v6M21 19a2 2 0 0 1-2 2h-1v-6h3v4zM3 19a2 2 0 0 0 2 2h1v-6H3v4z",
+  eye: "M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
+  stop: "M6 6h12v12H6z",
   chat: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z",
   pen: "M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z",
   list: "M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01",
@@ -284,6 +288,10 @@ function home() {
       <div><b>${state.placement ? `Ton niveau : ${state.placement.level}` : "Tester mon niveau"}</b>
         <span>${state.placement ? "Refaire le test de niveau" : "Un test adaptatif de 10 à 15 minutes pour démarrer au bon niveau"}</span></div>
       <span class="go">${icon("chevron")}</span></button>`}
+    ${legalMode() ? "" : `<button class="tile" id="read-home">
+      <div class="tile-icon read">${icon("headphones")}</div>
+      <div><b>Écouter et lire</b><span>Dialogues et textes du A1 au C2 · ${Object.keys(state.reads || {}).length}/${READINGS.length} faits</span></div>
+      <span class="go">${icon("chevron")}</span></button>`}
     ${legalMode() ? "" : `<button class="tile" id="cine-home">
       <div class="tile-icon cine">${icon("film")}</div>
       <div><b>Ciné et séries</b><span>Prépare ton prochain film en anglais</span></div>
@@ -303,6 +311,7 @@ function home() {
   root.querySelector("#cine-home")?.addEventListener("click", cinema);
   root.querySelector("#test-home")?.addEventListener("click", placementIntro);
   root.querySelector("#mistakes-home")?.addEventListener("click", mistakesHome);
+  root.querySelector("#read-home")?.addEventListener("click", readingList);
   root.querySelector("#backup-home")?.addEventListener("click", () => { exportProgress(); home(); });
   bindPath(next);
 }
@@ -928,6 +937,162 @@ async function category(id) {
     save();
     buzz([15, 40, 15]);
     category(id);
+  };
+}
+
+// ---------- Écouter et lire ----------
+// Dialogues et textes gradués : écoute (voix de synthèse, une voix par personnage si possible),
+// texte masqué au départ, mots difficiles traduits d'un toucher, puis questions de compréhension.
+const readWords = (r) => r.lines.map((l) => (Array.isArray(l) ? l[1] : l)).join(" ").split(/\s+/).length;
+
+function readingList() {
+  stopReading();
+  const reads = state.reads || {};
+  const lvls = [...new Set(READINGS.map((r) => r.lv))];
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
+    <div class="screen-title"><h1>Écouter et lire</h1><span class="pill">${icon("headphones")}${Object.keys(reads).length}/${READINGS.length}</span></div>
+    <p class="lead">Écoute d'abord sans le texte, puis lis-le en touchant les mots soulignés pour les traduire. Termine par les questions de compréhension.</p>
+    ${lvls.map((lv) => `
+      <h4 class="section-title">Niveau ${lv}</h4>
+      <div class="rlist">${READINGS.filter((r) => r.lv === lv).map((r) => `
+        <button class="rcard" data-r="${r.id}" data-lv="${r.lv}">
+          <span class="rcard-ic">${icon(reads[r.id] != null ? "check" : r.kind === "dialogue" ? "chat" : "book")}</span>
+          <span class="ch-txt"><small>${r.kind === "dialogue" ? "Dialogue" : "Texte"} · ${readWords(r)} mots${reads[r.id] != null ? ` · ${reads[r.id]}/${r.questions.length}` : ""}</small>
+            <b>${esc(r.title)}</b><span class="rcard-intro">${esc(r.intro)}</span></span>
+        </button>`).join("")}</div>`).join("")}
+  `);
+  root.querySelector("#back").onclick = home;
+  root.querySelectorAll(".rcard").forEach((b) => (b.onclick = () => readingView(READINGS.find((r) => r.id === b.dataset.r))));
+}
+
+// Repère les mots du glossaire dans une ligne (expressions les plus longues d'abord).
+function glossHtml(text, gloss) {
+  const keys = Object.keys(gloss).sort((a, b) => b.length - a.length).map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const re = new RegExp(`(?<![\\w'])(${keys.join("|")})(?![\\w'])`, "gi");
+  return esc(text).replace(re, (m) => `<button class="gl" data-g="${m.toLowerCase()}">${m}</button>`);
+}
+
+let reading = null; // lecture en cours (pour pouvoir l'arrêter)
+function stopReading() {
+  reading = null;
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+}
+function readingVoices() {
+  const all = "speechSynthesis" in window ? speechSynthesis.getVoices().filter((v) => /^en[-_]/i.test(v.lang)) : [];
+  return [...all.filter((v) => /GB/i.test(v.lang)), ...all.filter((v) => !/GB/i.test(v.lang))];
+}
+// Lit les lignes à partir de « from », en surlignant la ligne en cours.
+function playLines(r, from, rate, onLine, onDone) {
+  if (!("speechSynthesis" in window)) return onDone();
+  speechSynthesis.cancel();
+  const token = (reading = {});
+  const voices = readingVoices();
+  const who = [...new Set(r.lines.filter(Array.isArray).map((l) => l[0]))];
+  const step = (i) => {
+    if (reading !== token) return;
+    if (i >= r.lines.length) { reading = null; return onDone(); }
+    const line = r.lines[i];
+    const u = new SpeechSynthesisUtterance(Array.isArray(line) ? line[1] : line);
+    u.lang = "en-GB";
+    u.rate = rate;
+    if (Array.isArray(line)) {
+      const k = who.indexOf(line[0]);
+      if (voices.length > 1) u.voice = voices[k % voices.length];
+      else u.pitch = k % 2 ? 1.25 : 0.9;
+    } else if (voices.length) u.voice = voices[0];
+    u.onstart = () => onLine(i);
+    u.onend = () => step(i + 1);
+    u.onerror = () => step(i + 1);
+    speechSynthesis.speak(u);
+  };
+  step(from);
+}
+
+function readingView(r, show = false) {
+  stopReading();
+  const reads = state.reads || {};
+  let rate = 0.95;
+  render(`
+    <div class="ex-top"><button class="icon-btn" id="back" aria-label="Retour">${icon("back")}</button></div>
+    <section class="lesson-hero" data-lv="${r.lv}">
+      <span class="chip">${r.lv} · ${r.kind === "dialogue" ? "Dialogue" : "Texte"}</span>
+      <h1>${esc(r.title)}</h1>
+      <div class="meta"><span>${icon("clock")}${Math.max(2, Math.round(readWords(r) / 60))} min</span>
+        <span>${icon("book")}${readWords(r)} mots</span><span>${icon("list")}${r.questions.length} questions</span></div>
+    </section>
+    <div class="tip">${esc(r.intro)}</div>
+    <div class="read-ctrl">
+      <button class="btn lv" id="play">${icon("play")}Tout écouter</button>
+      <button class="speed" id="speed" aria-label="Vitesse">1×</button>
+    </div>
+    <div class="read-text ${show ? "" : "masked"}" id="text" data-lv="${r.lv}">
+      ${r.lines.map((l, i) => `<p class="rline" data-i="${i}">${Array.isArray(l) ? `<span class="who">${esc(l[0])}</span>` : ""}
+        <span class="rl">${glossHtml(Array.isArray(l) ? l[1] : l, r.gloss)}</span>
+        <button class="say mini" data-i="${i}" aria-label="Écouter cette ligne">${icon("sound")}</button></p>`).join("")}
+      <div class="mask"><p>Écoute d'abord sans lire : tu comprends plus que tu ne crois.</p>
+        <button class="btn ghost" id="reveal">${icon("eye")}Afficher le texte</button></div>
+    </div>
+    <div class="gl-pop" id="pop" hidden></div>
+    <div class="dock"><button class="btn" id="quiz">${icon("target")}${reads[r.id] != null ? `Refaire les questions (${reads[r.id]}/${r.questions.length})` : "Répondre aux questions"}</button></div>
+  `, { lv: r.lv });
+  const text = root.querySelector("#text");
+  const play = root.querySelector("#play");
+  const pop = root.querySelector("#pop");
+  const mark = (i) => text.querySelectorAll(".rline").forEach((p) => p.classList.toggle("on", +p.dataset.i === i));
+  const idle = () => { play.innerHTML = `${icon("play")}Tout écouter`; mark(-1); };
+  root.querySelector("#back").onclick = readingList;
+  root.querySelector("#reveal").onclick = () => text.classList.remove("masked");
+  root.querySelector("#speed").onclick = (e) => {
+    rate = rate > 0.9 ? 0.75 : 0.95;
+    e.currentTarget.textContent = rate > 0.9 ? "1×" : "Lent";
+  };
+  play.onclick = () => {
+    if (reading) { stopReading(); return idle(); }
+    play.innerHTML = `${icon("stop")}Arrêter`;
+    playLines(r, 0, rate, mark, idle);
+  };
+  text.querySelectorAll(".say.mini").forEach((b) => (b.onclick = () => { stopReading(); idle(); speak(Array.isArray(r.lines[+b.dataset.i]) ? r.lines[+b.dataset.i][1] : r.lines[+b.dataset.i]); }));
+  text.querySelectorAll(".gl").forEach((b) => (b.onclick = () => {
+    const fr = r.gloss[b.dataset.g], en = b.dataset.g.replace(/\bi\b/g, "I");
+    const has = !!state.deck[en];
+    pop.hidden = false;
+    pop.innerHTML = `<div><b>${esc(b.textContent)}</b><span>${esc(fr)}</span></div>
+      <button class="say" id="pop-say" aria-label="Écouter">${icon("sound")}</button>
+      <button class="pop-add" id="pop-add" ${has ? "disabled" : ""}>${icon(has ? "check" : "plus")}${has ? "Dans mes cartes" : "Ajouter"}</button>
+      <button class="icon-btn" id="pop-x" aria-label="Fermer">${icon("x")}</button>`;
+    pop.querySelector("#pop-say").onclick = () => speak(en);
+    pop.querySelector("#pop-x").onclick = () => (pop.hidden = true);
+    pop.querySelector("#pop-add").onclick = (e) => {
+      state.deck[en] = newCard(fr, en, "");
+      save();
+      e.currentTarget.disabled = true;
+      e.currentTarget.innerHTML = `${icon("check")}Dans mes cartes`;
+    };
+  }));
+  root.querySelector("#quiz").onclick = () => {
+    stopReading();
+    exercise({
+      id: r.id, title: r.title, lv: { id: r.lv },
+      exercises: r.questions.map((q) => ({ type: "qcm", ...q })),
+      onQuit: () => readingView(r, true),
+      onEnd: (score) => {
+        const first = (state.reads ||= {})[r.id] == null;
+        state.reads[r.id] = Math.max(score, state.reads[r.id] || 0);
+        addXp(first ? 10 + score * 5 : score * 2);
+        render(`
+          <canvas id="confetti"></canvas>
+          <div class="done-screen">
+            <div class="trophy">${icon("headphones")}</div>
+            <h1>${score === r.questions.length ? "Tout compris !" : "Bien joué !"}</h1>
+            <p>${esc(r.title)} · ${score}/${r.questions.length} bonnes réponses</p>
+          </div>
+          <div class="dock"><button class="btn" id="h">Retour aux textes</button></div>
+        `);
+        if (score / r.questions.length >= 0.75) confetti(root.querySelector("#confetti"));
+        root.querySelector("#h").onclick = readingList;
+      },
+    }, 0, 0);
   };
 }
 

@@ -31,6 +31,11 @@ Sans le son : pas de questions d'écoute, mais 20 à 34 questions et un seuil de
 Validation par simulation (`node tools/simulate_placement.mjs`, `NOAUDIO=1` sans écoute) : environ 86 % (avec son)
 et 88 % (sans son) de candidats classés au niveau exact, plus de 99 % à un niveau près. Ne mesure pas l'expression orale ou écrite ; ce n'est pas une certification.
 
+## Écouter et lire
+12 dialogues et textes originaux, deux par niveau du A1 au C2 (`app/reading.js`). Le texte est masqué au départ pour écouter d'abord
+(voix de synthèse, une voix par personnage quand l'appareil en propose plusieurs, vitesse lente possible), puis il s'affiche
+avec les mots difficiles traduits d'un toucher et ajoutables aux cartes. Quatre questions de compréhension terminent chaque texte.
+
 ## Ciné et séries
 Dans l'onglet **Mots** (et sur l'accueil) en anglais général : 10 films et séries (`app/films.js`) avec un pitch sans spoiler,
 l'accent, le niveau, 22 à 27 mots classés par thème et un quiz « Suis-je prêt ? ». Aucune réplique ni extrait n'est reproduit.
