@@ -8,12 +8,17 @@ const CONTRACTIONS = { "i'm": "i am", "you're": "you are", "he's": "he is", "she
   "they've": "they have", "i'd": "i would", "i'll": "i will", "you'll": "you will", "don't": "do not",
   "doesn't": "does not", "didn't": "did not", "can't": "cannot", "won't": "will not", "isn't": "is not",
   "aren't": "are not", "haven't": "have not", "hasn't": "has not", "wouldn't": "would not", "let's": "let us",
-  "what's": "what is", "that's": "that is", "there's": "there is",
+  "what's": "what is", "that's": "that is", "there's": "there is", "couldn't": "could not",
+  "shouldn't": "should not", "mustn't": "must not", "needn't": "need not", "wasn't": "was not", "weren't": "were not",
+  "you'd": "you would", "he'd": "he would", "she'd": "she would", "we'd": "we would", "they'd": "they would",
+  "it'll": "it will", "he'll": "he will", "she'll": "she will", "we'll": "we will", "they'll": "they will",
   // Apostrophe oubliée (fréquent sur téléphone), seulement quand la forme sans apostrophe n'est pas un vrai mot.
   im: "i am", ive: "i have", youre: "you are", theyre: "they are", youve: "you have", weve: "we have",
   theyve: "they have", dont: "do not", doesnt: "does not", didnt: "did not", cant: "cannot", isnt: "is not",
   arent: "are not", havent: "have not", hasnt: "has not", wouldnt: "would not", couldnt: "could not",
-  shouldnt: "should not", thats: "that is", whats: "what is", theres: "there is" };
+  shouldnt: "should not", thats: "that is", whats: "what is", theres: "there is", id: "i would", youd: "you would",
+  theyd: "they would", youll: "you will", theyll: "they will", itll: "it will", wasnt: "was not", werent: "were not",
+  wont: "will not", mustnt: "must not", neednt: "need not" };
 
 export const norm = (s) => s.toLowerCase().replace(/[’‘]/g, "'").replace(/[“”"«».,!?;:()]/g, " ").trim().split(/\s+/)
   .filter(Boolean).map((w) => CONTRACTIONS[w] || w).join(" ").replace(/\bcan not\b/g, "cannot");
