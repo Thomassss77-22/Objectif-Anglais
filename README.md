@@ -3,7 +3,7 @@
 Application d'apprentissage de l'anglais **pour les francophones**, du niveau débutant (A1) au niveau courant (C2).
 Leçons courtes avec explications en français + cartes mémoire à répétition espacée.
 
-- 📊 [Analyse concurrentielle](docs/analyse-concurrentielle.md) (Duolingo, Babbel, Mondly, Quizlet)
+- 📊 [Analyse concurrentielle](docs/analyse-concurrentielle.md) (Duolingo, Babbel, Mondly, Quizlet, MosaLingua)
 - 🏗️ [Architecture](docs/architecture.md)
 
 ## Prototype (PWA web + mobile)

@@ -6,14 +6,14 @@
 
 ## 1. Panorama
 
-| | **Duolingo** | **Babbel** | **Mondly** | **Quizlet** |
-|---|---|---|---|---|
-| Positionnement | Apprentissage ludique, grand public | Cours structurés, adultes, « parler vite » | Conversation et immersion (chatbot, VR/AR) | Révision par cartes mémoire, tous sujets |
-| Modèle éco | Freemium (pubs + Super/Max) | Abonnement (essai gratuit) | Freemium, abonnement ou à vie | Freemium (Quizlet Plus) |
-| Format d'une session | Leçons de 3–5 min | Leçons de 10–15 min | Leçon quotidienne + conversations | Sessions libres sur un « set » |
-| Contenu | Créé par l'éditeur, parcours fixe | Créé par des linguistes, thèmes concrets | Créé par l'éditeur, thèmes du quotidien | Surtout créé par les utilisateurs |
-| Niveaux | Débutant → ~B2 (alignement CECRL partiel) | A1 → C1 | Débutant → avancé | Pas de niveaux (dépend des sets) |
-| Plateformes | iOS, Android, web | iOS, Android, web | iOS, Android, web, VR | iOS, Android, web |
+| | **Duolingo** | **Babbel** | **Mondly** | **Quizlet** | **MosaLingua** |
+|---|---|---|---|---|---|
+| Positionnement | Apprentissage ludique, grand public | Cours structurés, adultes, « parler vite » | Conversation et immersion (chatbot, VR/AR) | Révision par cartes mémoire, tous sujets |Mémoriser l'essentiel vite (méthode française, répétition espacée) |
+| Modèle éco | Freemium (pubs + Super/Max) | Abonnement (essai gratuit) | Freemium, abonnement ou à vie | Freemium (Quizlet Plus) |Abonnement (~9,99 €/mois, ~71,90 €/an sur l'App Store) |
+| Format d'une session | Leçons de 3–5 min | Leçons de 10–15 min | Leçon quotidienne + conversations | Sessions libres sur un « set » |Sessions de ~5 min, objectif quotidien |
+| Contenu | Créé par l'éditeur, parcours fixe | Créé par des linguistes, thèmes concrets | Créé par l'éditeur, thèmes du quotidien | Surtout créé par les utilisateurs |Créé par l'éditeur : mots et phrases les plus utiles |
+| Niveaux | Débutant → ~B2 (alignement CECRL partiel) | A1 → C1 | Débutant → avancé | Pas de niveaux (dépend des sets) |Débutant → avancé |
+| Plateformes | iOS, Android, web | iOS, Android, web | iOS, Android, web, VR | iOS, Android, web |iOS, Android, web |
 
 ## 2. Fonctionnalités clés
 
@@ -45,14 +45,25 @@
 - Partage, classes, import de listes.
 - ➖ Critiques : pas de parcours pédagogique, qualité variable des sets communautaires, fonctions avancées payantes.
 
+### MosaLingua
+- Application **française**, très appréciée des francophones.
+- Repose d'abord sur la **répétition espacée** : cartes mémoire où l'on **s'auto-évalue** (je savais / je ne savais pas), l'app planifie la révision.
+- **Priorité au vocabulaire utile** : les mots et phrases les plus fréquents d'abord (logique « 20 % du vocabulaire couvre 80 % des usages »).
+- Phrases en contexte, dialogues, quiz, **audio par des natifs** ; contenus bonus (vidéos, livres) en version premium.
+- **Coaching** : objectif de temps quotidien, rappels, conseils d'apprentissage.
+- Palmarès Le Point 2021 : 3ᵉ de sa catégorie, derrière Busuu et Memrise.
+- ➖ Critiques : peu de gamification, grammaire moins structurée qu'un cours, abonnement payant pour l'essentiel.
+
 ## 3. Ce qu'on retient pour Objectif Anglais
 
 | Idée | Inspiration | Notre version |
 |---|---|---|
 | Leçons courtes en parcours | Duolingo | Parcours **A1 → C2 (CECRL)**, unités thématiques, leçons de 5 min |
 | Grammaire expliquée **en français** | Babbel | Une fiche courte au début de chaque leçon |
-| Cartes mémoire + répétition espacée | Quizlet / Anki | Algorithme **SM-2** (libre), chaque mot vu en leçon entre dans le paquet |
+| Cartes mémoire + répétition espacée, auto-évaluation | MosaLingua / Quizlet / Anki | Algorithme **SM-2** (libre), chaque mot vu en leçon entre dans le paquet |
 | Modes de révision | Quizlet | Flip, QCM, saisie (plus tard : écoute) |
+| Vocabulaire classé par fréquence (le plus utile d'abord) | MosaLingua | Chaque niveau commence par les mots les plus fréquents |
+| Objectif quotidien et rappels | MosaLingua / Duolingo | Objectif de cartes/minutes par jour (V2 : notifications) |
 | Motivation | Duolingo | Série quotidienne + XP, **sans** système de vies punitif |
 | Audio / prononciation | Mondly | Synthèse vocale du navigateur (Web Speech API) ; reconnaissance vocale en V2 |
 
