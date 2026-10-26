@@ -513,8 +513,13 @@ function confetti(cv) {
 // ---------- Révision ----------
 const fmtDays = (d) => (d < 1 ? "< 1 j" : d < 30 ? `${d} j` : `${Math.round(d / 30)} mois`);
 
+// Carte ratée : elle revient dans la séance, mais après quelques autres cartes (pas tout de suite).
+const SNOOZE = 4;
+const snoozed = new Map(); // carte → nombre de cartes à voir avant qu'elle revienne
 function reviewSession() {
-  const due = reviewQueue();
+  const queue = reviewQueue();
+  const wait = (c) => snoozed.get(c) || 0;
+  const due = [...queue.filter((c) => !wait(c)), ...queue.filter((c) => wait(c)).sort((a, b) => wait(a) - wait(b))];
   const card = due[0];
   if (!card) {
     const total = Object.keys(P().deck).length;
@@ -565,6 +570,9 @@ function reviewSession() {
       }
       const key = Object.keys(P().deck).find((k) => P().deck[k] === card);
       P().deck[key] = review(card, +b.dataset.q);
+      for (const [c, n] of snoozed) n > 1 ? snoozed.set(c, n - 1) : snoozed.delete(c);
+      snoozed.delete(card);
+      if (+b.dataset.q < 3) snoozed.set(P().deck[key], SNOOZE);
       addXp(1);
       reviewSession();
     }));
