@@ -1,9 +1,11 @@
-# Publie le dossier app/ sur GitHub Pages à chaque push sur main.
+# Publie le dossier app/ sur GitHub Pages.
+# L'environnement github-pages n'autorise que la branche par défaut du dépôt
+# (claude/serene-goldberg-adja16) : le déploiement part donc de cette branche.
 name: Déploiement GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [claude/serene-goldberg-adja16]
   workflow_dispatch:
 
 permissions:
@@ -27,5 +29,7 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: app
+      # L'artefact met parfois quelques secondes à devenir visible pour l'étape suivante.
+      - run: sleep 15
       - id: deployment
         uses: actions/deploy-pages@v4
