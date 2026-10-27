@@ -96,9 +96,8 @@ h1, h2, h3 { margin: 0; letter-spacing: -.02em; }
 .brand-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 @media (max-width: 420px) { [data-mode="legal"] .brand-name { display: none; } }
 .logo {
-  width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center;
-  background: var(--brand); color: #fff; font-size: .8rem; font-weight: 800;
-  box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--brand-1) 70%, transparent);
+  width: 36px; height: 36px; border-radius: 11px; object-fit: cover; background: #fff;
+  box-shadow: 0 4px 12px -4px rgba(18, 20, 43, .25);
 }
 .pills { display: flex; gap: 8px; }
 .pill {

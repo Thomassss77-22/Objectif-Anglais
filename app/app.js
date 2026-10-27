@@ -255,7 +255,7 @@ function tabbar(on) {
 
 const topbar = () => `
   <header class="topbar">
-    <div class="brand"><div class="logo">OA</div><span class="brand-name">Objectif Anglais</span>${legalMode() ? `<span class="mode-chip">CRFPA</span>` : ""}</div>
+    <div class="brand"><img class="logo" src="icons/logo-mark.png" alt=""><span class="brand-name">Objectif Anglais</span>${legalMode() ? `<span class="mode-chip">CRFPA</span>` : ""}</div>
     <div class="pills">
       <span class="pill" title="Série">${icon("flame", "flame")}${liveStreak()}</span>
       <span class="pill" title="XP">${icon("bolt", "bolt")}${state.xp}</span>
