@@ -47,9 +47,9 @@ app/
   Temps estimé ≈ 10 s par nouvelle carte + 5 révisions de 6 s par carte, une fois le rythme installé.
 - Leçons de vocabulaire : le script découpe la banque en `units` (dans `index.json`) de 6 à 15 mots,
   par niveau et par catégorie (les petits restes d'un niveau forment des leçons « Vocabulaire varié ») ;
-  en CRFPA, par catégorie, dans un module 5. Chaque mot est dans exactement une leçon (`node tools/check_lessons.mjs` le vérifie).
+  en CRFPA, par catégorie, chacune rattachée à une leçon du parcours (`LEGAL_PLACE` dans `build_words.py`). Chaque mot est dans exactement une leçon (`node tools/check_lessons.mjs` le vérifie).
 - `app.js` intercale ces leçons entre les leçons de grammaire de chaque niveau. À l'accueil, un niveau est affiché à la fois
-  et chaque leçon rédigée forme un chapitre avec les leçons de vocabulaire qui la suivent (module 5 CRFPA : un chapitre par thème) ;
+  et chaque leçon rédigée forme un chapitre avec les leçons de vocabulaire qui la suivent ;
   seul le chapitre en cours est déplié ; leurs exercices
   (QCM dans les deux sens, écoute, traduction, phrase à compléter) sont générés à l'ouverture, et les mots
   rejoignent les cartes à la fin de la leçon.

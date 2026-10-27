@@ -17,7 +17,7 @@ Ouvre http://localhost:8000. Sur mobile : menu du navigateur → « Ajouter à l
 Fonctionnalités :
 - Parcours A1 → C2, affiché un niveau à la fois (onglets) et découpé en chapitres repliables (une leçon + son vocabulaire) : fiche de grammaire, vocabulaire avec audio, exercices (QCM, traduction, oral) ; leçons supplémentaires dans `app/lessons-extra.js`, vérifiées par `node tools/check_lessons.mjs`.
 - **Toute la banque de mots est dans le parcours** : 187 leçons de vocabulaire (2 002 mots) intercalées entre les leçons de grammaire,
-  et un module 5 « Vocabulaire juridique » de 53 leçons (623 termes) en mode CRFPA.
+  et, en mode CRFPA, 53 leçons de vocabulaire juridique (623 termes), chacune placée après la leçon du même thème.
 - Les mots de chaque leçon rejoignent le paquet de **cartes mémoire**, révisées avec l'algorithme **SM-2**.
 - **Vocabulaire intensif** : dans l'onglet Mots, chaque thème liste ses leçons de vocabulaire avec sa progression et un bouton « Leçon suivante de ce thème ».
 - Rythme réglable dans le profil : 10, 20, 40 ou 60 nouvelles cartes par jour, avec le temps de révision quotidien estimé.
@@ -45,7 +45,7 @@ l'accent, le niveau, 22 à 27 mots classés par thème et un quiz « Suis-je pr�
 ## Mode CRFPA (anglais juridique)
 Activable dans **Profil → Mode d'apprentissage**. Il prépare l'oral d'anglais de l'examen d'accès au CRFPA
 (article de presse, 15 min de préparation, 15 min d'exposé et d'entretien) :
-- un parcours de 40 leçons en 4 modules (l'épreuve et la méthode, la langue, la culture juridique anglo-saxonne, le vocabulaire actif ; leçons ajoutées dans `app/legal-extra.js`), plus un module 5 de vocabulaire juridique ;
+- un parcours de 40 leçons en 4 modules (l'épreuve et la méthode, la langue, la culture juridique anglo-saxonne, le vocabulaire actif ; leçons ajoutées dans `app/legal-extra.js`) ; chaque leçon est suivie des leçons de vocabulaire de son thème ;
 - un entraînement : simulation chronométrée avec enregistrement, questions du jury, grille d'auto-évaluation ;
 - 10 articles d'entraînement originaux (`app/articles.js`, 450-550 mots, inspirés de faits réels et datés), chacun avec son corrigé ;
 - « Mon article » : coller un sujet, qui reste uniquement sur l'appareil ;

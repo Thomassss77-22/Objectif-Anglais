@@ -2,7 +2,7 @@
 // Épreuve (arrêté du 17 octobre 2016) : article de presse de 450 à 550 mots, 15 min de préparation
 // sans document, 15 min d'oral (exposé puis entretien), anglais uniquement, coefficient 1.
 // Même format que data.js : chaque leçon a une fiche, du vocabulaire et des exercices.
-import { LEGAL_EXTRA } from "./legal-extra.js";
+import { LEGAL_EXTRA, LEGAL_MORE } from "./legal-extra.js";
 
 export const LEGAL = [
   {
@@ -220,6 +220,15 @@ for (const mod of LEGAL) {
     const { after, ...lesson } = extra;
     const at = after ? mod.lessons.findIndex((l) => l.id === after) : -1;
     mod.lessons.splice(at >= 0 ? at + 1 : mod.lessons.length, 0, lesson);
+  }
+}
+// Ajoute les modèles rédigés et les exercices complémentaires.
+for (const mod of LEGAL) {
+  for (const l of mod.lessons) {
+    const more = LEGAL_MORE[l.id];
+    if (!more) continue;
+    if (more.model) l.model = more.model;
+    l.exercises.push(...(more.exercises || []));
   }
 }
 

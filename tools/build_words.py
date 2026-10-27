@@ -82,9 +82,21 @@ def split_even(items, size):
     return [items[i * len(items) // n:(i + 1) * len(items) // n] for i in range(n)]
 
 
+# Place de chaque thème juridique dans le parcours CRFPA : module, puis leçon après laquelle il vient.
+LEGAL_PLACE = {
+    "press": ("M1", "crfpa-reading"), "arguing": ("M1", "crfpa-opinion"), "interview": ("M1", "crfpa-interview"),
+    "verbs": ("M2", "crfpa-errors-1"), "figures": ("M2", "crfpa-numbers"), "collocations": ("M2", "crfpa-passive"),
+    "sources": ("M3", "crfpa-common-law"), "politics": ("M3", "crfpa-uk-parliament"), "institutions": ("M3", "crfpa-uk-courts"),
+    "profession": ("M3", "crfpa-uk-courts"), "international": ("M3", "crfpa-eu"),
+    "criminal": ("M4", "crfpa-criminal"), "courtroom": ("M4", "crfpa-criminal"), "civil": ("M4", "crfpa-civil"),
+    "business": ("M4", "crfpa-business"), "tax": ("M4", "crfpa-business"), "rights": ("M4", "crfpa-rights"),
+    "debates": ("M4", "crfpa-environment"), "falsefriends": ("M4", "crfpa-falsefriends"),
+}
+
+
 def make_units(all_words):
     """Leçons de vocabulaire : chaque mot de la banque figure dans exactement une leçon.
-    Banque générale : par niveau puis par thème. Banque juridique : par thème (module 5)."""
+    Banque générale : par niveau puis par thème. Banque juridique : par thème, placé après la leçon correspondante (LEGAL_PLACE)."""
     units = []
     ref = lambda c, e: f"{c['id']}/{e['id']}"
     if SUFFIX:
@@ -93,12 +105,15 @@ def make_units(all_words):
             if c not in cats:
                 cats.append(c)
         for c in cats:
+            if c["id"] not in LEGAL_PLACE:
+                sys.exit(f"Catégorie juridique sans place dans le parcours : {c['id']} (voir LEGAL_PLACE)")
+            module, after = LEGAL_PLACE[c["id"]]
             words = [e for cc, e in all_words if cc is c]
             parts = split_even(words, UNIT_MAX)
             for k, part in enumerate(parts, 1):
                 title = c["name"] + (f" ({k}/{len(parts)})" if len(parts) > 1 else "")
-                units.append({"id": f"v-legal-{c['id']}-{k}", "lv": "M5", "cat": c["id"], "title": title,
-                              "ids": [ref(c, e) for e in part]})
+                units.append({"id": f"v-legal-{c['id']}-{k}", "lv": module, "after": after, "cat": c["id"],
+                              "title": title, "ids": [ref(c, e) for e in part]})
         return units
     for lv in LEVELS:
         mixed = []

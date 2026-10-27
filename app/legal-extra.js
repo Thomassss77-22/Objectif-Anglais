@@ -263,3 +263,260 @@ export const LEGAL_EXTRA = {
     },
   ],
 };
+
+// Compléments des leçons existantes : un modèle rédigé (anglais annoté en français) et des exercices en plus.
+// Les modèles marqués « fictif » s'appuient sur un article inventé ; les faits cités sont réels.
+const q = (text, choices, answer) => ({ type: "qcm", q: text, choices, answer });
+const tr = (text, answers) => ({ type: "translate", q: text, answers });
+const sp = (text, answers) => ({ type: "speak", q: `Dis : « ${text} »`, answers });
+export const LEGAL_MORE = {
+  "crfpa-rules": {
+    model: {
+      title: "Le squelette de l'exposé", parts: [
+        ["The article I have been given is entitled \"Robots in robes\". It was published in The Economist in March 2025.", "Introduction : présenter le document (titre fictif)"],
+        ["It deals with the use of artificial intelligence in courtrooms. This raises the following question: to what extent can AI be trusted to assist judges?", "Thème et problématique"],
+        ["I will first sum up the main points of the article, then I will discuss two issues it raises, before concluding.", "Annonce du plan"],
+        ["Having summed up the article, I would now like to move on to my analysis.", "Transition vers le commentaire"],
+        ["To conclude, AI can make justice faster, but only if judges remain in control. It will be interesting to see how the courts use it.", "Conclusion : bilan, avis, ouverture"],
+        ["Thank you for your attention. I am now ready to answer your questions.", "Fin de l'exposé, avant l'entretien"],
+      ],
+    },
+    exercises: [
+      q("Combien de temps dure l'exposé avant l'entretien ?", ["Environ 3 minutes", "Environ 7 à 8 minutes", "15 minutes"], 1),
+      q("Dans la méthode 5/3/7, les 3 minutes servent à…", ["lire l'article", "problématiser et faire le plan", "rédiger l'introduction mot à mot"], 1),
+      q("Le jury évalue…", ["seulement l'accent", "la langue et la compréhension-analyse", "uniquement les connaissances juridiques"], 1),
+      tr("Je vais vous présenter l'article que l'on m'a donné.", ["i am going to present the article i have been given", "i'm going to present the article i have been given", "i will present the article i have been given", "i'll present the article i have been given", "i am going to present the article i was given", "i'm going to present the article i was given", "i will present the article i was given"]),
+    ],
+  },
+  "crfpa-reading": {
+    model: {
+      title: "Des notes de lecture efficaces", note: "Exemple fictif : six lignes suffisent, en anglais, sans phrases complètes.", parts: [
+        ["Source: The Times, a centre-right daily. 12 May 2025. News report.", "La source et sa ligne éditoriale"],
+        ["Trigger: a government bill to cut legal aid fees.", "Le déclencheur"],
+        ["Who speaks: the Justice Secretary versus the Law Society.", "Qui parle"],
+        ["Issue: access to justice for defendants on low incomes.", "De quoi il s'agit"],
+        ["Aim: to inform, but the closing quote suggests a critical stance.", "La visée"],
+        ["Structure: facts, then reactions, then figures, then outlook.", "La structure"],
+      ],
+    },
+    exercises: [
+      q("Dans un article, « actually » signifie…", ["actuellement", "en fait", "activement"], 1),
+      q("Une « op-ed » est…", ["un article d'opinion signé par un auteur extérieur", "une dépêche d'agence", "un éditorial non signé du journal"], 0),
+      q("« The Daily Telegraph » est un quotidien…", ["de centre gauche", "conservateur", "satirique"], 1),
+      tr("Le journaliste critique la réforme.", ["the journalist criticises the reform", "the journalist criticizes the reform", "the journalist is critical of the reform"]),
+    ],
+  },
+  "crfpa-hook": {
+    model: {
+      title: "Trois accroches qui marchent", parts: [
+        ["In 2024, the European Court of Human Rights held, for the first time, that a state's failure to act on climate change violated the Convention.", "Une actualité réelle et vérifiable (KlimaSeniorinnen c. Suisse)"],
+        ["Should a machine ever be allowed to decide whether someone goes to prison?", "Une question qui fait réagir"],
+        ["As Montesquieu put it, power must check power.", "Une citation exacte (De l'esprit des lois)"],
+        ["This is precisely the issue at stake in the article I have been given.", "La transition vers l'article"],
+      ],
+    },
+    exercises: [
+      q("Quelle accroche faut-il éviter ?", ["Une question liée au sujet", "Une citation dont tu n'es pas sûr de l'auteur", "Une actualité récente"], 1),
+      q("Une accroche dure environ…", ["2 ou 3 phrases", "une minute entière", "un mot"], 0),
+      q("« As Montesquieu put it, power must check power » peut introduire un sujet sur…", ["la séparation des pouvoirs", "le droit des contrats", "la fiscalité"], 0),
+      sp("Faut-il laisser une machine décider de l'avenir d'un accusé ?", ["should a machine be allowed to decide the future of a defendant?", "should a machine be allowed to decide a defendant's future?", "should we let a machine decide the future of a defendant?", "should we let a machine decide a defendant's future?", "should a machine decide the future of a defendant?"]),
+    ],
+  },
+  "crfpa-intro": {
+    model: {
+      title: "Une introduction et une synthèse complètes", note: "Article fictif ; l'affaire des avocats sanctionnés pour de fausses jurisprudences inventées par ChatGPT est réelle (New York, 2023).", parts: [
+        ["Should a machine ever help decide a criminal case? The question is no longer theoretical.", "Accroche"],
+        ["The article I have been given is entitled \"Robots in robes\". It was published in The Economist in March 2025.", "Présentation du document"],
+        ["It deals with the growing use of artificial intelligence by courts and lawyers.", "Thème"],
+        ["This raises the following question: to what extent can AI assist justice without undermining the right to a fair trial?", "Problématique"],
+        ["I will first sum up the article, then discuss two issues it raises, before concluding.", "Plan"],
+        ["The journalist first reports that several courts are testing AI tools to manage their caseload. He then points out that lawyers have been sanctioned for citing cases invented by chatbots. Finally, he stresses that judges must remain responsible for every decision.", "Synthèse : ordre logique et verbes variés (reports, points out, stresses)"],
+      ],
+    },
+    exercises: [
+      q("« The article I have been given is entitled… » sert à…", ["présenter le document", "conclure", "formuler la problématique"], 0),
+      q("Une bonne synthèse est…", ["une paraphrase ligne à ligne", "neutre et organisée", "ton avis personnel"], 1),
+      q("Le verbe le plus précis pour « le journaliste affirme » :", ["The journalist says", "The journalist claims", "The journalist talks"], 1),
+      tr("L'article a été publié dans le Guardian en mars 2025.", ["the article was published in the guardian in march 2025", "the article was published in the guardian in march, 2025"]),
+    ],
+  },
+  "crfpa-issue": {
+    model: {
+      title: "Quatre problématiques modèles", parts: [
+        ["To what extent can alternatives to prison reduce overcrowding without putting the public at risk?", "Sujet : la surpopulation carcérale"],
+        ["Is it possible to reconcile freedom of expression with the fight against online hate?", "Sujet : la haine en ligne"],
+        ["Should judges, rather than elected politicians, have the final say on assisted dying?", "Sujet : la fin de vie"],
+        ["How can the courts strike a balance between national security and the right to privacy?", "Sujet : la surveillance"],
+      ],
+    },
+    exercises: [
+      q("Une bonne problématique…", ["oppose deux idées ou deux intérêts", "résume l'article", "donne déjà la réponse"], 0),
+      q("« Whether » se traduit par…", ["si (alternative)", "pourquoi", "lorsque"], 0),
+      q("Phrase correcte :", ["The key issue is whether should the law change.", "The key issue is whether the law should change.", "The key issue is if should the law change."], 1),
+      tr("Est-il possible de concilier liberté d'expression et lutte contre la haine en ligne ?", ["is it possible to reconcile freedom of expression with the fight against online hate?", "is it possible to reconcile freedom of speech with the fight against online hate?", "is it possible to reconcile freedom of expression and the fight against online hate?", "is it possible to reconcile freedom of speech and the fight against online hate?"]),
+    ],
+  },
+  "crfpa-plan": {
+    model: {
+      title: "Le plan, du début à la fin", parts: [
+        ["First, I will sum up the article. Then I will focus on two issues: the efficiency of the reform and its impact on fundamental rights. Finally, I will give my own opinion.", "L'annonce du plan"],
+        ["Let us now turn to my first point: is the reform actually effective?", "Début de la première partie"],
+        ["This leads me to my second point, which is more fundamental: does the reform respect the right to a fair trial?", "Transition vers la deuxième partie"],
+        ["Having looked at its efficiency, I would now like to consider its legitimacy.", "Une autre transition possible"],
+        ["To sum up, the reform is efficient, but it raises serious concerns about fundamental rights.", "Vers la conclusion"],
+      ],
+    },
+    exercises: [
+      q("« Having looked at X, I would now like to consider Y » sert à…", ["conclure", "faire une transition", "présenter l'article"], 1),
+      q("Chaque partie du commentaire doit contenir…", ["une idée et un exemple", "seulement des chiffres", "une longue citation de l'article"], 0),
+      q("« Let us now turn to… » :", ["Passons maintenant à…", "Retournons à…", "Laissez-nous tourner…"], 0),
+      sp("Passons maintenant à mon second point.", ["let us now turn to my second point", "let's now turn to my second point", "let us now move on to my second point", "let's now move on to my second point", "let us turn to my second point", "now let us turn to my second point"]),
+    ],
+  },
+  "crfpa-analysis": {
+    model: {
+      title: "Un paragraphe de commentaire et une conclusion", parts: [
+        ["What is particularly striking in this article is that the problem is not the technology itself, but the way it is used.", "L'idée directrice"],
+        ["In the Mata v. Avianca case in 2023, a New York lawyer was sanctioned for citing cases that had been invented by ChatGPT.", "Un exemple précis et réel"],
+        ["By contrast, in France, using judges' identities to analyse or predict their decisions has been banned since 2019.", "La comparaison avec la France (loi du 23 mars 2019)"],
+        ["To conclude, AI can make justice faster, but only if humans remain in control. It will be interesting to see whether the EU AI Act, which treats the administration of justice as a high-risk area, will be enough.", "Conclusion : bilan, avis et ouverture"],
+      ],
+    },
+    exercises: [
+      q("Le commentaire doit surtout…", ["répéter la synthèse", "prendre du recul avec des références précises", "donner ton avis sans le justifier"], 1),
+      q("Une bonne ouverture en conclusion :", ["It will be interesting to see whether…", "That's all.", "I have nothing more to say."], 0),
+      q("Vers quel moment dois-tu avoir fait ta transition vers le commentaire ?", ["Vers 1 minute", "Vers 3 min 30", "À la toute fin"], 1),
+      tr("Ce qui est particulièrement frappant, c'est le rôle des juges.", ["what is particularly striking is the role of the judges", "what is particularly striking is the role of judges", "what is especially striking is the role of the judges", "what is particularly striking is the judges' role"]),
+    ],
+  },
+  "crfpa-opinion": {
+    model: {
+      title: "Un avis nuancé en quatre phrases", parts: [
+        ["It seems to me that the reform is a step in the right direction.", "La thèse"],
+        ["Admittedly, it may slow down some procedures, and lawyers are right to point that out.", "La concession"],
+        ["However, this argument is valid only up to a point: the delay is short, whereas the protection it offers is lasting.", "La nuance"],
+        ["On balance, I believe the benefits outweigh the costs.", "La prise de position"],
+      ],
+    },
+    exercises: [
+      q("« On balance » signifie…", ["sur la balance", "tout bien pesé", "en équilibre"], 1),
+      q("Pour concéder un point :", ["It is true that…, but…", "Totally wrong.", "I am agree that…"], 0),
+      q("Quelle formule évite de répéter « I think » ?", ["It seems to me that…", "I think that I think…", "Me, I think…"], 0),
+      sp("Certes, cette loi a des défauts, mais elle protège les victimes.", ["admittedly, this law has its flaws, but it protects victims", "admittedly, this law has flaws, but it protects victims", "admittedly, this law has its flaws, but it protects the victims", "admittedly, this law has some flaws, but it protects victims", "admittedly, the law has its flaws, but it protects victims"]),
+    ],
+  },
+  "crfpa-interview": {
+    model: {
+      title: "Une réponse en quatre temps", parts: [
+        ["Question: Could the death penalty ever return in Europe?", "La question du jury"],
+        ["No, I don't think so.", "1) Réponse directe"],
+        ["Because it is incompatible with the European Convention on Human Rights: Protocols 6 and 13 abolish it, in peacetime and then in all circumstances.", "2) Justification"],
+        ["In practice, abolishing it is a condition for joining the Council of Europe.", "3) Exemple précis"],
+        ["In France, it was abolished in 1981, and it has been banned by the Constitution since 2007.", "4) Comparaison avec la France"],
+      ],
+    },
+    exercises: [
+      q("Une réponse à une question du jury dure idéalement…", ["5 secondes", "30 à 45 secondes", "3 minutes"], 1),
+      q("Le 4e temps d'une bonne réponse :", ["une nuance ou une comparaison avec la France", "un silence", "une question au jury"], 0),
+      q("Le jury t'interroge sur un point que tu ne connais pas bien :", ["Tu réponds en français.", "Tu dis honnêtement que tu n'es pas sûr, puis tu raisonnes.", "Tu changes de sujet."], 1),
+      tr("Je ne suis pas tout à fait d'accord avec cette idée.", ["i don't entirely agree with this idea", "i do not entirely agree with this idea", "i don't fully agree with this idea", "i don't completely agree with this idea", "i don't entirely agree with that idea", "i'm not entirely sure i agree with this idea"]),
+    ],
+  },
+  "crfpa-blanks": {
+    model: {
+      title: "Se rattraper face au jury", parts: [
+        ["Jury: How separate are the powers in the United Kingdom?", "Une question difficile"],
+        ["That's a tricky question. Let me think about it for a second.", "Gagner du temps"],
+        ["If I understand correctly, you are asking whether Parliament is really separate from the government?", "Reformuler pour vérifier"],
+        ["Well, not entirely: the person who leads the government, I mean the Prime Minister, sits in the House of Commons.", "Contourner un mot puis se corriger"],
+        ["So the separation is weaker than in the American system.", "Conclure la réponse"],
+      ],
+    },
+    exercises: [
+      q("Tu viens de faire une faute de grammaire :", ["Tu continues comme si de rien n'était.", "Tu te corriges : « sorry, I mean… »", "Tu t'excuses longuement en français."], 1),
+      q("« Could you rephrase that? » veut dire :", ["Pourriez-vous reformuler ?", "Pourriez-vous parler plus fort ?", "Pouvez-vous traduire ?"], 0),
+      q("Un silence est sans conséquence s'il dure…", ["quelques secondes", "une minute", "il ne faut jamais se taire"], 0),
+      sp("Pardon, je veux dire la Cour suprême, pas le Parlement.", ["sorry, i mean the supreme court, not parliament", "sorry, i mean the supreme court, not the parliament", "sorry, i meant the supreme court, not parliament"]),
+    ],
+  },
+  "crfpa-errors-1": {
+    exercises: [
+      q("Phrase correcte :", ["She gave me an advice.", "She gave me some advice.", "She gave me advices."], 1),
+      q("Phrase correcte :", ["People is worried.", "People are worried.", "Peoples are worried."], 1),
+      q("Phrase correcte :", ["The law apply to everyone.", "The law applies to everyone.", "The law is apply to everyone."], 1),
+      tr("Les informations sont incomplètes.", ["the information is incomplete", "this information is incomplete"]),
+    ],
+  },
+  "crfpa-errors-2": {
+    exercises: [
+      q("Phrase correcte :", ["The article speaks about prisons.", "The article deals with prisons.", "The article talks of prisons."], 1),
+      q("Phrase correcte :", ["When the law will be passed, …", "When the law is passed, …", "When the law would be passed, …"], 1),
+      q("Phrase correcte :", ["He said me that…", "He told me that…", "He told that…"], 1),
+      tr("Pouvez-vous m'expliquer cette décision ?", ["can you explain this decision to me?", "could you explain this decision to me?", "can you explain this ruling to me?", "could you explain this ruling to me?", "can you explain the decision to me?", "could you explain the decision to me?"]),
+    ],
+  },
+  "crfpa-numbers": {
+    exercises: [
+      q("« 1,5 million » se lit…", ["one comma five million", "one point five million", "one and five million"], 1),
+      q("« Les années 2010 » :", ["the 2010s", "the 2010 years", "the years 2010"], 0),
+      q("« 10 000 » s'écrit en anglais…", ["10.000", "10,000", "10 000s"], 1),
+      tr("Le budget de la justice a doublé en dix ans.", ["the justice budget has doubled in ten years", "the justice budget doubled in ten years", "the budget for justice has doubled in ten years", "the justice budget has doubled over ten years", "the justice budget doubled over ten years", "the justice budget has doubled in a decade"]),
+    ],
+  },
+  "crfpa-linkers": {
+    exercises: [
+      q("« Whereas » exprime…", ["une opposition entre deux faits", "une cause", "une conséquence"], 0),
+      q("« Hence » signifie…", ["d'où, c'est pourquoi", "ici", "cependant"], 0),
+      q("« ___ it was expensive, the reform was adopted. » (bien que)", ["Despite", "Although", "However"], 1),
+      sp("En outre, la loi a été contestée devant la Cour suprême.", ["furthermore, the law was challenged before the supreme court", "moreover, the law was challenged before the supreme court", "in addition, the law was challenged before the supreme court", "furthermore, the law has been challenged before the supreme court", "moreover, the law has been challenged before the supreme court", "furthermore, the law was challenged in the supreme court", "moreover, the law was challenged in the supreme court"]),
+    ],
+  },
+  "crfpa-tenses": {
+    exercises: [
+      q("« La Cour a rendu sa décision hier. »", ["The court has delivered its ruling yesterday.", "The court delivered its ruling yesterday.", "The court had delivered its ruling yesterday."], 1),
+      q("« Il a avoué qu'il avait menti. »", ["He admitted that he lied before.", "He admitted that he had lied.", "He has admitted that he has lied."], 1),
+      q("« should have + participe passé » exprime…", ["un reproche sur le passé", "une obligation future", "une certitude"], 0),
+      tr("Le gouvernement aurait pu éviter cette crise.", ["the government could have avoided this crisis", "the government could have prevented this crisis", "the government might have avoided this crisis", "the government could have avoided the crisis"]),
+    ],
+  },
+  "crfpa-passive": {
+    exercises: [
+      q("« Il a été libéré sous caution » :", ["He was released on bail.", "He was freed under caution.", "He was released with bail."], 0),
+      q("« Accusé de » :", ["accused for", "accused of", "accused with"], 1),
+      q("« L'affaire a été rejetée » :", ["The case was dismissed.", "The case was classified.", "The case was rejected out."], 0),
+      sp("Le projet de loi a été adopté par le Parlement.", ["the bill was passed by parliament", "the bill has been passed by parliament", "the bill was adopted by parliament", "the bill has been adopted by parliament", "the bill was approved by parliament"]),
+    ],
+  },
+  "crfpa-modals-law": {
+    exercises: [
+      q("« The tenant shall not sublet the flat » exprime…", ["une interdiction", "une possibilité", "un conseil"], 0),
+      q("« Passible d'une amende » :", ["liable for a fine", "liable to a fine", "entitled to a fine"], 1),
+      q("À l'oral, pour exprimer une obligation, on dit plutôt…", ["shall", "must / is required to", "may"], 1),
+      tr("Les salariés ont droit à cinq semaines de congés payés.", ["employees are entitled to five weeks of paid leave", "employees are entitled to five weeks' paid leave", "employees are entitled to five weeks paid leave", "workers are entitled to five weeks of paid leave", "employees are entitled to five weeks of paid holiday"]),
+    ],
+  },
+  "crfpa-reporting": {
+    model: {
+      title: "Résumer un arrêt célèbre", parts: [
+        ["In Dobbs v. Jackson Women's Health Organization (2022), the US Supreme Court held that the Constitution does not confer a right to abortion.", "La règle posée (held that)"],
+        ["By five votes to four, it overruled Roe v. Wade, a landmark ruling from 1973.", "La majorité et l'arrêt renversé"],
+        ["Three justices wrote a joint dissenting opinion.", "L'opinion dissidente"],
+        ["As a result, the regulation of abortion was returned to the states.", "La conséquence"],
+      ],
+    },
+    exercises: [
+      q("« Une opinion dissidente » :", ["a dissenting opinion", "a dissident opinion", "an opposing judgment"], 0),
+      q("« In a 6-3 decision » veut dire…", ["à six voix contre trois", "à 6 h 03", "six juges sur trois"], 0),
+      q("« The court of appeal upheld the ruling » : la décision a été…", ["confirmée", "annulée", "reportée"], 0),
+      sp("La Cour suprême a jugé que la loi était contraire à la Constitution.", ["the supreme court held that the law was unconstitutional", "the supreme court ruled that the law was unconstitutional", "the supreme court found that the law was unconstitutional", "the supreme court held that the law was contrary to the constitution", "the supreme court ruled that the law was contrary to the constitution"]),
+    ],
+  },
+  "crfpa-pronunciation": {
+    exercises: [
+      q("Accent tonique de « legislation » :", ["LE-gis-la-tion", "legis-LA-tion", "legisla-TION"], 1),
+      q("« to record » (le verbe) se prononce…", ["RE-cord", "re-CORD", "les deux"], 1),
+      q("« decided » se termine par le son…", ["/t/", "/d/", "/ɪd/"], 2),
+      q("Dans « debt », quelle lettre est muette ?", ["le d", "le b", "le t"], 1),
+    ],
+  },
+};

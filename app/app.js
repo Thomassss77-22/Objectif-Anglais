@@ -112,7 +112,7 @@ function reviewQueue() {
 }
 
 // Parcours = leçons rédigées + leçons de vocabulaire tirées de la banque (words/index.json → units),
-// intercalées régulièrement. En mode CRFPA, le vocabulaire juridique forme un module 5.
+// intercalées régulièrement. En mode CRFPA, chaque thème juridique suit la leçon qui lui correspond.
 const composed = {};
 const vocabStub = (u) => ({ id: u.id, title: u.title, vocab: u });
 function interleave(main, extra) {
@@ -129,9 +129,14 @@ const levels = () => {
   const units = banks[state.mode].index?.units;
   if (!units) return base;
   if (!composed[state.mode]) {
-    const out = base.map((lv) => ({ ...lv, lessons: interleave(lv.lessons, units.filter((u) => u.lv === lv.id).map(vocabStub)) }));
-    const m5 = units.filter((u) => u.lv === "M5");
-    if (m5.length) out.push({ id: "M5", label: "Module 5", name: "Vocabulaire juridique", lessons: m5.map(vocabStub) });
+    const out = base.map((lv) => {
+      const mine = units.filter((u) => u.lv === lv.id);
+      // Thème rattaché à une leçon (CRFPA) : juste après elle. Sinon, réparti régulièrement dans le niveau.
+      const placed = (l) => mine.filter((u) => u.after === l.id).map(vocabStub);
+      const known = new Set(lv.lessons.map((l) => l.id));
+      const free = mine.filter((u) => !u.after || !known.has(u.after)).map(vocabStub);
+      return { ...lv, lessons: interleave(lv.lessons.flatMap((l) => [l, ...placed(l)]), free) };
+    });
     composed[state.mode] = out;
   }
   return composed[state.mode];
@@ -332,7 +337,7 @@ function home() {
 
 // Le parcours s'affiche un niveau à la fois (onglets), découpé en chapitres : une leçon rédigée
 // suivie des leçons de vocabulaire qui l'accompagnent. Un module fait uniquement de vocabulaire
-// (CRFPA, module 5) est découpé par thème. Seul le chapitre en cours est déplié.
+// est découpé par thème. Seul le chapitre en cours est déplié.
 const shownLv = {};          // niveau affiché, par mode
 const toggled = new Set();   // chapitres ouverts ou fermés à la main
 const baseTitle = (t) => t.replace(/ \(\d+\/\d+\)$/, "");
@@ -484,6 +489,11 @@ function showLesson(l) {
     </section>
     <h4 class="section-title">${icon("bulb")}L'essentiel</h4>
     <div class="tip">${l.tip}</div>
+    ${l.model ? `<h4 class="section-title">${icon("quote")}${esc(l.model.title)}</h4>
+    <div class="lmodel">${l.model.note ? `<p class="lmodel-note">${esc(l.model.note)}</p>` : ""}${l.model.parts.map(([en, note]) => `
+      <div class="mpart"><small>${esc(note)}</small><p>${esc(en)}</p>
+        <button class="say mini" data-en="${esc(en)}" aria-label="Écouter">${icon("sound")}</button></div>`).join("")}
+    </div>` : ""}
     <h4 class="section-title">${icon("book")}Vocabulaire</h4>
     <div class="vocab">${l.words.map(([fr, en, ex]) => `
       <div class="word"><div><b>${esc(en)}</b><span>${esc(fr)}</span>${ex ? `<i class="word-ex">${esc(ex)}</i>` : ""}</div>
