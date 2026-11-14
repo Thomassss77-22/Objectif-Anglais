@@ -59,6 +59,51 @@ async function exportProgress() {
   a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 2000);
 }
+// ---------- Rappel quotidien ----------
+// Sans serveur, une application web ne peut pas envoyer de notification quand elle est fermée.
+// Dans l'application iPhone : notification locale programmée chaque jour (plugin LocalNotifications).
+// Dans le navigateur : un événement d'agenda quotidien (.ics), dont l'alerte fait office de rappel.
+const REMINDER_TIMES = ["08:00", "12:30", "19:00", "21:30"];
+const REMINDER_ID = 1;
+async function setReminder(time) {
+  const plugin = nativePlugin("LocalNotifications");
+  if (plugin) {
+    try {
+      await plugin.cancel({ notifications: [{ id: REMINDER_ID }] });
+      if (time) {
+        const perm = await plugin.requestPermissions();
+        if (perm.display !== "granted") { alert("Autorise les notifications dans Réglages pour recevoir le rappel."); return false; }
+        const [hour, minute] = time.split(":").map(Number);
+        await plugin.schedule({ notifications: [{ id: REMINDER_ID, title: "Objectif Anglais",
+          body: "Tes cartes du jour t'attendent : cinq minutes suffisent.", schedule: { on: { hour, minute }, allowWhileIdle: true } }] });
+      }
+    } catch { alert("Le rappel n'a pas pu être programmé."); return false; }
+  }
+  state.reminder = time || null;
+  save();
+  return true;
+}
+function reminderIcs(time) {
+  const [h, m] = time.split(":");
+  const d = new Date();
+  const day = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
+  const end = `${String((+h + (+m + 10 >= 60 ? 1 : 0)) % 24).padStart(2, "0")}${String((+m + 10) % 60).padStart(2, "0")}`;
+  return ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Objectif Anglais//FR", "BEGIN:VEVENT",
+    `UID:rappel-${day}-${h}${m}@objectif-anglais`, `DTSTAMP:${day}T000000Z`, `DTSTART:${day}T${h}${m}00`, `DTEND:${day}T${end}00`,
+    "RRULE:FREQ=DAILY", "SUMMARY:Anglais : mes cartes du jour", "DESCRIPTION:Cinq minutes de révision dans Objectif Anglais.",
+    "BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:Anglais : mes cartes du jour", "TRIGGER:PT0M", "END:VALARM",
+    "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+}
+function downloadIcs(time) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([reminderIcs(time)], { type: "text/calendar" }));
+  a.download = "rappel-anglais.ics";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+
 // Rappel sur l'accueil dès qu'il y a quelque chose à perdre, puis toutes les deux semaines.
 const needsBackup = () => Object.keys(state.done).length + Object.keys(state.legal.done).length >= 3
   && (!state.lastBackup || Date.now() - state.lastBackup > 14 * 864e5);
@@ -627,6 +672,11 @@ function exercise(l, i, score) {
   root.querySelector("#quit").onclick = l.onQuit || (() => lesson(l.id, origin));
 
   const next = (good, correction, fixes = [], given = "") => {
+    // Réponse écrite ou dictée comptée fausse : on garde l'état du carnet d'erreurs pour pouvoir
+    // l'annuler si l'utilisateur indique « J'avais bon » (synonyme juste, autre formulation correcte…).
+    const canAccept = !good && ex.type !== "qcm" && ex.type !== "listen";
+    const mKey = ex.key || mistakeKey(l.id, ex);
+    const before = canAccept && mistakes()[mKey] ? JSON.stringify(mistakes()[mKey]) : null;
     if (l.onAnswer) l.onAnswer(ex, good);
     else if (!good) logMistake(l, ex, given);
     buzz(good ? 15 : [30, 40, 30]);
@@ -641,9 +691,16 @@ function exercise(l, i, score) {
       <p>${good ? (ex.type === "qcm" ? "" : `<b>${esc(correction)}</b>`) : `Bonne réponse :<b>${esc(correction)}</b>`}
         ${fixes.length ? `<i class="sheet-ex">Attention à l'orthographe : ${esc(fixesText(fixes))}</i>` : ""}</p>
       ${!good && tip ? `<details class="rule"><summary>${icon("bulb")}Revoir la règle</summary><div>${tip}</div></details>` : ""}
-      <button class="btn ${good ? "ok" : "ko"}" id="nx">Continuer</button></div>`;
+      ${canAccept ? `<div class="row2"><button class="btn ghost" id="acc">J'avais bon</button><button class="btn ko" id="nx">Continuer</button></div>`
+                  : `<button class="btn ${good ? "ok" : "ko"}" id="nx">Continuer</button>`}</div>`;
     root.appendChild(sheet);
     sheet.querySelector("#nx").onclick = () => exercise(l, i + 1, score + (good ? 1 : 0));
+    if (canAccept) sheet.querySelector("#acc").onclick = () => {
+      if (before) mistakes()[mKey] = JSON.parse(before); else delete mistakes()[mKey];
+      if (l.onAnswer) l.onAnswer(ex, true);
+      save();
+      exercise(l, i + 1, score + 1);
+    };
   };
 
   if (ex.type === "listen") {
@@ -1367,6 +1424,12 @@ function profile() {
         <div><b>${esc(lv.name.split(" — ")[0])}</b><div class="meter"><i style="width:${(n / lv.lessons.length) * 100}%"></i></div></div>
         <em>${n}/${lv.lessons.length}</em></div>`;
     }).join("")}</div>
+    <h4 class="section-title">${icon("flame")}Rappel quotidien</h4>
+    <div class="pace">${REMINDER_TIMES.map((t) => `<button class="pace-opt ${state.reminder === t ? "on" : ""}" data-rem="${t}">
+      <b>${t.replace(":", " h ")}</b><span>${state.reminder === t ? "Activé" : "Choisir"}</span></button>`).join("")}</div>
+    <p class="pace-note">${nativePlugin("LocalNotifications")
+      ? (state.reminder ? `Notification chaque jour à ${state.reminder.replace(":", " h ")}. Touche l'heure à nouveau pour l'arrêter.` : "Choisis une heure pour recevoir une notification chaque jour.")
+      : (state.reminder ? `Un événement quotidien à ${state.reminder.replace(":", " h ")} a été téléchargé : ouvre-le pour l'ajouter à ton agenda. Pour l'arrêter, supprime-le dans l'agenda.` : "Choisis une heure : un rappel quotidien sera ajouté à ton agenda, qui t'alertera même quand l'application est fermée.")}</p>
     <h4 class="section-title">${icon("download")}Sauvegarde</h4>
     <div class="backup">
       <p>Ta progression est enregistrée <b>sur cet appareil uniquement</b>. Télécharge une sauvegarde pour la retrouver
@@ -1388,6 +1451,16 @@ function profile() {
   root.querySelectorAll("[data-pace]").forEach((b) => (b.onclick = () => {
     state.newPerDay = +b.dataset.pace;
     save();
+    buzz(15);
+    const y = window.scrollY;
+    profile();
+    window.scrollTo(0, y);
+  }));
+  root.querySelectorAll("[data-rem]").forEach((b) => (b.onclick = async () => {
+    const native = Boolean(nativePlugin("LocalNotifications"));
+    const time = native && state.reminder === b.dataset.rem ? null : b.dataset.rem;
+    if (!(await setReminder(time))) return;
+    if (!native && time) downloadIcs(time);
     buzz(15);
     const y = window.scrollY;
     profile();
