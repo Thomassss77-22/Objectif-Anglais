@@ -5,12 +5,14 @@
   "description": "Application d'apprentissage de l'anglais pour francophones (PWA + application iOS via Capacitor)",
   "scripts": {
     "ios": "cap sync ios && cap open ios",
-    "sync": "cap sync ios"
+    "sync": "cap sync ios",
+    "test": "node tools/test_match.mjs"
   },
   "dependencies": {
     "@capacitor/core": "^8.5.3",
     "@capacitor/filesystem": "^8.1.5",
     "@capacitor/ios": "^8.5.3",
+    "@capacitor/local-notifications": "^8.0.0",
     "@capacitor/share": "^8.0.3"
   },
   "devDependencies": {
