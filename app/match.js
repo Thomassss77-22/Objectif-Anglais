@@ -2,6 +2,8 @@
 // On ignore la casse, la ponctuation et les contractions (I'm = I am), et on tolère une petite faute
 // de frappe sur les mots longs. Les mots courts, l'ordre des mots et les mots manquants restent stricts :
 // ce sont des fautes de langue (is/are, a/an, he go…), pas des fautes de frappe.
+// Pour le vocabulaire, un seul des termes d'une liste (« borrow / lend ») suffit, et l'article ou « to »
+// en tête est facultatif.
 
 const CONTRACTIONS = { "i'm": "i am", "you're": "you are", "he's": "he is", "she's": "she is", "it's": "it is",
   "we're": "we are", "they're": "they are", "i've": "i have", "you've": "you have", "we've": "we have",
@@ -72,18 +74,46 @@ function diff(given, expected) {
   return [g.slice(i, g.length - j).join(" "), e.slice(i, e.length - j).join(" ")];
 }
 
+// Lettres accentuées ramenées à la lettre simple (« fiancé » = « fiance », « café » = « cafe »).
+const fold = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+// Article ou « to » en tête : facultatif pour un mot ou une courte expression de vocabulaire.
+const lead = (s) => s.replace(/^(to|a|an|the) /, "");
+const short = (s) => lead(s).split(" ").length <= 3;
+// Admis seulement si l'article manque d'un côté : « a apple » pour « an apple » reste une faute.
+const loose = (given, v) => short(v) && !(lead(given) !== given && lead(v) !== v);
+
+// Formes acceptées pour une réponse attendue.
+// « borrow / lend » : chaque terme seul est accepté, comme la paire entière.
+// « the analysis, the commentary » : idem, quand chaque terme commence par un article ou « to ».
+// Les précisions entre parenthèses ne sont jamais exigées.
+export function variants(answer) {
+  const whole = answer.replace(/\(.*?\)/g, " ").replace(/\s+/g, " ").trim();
+  const out = [whole];
+  if (whole.includes("/")) out.push(whole.replace(/\s*\/\s*/g, " "), ...whole.split("/").map((x) => x.trim()).filter(Boolean));
+  else if (whole.includes(",") && !/[.?!]/.test(whole)) {
+    const parts = whole.split(",").map((x) => x.trim()).filter(Boolean);
+    if (parts.length > 1 && parts.every((x) => /^(to|a|an|the) /i.test(x))) out.push(...parts);
+  }
+  return [...new Set(out)];
+}
+
 export function check(input, answers, prep = norm) {
-  const given = prep(input);
+  const given = fold(prep(input));
+  // Chaque forme acceptée garde la réponse d'origine, qui est celle qu'on affiche.
+  const forms = answers.flatMap((a) => variants(a).map((v) => [fold(prep(v)), a])).filter(([v]) => v);
   let best = null;
-  for (const a of answers) {
-    const fixes = compare(given, prep(a));
+  for (const [v, a] of forms) {
+    let fixes = compare(given, v);
+    if (!fixes && loose(given, v)) fixes = compare(lead(given), lead(v));
     if (fixes && (!best || fixes.length < best.fixes.length)) best = { ok: true, fixes, answer: a };
     if (best && !best.fixes.length) break;
   }
   if (best) return best;
   // Seuls les espaces, apostrophes ou traits d'union diffèrent : accepté, avec la forme correcte affichée.
-  for (const a of answers) {
-    if (squash(given) === squash(prep(a))) return { ok: true, fixes: [diff(given, prep(a))], answer: a };
+  for (const [v, a] of forms) {
+    if (squash(given) === squash(v)) return { ok: true, fixes: [diff(given, v)], answer: a };
+    if (loose(given, v) && squash(lead(given)) === squash(lead(v))) return { ok: true, fixes: [diff(lead(given), lead(v))], answer: a };
   }
   return { ok: false, fixes: [], answer: answers[0] };
 }
