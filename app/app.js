@@ -1,8 +1,4 @@
-import { LEVELS } from "./data.js";
-import { LEGAL, JURY_QUESTIONS, SELF_GRID, DRILL_SENTENCES, ERROR_SENTENCES } from "./legal.js";
-import { ARTICLES } from "./articles.js";
-import { FILMS } from "./films.js";
-import { READINGS } from "./reading.js";
+import { module as contenu, json as contenuJson, porte, indisponible, verrou, compte } from "./contenu.js";
 import * as PT from "./placement.js";
 import { norm, check, fixesText } from "./match.js";
 import { newCard, review, dueCards } from "./srs.js";
@@ -10,6 +6,14 @@ import { newCard, review, dueCards } from "./srs.js";
 const KEY = "objectif-anglais-v1";
 const DAILY_GOAL = 30; // XP par jour
 const root = document.getElementById("app");
+
+// ---------- Contenu ----------
+// La porte vérifie le compte quand le site en exige un ; sinon elle laisse passer.
+await porte(root);
+const [{ LEVELS }, { LEGAL, JURY_QUESTIONS, SELF_GRID, DRILL_SENTENCES, ERROR_SENTENCES }, { ARTICLES }, { FILMS }, { READINGS }] =
+  await Promise.all(["data.js", "legal.js", "articles.js", "films.js", "reading.js"].map(contenu)).catch(() => indisponible(root));
+// La progression la plus récente, si elle vient d'un autre appareil.
+if (verrou) await compte.tirer(KEY);
 
 // ---------- État ----------
 function load() {
@@ -27,6 +31,7 @@ const legalMode = () => state.mode === "legal";
 const P = () => (legalMode() ? state.legal : state);
 function save() {
   try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {}
+  if (verrou) compte.pousserBientot(KEY);
 }
 
 // ---------- Lien avec l'espace candidat ----------
@@ -887,12 +892,12 @@ const bankDir = () => (legalMode() ? "words-legal" : "words");
 const curBank = () => banks[state.mode];
 async function loadIndex() {
   const b = curBank();
-  if (!b.index) b.index = await (await fetch(`${bankDir()}/index.json`)).json();
+  if (!b.index) b.index = await contenuJson(`${bankDir()}/index.json`);
   return b.index;
 }
 async function loadCat(id) {
   const b = curBank();
-  if (!b.cats[id]) b.cats[id] = await (await fetch(`${bankDir()}/${id}.json`)).json();
+  if (!b.cats[id]) b.cats[id] = await contenuJson(`${bankDir()}/${id}.json`);
   return b.cats[id];
 }
 // Même clé que les cartes des leçons (le mot anglais), sauf pour un mot à plusieurs sens.
@@ -1966,7 +1971,7 @@ function jury() {
 const TABS = { home, words: wordsHome, review: reviewSession, profile, training };
 // Le parcours a besoin du découpage en leçons de vocabulaire : on charge les deux index d'abord.
 const loadAllIndexes = () => Promise.all(["general", "legal"].map(async (m) => {
-  if (!banks[m].index) banks[m].index = await (await fetch(`${m === "legal" ? "words-legal" : "words"}/index.json`)).json();
+  if (!banks[m].index) banks[m].index = await contenuJson(`${m === "legal" ? "words-legal" : "words"}/index.json`);
 }));
 loadAllIndexes().catch(() => {}).finally(() => {
   const mode = params.get("mode"), tab = params.get("ouvrir");
@@ -1975,11 +1980,18 @@ loadAllIndexes().catch(() => {}).finally(() => {
   (Object.hasOwn(TABS, tab) && (tab !== "training" || legalMode()) ? TABS[tab] : home)();
 });
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+// Avec le coffre privé, les catégories de mots ne sont pas préchargées par le service worker :
+// on les met de côté en arrière-plan pour que tout fonctionne ensuite hors ligne.
+if (verrou) setTimeout(async () => {
+  for (const m of ["general", "legal"]) for (const c of (banks[m].index?.categories || banks[m].index || [])) {
+    try { await contenuJson(`${m === "legal" ? "words-legal" : "words"}/${c.id}.json`); } catch { return; }
+  }
+}, 4000);
 
 // Filet de sécurité : un contenu demandé sans réseau et absent du cache. Sans ce message,
 // le bouton semble simplement ne pas répondre.
 addEventListener("unhandledrejection", (e) => {
-  if (!/fetch|network|load/i.test(String(e.reason && e.reason.message || e.reason))) return;
+  if (!/fetch|network|load|verrou/i.test(String(e.reason && e.reason.message || e.reason))) return;
   let n = document.getElementById("net-note");
   if (!n) {
     n = document.createElement("div"); n.id = "net-note"; n.setAttribute("role", "status");
