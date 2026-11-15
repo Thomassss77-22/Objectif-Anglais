@@ -29,6 +29,14 @@ function save() {
   try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {}
 }
 
+// ---------- Lien avec l'espace candidat ----------
+// L'espace ouvre l'application avec ?de=espace&ouvrir=<onglet> ; on retient d'où l'on vient pour proposer le retour.
+const params = new URLSearchParams(location.search);
+if (params.get("de") === "espace") { try { sessionStorage.setItem("de-espace", "1"); } catch {} }
+const fromEspace = () => { try { return sessionStorage.getItem("de-espace") === "1"; } catch { return false; } };
+const backLink = () => (fromEspace() ? `<a href="../espace/" aria-label="Retour à mon espace" title="Retour à mon espace" style="display:grid;place-items:center;flex:none;width:40px;height:40px;border-radius:12px;background:var(--surface);color:var(--fg);text-decoration:none;font-weight:800;box-shadow:var(--shadow-sm)">←</a>` : "");
+
+
 // ---------- Sauvegarde ----------
 // La progression ne vit que dans ce navigateur : on peut l'exporter dans un fichier et la restaurer
 // sur un autre appareil.
@@ -300,7 +308,7 @@ function tabbar(on) {
 
 const topbar = () => `
   <header class="topbar">
-    <div class="brand"><img class="logo" src="icons/logo-mark.png" alt=""><span class="brand-name">Objectif Anglais</span>${legalMode() ? `<span class="mode-chip">CRFPA</span>` : ""}</div>
+    <div class="brand">${backLink()}<img class="logo" src="icons/logo-mark.png" alt=""><span class="brand-name">Objectif Anglais</span>${legalMode() ? `<span class="mode-chip">CRFPA</span>` : ""}</div>
     <div class="pills">
       <span class="pill" title="Série">${icon("flame", "flame")}${liveStreak()}</span>
       <span class="pill" title="XP">${icon("bolt", "bolt")}${state.xp}</span>
@@ -1960,7 +1968,12 @@ const TABS = { home, words: wordsHome, review: reviewSession, profile, training 
 const loadAllIndexes = () => Promise.all(["general", "legal"].map(async (m) => {
   if (!banks[m].index) banks[m].index = await (await fetch(`${m === "legal" ? "words-legal" : "words"}/index.json`)).json();
 }));
-loadAllIndexes().catch(() => {}).finally(home);
+loadAllIndexes().catch(() => {}).finally(() => {
+  const mode = params.get("mode"), tab = params.get("ouvrir");
+  if (mode === "legal" || mode === "general") { state.mode = mode; save(); }
+  if (params.has("de")) history.replaceState(null, "", location.pathname);
+  (Object.hasOwn(TABS, tab) && (tab !== "training" || legalMode()) ? TABS[tab] : home)();
+});
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 
 // Filet de sécurité : un contenu demandé sans réseau et absent du cache. Sans ce message,
