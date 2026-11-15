@@ -406,7 +406,7 @@ function pathSection(next) {
   const n = doneIn(lv.lessons);
   const tabs = lvls.map((x) => {
     const full = doneIn(x.lessons) === x.lessons.length;
-    return `<button class="lv-tab ${x.id === lv.id ? "on" : ""} ${full ? "full" : ""}" data-lv="${x.id}" data-pick="${x.id}">
+    return `<button role="tab" aria-selected="${x.id === lv.id}" class="lv-tab ${x.id === lv.id ? "on" : ""} ${full ? "full" : ""}" data-lv="${x.id}" data-pick="${x.id}">
       ${full ? icon("check") : ""}${x.id}${x.id === cur.id && !full ? `<i class="dot"></i>` : ""}</button>`;
   }).join("");
   const chs = chapters(lv).map((ch, i) => {
@@ -1962,3 +1962,17 @@ const loadAllIndexes = () => Promise.all(["general", "legal"].map(async (m) => {
 }));
 loadAllIndexes().catch(() => {}).finally(home);
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+
+// Filet de sécurité : un contenu demandé sans réseau et absent du cache. Sans ce message,
+// le bouton semble simplement ne pas répondre.
+addEventListener("unhandledrejection", (e) => {
+  if (!/fetch|network|load/i.test(String(e.reason && e.reason.message || e.reason))) return;
+  let n = document.getElementById("net-note");
+  if (!n) {
+    n = document.createElement("div"); n.id = "net-note"; n.setAttribute("role", "status");
+    n.style.cssText = "position:fixed;left:16px;right:16px;bottom:calc(var(--nav-h) + 16px);z-index:50;padding:12px 16px;border-radius:14px;background:var(--fg);color:var(--bg);font-weight:700;font-size:.9rem;text-align:center";
+    document.body.append(n);
+  }
+  n.textContent = "Pas de connexion : ce contenu se chargera dès que tu seras en ligne.";
+  clearTimeout(n._t); n._t = setTimeout(() => n.remove(), 4000);
+});
